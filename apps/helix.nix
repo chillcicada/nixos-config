@@ -3,4 +3,8 @@
 , ...
 }:
 
-{}
+{
+  programs.helix = {
+    enable = true;
+  };
+}

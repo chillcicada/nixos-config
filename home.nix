@@ -13,11 +13,11 @@
     eza
     openssh
     xz
-    fastfetch
     yazi
     zip
     nnn
     jq
+    cloc
 
     # lang
     zig
@@ -26,6 +26,7 @@
     nodejs
     pnpm
     yarn
+    fnm
 
     python311
     rye
@@ -47,6 +48,8 @@
     go
     gopls
 
+    selene
+
     # R&D
     zotero
     libreoffice-qt6-fresh
@@ -54,6 +57,7 @@
     # misc
     fastfetch
     yesplaymusic
+    htop
   ];
 
   imports = [
