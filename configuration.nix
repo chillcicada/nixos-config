@@ -7,6 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./cachix.nix
       ./core/hardware-configuration.nix
       ./core/font.nix
     ];
@@ -123,6 +124,7 @@
     fontconfig
     direnv
     nerd-font-patcher
+    cachix
   ];
 
   # Set default editor
