@@ -7,8 +7,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
       plugins = [];
@@ -21,6 +21,10 @@
         *) export PATH="$PNPM_HOME:$PATH" ;;
       esac
       # pnpm end
+
+      # fnm
+      eval "$(fnm env --use-on-cd --shell zsh)"
+      # fnm end
     '';
   };
 }

@@ -58,6 +58,7 @@
     fastfetch
     yesplaymusic
     htop
+    typos
   ];
 
   imports = [
@@ -65,7 +66,7 @@
   ];
 
   home.sessionVariables = {
-    GOPATH = "/home/cc/.local/share/go";
+    GOPATH = "/etc/profiles/per-user/cc/bin/go";
   };
 
   home.stateVersion = "24.05";
