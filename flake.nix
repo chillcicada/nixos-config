@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
 
-    nixos-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-master.url = "github:Nixos/nixpkgs/master";
 
     nur.url = "github:nix-community/NUR";
 
@@ -14,13 +14,15 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.chill = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix

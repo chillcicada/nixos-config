@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-64f9a2a3-e6c3-418c-902d-dde61e57bdb3".device = "/dev/disk/by-uuid/64f9a2a3-e6c3-418c-902d-dde61e57bdb3";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "chill"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -125,6 +125,7 @@
     direnv
     nerd-font-patcher
     cachix
+    v2raya
   ];
 
   # Set default editor
@@ -149,8 +150,8 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.v2raya.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -158,13 +159,7 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11";
 
   security.sudo.extraRules = [
     {
