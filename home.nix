@@ -59,6 +59,7 @@
     yesplaymusic
     htop
     typos
+    nom
   ];
 
   imports = [
@@ -69,7 +70,7 @@
     GOPATH = "/etc/profiles/per-user/cc/bin/go";
   };
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   programs.home-manager.enable = true;
 }
