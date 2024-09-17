@@ -11,10 +11,10 @@
     # tools
     bat
     eza
-    openssh
-    xz
     yazi
+    xz
     zip
+    unzip
     nnn
     jq
     cloc
