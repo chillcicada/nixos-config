@@ -117,7 +117,7 @@
     lua51Packages.lua
     luajitPackages.luarocks
     tree-sitter
-    unzip
+    openssh
     fontconfig
     direnv
     nerd-font-patcher
