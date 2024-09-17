@@ -17,4 +17,4 @@ list:
   nix profile history --profile /nix/var/nix/profiles/system
 
 up:
-  nix flake update --commit-lock-file
+  sudo nix flake update --commit-lock-file

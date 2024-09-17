@@ -54,12 +54,16 @@
     zotero
     libreoffice-qt6-fresh
 
+    # terminal
+    kitty
+
     # misc
     fastfetch
     yesplaymusic
     htop
     typos
     nom
+    firefox-beta
   ];
 
   imports = [
