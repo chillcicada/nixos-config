@@ -18,3 +18,6 @@ list:
 
 up:
   sudo nix flake update --commit-lock-file
+
+proxy:
+  sudo sh ./scripts/proxy.sh

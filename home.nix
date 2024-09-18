@@ -64,7 +64,6 @@
     typos
     nom
     firefox-beta
-    typora
   ];
 
   imports = [

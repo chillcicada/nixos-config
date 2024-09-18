@@ -126,7 +126,7 @@
     direnv
     nerd-font-patcher
     cachix
-    v2raya
+    clash-verge-rev
   ];
 
   # Set default editor
