@@ -30,15 +30,22 @@
     };
   };
 
-  # Rime and Fcitx5
+  # Rime and Fcitx5 / iBus
   i18n.inputMethod = {
     enable = true;
-    type = "fcitx5";
+    type = "fcitx5"; # kde
+    # ensure you have download iput method panel extension if you are using gnome
+    # https://github.com/wengxt/gnome-shell-extension-kimpanel
     fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons
-      fcitx5-gtk
-      fcitx5-nord
+      fcitx5-chinese-addons # chinese
+      fcitx5-gtk # gtk
+      fcitx5-nord # theme
     ];
+    # ! Abandon reason: ibus-rime is outdated
+    # type = "ibus"; # gnome
+    # ibus.engines = with pkgs.ibus-engines; [
+    #   rime
+    # ];
   };
 }
