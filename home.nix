@@ -51,7 +51,7 @@
     selene
 
     # R&D
-    zotero
+    zotero-beta
     libreoffice-qt6-fresh
 
     # terminal
@@ -64,6 +64,7 @@
     typos
     nom
     firefox-beta
+    typora
   ];
 
   imports = [
