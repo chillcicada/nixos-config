@@ -10,5 +10,6 @@
     config = {
       warn_timeout = 0;
     };
+    enableZshIntegration = true;
   };
 }

@@ -11,7 +11,10 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [];
+      plugins = [
+        "git"
+        "dotenv"
+      ];
     };
     initExtra = ''
       # pnpm
