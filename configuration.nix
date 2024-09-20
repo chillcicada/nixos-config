@@ -28,7 +28,7 @@
   networking.networkmanager.enable = true;
 
   networking.extraHosts = ''
-    127.0.0.1      www.bilibili.com
+    #127.0.0.1      www.bilibili.com
   '';
 
   # Set your time zone.
@@ -157,7 +157,6 @@
   # List services that you want to enable:
 
   services.openssh.enable = true;
-  services.v2raya.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
