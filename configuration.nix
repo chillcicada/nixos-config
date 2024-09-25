@@ -28,7 +28,7 @@
   networking.networkmanager.enable = true;
 
   networking.extraHosts = ''
-    #127.0.0.1      www.bilibili.com
+    127.0.0.1      www.bilibili.com
   '';
 
   # Set your time zone.
