@@ -18,6 +18,7 @@
     nnn
     jq
     cloc
+    difftastic
 
     # lang
     zig
