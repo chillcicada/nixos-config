@@ -11,10 +11,10 @@
     # tools
     bat
     eza
-    yazi
     xz
     zip
     unzip
+    lz4
     nnn
     jq
     cloc

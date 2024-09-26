@@ -32,6 +32,7 @@
     shellAliases = {
       gpl = "git pull";
       f = "fastfetch";
+      j = "just";
     };
   };
 }
