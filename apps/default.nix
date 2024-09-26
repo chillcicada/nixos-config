@@ -6,5 +6,5 @@ _: let
     "firefox.nix"
   ]);
 in {
-    imports = map (name: ./${name}) files;
+  imports = map (name: ./${name}) files;
 }

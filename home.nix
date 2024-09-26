@@ -64,7 +64,9 @@
     htop
     typos
     nom
+    # firefox
     firefox-beta
+    fh
   ];
 
   imports = [
