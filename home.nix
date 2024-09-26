@@ -64,6 +64,7 @@
     # firefox
     firefox-beta
     fh
+    ffmpeg-full
   ];
 
   imports = [
