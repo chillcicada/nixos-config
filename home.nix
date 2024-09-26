@@ -55,9 +55,6 @@
     zotero-beta
     libreoffice-qt6-fresh
 
-    # terminal
-    kitty
-
     # misc
     fastfetch
     yesplaymusic

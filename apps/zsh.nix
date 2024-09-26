@@ -31,6 +31,7 @@
     '';
     shellAliases = {
       gpl = "git pull";
+      f = "fastfetch";
     };
   };
 }
