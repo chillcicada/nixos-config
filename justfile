@@ -21,3 +21,9 @@ up:
 
 proxy:
   sudo sh ./scripts/proxy.sh
+
+onproxy:
+  sh ./scripts/onproxy.sh
+
+offproxy:
+  sh ./scripts/offproxy.sh

@@ -69,6 +69,7 @@
     fh
     ffmpeg-full
     pandoc
+    typora
   ];
 
   imports = [
