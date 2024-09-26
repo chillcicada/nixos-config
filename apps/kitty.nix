@@ -16,6 +16,7 @@
     settings = {
       background_opacity = "0.9";
       tab_bar_edge = "top";
+      hide_window_decorations = true;
     };
   };
 }
