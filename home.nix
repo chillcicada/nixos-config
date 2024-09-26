@@ -18,7 +18,13 @@
     nnn
     jq
     cloc
+    tokei
     difftastic
+    btop
+    delta
+    fastfetch
+    onefetch
+    nh
 
     # lang
     zig
@@ -56,15 +62,13 @@
     libreoffice-qt6-fresh
 
     # misc
-    fastfetch
     yesplaymusic
-    htop
     typos
     nom
-    # firefox
     firefox-beta
     fh
     ffmpeg-full
+    pandoc
   ];
 
   imports = [

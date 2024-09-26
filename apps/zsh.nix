@@ -33,6 +33,7 @@
       gpl = "git pull";
       f = "fastfetch";
       j = "just";
+      y = "yazi";
     };
   };
 }
