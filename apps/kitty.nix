@@ -9,7 +9,7 @@
     theme = "Catppuccin-Mocha";
 
     font = {
-      name = "MesloLGL Nerd Font Mono";
+      name = "MesloLGMDZ Nerd Font";
       size = 13;
     };
 
