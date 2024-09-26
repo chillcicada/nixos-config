@@ -29,5 +29,8 @@
       eval "$(fnm env --use-on-cd --shell zsh)"
       # fnm end
     '';
+    shellAliases = {
+      gpl = "git pull";
+    };
   };
 }
