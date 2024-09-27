@@ -17,7 +17,7 @@ list:
   nix profile history --profile /nix/var/nix/profiles/system
 
 up:
-  sudo nix flake update --commit-lock-file
+  sudo nix flake update
 
 proxy:
   sudo sh ./scripts/proxy.sh
