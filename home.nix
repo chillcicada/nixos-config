@@ -70,6 +70,7 @@
     ffmpeg-full
     pandoc
     typora
+    wakatime-cli
   ];
 
   imports = [
