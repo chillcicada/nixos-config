@@ -74,6 +74,7 @@
 
   imports = [
     ./apps
+    ./pkgs
   ];
 
   home.sessionVariables = {

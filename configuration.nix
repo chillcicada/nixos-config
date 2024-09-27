@@ -133,7 +133,11 @@
   # Set default editor
   environment.variables.EDITOR = "nvim";
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+
+    xwayland.enable = true;
+  };
 
   # Hint Electron apps to use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
