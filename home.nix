@@ -71,6 +71,7 @@
     pandoc
     typora
     wakatime-cli
+    vscode-fhs
   ];
 
   imports = [
