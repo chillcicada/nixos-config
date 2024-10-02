@@ -4,6 +4,7 @@
 # refer to `https://nixos.wiki/wiki/Visual_Studio_Code#Wayland`
 { pkgs
 , config
+, vars
 , ...
 }:
 

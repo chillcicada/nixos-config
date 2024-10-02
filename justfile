@@ -4,6 +4,9 @@ re:
 debug:
   sudo nixos-rebuild switch --flake .#chill --show-trace --verbose
 
+fulldebug:
+  sudo nixos-rebuild switch --flake .#chill --show-trace --verbose --print-build-logs
+
 test:
   nix flake check .
 

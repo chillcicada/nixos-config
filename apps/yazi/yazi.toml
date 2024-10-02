@@ -1,2 +1,6 @@
 [manager]
 show_hidden = true
+
+[preview]
+wrap = "yes"
+tab_size = 2

@@ -1,13 +1,14 @@
 { pkgs
 , config
+, vars
 , ...
 }:
 
 {
   programs.git = {
     enable = true;
-    userName = "chillcicada";
-    userEmail = "2210227279@qq.com";
+    userName = vars.gitName;
+    userEmail = vars.userEmail;
     extraConfig = {
       user.signingKey = "34C212310A99754B";
       core.editor = "nvim";

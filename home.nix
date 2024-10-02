@@ -1,30 +1,33 @@
 { pkgs
 , config
+, vars
 , ...
 }:
 
 {
-  home.username = "cc";
-  home.homeDirectory = "/home/cc";
+  home.username = vars.userName;
+  home.homeDirectory = "/home/${vars.userName}";
 
   home.packages = with pkgs; [
     # tools
-    bat
-    eza
-    xz
-    zip
-    unzip
-    lz4
-    nnn
-    jq
-    cloc
-    tokei
-    difftastic
-    btop
-    delta
-    fastfetch
-    onefetch
+    bat # cat
+    eza # better ls
+    xz # xz
+    zip # zip
+    unzip # unzip
+    lz4 # lz4
+    nnn # file manager
+    jq # json parser
+    cloc # count lines of code
+    tokei # count lines of code
+    difftastic # diff tool
+    btop # better top, htop
+    delta # better diff for git
+    fastfetch # view system info
+    onefetch # view git repo info
     nh
+    dust # disk usage
+    openssl # openssl
 
     # lang
     zig
@@ -72,6 +75,10 @@
     typora
     wakatime-cli
     vscode-fhs
+
+    wechat-uos
+    qq
+    discord
   ];
 
   imports = [
@@ -80,7 +87,7 @@
   ];
 
   home.sessionVariables = {
-    GOPATH = "/etc/profiles/per-user/cc/bin/go";
+    GOPATH = "/etc/profiles/per-user/${vars.userName}/bin/go";
   };
 
   home.stateVersion = "24.11";
