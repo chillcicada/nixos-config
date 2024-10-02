@@ -1,5 +1,6 @@
 { pkgs
 , config
+, vars
 , ...
 }:
 
@@ -18,7 +19,7 @@
     };
     initExtra = ''
       # pnpm
-      export PNPM_HOME="/home/cc/.local/share/pnpm"
+      export PNPM_HOME="/home/${vars.userName}/.local/share/pnpm"
       case ":$PATH:" in
         *":$PNPM_HOME:"*) ;;
         *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -30,11 +31,15 @@
       # fnm end
     '';
     shellAliases = {
-      gpl = "git pull";
+      gpl = "git pull"; # keep consistent with my windows config
+
+      # ! special character alias
+      # g = "git"; # provided by oh-my-zsh
       f = "fastfetch";
       j = "just";
       y = "yazi";
       o = "onefetch";
+      c = "code";
     };
   };
 }

@@ -21,19 +21,5 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.chill = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.cc = import ./home.nix;
-          home-manager.extraSpecialArgs = inputs;
-        }
-      ];
-    };
-  };
+  outputs = inputs: import ./outputs inputs;
 }

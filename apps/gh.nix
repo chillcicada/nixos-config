@@ -1,5 +1,6 @@
 { pkgs
 , config
+, vars
 , ...
 }:
 
@@ -9,6 +10,7 @@
 
     settings = {
       git_protocol = "ssh";
+      editor  = "Code";
     };
 
     extensions = [ ];
