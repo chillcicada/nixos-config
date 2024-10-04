@@ -5,8 +5,8 @@
 }:
 
 {
-  home.username = vars.userName;
-  home.homeDirectory = "/home/${vars.userName}";
+  home.username = "cc";
+  home.homeDirectory = "/home/cc";
 
   home.packages = with pkgs; [
     # tools
@@ -79,6 +79,7 @@
     wechat-uos
     qq
     discord
+    wpsoffice-cn
   ];
 
   imports = [
@@ -87,7 +88,7 @@
   ];
 
   home.sessionVariables = {
-    GOPATH = "/etc/profiles/per-user/${vars.userName}/bin/go";
+    GOPATH = "/etc/profiles/per-user/cc/bin/go";
   };
 
   home.stateVersion = "24.11";

@@ -13,7 +13,7 @@ in {
         home-manager.extraSpecialArgs = { inherit inputs vars; };
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.${vars.userName} = import ../home.nix;
+        home-manager.users.cc = import ../home.nix;
       }
     ];
   };
