@@ -62,7 +62,6 @@
 
     # R&D
     zotero-beta
-    libreoffice-qt6-fresh
 
     # misc
     yesplaymusic
