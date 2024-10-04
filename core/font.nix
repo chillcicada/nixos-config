@@ -12,6 +12,29 @@
       nerdfonts
       lxgw-wenkai
       noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      eb-garamond
+      fira
+      fira-mono
+      fira-code
+      hack-font
+      inter
+      iosevka
+      jetbrains-mono
+      liberation_ttf
+      roboto
+      roboto-mono
+      roboto-serif
+      sarasa-gothic
+      source-han-mono
+      source-han-sans
+      source-han-serif
+      wqy_microhei
+      wqy_zenhei
+      nur.repos.rewine.ttf-wps-fonts
+      nur.repos.rewine.ttf-ms-win10
     ];
     fontconfig = {
       defaultFonts = {
