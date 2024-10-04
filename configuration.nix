@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs
+, inputs
 , config
 , vars
 , ...
@@ -110,9 +111,16 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowUnsupportedSystem = true;
+  # Nixpkgs config
+  nixpkgs = {
+    overlays = [
+      inputs.nur.overlay
+    ];
+    config = {
+      allowUnfree = true;
+      allowUnsupportedSystem = true;
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

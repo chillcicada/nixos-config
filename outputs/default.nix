@@ -1,10 +1,13 @@
 { self, nixpkgs, home-manager, ... } @ inputs: let
+  inherit (self) outputs;
   inherit (inputs.nixpkgs) lib;
 
   vars = import ../vars.nix { inherit lib; };
 in {
+  overlays = import ../overlays { inherit inputs; };
+
   nixosConfigurations.${vars.hostName} = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit inputs lib vars; };
+    specialArgs = { inherit inputs outputs lib vars; };
     system = "x86_64-linux";
     modules = [
       ../configuration.nix
