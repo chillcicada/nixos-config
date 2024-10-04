@@ -90,9 +90,9 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${vars.userName} = {
+  users.users."cc" = {
     isNormalUser = true;
-    description = vars.userFullname;
+    description = "ChillCicada";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
@@ -104,7 +104,7 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = vars.userName;
+  services.displayManager.autoLogin.user = "cc";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -137,8 +137,9 @@
   # Set default editor
   environment.variables.EDITOR = "nvim";
 
+  # https://discourse.nixos.org/t/ln-failed-to-create-symbolic-link-nix-store-user-units-xdg-desktop-portal-gtk-service-file-exists/53876/3
   programs.hyprland = {
-    enable = true;
+    enable = false;
 
     xwayland.enable = true;
   };
@@ -177,7 +178,7 @@
 
   security.sudo.extraRules = [
     {
-      users = [ vars.userName ];
+      users = [ "cc" ];
       commands = [
         {
           command = "ALL";
