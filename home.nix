@@ -61,22 +61,25 @@
     selene
 
     # R&D
-    zotero-beta
+    zotero
 
     # programming
     lapce
+    vscode-fhs
+
+    # qemu
+    qemu
+    quickemu
 
     # misc
     yesplaymusic
     typos
     nom
-    firefox-beta
+    firefox
     fh
     ffmpeg-full
     pandoc
     typora
-    wakatime-cli
-    vscode-fhs
 
     wechat-uos
     qq
