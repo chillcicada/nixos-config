@@ -63,6 +63,9 @@
     # R&D
     zotero-beta
 
+    # programming
+    lapce
+
     # misc
     yesplaymusic
     typos
@@ -78,7 +81,7 @@
     wechat-uos
     qq
     discord
-    wpsoffice-cn
+    wpsoffice
   ];
 
   imports = [
