@@ -54,6 +54,7 @@
     cmake
     xmake
     clang-tools
+    llvm_18
 
     go
     gopls
