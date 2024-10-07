@@ -7,7 +7,7 @@
 {
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
 
     font = {
       name = "MesloLGMDZ Nerd Font";
