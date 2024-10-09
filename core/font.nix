@@ -35,6 +35,8 @@
       wqy_zenhei
       nur.repos.rewine.ttf-wps-fonts
       nur.repos.rewine.ttf-ms-win10
+      newcomputermodern # new computer modern font
+      texlivePackages.cm # computer modern font
     ];
     fontconfig = {
       defaultFonts = {
