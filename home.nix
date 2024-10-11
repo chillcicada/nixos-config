@@ -15,6 +15,7 @@
     xz # xz
     zip # zip
     unzip # unzip
+    ouch # unzip
     lz4 # lz4
     nnn # file manager
     jq # json parser
