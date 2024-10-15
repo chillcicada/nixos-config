@@ -15,6 +15,8 @@
       ./cachix.nix
       ./core/hardware-configuration.nix
       ./core/font.nix
+
+      ./core/steam
     ];
 
   # Bootloader.
@@ -140,6 +142,7 @@
     nerd-font-patcher
     cachix
     clash-verge-rev
+    mangohud
   ];
 
   # Set default editor
