@@ -87,6 +87,7 @@
     qq
     discord
     wpsoffice
+    obs-studio
   ];
 
   imports = [
