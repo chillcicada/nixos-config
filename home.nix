@@ -29,6 +29,7 @@
     nh
     dust # disk usage
     openssl # openssl
+    navi
 
     # lang
     zig
@@ -68,6 +69,7 @@
     # programming
     lapce
     vscode-fhs
+    zed-editor
 
     # qemu
     qemu
