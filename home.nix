@@ -11,7 +11,6 @@
   home.packages = with pkgs; [
     # tools
     bat # cat
-    eza # better ls
     xz # xz
     zip # zip
     unzip # unzip
@@ -42,7 +41,7 @@
     fnm
 
     python311
-    rye
+    rye # need `nix-ld`
     uv
     ruff
 

@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs
 , inputs
 , config
@@ -11,12 +7,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./cachix.nix
-      ./core/hardware-configuration.nix
-      ./core/font.nix
-
-      ./core/steam
+    [
+      ./core
     ];
 
   # Bootloader.
@@ -24,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-64f9a2a3-e6c3-418c-902d-dde61e57bdb3".device = "/dev/disk/by-uuid/64f9a2a3-e6c3-418c-902d-dde61e57bdb3";
-  networking.hostName = vars.hostName; # Define your hostname.
+  networking.hostName = vars.hostName;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -176,8 +168,6 @@
     viAlias = true;
     vimAlias = true;
   };
-
-  # List services that you want to enable:
 
   services.openssh.enable = true;
 
