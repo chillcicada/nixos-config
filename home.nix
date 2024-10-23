@@ -29,7 +29,8 @@
     nh
     dust # disk usage
     openssl # openssl
-    navi
+    navi # navigate cli commands
+    tree # tree
 
     # lang
     zig

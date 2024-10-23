@@ -143,6 +143,8 @@
     cachix
     clash-verge-rev
     mangohud
+
+    adwsteamgtk # for steam
   ];
 
   # Set default editor
