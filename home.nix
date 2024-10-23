@@ -65,6 +65,7 @@
 
     # R&D
     zotero
+    trilium-desktop
 
     # programming
     lapce
