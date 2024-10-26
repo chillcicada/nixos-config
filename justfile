@@ -1,4 +1,5 @@
 re:
+  git add .
   sudo nixos-rebuild switch --flake .#chill
 
 debug:

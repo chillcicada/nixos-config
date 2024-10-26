@@ -8,6 +8,10 @@
 
     nur.url = "github:nix-community/NUR";
 
+    catppuccin.url = "github:catppuccin/nix";
+
+    stylix.url = "github:danth/stylix";
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";

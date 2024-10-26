@@ -1,4 +1,12 @@
-{ self, nixpkgs, home-manager, ... } @ inputs: let
+{ self
+, nixpkgs
+, home-manager
+, catppuccin
+, stylix
+, ...
+} @ inputs:
+
+let
   inherit (self) outputs;
   inherit (inputs.nixpkgs) lib;
 
@@ -11,12 +19,19 @@ in {
     system = "x86_64-linux";
     modules = [
       ../configuration.nix
+
       home-manager.nixosModules.home-manager
       {
         home-manager.extraSpecialArgs = { inherit inputs vars; };
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.cc = import ../home.nix;
+        home-manager.users.cc = {
+          imports = [
+            ../home.nix
+            catppuccin.homeManagerModules.catppuccin
+            stylix.homeManagerModules.stylix
+          ];
+        };
         home-manager.backupFileExtension = "backup";
       }
     ];
