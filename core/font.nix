@@ -52,6 +52,9 @@
           "MesloLG LG L DZ"
           "LXGW WenKai Mono"
         ];
+        emoji = [
+          "Noto Color Emoji"
+        ];
       };
     };
   };
