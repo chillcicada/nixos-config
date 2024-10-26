@@ -41,7 +41,6 @@
     fnm
 
     python311
-    rye # need `nix-ld`
     uv
     ruff
 
