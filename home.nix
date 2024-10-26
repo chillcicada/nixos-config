@@ -65,6 +65,7 @@
 
     # R&D
     zotero
+    libreoffice
     trilium-desktop
 
     # programming
