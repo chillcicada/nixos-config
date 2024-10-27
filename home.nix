@@ -41,6 +41,7 @@
     fnm
 
     python311
+    rye
     uv
     ruff
 
