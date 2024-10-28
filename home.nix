@@ -92,6 +92,7 @@
     discord
     wpsoffice
     obs-studio
+    telegram-desktop
   ];
 
   imports = [
