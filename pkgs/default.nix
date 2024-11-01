@@ -3,5 +3,5 @@
 }:
 
 rec {
-  degit = pkgs.callPackage ./degit {};
+  degit-rs = pkgs.callPackage ./degit-rs {};
 }

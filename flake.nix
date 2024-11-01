@@ -14,6 +14,8 @@
 
     stylix.url = "github:danth/stylix";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";

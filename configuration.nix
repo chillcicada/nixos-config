@@ -135,6 +135,7 @@
     cachix
     clash-verge-rev
     mangohud
+    sops
 
     adwsteamgtk # for steam
   ];
