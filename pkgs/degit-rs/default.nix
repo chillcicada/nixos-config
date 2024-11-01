@@ -6,12 +6,12 @@
 }:
 
 rustPlatform.buildRustPackage rec {
-  pname = "degit";
+  pname = "degit-rs";
   version = "0.1.3";
 
   src = fetchFromGitHub {
     owner = "psnszsn";
-    repo = "degit-rs";
+    repo = pname;
     rev = "c7dbeb75131510a79400838e081b90665c654c80";
     hash = "sha256-swyfKnYQ+I4elnDnJ0yPDUryiFXEVnrGt9xHWiEe6wo=";
   };
@@ -21,7 +21,7 @@ rustPlatform.buildRustPackage rec {
     ./add-Cargo.lock.patch
   ];
 
-  cargoHash = "sha256-LtpjFyDk9BksaymighlP5Qu2SbLb184zoh/xQ2t+D7A=";
+  cargoHash = "sha256-mYDLOlemtgEVu9o/swQUlraTWMnCl8WFsyzU3xUDMP8=";
 
   nativeBuildInputs = [ pkg-config ];
 
@@ -34,6 +34,6 @@ rustPlatform.buildRustPackage rec {
     description = "Rust rewrite of degit";
     homepage = "https://github.com/psnszsn/degit-rs";
     license = licenses.mit;
-    mainProgram = "degit";
+    mainProgram = "degit-rs";
   };
 }
