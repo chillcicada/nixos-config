@@ -6,6 +6,8 @@
 
     nixpkgs-master.url = "github:Nixos/nixpkgs/master";
 
+    systems.url = "github:nix-systems/default-linux";
+
     nur.url = "github:nix-community/NUR";
 
     catppuccin.url = "github:catppuccin/nix";

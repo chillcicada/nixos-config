@@ -30,6 +30,7 @@
     openssl # openssl
     navi # navigate cli commands
     tree # tree
+    pkg-config # pkg-config
 
     # lang
     zig
