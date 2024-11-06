@@ -91,7 +91,7 @@
     wechat-uos
     qq
     discord
-    wpsoffice
+    wpsoffice-cn
     obs-studio
     telegram-desktop
   ];
