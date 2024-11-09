@@ -90,6 +90,7 @@
 
     wechat-uos
     qq
+    quarto
     discord
     wpsoffice-cn
     obs-studio
