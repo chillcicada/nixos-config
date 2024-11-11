@@ -31,6 +31,7 @@
     navi # navigate cli commands
     tree # tree
     pkg-config # pkg-config
+    parallel # parallel
 
     # lang
     zig
