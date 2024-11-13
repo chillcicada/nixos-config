@@ -59,6 +59,8 @@
     xmake
     clang-tools
     llvm_18
+    qt6.full
+    qtcreator
 
     go
     gopls
