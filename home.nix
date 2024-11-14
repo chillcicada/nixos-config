@@ -86,6 +86,7 @@
     typos
     nom
     firefox
+    chromium
     fh
     ffmpeg-full
     pandoc
