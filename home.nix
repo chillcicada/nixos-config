@@ -21,7 +21,6 @@
     cloc # count lines of code
     tokei # count lines of code
     difftastic # diff tool
-    btop # better top, htop
     delta # better diff for git
     fastfetch # view system info
     onefetch # view git repo info
