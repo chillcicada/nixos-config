@@ -3,7 +3,6 @@ _: let
     "README.md"
     "default.nix"
     "vscode.nix"
-    "firefox.nix"
   ]);
 in {
   imports = map (name: ./${name}) files;

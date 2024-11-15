@@ -24,7 +24,7 @@
     delta # better diff for git
     fastfetch # view system info
     onefetch # view git repo info
-    nh
+    nh # nixos helper
     dust # disk usage
     openssl # openssl
     navi # navigate cli commands
@@ -84,7 +84,6 @@
     yesplaymusic
     typos
     nom
-    firefox
     chromium
     fh
     ffmpeg-full
