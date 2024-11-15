@@ -19,6 +19,7 @@
       fzf.enable = false;
       helix.enable = false;
       yazi.enable = false;
+      btop.enable = false;
     };
 
     cursor = {
