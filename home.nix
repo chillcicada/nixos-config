@@ -89,7 +89,7 @@
     ffmpeg-full
     pandoc
     typora
-
+    seafile-client
     wechat-uos
     qq
     quarto
