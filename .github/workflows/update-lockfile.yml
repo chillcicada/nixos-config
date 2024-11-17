@@ -2,7 +2,7 @@ name: UPDATE-FLAKE-LOCKFILE
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - cron: '0 2 * * 1' # at 02:00 in every Sunday
+    - '0 18 * * 5' # at 02:00 in every Saturday (UTC+8)
 
 jobs:
   update:
@@ -17,6 +17,6 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
           pr-title: "chore(deps): Update flake.lock" # Title of PR to be created
-          pr-labels: |                  # Labels to be set on the PR
+          pr-labels: |                               # Labels to be set on the PR
             dependencies
             automated
