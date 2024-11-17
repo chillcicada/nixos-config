@@ -97,6 +97,7 @@
     wpsoffice-cn
     obs-studio
     telegram-desktop
+    openutau
   ];
 
   imports = [
