@@ -2,7 +2,7 @@ name: UPDATE-FLAKE-LOCKFILE
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-    - '0 18 * * 5' # at 02:00 in every Saturday (UTC+8)
+    - cron: '0 18 * * 5' # at 02:00 in every Saturday (UTC+8)
 
 jobs:
   update:
