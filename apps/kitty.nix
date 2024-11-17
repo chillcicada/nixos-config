@@ -25,5 +25,10 @@
     keybindings = {
       "ctrl+c" = "copy_or_interrupt";
     };
+
+    shellIntegration = {
+      enableZshIntegration = true;
+      enableBashIntegration = true;
+    };
   };
 }
