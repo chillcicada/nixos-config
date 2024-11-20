@@ -25,8 +25,6 @@ let
 in {
   overlays = import ../overlays { inherit inputs; };
 
-  packages = forEachSystem (pkgs: import ../pkgs {inherit pkgs;});
-
   nixosConfigurations.${vars.hostName} = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs outputs lib vars; };
     system = "x86_64-linux";
