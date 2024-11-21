@@ -98,6 +98,8 @@
     obs-studio
     telegram-desktop
     openutau
+
+    nur.repos.chillcicada.degit-rs
   ];
 
   imports = [
