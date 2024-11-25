@@ -98,7 +98,6 @@
     obs-studio
     telegram-desktop
     openutau
-    dooit
 
     nur.repos.chillcicada.degit-rs
   ];
