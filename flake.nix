@@ -12,17 +12,17 @@
 
     catppuccin.url = "github:catppuccin/nix";
 
-    # FIXME: https://github.com/danth/stylix/issues/642
     stylix.url = "github:danth/stylix";
-    stylix.inputs.base16.follows = "base16";
-    base16.url = "github:Noodlez1232/base16.nix/slugify-fix";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    dooit.url = "github:dooit-org/dooit";
+    dooit-extras.url = "github:dooit-org/dooit-extras";
+
+    # nixos-wsl = {
+    #   url = "github:nix-community/NixOS-WSL";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     home-manager = {
       url = "github:nix-community/home-manager";

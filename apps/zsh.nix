@@ -29,6 +29,10 @@
       # fnm
       eval "$(fnm env --use-on-cd --shell zsh)"
       # fnm end
+
+      # cargo
+      export PATH="$HOME/.cargo/bin:$PATH"
+      # cargo end
     '';
     shellAliases = {
       gpl = "git pull"; # keep consistent with my windows config
