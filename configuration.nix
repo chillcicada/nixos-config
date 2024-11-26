@@ -140,8 +140,8 @@
 
     adwsteamgtk # for steam
 
-    # docker compose
-    inputs.compose2nix.packages.x86_64-linux.default
+    compose2nix
+    docker-compose
   ];
 
   # Set default editor
@@ -207,9 +207,14 @@
   # docker config
   virtualisation.docker = {
     enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
+    daemon = {
+      settings = {
+        proxies = {
+          http-proxy = "http://127.0.0.1:7897";
+          https-proxy = "http://127.0.0.1:7897";
+          no-proxy = "localhost";
+        };
+      };
     };
   };
 }
