@@ -88,7 +88,7 @@
   users.users."cc" = {
     isNormalUser = true;
     description = "ChillCicada";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
   };
 
@@ -139,6 +139,9 @@
     nix-init
 
     adwsteamgtk # for steam
+
+    # docker compose
+    inputs.compose2nix.packages.x86_64-linux.default
   ];
 
   # Set default editor
@@ -198,6 +201,15 @@
   nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
       inherit pkgs;
+    };
+  };
+
+  # docker config
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
     };
   };
 }
