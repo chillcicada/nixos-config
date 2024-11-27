@@ -52,7 +52,7 @@
 
     rustup
 
-    gcc
+    gfortran
     gnumake
     cmake
     xmake
