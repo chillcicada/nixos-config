@@ -69,7 +69,6 @@
     # R&D
     zotero
     libreoffice
-    trilium-desktop
 
     # programming
     lapce
@@ -81,10 +80,8 @@
     quickemu
 
     # misc
-    yesplaymusic
     typos
     nom
-    chromium
     fh
     ffmpeg-full
     pandoc
@@ -93,10 +90,8 @@
     wechat-uos
     qq
     quarto
-    discord
     wpsoffice-cn
     obs-studio
-    telegram-desktop
     openutau
     amberol
 
