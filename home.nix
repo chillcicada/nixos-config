@@ -98,6 +98,7 @@
     obs-studio
     telegram-desktop
     openutau
+    amberol
 
     nur.repos.chillcicada.degit-rs
   ];
