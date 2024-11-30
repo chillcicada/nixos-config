@@ -31,3 +31,6 @@ onproxy:
 
 offproxy:
   sh ./scripts/offproxy.sh
+
+fmt:
+  nixpkgs-fmt .
