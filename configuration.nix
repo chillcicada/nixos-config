@@ -56,6 +56,12 @@
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
 
+  # programs.hyprland = {
+  #   enable = true;
+  #   withUWSM = true;
+  #   xwayland.enable = true;
+  # };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
