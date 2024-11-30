@@ -15,14 +15,15 @@ let
   forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
   pkgsFor = lib.genAttrs (import systems) (
     system:
-      import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      }
+    import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    }
   );
 
   vars = import ../vars.nix { inherit lib; };
-in {
+in
+{
   overlays = import ../overlays { inherit inputs; };
 
   nixosConfigurations.${vars.hostName} = nixpkgs.lib.nixosSystem {

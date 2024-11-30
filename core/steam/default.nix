@@ -29,6 +29,6 @@
   hardware.xone.enable = true; # support for the xbox controller USB dongle
   services.getty.autologinUser = "cc";
   environment.loginShellInit = ''
-      [[ "$(tty)" = "/dev/tty1" ]] && ./gs.sh
-    '';
+    [[ "$(tty)" = "/dev/tty1" ]] && ./gs.sh
+  '';
 }

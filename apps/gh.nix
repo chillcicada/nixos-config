@@ -10,7 +10,7 @@
 
     settings = {
       git_protocol = "ssh";
-      editor  = "Code";
+      editor = "Code";
     };
 
     extensions = [ ];

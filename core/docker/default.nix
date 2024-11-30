@@ -1,7 +1,9 @@
-_: let
+_:
+let
   files = builtins.attrNames (removeAttrs (builtins.readDir ./.) [
     "default.nix"
   ]);
-in {
+in
+{
   imports = map (name: ./${name}) files;
 }
