@@ -30,10 +30,8 @@
     127.0.0.1      www.bilibili.com
   '';
 
-  # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -57,7 +55,6 @@
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -75,7 +72,7 @@
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -147,13 +144,6 @@
   # Set default editor
   environment.variables.EDITOR = "nvim";
 
-  # https://discourse.nixos.org/t/ln-failed-to-create-symbolic-link-nix-store-user-units-xdg-desktop-portal-gtk-service-file-exists/53876/3
-  programs.hyprland = {
-    enable = false;
-
-    xwayland.enable = true;
-  };
-
   # Hint Electron apps to use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -162,7 +152,7 @@
   # programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    #   enableSSHSupport = true;
+    enableSSHSupport = true;
   };
 
   # nvim config
