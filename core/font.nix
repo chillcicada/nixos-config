@@ -77,4 +77,14 @@
     #   rime
     # ];
   };
+
+  environment.sessionVariables = rec {
+    QT_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+    # ! Abandon reason: ibus-rime is outdated
+    # GTK_IM_MODULE = "ibus";
+    # QT_IM_MODULE = "ibus";
+    # XMODIFIERS = "@im=ibus";
+  };
 }
