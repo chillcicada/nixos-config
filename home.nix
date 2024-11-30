@@ -46,6 +46,8 @@
     uv
     ruff
 
+    nixpkgs-fmt
+
     typst
     typstyle
     tinymist
@@ -71,9 +73,7 @@
     libreoffice
 
     # programming
-    lapce
     vscode-fhs
-    zed-editor
 
     # qemu
     qemu

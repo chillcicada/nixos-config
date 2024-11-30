@@ -27,15 +27,15 @@
       svelte.svelte-vscode
 
       # js / ts (node / bun)
-      oven.bun-vscode                # bun
-      antfu.goto-alias               # go to alias in `d.ts`
+      oven.bun-vscode # bun
+      antfu.goto-alias # go to alias in `d.ts`
       bengreenier.vsocde-node-readme # npm readme preview
-      yoavbls.pretty-ts-errors       # pretty ts errors
-      wix.vscode-import-cost         # import cost
-      vitest.explorer                # vitest
-      dbaeumer.vscode-eslint         # eslint
-      esbenp.prettier-vscode         # prettier
-      rvest.vs-code-prettier-eslint  # eslint x prettier
+      yoavbls.pretty-ts-errors # pretty ts errors
+      wix.vscode-import-cost # import cost
+      vitest.explorer # vitest
+      dbaeumer.vscode-eslint # eslint
+      esbenp.prettier-vscode # prettier
+      rvest.vs-code-prettier-eslint # eslint x prettier
 
       # css
       csstools.postcss
@@ -134,32 +134,32 @@
       rust-lang.rust-analyzer
 
       # misc
-      aaron-bond.better-comments                          # better comments
-      tomoki1207.vscode-pdf                               # pdf
-      zh9528.file-size                                    # file-size
-      wakatime.vscode-wakatime                            # wakatime
-      editorconfig.editorconfig                           # editorconfig
-      chrmarti.regex                                      # regex check / preview
-      pnp.polacode                                        # polacode
-      mikestead.dotenv                                    # dotenv file
-      ultram4rine.vscode-choosealicense                   # choose a license
-      w88975.code-translate                               # code translate
-      streetsidesoftware.code-spell-checker               # cspell
-      usernamehw.errorlens                                # error lens
-      afzalsayed96.icones                                 # icon search
-      jock.svg                                            # svg preview
-      antfu.slidev                                        # slidev
-      antfu.iconify                                       # iconify preview
-      cschlosser.doxdocgen                                # doxygen
-      redhat.vsocde-commons                               # redhat extension commons
+      aaron-bond.better-comments # better comments
+      tomoki1207.vscode-pdf # pdf
+      zh9528.file-size # file-size
+      wakatime.vscode-wakatime # wakatime
+      editorconfig.editorconfig # editorconfig
+      chrmarti.regex # regex check / preview
+      pnp.polacode # polacode
+      mikestead.dotenv # dotenv file
+      ultram4rine.vscode-choosealicense # choose a license
+      w88975.code-translate # code translate
+      streetsidesoftware.code-spell-checker # cspell
+      usernamehw.errorlens # error lens
+      afzalsayed96.icones # icon search
+      jock.svg # svg preview
+      antfu.slidev # slidev
+      antfu.iconify # iconify preview
+      cschlosser.doxdocgen # doxygen
+      redhat.vsocde-commons # redhat extension commons
       visualstudioexptteam.intellicode-api-usage-examples # vscode offical lsp extension commons
-      visualstudioexptteam.vscodeintelligenicode          # vscode offical lsp extension commons
-      kisstkondoros.vscode-gutter-preview                 # image preview
-      vsls-contrib.gistfs                                 # github gist files
-      peterschmalfeldt.explorer-exclude                   # file / folder explorer exclude
-      naumovs.color-highlight                             # color highlight
-      oderwat.indent-rainbow                              # indent rainbow
-      vincaslt.highlight-matching-tag                     # highlight matching tag
+      visualstudioexptteam.vscodeintelligenicode # vscode offical lsp extension commons
+      kisstkondoros.vscode-gutter-preview # image preview
+      vsls-contrib.gistfs # github gist files
+      peterschmalfeldt.explorer-exclude # file / folder explorer exclude
+      naumovs.color-highlight # color highlight
+      oderwat.indent-rainbow # indent rainbow
+      vincaslt.highlight-matching-tag # highlight matching tag
     ];
   };
 }
