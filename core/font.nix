@@ -9,7 +9,9 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       meslo-lg
-      nerdfonts
+      nerd-fonts.meslo-lg
+      nerd-fonts.roboto-mono
+      nerd-fonts.noto
       lxgw-wenkai
       noto-fonts
       noto-fonts-cjk-sans
