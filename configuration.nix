@@ -89,8 +89,21 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Enable Flakes and others experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      # Enable experimental features
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+
+    # Storage optimization
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."cc" = {
