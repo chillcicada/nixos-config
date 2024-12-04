@@ -16,7 +16,6 @@
     unzip # unzip
     ouch # unzip
     lz4 # lz4
-    nnn # file manager
     jq # json parser
     cloc # count lines of code
     tokei # count lines of code
@@ -31,6 +30,8 @@
     tree # tree
     pkg-config # pkg-config
     parallel # parallel
+    feh
+    nautilus
 
     # lang
     zig
@@ -70,7 +71,6 @@
 
     # R&D
     zotero
-    libreoffice
 
     # programming
     vscode-fhs
