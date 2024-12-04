@@ -30,8 +30,11 @@
     tree # tree
     pkg-config # pkg-config
     parallel # parallel
-    feh
-    nautilus
+
+    feh # image viewer
+    nautilus # file manager
+    totem # video player
+    snapshot # camera
 
     # lang
     zig
