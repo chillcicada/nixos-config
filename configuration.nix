@@ -153,10 +153,13 @@
   ];
 
   # Set default editor
-  environment.variables.EDITOR = "nvim";
+  environment.variables = {
+    EDITOR = "nvim";
+  };
 
-  # Hint Electron apps to use Wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Hint Electron apps to use Wayland
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

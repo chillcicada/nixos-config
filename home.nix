@@ -107,6 +107,8 @@
 
   home.sessionVariables = {
     GOPATH = "/etc/profiles/per-user/cc/bin/go";
+    TERMINAL = "kitty";
+    BROWSER = "firefox";
   };
 
   home.stateVersion = "24.11";
