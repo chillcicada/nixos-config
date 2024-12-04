@@ -96,7 +96,7 @@
     wpsoffice-cn
     obs-studio
     openutau
-    amberol
+    music-player
 
     nur.repos.chillcicada.degit-rs
   ];
