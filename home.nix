@@ -10,7 +10,6 @@
 
   home.packages = with pkgs; [
     # tools
-    bat # cat
     xz # xz
     zip # zip
     unzip # unzip
@@ -30,11 +29,6 @@
     tree # tree
     pkg-config # pkg-config
     parallel # parallel
-
-    feh # image viewer
-    nautilus # file manager
-    totem # video player
-    snapshot # camera
 
     # lang
     zig
@@ -99,6 +93,7 @@
     music-player
 
     nur.repos.chillcicada.degit-rs
+    nur.repos.novel2430.wemeet-bin-bwrap
   ];
 
   imports = [

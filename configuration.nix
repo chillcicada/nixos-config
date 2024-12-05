@@ -55,17 +55,22 @@
 
   services.xserver.excludePackages = [ pkgs.xterm ];
 
-  services.gnome.core-utilities.enable = false;
-  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+  services.gnome.core-utilities.enable = true;
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-maps
+    epiphany # web browser
+    gnome-user-docs
+    gnome-text-editor
+    gnome-music
+    gnome-contacts
+    gnome-calculator
+    simple-scan
+    yelp # help viewer
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-
-  # programs.hyprland = {
-  #   enable = true;
-  #   withUWSM = true;
-  #   xwayland.enable = true;
-  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -152,7 +157,7 @@
     openssh
     fontconfig
     direnv
-    nerd-font-patcher
+    # nerd-font-patcher
     cachix
     clash-verge-rev
     mangohud
