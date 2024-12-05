@@ -11,15 +11,14 @@
 
     polarity = "dark";
     autoEnable = true;
-    # opacity.terminal = 0.1;
 
     targets = {
       gtk.enable = true;
       kitty.enable = false;
       fzf.enable = false;
-      helix.enable = false;
       yazi.enable = false;
       btop.enable = false;
+      bat.enable = false;
     };
 
     cursor = {
