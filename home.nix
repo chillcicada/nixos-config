@@ -29,6 +29,7 @@
     tree # tree
     pkg-config # pkg-config
     parallel # parallel
+    amberol # music player
 
     # lang
     zig
@@ -90,7 +91,6 @@
     wpsoffice-cn
     obs-studio
     openutau
-    music-player
 
     nur.repos.chillcicada.degit-rs
     nur.repos.novel2430.wemeet-bin-bwrap
@@ -102,7 +102,6 @@
 
   home.sessionVariables = {
     GOPATH = "/etc/profiles/per-user/cc/bin/go";
-    TERMINAL = "kitty";
     BROWSER = "firefox";
   };
 
