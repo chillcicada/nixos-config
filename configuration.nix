@@ -67,6 +67,7 @@
     gnome-calculator
     simple-scan
     yelp # help viewer
+    evince # document viewer
   ];
 
   # Configure keymap in X11
@@ -93,6 +94,18 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
+
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
+      ];
+    };
+  };
+
 
   nix = {
     settings = {
@@ -168,7 +181,14 @@
 
     compose2nix
     docker-compose
+
+    gnomeExtensions.appindicator
+    adwaita-icon-theme
+    gnome-tweaks
   ];
+
+  services.udev.packages = with pkgs; [ gnome-settings-daemon ];
+  programs.dconf.enable = true;
 
   # Set default editor
   environment.variables = {
