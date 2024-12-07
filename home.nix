@@ -44,6 +44,7 @@
     rye
     uv
     ruff
+    conda
 
     nixpkgs-fmt
 
