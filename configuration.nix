@@ -163,6 +163,7 @@
     curl
     just
     neovim
+    cairo
     lua
     lua51Packages.lua
     luajitPackages.luarocks
