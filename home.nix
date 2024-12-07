@@ -62,6 +62,7 @@
     llvm_18
     qt6.full
     qtcreator
+    meson
 
     go
     gopls
