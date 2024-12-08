@@ -98,6 +98,7 @@
           };
           "Group/0/Items/0".Name = "keyboard-us";
           "Group/0/Items/1".Name = "shuangpin";
+          "Group/0/Items/2".Name = "mozc";
           GroupOrder."0" = "Default";
         };
       };
