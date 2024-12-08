@@ -64,12 +64,44 @@
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-chinese-addons # chinese
-      fcitx5-gtk # gtk
-      fcitx5-nord # theme
-    ];
+
+    fcitx5 = {
+      # waylandFrontend = true;
+
+      addons = with pkgs; [
+        fcitx5-chinese-addons # chinese
+        fcitx5-mozc           # japanese
+        fcitx5-gtk            # gtk
+        fcitx5-nord           # theme
+
+        fcitx5-pinyin-moegirl #pinyin
+        fcitx5-pinyin-zhwiki  #pinyin
+      ];
+
+      ignoreUserConfig = false;
+
+      settings = {
+        addons = {
+          classicui.globalSection.Theme = "Nord-Dark";
+          classicui.globalSection.DarkTheme = "Nord-Dark";
+
+          cloudpinyin.globalSection = {
+            Backend = "Baidu";
+          };
+        };
+
+        inputMethod = {
+          "Group/0" = {
+            Name = "Default";
+            "Default Layout" = "us";
+            DefaultIM = "keyboard-us";
+          };
+          "Group/0/Items/0".Name = "keyboard-us";
+          "Group/0/Items/1".Name = "shuangpin";
+          GroupOrder."0" = "Default";
+        };
+      };
+    };
   };
 
   environment.sessionVariables = rec {
