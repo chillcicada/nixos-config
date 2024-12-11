@@ -70,12 +70,12 @@
 
       addons = with pkgs; [
         fcitx5-chinese-addons # chinese
-        fcitx5-mozc           # japanese
-        fcitx5-gtk            # gtk
-        fcitx5-nord           # theme
+        fcitx5-mozc # japanese
+        fcitx5-gtk # gtk
+        fcitx5-nord # theme
 
         fcitx5-pinyin-moegirl #pinyin
-        fcitx5-pinyin-zhwiki  #pinyin
+        fcitx5-pinyin-zhwiki #pinyin
       ];
 
       ignoreUserConfig = false;

@@ -59,10 +59,11 @@
     cmake
     xmake
     clang-tools
-    llvm_18
+    llvm_19
     qt6.full
     qtcreator
     meson
+    lldb_19
 
     go
     gopls
