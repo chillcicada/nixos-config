@@ -221,11 +221,12 @@
 
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    # Allow HTTP and SSH traffic
+    allowedTCPPorts = [ 22 80 443 ];
+    allowedUDPPorts = [ ];
+  };
 
   system.stateVersion = "24.11";
 
