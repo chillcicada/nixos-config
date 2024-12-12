@@ -1,12 +1,14 @@
-re:
+current_hostname := `hostname`
+
+re TARGET=current_hostname:
   git add .
-  sudo nixos-rebuild switch --flake .#chill
+  sudo nixos-rebuild switch --flake .#{{TARGET}}
 
-debug:
-  sudo nixos-rebuild switch --flake .#chill --show-trace --verbose
+debug TARGET=current_hostname:
+  sudo nixos-rebuild switch --flake .#{{TARGET}} --show-trace --verbose
 
-fulldebug:
-  sudo nixos-rebuild switch --flake .#chill --show-trace --verbose --print-build-logs
+diagnosis TARGET=current_hostname:
+  sudo nixos-rebuild switch --flake .#{{TARGET}} --show-trace --verbose --print-build-logs
 
 test:
   nix flake check .
