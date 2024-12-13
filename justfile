@@ -4,6 +4,9 @@ re TARGET=current_hostname:
   git add .
   sudo nixos-rebuild switch --flake .#{{TARGET}}
 
+re-as-root TARGET=current_hostname:
+  nixos-rebuild switch --flake .#{{TARGET}} --rollback --show-trace --verbose
+
 debug TARGET=current_hostname:
   sudo nixos-rebuild switch --flake .#{{TARGET}} --show-trace --verbose
 
