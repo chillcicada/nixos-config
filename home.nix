@@ -39,6 +39,7 @@
     pnpm
     yarn
     fnm
+    quickjs-ng
 
     python311
     rye
