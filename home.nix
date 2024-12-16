@@ -95,6 +95,7 @@
     wpsoffice-cn
     obs-studio
     openutau
+    qbittorrent
 
     nur.repos.chillcicada.degit-rs
     nur.repos.novel2430.wemeet-bin-bwrap
