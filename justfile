@@ -5,7 +5,7 @@ re TARGET=current_hostname:
   sudo nixos-rebuild switch --flake .#{{TARGET}}
 
 re-as-root TARGET=current_hostname:
-  nixos-rebuild switch --flake .#{{TARGET}} --rollback --show-trace --verbose
+  nixos-rebuild switch --flake .#{{TARGET}}
 
 debug TARGET=current_hostname:
   sudo nixos-rebuild switch --flake .#{{TARGET}} --show-trace --verbose
