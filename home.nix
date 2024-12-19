@@ -96,6 +96,7 @@
     obs-studio
     openutau
     qbittorrent
+    showmethekey
 
     nur.repos.chillcicada.degit-rs
     nur.repos.novel2430.wemeet-bin-bwrap
