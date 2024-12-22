@@ -97,6 +97,9 @@
     openutau
     qbittorrent
     showmethekey
+    itch
+    wine
+    netease-cloud-music-gtk
 
     nur.repos.chillcicada.degit-rs
     nur.repos.novel2430.wemeet-bin-bwrap
