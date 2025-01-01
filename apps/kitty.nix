@@ -10,7 +10,7 @@
     themeFile = "Catppuccin-Mocha";
 
     font = {
-      name = "MesloLGMDZ Nerd Font";
+      name = "Maple Mono SC NF";
       size = 13;
     };
 

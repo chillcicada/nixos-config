@@ -9,6 +9,11 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       meslo-lg
+      maple-mono
+      maple-mono-otf
+      maple-mono-NF
+      maple-mono-SC-NF
+      maple-mono-autohint
       nerd-fonts.meslo-lg
       nerd-fonts.roboto-mono
       nerd-fonts.noto
