@@ -157,7 +157,9 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
+    inputs.zen-browser.packages."${pkgs.system}".default
+  ] ++ (with pkgs; [
     git
     wget
     curl
@@ -186,7 +188,7 @@
     gnomeExtensions.appindicator
     adwaita-icon-theme
     gnome-tweaks
-  ];
+  ]);
 
   services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   programs.dconf.enable = true;

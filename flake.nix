@@ -19,6 +19,8 @@
     dooit.url = "github:dooit-org/dooit";
     dooit-extras.url = "github:dooit-org/dooit-extras";
 
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
     # nixos-wsl = {
     #   url = "github:nix-community/NixOS-WSL";
     #   inputs.nixpkgs.follows = "nixpkgs";
