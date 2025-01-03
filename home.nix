@@ -78,8 +78,8 @@
     vscode-fhs
 
     # qemu
-    qemu
-    quickemu
+    # qemu
+    # quickemu
 
     # misc
     typos
@@ -88,7 +88,7 @@
     ffmpeg-full
     pandoc
     typora
-    seafile-client
+    # seafile-client
     wechat-uos
     qq
     quarto
