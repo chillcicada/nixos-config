@@ -62,7 +62,6 @@
     clang-tools
     llvm_19
     qt6.full
-    qtcreator
     meson
     lldb_19
 
@@ -77,29 +76,16 @@
     # programming
     vscode-fhs
 
-    # qemu
-    # qemu
-    # quickemu
-
     # misc
     typos
     nom
     fh
-    ffmpeg-full
     pandoc
     typora
-    # seafile-client
     wechat-uos
     qq
     quarto
     wpsoffice-cn
-    obs-studio
-    openutau
-    qbittorrent
-    showmethekey
-    itch
-    wine
-    netease-cloud-music-gtk
 
     nur.repos.chillcicada.degit-rs
     nur.repos.chillcicada.tunet-rust
