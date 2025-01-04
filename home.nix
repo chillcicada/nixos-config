@@ -39,13 +39,11 @@
     pnpm
     yarn
     fnm
-    quickjs-ng
 
     python311
     rye
     uv
     ruff
-    conda
 
     nixpkgs-fmt
 
