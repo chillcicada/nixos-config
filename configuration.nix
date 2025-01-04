@@ -26,10 +26,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.extraHosts = ''
-    127.0.0.1      www.bilibili.com
-  '';
-
   time.timeZone = "Asia/Shanghai";
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -147,7 +143,7 @@
   # Nixpkgs config
   nixpkgs = {
     overlays = [
-      inputs.nur.overlay
+      inputs.nur.overlays.default
     ];
     config = {
       allowUnfree = true;
@@ -173,9 +169,7 @@
     openssh
     fontconfig
     direnv
-    # nerd-font-patcher
     cachix
-    clash-verge-rev
     mangohud
     sops
     nix-init
@@ -221,6 +215,8 @@
 
   programs.nix-ld.enable = true;
 
+  programs.clash-verge.enable = true;
+
   services.openssh.enable = true;
 
   networking.firewall = {
@@ -230,7 +226,7 @@
     allowedUDPPorts = [ ];
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
   security.sudo.extraRules = [
     {
