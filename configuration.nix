@@ -123,7 +123,7 @@
   users.users."cc" = {
     isNormalUser = true;
     description = "ChillCicada";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
 
@@ -175,9 +175,6 @@
     nix-init
 
     adwsteamgtk # for steam
-
-    compose2nix
-    docker-compose
 
     gnomeExtensions.appindicator
     adwaita-icon-theme
@@ -243,20 +240,6 @@
   nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
       inherit pkgs;
-    };
-  };
-
-  # docker config
-  virtualisation.docker = {
-    enable = true;
-    daemon = {
-      settings = {
-        proxies = {
-          http-proxy = "http://127.0.0.1:7897";
-          https-proxy = "http://127.0.0.1:7897";
-          no-proxy = "localhost";
-        };
-      };
     };
   };
 }
