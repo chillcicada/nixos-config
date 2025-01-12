@@ -85,6 +85,9 @@
     quarto
     wpsoffice-cn
 
+    teamspeak3
+    teamspeak5_client
+
     nur.repos.chillcicada.degit-rs
     nur.repos.chillcicada.tunet-rust
     nur.repos.novel2430.wemeet-bin-bwrap
