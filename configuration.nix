@@ -9,6 +9,7 @@
   imports =
     [
       ./core
+      ./hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -25,22 +26,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  time.timeZone = "Asia/Shanghai";
-
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -74,6 +59,8 @@
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+  hardware.graphics.enable32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -102,23 +89,6 @@
     };
   };
 
-
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      # Enable experimental features
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-
-    # Storage optimization
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."cc" = {
     isNormalUser = true;
@@ -139,17 +109,6 @@
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
-
-  # Nixpkgs config
-  nixpkgs = {
-    overlays = [
-      inputs.nur.overlays.default
-    ];
-    config = {
-      allowUnfree = true;
-      allowUnsupportedSystem = true;
-    };
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -173,9 +132,7 @@
     mangohud
     sops
     nix-init
-
     adwsteamgtk # for steam
-
     gnomeExtensions.appindicator
     adwaita-icon-theme
     gnome-tweaks
@@ -236,11 +193,5 @@
       ];
     }
   ];
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
 }
 
