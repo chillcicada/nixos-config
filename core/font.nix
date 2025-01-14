@@ -89,10 +89,6 @@
         addons = {
           classicui.globalSection.Theme = "Nord-Dark";
           classicui.globalSection.DarkTheme = "Nord-Dark";
-
-          cloudpinyin.globalSection = {
-            Backend = "Baidu";
-          };
         };
 
         inputMethod = {
