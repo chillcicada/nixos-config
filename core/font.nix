@@ -74,7 +74,7 @@
       waylandFrontend = true;
 
       addons = with pkgs; [
-        # fcitx5-chinese-addons # chinese
+        fcitx5-chinese-addons # chinese
         fcitx5-mozc # japanese
         fcitx5-gtk # gtk
         fcitx5-nord # theme
