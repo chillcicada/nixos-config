@@ -30,6 +30,7 @@
     pkg-config # pkg-config
     parallel # parallel
     amberol # music player
+    postman
 
     # lang
     zig
@@ -90,7 +91,6 @@
 
     nur.repos.chillcicada.degit-rs
     nur.repos.chillcicada.tunet-rust
-    # nur.repos.novel2430.wemeet-bin-bwrap
     nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
   ];
 
