@@ -86,7 +86,6 @@
     quarto
     wpsoffice-cn
 
-    teamspeak3
     teamspeak5_client
 
     nur.repos.chillcicada.degit-rs
