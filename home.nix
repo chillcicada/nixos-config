@@ -84,6 +84,7 @@
     wechat-uos
     qq
     quarto
+    qbittorrent
     wpsoffice-cn
 
     teamspeak5_client
