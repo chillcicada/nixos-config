@@ -20,6 +20,10 @@
           inherit pkgs;
         };
       };
+
+      permittedInsecurePackages = [
+        "electron-11.5.0"
+      ];
     };
   };
 }
