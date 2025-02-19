@@ -1,6 +1,7 @@
 { pkgs
 , config
 , vars
+, lib
 , ...
 }:
 
@@ -87,11 +88,13 @@
     qbittorrent
     wpsoffice-cn
 
+    itch
     teamspeak5_client
 
-    nur.repos.chillcicada.degit-rs
-    nur.repos.chillcicada.tunet-rust
+    # nur.repos.chillcicada.degit-rs
+    # nur.repos.chillcicada.tunet-rust
     nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
+    nur.repos.xddxdd.baidunetdisk
   ];
 
   imports = [
@@ -106,4 +109,10 @@
   home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
+
+  # linked to https://github.com/catppuccin/nix/issues/275
+  qt = lib.mkForce {
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
+  };
 }

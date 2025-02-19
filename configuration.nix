@@ -58,9 +58,9 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   hardware.graphics.enable32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
+  services.pulseaudio.support32Bit = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
