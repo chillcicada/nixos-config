@@ -37,14 +37,17 @@ list:
 up:
   sudo nix flake update
 
+up-nur:
+  sudo nix flake update nur
+
 proxy:
-  sudo sh ./scripts/proxy.sh
+  sudo ./scripts/proxy.sh
 
 onproxy:
-  sh ./scripts/onproxy.sh
+  ./scripts/onproxy.sh
 
 offproxy:
-  sh ./scripts/offproxy.sh
+  ./scripts/offproxy.sh
 
 # format nix files
 fmt:
