@@ -33,19 +33,27 @@ cleanall:
 list:
   nix profile history --profile /nix/var/nix/profiles/system
 
-# update the system flake lock file
+# update the all flake sources
 up:
   sudo nix flake update
 
+# update the nixpkgs flake source only
+up-nixpkgs:
+  sudo nix flake update nixpkgs
+
+# update the nur flake source only
 up-nur:
   sudo nix flake update nur
 
+# set proxy for nix deamon
 proxy:
   sudo ./scripts/proxy.sh
 
+# switch on proxy
 onproxy:
   ./scripts/onproxy.sh
 
+# switch off proxy
 offproxy:
   ./scripts/offproxy.sh
 
