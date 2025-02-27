@@ -75,6 +75,7 @@
 
     # programming
     vscode-fhs
+    ghostty
 
     # misc
     typos
