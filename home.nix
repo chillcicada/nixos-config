@@ -88,6 +88,7 @@
     quarto
     qbittorrent
     wpsoffice-cn
+    obs-studio
 
     itch
     teamspeak5_client
