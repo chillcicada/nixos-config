@@ -119,23 +119,30 @@
     wget
     curl
     just
-    neovim
+    direnv
+
+    sops
+    cachix
+    fontconfig
+
     cairo
+    openssh
+    openssl
+    mangohud
+
+    # gnome
+    adwsteamgtk # for steam theme
+    gnome-tweaks
+    adwaita-icon-theme
+    gnomeExtensions.appindicator
+
+    # neovim
+    neovim
     lua
     lua51Packages.lua
     luajitPackages.luarocks
+    luajit
     tree-sitter
-    openssh
-    fontconfig
-    direnv
-    cachix
-    mangohud
-    sops
-    nix-init
-    adwsteamgtk # for steam
-    gnomeExtensions.appindicator
-    adwaita-icon-theme
-    gnome-tweaks
   ]);
 
   services.udev.packages = with pkgs; [ gnome-settings-daemon ];
@@ -194,4 +201,3 @@
     }
   ];
 }
-

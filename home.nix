@@ -10,28 +10,24 @@
   home.homeDirectory = "/home/cc";
 
   home.packages = with pkgs; [
-    # tools
-    xz # xz
-    zip # zip
-    unzip # unzip
-    ouch # unzip
-    lz4 # lz4
+    # core
     jq # json parser
-    cloc # count lines of code
-    tokei # count lines of code
-    difftastic # diff tool
-    delta # better diff for git
-    fastfetch # view system info
-    onefetch # view git repo info
-    nh # nixos helper
     dust # disk usage
-    openssl # openssl
-    navi # navigate cli commands
-    tree # tree
+    ouch # zip and unzip
+    tree # produce a depth indented directory listing
+    parallel # parallelize shell commands
     pkg-config # pkg-config
-    parallel # parallel
-    amberol # music player
-    postman
+
+    # cli tools
+    fh # flake generator
+    nh # nixos helper
+    nom # cli rss reader
+    tokei # count code lines
+    typos # code spell checker
+    nix-init # generate nix pkgs from url
+    onefetch # view git repo info
+    fastfetch # view system info
+    difftastic # diff tool
 
     # lang
     zig
@@ -39,7 +35,6 @@
     bun
     nodejs
     pnpm
-    yarn
     fnm
 
     python311
@@ -55,58 +50,41 @@
 
     rustup
 
-    gfortran
-    gnumake
     cmake
     xmake
-    clang-tools
     llvm_19
     qt6.full
-    meson
-    lldb_19
-
-    go
-    gopls
+    clang-tools
 
     selene
 
     # R&D
     zotero
 
-    # programming
+    # program
     vscode-fhs
-    ghostty
 
     # misc
-    typos
-    nom
-    fh
-    pandoc
-    typora
-    wechat-uos
     qq
+    itch
+    pandoc
     quarto
+    typora
+    amberol
+    obs-studio
+    wechat-uos
     qbittorrent
     wpsoffice-cn
-    obs-studio
-
-    itch
     teamspeak5_client
 
-    nur.repos.chillcicada.degit-rs
-    # nur.repos.chillcicada.tunet-rust
-    nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
     nur.repos.xddxdd.baidunetdisk
+    nur.repos.chillcicada.degit-rs
+    nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
   ];
 
   imports = [
     ./apps
   ];
-
-  home.sessionVariables = {
-    GOPATH = "/etc/profiles/per-user/cc/bin/go";
-    BROWSER = "firefox";
-  };
 
   home.stateVersion = "25.05";
 
