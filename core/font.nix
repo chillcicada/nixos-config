@@ -66,7 +66,7 @@
     type = "fcitx5";
 
     fcitx5 = {
-      # waylandFrontend = true;
+      waylandFrontend = true;
 
       addons = with pkgs; [
         fcitx5-chinese-addons # chinese
@@ -103,8 +103,8 @@
 
   environment.sessionVariables = rec {
     QT_IM_MODULE = "fcitx";
-    # GTK_IM_MODULE = "fcitx";
+    GTK_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
-    # QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORM = "wayland";
   };
 }

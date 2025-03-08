@@ -47,9 +47,6 @@ with pkgs; [
   # R&D
   zotero
 
-  # program
-  vscode-fhs
-
   # misc
   qq
   pandoc
