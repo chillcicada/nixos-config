@@ -35,15 +35,15 @@
       # cargo end
     '';
     shellAliases = {
-      gpl = "git pull"; # keep consistent with my windows config
-
       # ! special character alias
-      # g = "git"; # provided by oh-my-zsh
       f = "fastfetch";
       j = "just";
       y = "yazi";
       o = "onefetch";
       c = "code";
+
+      proxyon = "export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897";
+      proxyoff = "unset https_proxy http_proxy all_proxy";
     };
   };
 }

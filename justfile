@@ -11,11 +11,11 @@ re-as-root TARGET=current_hostname:
 
 # rebuild the system configuration with verbose output
 debug TARGET=current_hostname:
-  sudo nixos-rebuild switch --flake .#{{TARGET}} --show-trace --verbose
+  sudo nixos-rebuild switch --show-trace --verbose --flake .#{{TARGET}}
 
 # rebuild the system configuration with verbose output and print build logs
 diagnosis TARGET=current_hostname:
-  sudo nixos-rebuild switch --flake .#{{TARGET}} --show-trace --verbose --print-build-logs
+  sudo nixos-rebuild switch  --show-trace --verbose --print-build-logs --flake .#{{TARGET}}
 
 # test the system configuration
 test:
@@ -33,29 +33,9 @@ cleanall:
 list:
   nix profile history --profile /nix/var/nix/profiles/system
 
-# update the all flake sources
-up:
-  sudo nix flake update
-
-# update the nixpkgs flake source only
-up-nixpkgs:
-  sudo nix flake update nixpkgs
-
-# update the nur flake source only
-up-nur:
-  sudo nix flake update nur
-
-# set proxy for nix deamon
-proxy:
-  sudo ./scripts/proxy.sh
-
-# switch on proxy
-onproxy:
-  ./scripts/onproxy.sh
-
-# switch off proxy
-offproxy:
-  ./scripts/offproxy.sh
+# update the flake
+up TARGET='':
+  sudo nix flake update {{TARGET}}
 
 # format nix files
 fmt:

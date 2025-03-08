@@ -8,8 +8,8 @@
 {
   imports =
     [
-      ./core
-      ./hardware-configuration.nix
+      ../../core
+      ./hardware.nix
     ];
 
   # Bootloader.
@@ -89,10 +89,9 @@
     };
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users."cc" = {
+  users.users."${vars.userName}" = {
     isNormalUser = true;
-    description = "ChillCicada";
+    description = vars.userFullname;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };
@@ -104,7 +103,7 @@
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "cc";
+  services.displayManager.autoLogin.user = vars.userName;
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -191,7 +190,7 @@
 
   security.sudo.extraRules = [
     {
-      users = [ "cc" ];
+      users = [ vars.userName ];
       commands = [
         {
           command = "ALL";
