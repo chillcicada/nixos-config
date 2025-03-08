@@ -1,4 +1,5 @@
 { self
+, nur
 , nixpkgs
 , home-manager
 , systems
@@ -24,13 +25,14 @@ let
   vars = import ../vars.nix { inherit lib; };
 in
 {
-  overlays = import ../overlays { inherit inputs; };
-
   nixosConfigurations.${vars.hostName} = nixpkgs.lib.nixosSystem {
     specialArgs = { inherit inputs outputs lib vars; };
     system = "x86_64-linux";
     modules = [
-      ../configuration.nix
+      ../hosts/1chill/configuration.nix
+
+      # nur overlay
+      nur.modules.nixos.default
 
       sops-nix.nixosModules.sops
 
@@ -39,7 +41,7 @@ in
         home-manager.extraSpecialArgs = { inherit inputs vars; };
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.cc = {
+        home-manager.users.${vars.userName} = {
           imports = [
             ../home.nix
             catppuccin.homeManagerModules.catppuccin

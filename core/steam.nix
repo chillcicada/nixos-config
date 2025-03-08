@@ -27,5 +27,5 @@
   };
 
   hardware.xone.enable = true; # support for the xbox controller USB dongle
-  services.getty.autologinUser = "cc";
+  services.getty.autologinUser = vars.userName;
 }
