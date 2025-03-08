@@ -19,6 +19,7 @@
       yazi.enable = false;
       btop.enable = false;
       bat.enable = false;
+      vscode.enable = false;
     };
 
     cursor = {
