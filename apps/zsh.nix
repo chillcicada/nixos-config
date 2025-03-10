@@ -35,7 +35,7 @@
       # cargo end
 
       # rye
-      export PATH="$HOME/.rye/shims/:$PATH"
+      export PATH="$PATH:$HOME/.rye/shims"
       # rye end
     '';
     shellAliases = {
