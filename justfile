@@ -5,6 +5,10 @@ re TARGET=current_hostname:
   git add --all
   sudo nixos-rebuild switch --flake .#{{TARGET}}
 
+boot TARGET=current_hostname:
+  git add --all
+  sudo nixos-rebuild boot --flake .#{{TARGET}}
+
 # rebuild the system configuration as root
 re-as-root TARGET=current_hostname:
   nixos-rebuild switch --flake .#{{TARGET}}

@@ -8,6 +8,7 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      julia-mono
       maple-mono
       maple-mono-otf
       maple-mono-NF
@@ -37,8 +38,9 @@
       wqy_zenhei
       nur.repos.rewine.ttf-wps-fonts
       nur.repos.rewine.ttf-ms-win10
-      newcomputermodern # new computer modern font
-      texlivePackages.cm # computer modern font
+      texlivePackages.cm
+      texlivePackages.firamath-otf
+      texlivePackages.newcomputermodern
     ];
     fontconfig = {
       defaultFonts = {
