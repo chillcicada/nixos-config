@@ -33,6 +33,10 @@
       # cargo
       export PATH="$HOME/.cargo/bin:$PATH"
       # cargo end
+
+      # rye
+      export PATH="$HOME/.rye/shims/:$PATH"
+      # rye end
     '';
     shellAliases = {
       # ! special character alias
