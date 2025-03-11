@@ -5,8 +5,8 @@ _:
     enable = true;
     flavor = "mocha";
 
-    starship = {
-      enable = true;
-    };
+    starship.enable = true;
+
+    nvim.enable = false; # not neovim
   };
 }

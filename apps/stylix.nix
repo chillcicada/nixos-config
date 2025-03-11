@@ -14,12 +14,14 @@
 
     targets = {
       gtk.enable = true;
+
       kitty.enable = false;
       fzf.enable = false;
       yazi.enable = false;
       btop.enable = false;
       bat.enable = false;
       vscode.enable = false;
+      neovim.enable = false;
     };
 
     cursor = {

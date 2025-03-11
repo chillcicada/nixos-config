@@ -26,12 +26,8 @@
       esac
       # pnpm end
 
-      # fnm
-      eval "$(fnm env --use-on-cd --shell zsh)"
-      # fnm end
-
       # cargo
-      export PATH="$HOME/.cargo/bin:$PATH"
+      export PATH="$PATH:$HOME/.cargo/bin"
       # cargo end
 
       # rye
