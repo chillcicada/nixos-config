@@ -48,6 +48,7 @@
     gnome-calculator
     simple-scan
     yelp # help viewer
+    totem # video player
     evince # document viewer
   ];
 
@@ -130,27 +131,13 @@
     mangohud
 
     # gnome
-    adwsteamgtk # for steam theme
     gnome-tweaks
     adwaita-icon-theme
     gnomeExtensions.appindicator
-
-    # neovim
-    neovim
-    lua
-    lua51Packages.lua
-    luajitPackages.luarocks
-    luajit
-    tree-sitter
   ]);
 
   services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   programs.dconf.enable = true;
-
-  # Set default editor
-  environment.variables = {
-    EDITOR = "nvim";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -158,15 +145,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-
-  # nvim config
-  programs.neovim = {
-    enable = true;
-
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
   };
 
   programs.nix-ld.enable = true;

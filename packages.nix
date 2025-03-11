@@ -7,13 +7,12 @@ with pkgs; [
   tree # produce a depth indented directory listing
   parallel # parallelize shell commands
   pkg-config # pkg-config
+  imagemagick # image manipulation
 
   # cli tools
   fh # flake generator
   nh # nixos helper
-  nom # cli rss reader
   tokei # count code lines
-  typos # code spell checker
   onefetch # view git repo info
   fastfetch # view system info
   difftastic # diff tool
@@ -21,35 +20,40 @@ with pkgs; [
   bun
   nodejs
   pnpm
-  fnm
 
   python311
   rye
   uv
   ruff
 
-  nixpkgs-fmt
-
   typst
 
   rustup
 
-  selene
+  gcc
+  xmake
+  clang-tools
 
-  # R&D
-  zotero
+  nixpkgs-fmt
+
+  selene
+  stylua
+  tree-sitter
+  lua51Packages.lua
+  luajitPackages.luarocks
 
   # misc
   qq
   pandoc
   typora
+  zotero
   obs-studio
   wechat-uos
   qbittorrent
   wpsoffice-cn
   teamspeak5_client
 
-  nur.repos.xddxdd.baidunetdisk
+  nur.repos.chillcicada.typship
   nur.repos.chillcicada.degit-rs
   nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
 ]
