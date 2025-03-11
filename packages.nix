@@ -47,9 +47,7 @@ with pkgs; [
   pandoc
   typora
   zotero
-  obs-studio
   wechat-uos
-  qbittorrent
   wpsoffice-cn
   teamspeak5_client
 
