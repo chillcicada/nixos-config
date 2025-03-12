@@ -1,8 +1,4 @@
-{ pkgs
-, config
-, vars
-, ...
-}:
+{ pkgs, config, vars, ... }:
 
 {
   programs.starship = {
@@ -10,8 +6,6 @@
     enableZshIntegration = true;
 
     # https://starship.rs/config/
-    settings = {
-      nix_shell.disabled = true;
-    };
+    settings = { nix_shell.disabled = true; };
   };
 }

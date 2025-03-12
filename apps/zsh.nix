@@ -1,8 +1,4 @@
-{ pkgs
-, config
-, vars
-, ...
-}:
+{ pkgs, config, vars, ... }:
 
 {
   programs.zsh = {
@@ -12,10 +8,7 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "git"
-        "dotenv"
-      ];
+      plugins = [ "git" "dotenv" ];
     };
     initExtra = ''
       # pnpm
@@ -42,7 +35,8 @@
       o = "onefetch";
       c = "code";
 
-      proxyon = "export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897";
+      proxyon =
+        "export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897";
       proxyoff = "unset https_proxy http_proxy all_proxy";
     };
   };

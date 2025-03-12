@@ -1,7 +1,4 @@
-{ pkgs
-, config
-, ...
-}:
+{ pkgs, config, ... }:
 
 {
   # Nixpkgs config
@@ -10,9 +7,7 @@
       allowUnfree = true;
       allowUnsupportedSystem = true;
 
-      permittedInsecurePackages = [
-        "electron-11.5.0"
-      ];
+      permittedInsecurePackages = [ "electron-11.5.0" ];
     };
   };
 }

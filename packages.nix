@@ -1,10 +1,11 @@
 { pkgs }:
 
-with pkgs; [
+with pkgs;
+[
   # core
   dust # disk usage
-  ouch # zip and unzip
   tree # produce a depth indented directory listing
+  unzip # unzip files
   parallel # parallelize shell commands
   pkg-config # pkg-config
   imagemagick # image manipulation
@@ -40,7 +41,7 @@ with pkgs; [
 
   # nix
   nil
-  nixpkgs-fmt
+  nixfmt
 
   # lua
   selene

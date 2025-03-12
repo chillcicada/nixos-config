@@ -1,11 +1,6 @@
 # more infomation can be found at https://yazi-rs.github.io/
 
-{ pkgs
-, config
-, vars
-, lib
-, ...
-}:
+{ pkgs, config, vars, lib, ... }:
 
 {
   programs.yazi = {
