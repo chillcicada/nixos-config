@@ -9,35 +9,40 @@ with pkgs; [
   pkg-config # pkg-config
   imagemagick # image manipulation
 
-  # cli tools
+  # utils
   fh # flake generator
-  nh # nixos helper
   tokei # count code lines
   onefetch # view git repo info
-  fastfetch # view system info
   difftastic # diff tool
 
-  # dev
+  # js/ts
   bun
   pnpm
   nodejs
 
+  # python
   uv
   rye
   ruff
   python311
 
+  # typst
   typst
   typstyle
 
+  # rust
   rustup
 
+  # c/c++
   gcc
   xmake
   clang-tools
 
+  # nix
+  nil
   nixpkgs-fmt
 
+  # lua
   selene
   stylua
   tree-sitter
@@ -52,8 +57,9 @@ with pkgs; [
   wechat-uos
   wpsoffice-cn
   teamspeak5_client
-
-  nur.repos.chillcicada.typship
-  nur.repos.chillcicada.degit-rs
-  nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
-]
+] ++ (with nur.repos; [
+  # nur
+  chillcicada.typship
+  chillcicada.degit-rs
+  novel2430.wemeet-bin-bwrap-wayland-screenshare
+])
