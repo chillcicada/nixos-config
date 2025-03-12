@@ -160,6 +160,13 @@
     allowedUDPPorts = [ ];
   };
 
+  environment.sessionVariables = {
+    XMODIFIERS = "@im=fcitx";
+    QT_IM_MODULE = "fcitx";
+    QT_QPA_PLATFORM = "wayland";
+    NIXOS_OZONE_WL = "1";
+  };
+
   system.stateVersion = "25.05";
 
   security.sudo.extraRules = [

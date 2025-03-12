@@ -102,12 +102,4 @@
       };
     };
   };
-
-  environment.sessionVariables = rec {
-    QT_IM_MODULE = "fcitx";
-    GTK_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
-    QT_QPA_PLATFORM = "wayland";
-    NIXOS_OZONE_WL = "1";
-  };
 }

@@ -17,16 +17,18 @@ with pkgs; [
   fastfetch # view system info
   difftastic # diff tool
 
+  # dev
   bun
-  nodejs
   pnpm
+  nodejs
 
-  python311
-  rye
   uv
+  rye
   ruff
+  python311
 
   typst
+  typstyle
 
   rustup
 
