@@ -1,8 +1,4 @@
-{ pkgs
-, config
-, vars
-, ...
-}:
+{ pkgs, config, vars, ... }:
 
 {
   time.timeZone = "Asia/Shanghai";

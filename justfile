@@ -43,4 +43,4 @@ up TARGET='':
 
 # format nix files
 fmt:
-  nixpkgs-fmt .
+  nixfmt .

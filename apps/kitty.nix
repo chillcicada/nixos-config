@@ -1,8 +1,4 @@
-{ pkgs
-, config
-, vars
-, ...
-}:
+{ pkgs, config, vars, ... }:
 
 {
   programs.kitty = {
@@ -22,9 +18,7 @@
       tab_bar_edge = "top";
     };
 
-    keybindings = {
-      "ctrl+c" = "copy_or_interrupt";
-    };
+    keybindings = { "ctrl+c" = "copy_or_interrupt"; };
 
     shellIntegration = {
       enableZshIntegration = true;

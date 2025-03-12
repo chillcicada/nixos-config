@@ -1,8 +1,4 @@
-{ pkgs
-, config
-, vars
-, ...
-}:
+{ pkgs, config, vars, ... }:
 
 {
   fonts = {
@@ -44,21 +40,10 @@
     ];
     fontconfig = {
       defaultFonts = {
-        serif = [
-          "Noto Serif"
-          "LXGW WenKai"
-        ];
-        sansSerif = [
-          "LXGW WenKai"
-          "Noto Sans"
-        ];
-        monospace = [
-          "MesloLG LG L DZ"
-          "LXGW WenKai Mono"
-        ];
-        emoji = [
-          "Noto Color Emoji"
-        ];
+        serif = [ "Noto Serif" "LXGW WenKai" ];
+        sansSerif = [ "LXGW WenKai" "Noto Sans" ];
+        monospace = [ "MesloLG LG L DZ" "LXGW WenKai Mono" ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };
@@ -76,8 +61,8 @@
         fcitx5-gtk # gtk lib
         fcitx5-nord # theme
 
-        fcitx5-pinyin-moegirl #pinyin
-        fcitx5-pinyin-zhwiki #pinyin
+        fcitx5-pinyin-moegirl # pinyin
+        fcitx5-pinyin-zhwiki # pinyin
       ];
 
       ignoreUserConfig = false;

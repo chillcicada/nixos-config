@@ -1,22 +1,14 @@
-{ pkgs
-, inputs
-, config
-, vars
-, ...
-}:
+{ pkgs, inputs, config, vars, ... }:
 
 {
-  imports =
-    [
-      ../../core
-      ./hardware.nix
-    ];
+  imports = [ ../../core ./hardware.nix ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-64f9a2a3-e6c3-418c-902d-dde61e57bdb3".device = "/dev/disk/by-uuid/64f9a2a3-e6c3-418c-902d-dde61e57bdb3";
+  boot.initrd.luks.devices."luks-64f9a2a3-e6c3-418c-902d-dde61e57bdb3".device =
+    "/dev/disk/by-uuid/64f9a2a3-e6c3-418c-902d-dde61e57bdb3";
   networking.hostName = vars.hostName;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -112,29 +104,28 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [
-    inputs.zen-browser.packages."${pkgs.system}".default
-  ] ++ (with pkgs; [
-    git
-    wget
-    curl
-    just
-    direnv
+  environment.systemPackages =
+    [ inputs.zen-browser.packages."${pkgs.system}".default ] ++ (with pkgs; [
+      git
+      wget
+      curl
+      just
+      direnv
 
-    sops
-    cachix
-    fontconfig
+      sops
+      cachix
+      fontconfig
 
-    cairo
-    openssh
-    openssl
-    mangohud
+      cairo
+      openssh
+      openssl
+      mangohud
 
-    # gnome
-    gnome-tweaks
-    adwaita-icon-theme
-    gnomeExtensions.appindicator
-  ]);
+      # gnome
+      gnome-tweaks
+      adwaita-icon-theme
+      gnomeExtensions.appindicator
+    ]);
 
   services.udev.packages = with pkgs; [ gnome-settings-daemon ];
   programs.dconf.enable = true;
@@ -169,15 +160,11 @@
 
   system.stateVersion = "25.05";
 
-  security.sudo.extraRules = [
-    {
-      users = [ vars.userName ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+  security.sudo.extraRules = [{
+    users = [ vars.userName ];
+    commands = [{
+      command = "ALL";
+      options = [ "NOPASSWD" ];
+    }];
+  }];
 }
