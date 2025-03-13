@@ -7,4 +7,6 @@
 
     extensions = with pkgs.vscode-extensions; [ ];
   };
+
+  home.sessionVariables = { EDITOR = "code"; };
 }

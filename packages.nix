@@ -13,7 +13,6 @@ with pkgs;
   # utils
   fh # flake generator
   tokei # count code lines
-  onefetch # view git repo info
   difftastic # diff tool
 
   # js/ts
