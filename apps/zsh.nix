@@ -32,7 +32,6 @@
       f = "fastfetch";
       j = "just";
       y = "yazi";
-      o = "onefetch";
       c = "code";
 
       proxyon =
