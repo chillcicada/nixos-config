@@ -2,18 +2,18 @@
 
 with pkgs;
 [
-  # core
+  # core & utils
+  fh # flake generator
   dust # disk usage
-  tree # produce a depth indented directory listing
+  tree # tree view
+  tokei # count code lines
+  typos # typo correction
   unzip # unzip files
+  treefmt # tree format
   parallel # parallelize shell commands
+  difftastic # diff tool
   pkg-config # pkg-config
   imagemagick # image manipulation
-
-  # utils
-  fh # flake generator
-  tokei # count code lines
-  difftastic # diff tool
 
   # js/ts
   bun
@@ -57,7 +57,8 @@ with pkgs;
   wechat-uos
   wpsoffice-cn
   teamspeak5_client
-] ++ (with nur.repos; [
+]
+++ (with nur.repos; [
   # nur
   chillcicada.typship
   chillcicada.degit-rs

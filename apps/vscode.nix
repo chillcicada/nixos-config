@@ -1,4 +1,9 @@
-{ pkgs, config, vars, ... }:
+{
+  pkgs,
+  config,
+  vars,
+  ...
+}:
 
 {
   # https://nixos.wiki/wiki/Visual_Studio_Code
@@ -6,5 +11,7 @@
     enable = true;
   };
 
-  home.sessionVariables = { EDITOR = "code"; };
+  home.sessionVariables = {
+    EDITOR = "code";
+  };
 }

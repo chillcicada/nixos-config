@@ -1,4 +1,9 @@
-{ pkgs, config, vars, ... }:
+{
+  pkgs,
+  config,
+  vars,
+  ...
+}:
 
 {
   fonts = {
@@ -40,9 +45,18 @@
     ];
     fontconfig = {
       defaultFonts = {
-        serif = [ "Noto Serif" "LXGW WenKai" ];
-        sansSerif = [ "LXGW WenKai" "Noto Sans" ];
-        monospace = [ "MesloLG LG L DZ" "LXGW WenKai Mono" ];
+        serif = [
+          "Noto Serif"
+          "LXGW WenKai"
+        ];
+        sansSerif = [
+          "LXGW WenKai"
+          "Noto Sans"
+        ];
+        monospace = [
+          "MesloLG LG L DZ"
+          "LXGW WenKai Mono"
+        ];
         emoji = [ "Noto Color Emoji" ];
       };
     };
