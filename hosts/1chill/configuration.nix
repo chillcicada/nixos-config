@@ -1,7 +1,16 @@
-{ pkgs, inputs, config, vars, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  vars,
+  ...
+}:
 
 {
-  imports = [ ../../core ./hardware.nix ];
+  imports = [
+    ../../core
+    ./hardware.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,7 +94,10 @@
   users.users."${vars.userName}" = {
     isNormalUser = true;
     description = vars.userFullname;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -105,7 +117,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages =
-    [ inputs.zen-browser.packages."${pkgs.system}".default ] ++ (with pkgs; [
+    [ inputs.zen-browser.packages."${pkgs.system}".default ]
+    ++ (with pkgs; [
       git
       wget
       curl
@@ -147,7 +160,11 @@
   networking.firewall = {
     enable = true;
     # Allow HTTP and SSH traffic
-    allowedTCPPorts = [ 22 80 443 ];
+    allowedTCPPorts = [
+      22
+      80
+      443
+    ];
     allowedUDPPorts = [ ];
   };
 
@@ -160,11 +177,15 @@
 
   system.stateVersion = "25.05";
 
-  security.sudo.extraRules = [{
-    users = [ vars.userName ];
-    commands = [{
-      command = "ALL";
-      options = [ "NOPASSWD" ];
-    }];
-  }];
+  security.sudo.extraRules = [
+    {
+      users = [ vars.userName ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 }

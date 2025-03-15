@@ -1,4 +1,10 @@
-{ pkgs, lib, vars, inputs, ... }:
+{
+  pkgs,
+  lib,
+  vars,
+  inputs,
+  ...
+}:
 
 {
   nix = {
@@ -8,7 +14,10 @@
     settings = {
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       use-xdg-base-directories = true;
       trusted-users = [ vars.userName ];
       substituters = [
