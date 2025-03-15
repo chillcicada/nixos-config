@@ -40,7 +40,7 @@ with pkgs;
 
   # nix
   nil
-  nixfmt
+  nixfmt-rfc-style
 
   # lua
   selene
