@@ -28,7 +28,5 @@
   };
 
   environment.systemPackages = with pkgs; [ adwsteamgtk ];
-
-  hardware.xone.enable = true; # support for the xbox controller USB dongle
   services.getty.autologinUser = vars.userName;
 }
