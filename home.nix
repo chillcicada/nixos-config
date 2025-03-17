@@ -14,6 +14,7 @@ in
   home.homeDirectory = "/home/${vars.userName}";
   home.packages = packages;
 
+  # https://nix-community.github.io/home-manager/options.xhtml
   imports = [ ./apps ];
 
   home.stateVersion = "25.05";

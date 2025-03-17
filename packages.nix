@@ -28,7 +28,7 @@ with pkgs;
 
   # typst
   typst
-  typstyle
+  typstyle # formatter
 
   # rust
   rustup
@@ -40,7 +40,7 @@ with pkgs;
 
   # nix
   nil
-  nixfmt-rfc-style
+  nixfmt-rfc-style # formatter
 
   # lua
   selene
@@ -51,7 +51,7 @@ with pkgs;
 
   # misc
   qq
-  pandoc
+  pandoc # required by typora
   typora
   zotero
   wechat-uos

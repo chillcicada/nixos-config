@@ -21,4 +21,4 @@ systemctl restart nix-daemon
 
 ## License
 
-[GLWTS](./LICENSE)
+[GLWTS](LICENSE)

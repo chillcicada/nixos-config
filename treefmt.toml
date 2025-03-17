@@ -1,4 +1,4 @@
-excludes = ["LICENSE", "flake.lock", "*.jpg", "*.png"]
+excludes = ["LICENSE", "flake.lock", "*.jpg", "*.png", ".*"]
 
 [formatter.nixfmt-rfc-style]
 command = "nixfmt"
