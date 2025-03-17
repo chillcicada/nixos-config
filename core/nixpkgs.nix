@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ lib, vars, ... }:
 
 {
   # Nixpkgs config
@@ -9,5 +9,8 @@
 
       permittedInsecurePackages = [ "electron-11.5.0" ];
     };
+
+    hostPlatform = lib.mkDefault vars.hostPlatform;
   };
+
 }
