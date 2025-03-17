@@ -6,6 +6,16 @@
 }:
 
 {
+  home-manager = {
+    extraSpecialArgs = { inherit inputs vars; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+    users.${vars.userName} = {
+      imports = [ inputs.self.homeModules.chill ];
+    };
+  };
+
   users.users."${vars.userName}" = {
     isNormalUser = true;
     description = vars.userFullname;
@@ -40,18 +50,14 @@
       just
       direnv
 
-      sops
       cachix
       fontconfig
 
       cairo
       openssl
-      mangohud
-    ]);
 
-  # support for the xbox controller USB dongle
-  hardware.xone.enable = true;
-  hardware.graphics.enable32Bit = true;
+      nix-output-monitor
+    ]);
 
   security.sudo.extraRules = [
     {

@@ -1,19 +1,10 @@
 {
-  description = "chillcicada's personal nixos config on chill";
+  description = "chillcicada's personal nixos config";
 
   inputs = {
     nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
 
-    flake-utils.url = "github:numtide/flake-utils";
-
-    systems.url = "github:nix-systems/default-linux";
-
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     catppuccin.url = "github:catppuccin/nix";
 
@@ -28,8 +19,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs: import ./outputs inputs;
+  outputs =
+    inputs@{ flake-parts, nixpkgs, ... }:
+
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ ./hosts ];
+      systems = [ "x86_64-linux" ];
+    };
 }

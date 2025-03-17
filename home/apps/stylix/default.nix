@@ -8,7 +8,8 @@
 {
   stylix = {
     enable = true;
-    image = ../_img/bg.jpg;
+    # TODO: remove this by nix module
+    image = ./bg.jpg;
 
     polarity = "dark";
     autoEnable = true;

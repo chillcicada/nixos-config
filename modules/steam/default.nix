@@ -27,6 +27,12 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ adwsteamgtk ];
+  environment.systemPackages = with pkgs; [
+    adwsteamgtk
+    mangohud
+  ];
   services.getty.autologinUser = vars.userName;
+
+  hardware.xone.enable = true;
+  hardware.graphics.enable32Bit = true;
 }

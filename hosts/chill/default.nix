@@ -7,8 +7,10 @@
 
 {
   imports = [
-    ../../core
     ./hardware.nix
+
+    ../../modules/core
+    ../../modules/steam
   ];
 
   # Bootloader.

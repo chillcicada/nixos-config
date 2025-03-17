@@ -25,7 +25,7 @@
       127.0.0.1 www.bilibili.com
     '';
 
-    hostName = vars.hostName;
+    hostName = "chill";
 
     firewall = {
       enable = true;

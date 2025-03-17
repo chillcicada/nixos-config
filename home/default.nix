@@ -10,14 +10,15 @@ let
   packages = import ./packages.nix { inherit pkgs; };
 in
 {
-  home.username = vars.userName;
-  home.homeDirectory = "/home/${vars.userName}";
-  home.packages = packages;
+  home = {
+    username = vars.userName;
+    homeDirectory = "/home/${vars.userName}";
+    packages = packages;
+    stateVersion = "25.05";
+  };
 
   # https://nix-community.github.io/home-manager/options.xhtml
   imports = [ ./apps ];
-
-  home.stateVersion = "25.05";
 
   programs.home-manager.enable = true;
 
