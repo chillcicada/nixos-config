@@ -14,5 +14,7 @@
       "dist/"
       "build/"
     ];
+
+    extraOptions = [ ];
   };
 }
