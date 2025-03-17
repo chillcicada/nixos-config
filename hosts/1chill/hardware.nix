@@ -41,9 +41,5 @@
 
   swapDevices = [ { device = "/dev/disk/by-uuid/732c80a8-9628-4f9f-ae53-a82ec8565e53"; } ];
 
-  nixpkgs.hostPlatform = lib.mkDefault vars.hostPlatform;
-
-  hardware.xone.enable = true; # support for the xbox controller USB dongle
-  hardware.graphics.enable32Bit = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -49,6 +49,10 @@
       mangohud
     ]);
 
+  # support for the xbox controller USB dongle
+  hardware.xone.enable = true;
+  hardware.graphics.enable32Bit = true;
+
   security.sudo.extraRules = [
     {
       users = [ vars.userName ];
