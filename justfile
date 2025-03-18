@@ -44,3 +44,6 @@ up TARGET='':
 # format nix files
 fmt:
   treefmt
+
+fd:
+  fd -H -e '.homeManagerBackup' -p ~
