@@ -8,9 +8,9 @@
 {
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
+    backupFileExtension = "homeManagerBackup";
     useGlobalPkgs = true;
     useUserPackages = true;
-    backupFileExtension = "backup";
     users.${vars.userName} = {
       imports = [ inputs.self.homeModules.chill ];
     };

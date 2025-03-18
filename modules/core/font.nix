@@ -49,11 +49,10 @@
     fontconfig = {
       defaultFonts = {
         serif = [
-          "Noto Serif"
-          "LXGW WenKai"
+          "Source Han Serif"
         ];
         sansSerif = [
-          "Noto Sans"
+          "Source Han Sans"
         ];
         monospace = [
           "Maple Mono NF"
