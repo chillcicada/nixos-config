@@ -9,8 +9,6 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      julia-mono
-
       maple-mono
       maple-mono-otf
       maple-mono-NF
@@ -19,7 +17,6 @@
 
       lxgw-wenkai
 
-      noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
@@ -32,16 +29,14 @@
       roboto-mono
       roboto-serif
 
-      source-han-mono
-      source-han-sans
-      source-han-serif
-
       wqy_microhei
       wqy_zenhei
 
       nur.repos.rewine.ttf-wps-fonts
       nur.repos.rewine.ttf-ms-win10
 
+      # math fonts
+      julia-mono
       texlivePackages.cm
       texlivePackages.firamath-otf
       texlivePackages.newcomputermodern
@@ -49,10 +44,10 @@
     fontconfig = {
       defaultFonts = {
         serif = [
-          "Source Han Serif"
+          "Noto Serif CJK SC"
         ];
         sansSerif = [
-          "Source Han Sans"
+          "Noto Sans CJK SC"
         ];
         monospace = [
           "Maple Mono NF"
