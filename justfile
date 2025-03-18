@@ -5,6 +5,7 @@ re TARGET=current_hostname:
   git add --all
   sudo nixos-rebuild switch --flake .#{{TARGET}}
 
+# rebuild the system configuration bubt not switch
 boot TARGET=current_hostname:
   git add --all
   sudo nixos-rebuild boot --flake .#{{TARGET}}
@@ -45,5 +46,6 @@ up TARGET='':
 fmt:
   treefmt
 
+# find all the files that get backup by home-manager
 fd:
   fd -H -e '.homeManagerBackup' -p ~
