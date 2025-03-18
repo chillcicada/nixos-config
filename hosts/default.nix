@@ -2,9 +2,8 @@
 let
   vars = {
     userName = "cc";
-    userFullname = "ChillCicada";
+    userFullname = "chillcicada";
     userEmail = "2210227279@qq.com";
-    gitName = "chillcicada";
   };
 in
 with inputs;

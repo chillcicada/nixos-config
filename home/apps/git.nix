@@ -8,7 +8,7 @@
 {
   programs.git = {
     enable = true;
-    userName = vars.gitName;
+    userName = vars.userFullname;
     userEmail = vars.userEmail;
     extraConfig = {
       user.signingKey = "34C212310A99754B";
