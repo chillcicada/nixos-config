@@ -1,7 +1,5 @@
 {
   pkgs,
-  config,
-  vars,
   ...
 }:
 
@@ -32,6 +30,7 @@
       wqy_microhei
       wqy_zenhei
 
+      # Microsoft fonts
       nur.repos.rewine.ttf-wps-fonts
       nur.repos.rewine.ttf-ms-win10
 
