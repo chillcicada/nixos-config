@@ -55,12 +55,12 @@ with pkgs;
   typora
   zotero
   wechat-uos
-  wpsoffice-cn
   teamspeak5_client
 ]
 ++ (with nur.repos; [
   # nur
   chillcicada.typship
   chillcicada.degit-rs
+  chillcicada.wpsoffice-cn
   novel2430.wemeet-bin-bwrap-wayland-screenshare
 ])
