@@ -18,6 +18,17 @@
         "dotenv"
       ];
     };
+    plugins = [
+      {
+        name = "zsh-wakatime";
+        src = pkgs.fetchFromGitHub {
+          owner = "wbingli";
+          repo = "zsh-wakatime";
+          rev = "master";
+          sha256 = "sha256-iMHPDz4QvaL3YdRd3vaaz1G4bj8ftRVD9cD0KyJVeAs=";
+        };
+      }
+    ];
     initExtra = ''
       # pnpm
       export PNPM_HOME="/home/cc/.local/share/pnpm"

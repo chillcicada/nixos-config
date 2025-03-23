@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  vars,
-  ...
-}:
+_:
 
 {
   programs.bun = {
@@ -12,10 +7,8 @@
     enableGitIntegration = true;
 
     # refer to https://bun.sh/docs/runtime/bunfig
-    settings = ''
-      {
-        smol = true;
-      }
-    '';
+    settings = {
+      smol = true;
+    };
   };
 }
