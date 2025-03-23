@@ -4,19 +4,20 @@ with pkgs;
 [
   # core & utils
   fh # flake generator
+  curl # cli http client
   dust # disk usage
   tree # tree view
+  wget # download files
   tokei # count code lines
   typos # typo correction
-  unzip # unzip files
+  unzip # unzip files, required by nvim
   treefmt # tree format
   parallel # parallelize shell commands
   difftastic # diff tool
-  pkg-config # pkg-config
+  pkg-config # pkg-config, required by rust
   imagemagick # image manipulation
 
   # js/ts
-  bun
   pnpm
   nodejs
 
@@ -36,7 +37,7 @@ with pkgs;
   # c/c++
   gcc
   xmake
-  clang-tools
+  clang-tools # provides clangd and clang-format
 
   # nix
   nil
@@ -45,13 +46,12 @@ with pkgs;
   # lua
   selene
   stylua
-  tree-sitter
+  tree-sitter # required by nvim
   lua51Packages.lua
   luajitPackages.luarocks
 
   # misc
   qq
-  pandoc # required by typora
   typora
   zotero
   wechat-uos

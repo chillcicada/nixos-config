@@ -45,8 +45,6 @@
     [ inputs.zen-browser.packages."${pkgs.system}".default ]
     ++ (with pkgs; [
       git
-      wget
-      curl
       just
       direnv
 
@@ -56,7 +54,7 @@
       cairo
       openssl
 
-      nix-output-monitor
+      nix-output-monitor # nom
     ]);
 
   security.sudo.extraRules = [

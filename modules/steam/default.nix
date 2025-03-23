@@ -31,6 +31,7 @@
     adwsteamgtk
     mangohud
   ];
+
   services.getty.autologinUser = vars.userName;
 
   hardware.xone.enable = true;
