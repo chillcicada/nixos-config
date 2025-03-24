@@ -1,13 +1,13 @@
 {
   pkgs,
-  config,
+  inputs,
   vars,
   lib,
   ...
 }:
 
 let
-  packages = import ./packages.nix { inherit pkgs; };
+  packages = import ./packages.nix { inherit inputs pkgs; };
 in
 {
   home = {

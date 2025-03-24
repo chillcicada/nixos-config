@@ -23,7 +23,6 @@
       nur.repos.rewine.ttf-ms-win10
       nur.repos.rewine.ttf-wps-fonts
 
-
       # math fonts
       fira-math
       julia-mono
