@@ -22,8 +22,11 @@ with inputs;
 
   flake.homeModules = {
     chill = {
+      # gnome
       imports = [
         ../home
+
+        ../modules/gnome/home.nix
 
         catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix

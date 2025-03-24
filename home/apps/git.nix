@@ -25,8 +25,5 @@
     enable = true;
     enableSshSupport = true;
     enableZshIntegration = true;
-
-    # add `pkgs.gcr` for non Gnome
-    pinentryPackage = pkgs.pinentry-gnome3;
   };
 }
