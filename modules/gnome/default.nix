@@ -22,6 +22,7 @@
 
     yelp # help viewer
     geary # mail client
+    gedit # text editor
     totem # video player
     baobab # disk usage analyzer
     evince # document viewer
@@ -52,7 +53,7 @@
     with pkgs;
     [
       gnome-tweaks
-      adwaita-icon-theme
+      adwaita-icon-theme # icon theme
     ]
     ++ (with gnomeExtensions; [
       open-bar

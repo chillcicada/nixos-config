@@ -1,6 +1,7 @@
-{ pkgs }:
+{ inputs, pkgs }:
 
-with pkgs;
+[ inputs.zen-browser.packages."${pkgs.system}".default ]
+++ (with pkgs;
 [
   # core & utils
   fh # flake generator
@@ -11,11 +12,9 @@ with pkgs;
   tokei # count code lines
   typos # typo correction
   unzip # unzip files, required by nvim
+  cachix # nix binary cache
   treefmt # tree format
-  parallel # parallelize shell commands
   difftastic # diff tool
-  pkg-config # pkg-config, required by rust
-  imagemagick # image manipulation
 
   # js/ts
   pnpm
@@ -40,12 +39,12 @@ with pkgs;
   clang-tools # provides clangd and clang-format
 
   # nix
-  nil
+  nil # nix linter
   nixfmt-rfc-style # formatter
 
   # lua
-  selene
-  stylua
+  selene # lua linter
+  stylua # lua formatter
   tree-sitter # required by nvim
   lua51Packages.lua
   luajitPackages.luarocks
@@ -64,4 +63,4 @@ with pkgs;
   chillcicada.degit-rs
   chillcicada.wpsoffice-cn
   novel2430.wemeet-bin-bwrap-wayland-screenshare
-])
+]))

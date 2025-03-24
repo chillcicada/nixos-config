@@ -26,36 +26,34 @@
     shell = pkgs.zsh;
   };
 
-  programs.zsh.enable = true;
-
   environment.shells = with pkgs; [ zsh ];
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
+  programs.zsh.enable = true;
 
   programs.nix-ld.enable = true;
 
-  programs.clash-verge.enable = true;
+  programs.clash-verge = {
+    enable = true;
+    autoStart = true;
+  };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 20202 ];
+    openFirewall = true;
+    settings = {
+      UseDns = true;
+      AllowUsers = [ vars.userName ];
+      PermitRootLogin = "prohibit-password";
+      PasswordAuthentication = true;
+    };
+  };
 
-  environment.systemPackages =
-    [ inputs.zen-browser.packages."${pkgs.system}".default ]
-    ++ (with pkgs; [
-      git
-      just
-      direnv
-
-      cachix
-      fontconfig
-
-      cairo
-      openssl
-
-      nix-output-monitor # nom
-    ]);
+  environment.systemPackages = with pkgs; [
+    just
+    fontconfig # font
+    nix-output-monitor # nom
+  ];
 
   security.sudo.extraRules = [
     {
