@@ -26,13 +26,9 @@ diagnosis TARGET=current_hostname:
 test:
   nix flake check .
 
-# run nix garbage collection to free up disk space
-gc:
-  nix store gc
-
 # clean all the system nix profiles
 cleanall:
-  sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
+  nh clean all
 
 # list the system nix profiles
 list:
