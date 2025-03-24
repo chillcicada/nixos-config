@@ -1,8 +1,4 @@
-{
-  pkgs,
-  vars,
-  ...
-}:
+_:
 
 {
   imports = [
@@ -23,16 +19,20 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  services.pulseaudio.support32Bit = true;
-  security.rtkit.enable = true;
+  # Enable sound with pulse and pipewire.
+  services.pulseaudio = {
+    enable = false;
+    support32Bit = true;
+  };
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  security.rtkit.enable = true; # Required for pulse and pipewire.
 
   # Enable wayland support.
   environment.sessionVariables = {

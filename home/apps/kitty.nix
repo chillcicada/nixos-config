@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  vars,
-  ...
-}:
+_:
 
 {
   programs.kitty = {
@@ -29,7 +24,6 @@
 
     shellIntegration = {
       enableZshIntegration = true;
-      enableBashIntegration = true;
     };
   };
 }
