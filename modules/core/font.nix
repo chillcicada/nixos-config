@@ -20,8 +20,9 @@
       noto-fonts-color-emoji
 
       # Microsoft fonts
-      nur.repos.rewine.ttf-wps-fonts
       nur.repos.rewine.ttf-ms-win10
+      nur.repos.rewine.ttf-wps-fonts
+
 
       # math fonts
       fira-math
@@ -56,15 +57,15 @@
       waylandFrontend = true;
 
       addons = with pkgs; [
-        fcitx5-chinese-addons # chinese
-        fcitx5-mozc # japanese
+        fcitx5-gtk # gtk support
 
         fcitx5-nord # theme
 
-        fcitx5-gtk # gtk lib
+        fcitx5-mozc # japanese
+        fcitx5-chinese-addons # chinese
 
-        fcitx5-pinyin-moegirl # pinyin
-        fcitx5-pinyin-zhwiki # pinyin
+        fcitx5-pinyin-zhwiki # pinyin lib
+        fcitx5-pinyin-moegirl # pinyin lib
       ];
 
       ignoreUserConfig = false;
