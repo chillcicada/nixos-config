@@ -53,7 +53,6 @@
     with pkgs;
     [
       gnome-tweaks
-      adwaita-icon-theme # icon theme
     ]
     ++ (with gnomeExtensions; [
       open-bar

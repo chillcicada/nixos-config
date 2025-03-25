@@ -21,10 +21,4 @@ in
   imports = [ ./apps ];
 
   programs.home-manager.enable = true;
-
-  # linked to https://github.com/catppuccin/nix/issues/275
-  qt = lib.mkForce {
-    platformTheme.name = "kvantum";
-    style.name = "kvantum";
-  };
 }

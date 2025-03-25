@@ -6,8 +6,6 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    catppuccin.url = "github:catppuccin/nix";
-
     stylix.url = "github:danth/stylix";
 
     sops-nix.url = "github:Mic92/sops-nix";

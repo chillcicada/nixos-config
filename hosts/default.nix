@@ -28,7 +28,6 @@ with inputs;
 
         ../modules/gnome/home.nix
 
-        catppuccin.homeManagerModules.catppuccin
         stylix.homeManagerModules.stylix
       ];
     };

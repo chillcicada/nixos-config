@@ -39,8 +39,7 @@
           "Noto Sans CJK SC"
         ];
         monospace = [
-          "Maple Mono NF"
-          "LXGW WenKai Mono"
+          "Maple Mono SC NF"
         ];
         emoji = [
           "Noto Color Emoji"
@@ -64,8 +63,10 @@
         fcitx5-mozc # japanese
         fcitx5-chinese-addons # chinese
 
-        fcitx5-pinyin-zhwiki # pinyin lib
-        fcitx5-pinyin-moegirl # pinyin lib
+        # pinyin libs
+        fcitx5-pinyin-zhwiki
+        fcitx5-pinyin-moegirl
+        fcitx5-pinyin-minecraft
       ];
 
       ignoreUserConfig = false;

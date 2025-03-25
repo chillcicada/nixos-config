@@ -1,35 +1,66 @@
-{
-  pkgs,
-  config,
-  vars,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   stylix = {
     enable = true;
-    # TODO: remove this by nix module
-    image = ./bg.jpg;
+    autoEnable = true;
+
+    image = ./bg.jpg; # TODO: remove this by nix module
 
     polarity = "dark";
-    autoEnable = true;
 
     targets = {
       gtk.enable = true;
 
-      kitty.enable = false;
-      fzf.enable = false;
-      yazi.enable = false;
-      btop.enable = false;
-      bat.enable = false;
       vscode.enable = false;
       neovim.enable = false;
     };
 
+    # keep in sync with modules/core/font.nix
+    fonts = {
+      serif = {
+        package = pkgs.noto-fonts-cjk-serif;
+        name = "Noto Serif CJK SC";
+      };
+
+      sansSerif = {
+        package = pkgs.noto-fonts-cjk-sans;
+        name = "Noto Sans CJK SC";
+      };
+
+      monospace = {
+        package = pkgs.maple-mono-SC-NF;
+        name = "Maple Mono SC NF";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+
+      sizes = {
+        terminal = 13;
+      };
+    };
+
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgs.catppuccin-cursors.mochaLavender;
+      name = "catppuccin-mocha-lavender-cursors";
       size = 24;
+    };
+
+    iconTheme = {
+      enable = true;
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
+      };
+      dark = "Papirus-Dark";
+      light = "Papirus-Light";
+    };
+
+    opacity = {
+      terminal = 0.8;
     };
   };
 }
