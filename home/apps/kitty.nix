@@ -26,4 +26,8 @@ _:
       enableZshIntegration = true;
     };
   };
+
+  home.sessionVariables = {
+    TERM = "kitty";
+  };
 }

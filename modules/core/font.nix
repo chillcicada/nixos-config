@@ -22,6 +22,7 @@
       # Microsoft fonts
       nur.repos.rewine.ttf-ms-win10
       nur.repos.rewine.ttf-wps-fonts
+      nur.repos.chillcicada.ttf-ms-win10-sc-sup
 
       # math fonts
       fira-math
