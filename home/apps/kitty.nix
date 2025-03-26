@@ -6,7 +6,7 @@ _:
 
     settings = {
       dynamic_background_opacity = true;
-      background_blur = 2;
+      background_blur = 16;
       window_padding_width = 10;
       tab_bar_edge = "top";
     };
@@ -22,5 +22,6 @@ _:
 
   home.sessionVariables = {
     TERM = "kitty";
+    TERMINAL = "kitty";
   };
 }

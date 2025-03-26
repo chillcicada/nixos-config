@@ -14,10 +14,6 @@ boot TARGET=current_hostname:
 re-as-root TARGET=current_hostname:
   nixos-rebuild switch --flake .#{{TARGET}} |& nom
 
-# rebuild the system configuration with verbose output
-debug TARGET=current_hostname:
-  sudo nixos-rebuild switch --show-trace --verbose --flake .#{{TARGET}} |& nom
-
 # rebuild the system configuration with verbose output and print build logs
 diagnosis TARGET=current_hostname:
   sudo nixos-rebuild switch  --show-trace --verbose --print-build-logs --flake .#{{TARGET}} |& nom
@@ -36,7 +32,7 @@ list:
 
 # update the flake
 up TARGET='':
-  sudo nix flake update {{TARGET}}
+  nix flake update {{TARGET}}
 
 # format nix files
 fmt:

@@ -1,5 +1,7 @@
 # NixOS-config
 
+<p align="center"><img src="https://img.chillcicada.com/i/2025/03/26/67e3884a2de6d.png" width=300px></p>
+
 This repo stores some cc's NixOS-configs.
 
 > Hint: this repo contains my hardware configuration, you shouldn't directly use the config to build your system.

@@ -15,8 +15,8 @@
       nix_shell.disabled = true;
 
       character = {
-        success_symbol = "[λ](bold)";
-        error_symbol = "[×](bold)";
+        success_symbol = "[λ](bold green)";
+        error_symbol = "[×](bold red)";
       };
     };
   };

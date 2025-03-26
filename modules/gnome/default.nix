@@ -8,10 +8,12 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   services.xserver.excludePackages = with pkgs; [ xterm ];
+
   services.gnome.core-utilities.enable = true;
   environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
+    gnome-logs
     gnome-maps
+    gnome-tour
     gnome-music
     gnome-contacts
     gnome-user-docs
@@ -22,7 +24,6 @@
 
     yelp # help viewer
     geary # mail client
-    gedit # text editor
     totem # video player
     baobab # disk usage analyzer
     evince # document viewer
@@ -34,8 +35,8 @@
     portal = {
       enable = true;
       extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
+        xdg-desktop-portal-wlr
         xdg-desktop-portal-gnome
       ];
     };

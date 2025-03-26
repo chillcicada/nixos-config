@@ -6,14 +6,15 @@
 {
   fonts = {
     enableDefaultPackages = true;
+
     packages = with pkgs; [
       fira
       roboto
       lxgw-wenkai
 
-      maple-mono
-      maple-mono-NF
-      maple-mono-SC-NF
+      maple-mono.truetype
+      maple-mono.NF-unhinted
+      maple-mono.NF-CN-unhinted
 
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -30,6 +31,7 @@
       newcomputermodern
       texlivePackages.cm
     ];
+
     fontconfig = {
       defaultFonts = {
         serif = [
@@ -39,7 +41,7 @@
           "Noto Sans CJK SC"
         ];
         monospace = [
-          "Maple Mono SC NF"
+          "Maple Mono NF CN"
         ];
         emoji = [
           "Noto Color Emoji"
