@@ -50,6 +50,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    git
     just
     fontconfig # font
     nix-output-monitor # nom
