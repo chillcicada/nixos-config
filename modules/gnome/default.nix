@@ -56,8 +56,10 @@
       gnome-tweaks
     ]
     ++ (with gnomeExtensions; [
+      forge
       open-bar
       appindicator
+      app-menu-is-back
     ]);
 
   services.udev.packages = with pkgs; [ gnome-settings-daemon ];
