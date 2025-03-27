@@ -29,6 +29,6 @@
 
   services.getty.autologinUser = vars.userName;
 
-  hardware.xone.enable = true;
+  hardware.xpadneo.enable = true;
   hardware.graphics.enable32Bit = true;
 }
