@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  vars,
-  lib,
-  ...
-}:
+{ lib, ... }:
 
 {
   networking = {

@@ -1,8 +1,9 @@
-_:
+{ pkgs, vars, ... }:
 
 {
   imports = [
     ./hardware.nix
+    ./networking.nix
 
     ../../modules/core
     ../../modules/gnome
@@ -41,6 +42,30 @@ _:
     QT_QPA_PLATFORM = "wayland";
     NIXOS_OZONE_WL = "1";
   };
+
+  users = {
+    users.${vars.userName} = {
+      isNormalUser = true;
+      description = vars.userFullname;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      shell = pkgs.zsh;
+    };
+  };
+
+  security.sudo.extraRules = [
+    {
+      users = [ vars.userName ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   networking.hostName = "chill";
 

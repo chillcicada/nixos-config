@@ -1,10 +1,7 @@
 { inputs, ... }:
+
 let
-  vars = {
-    userName = "cc";
-    userFullname = "chillcicada";
-    userEmail = "2210227279@qq.com";
-  };
+  vars = import ./vars.nix { inherit inputs; };
 in
 with inputs;
 {

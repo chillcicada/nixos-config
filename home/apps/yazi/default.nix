@@ -1,16 +1,10 @@
-# more infomation can be found at https://yazi-rs.github.io/
+{ pkgs, lib, ... }:
 
 {
-  pkgs,
-  config,
-  vars,
-  lib,
-  ...
-}:
-
-{
+  # refer to https://yazi-rs.github.io/ for more information
   programs.yazi = {
     enable = true;
+    package = pkgs.yazi;
     enableZshIntegration = true;
     settings = lib.importTOML ./yazi.toml;
   };

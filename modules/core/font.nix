@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   fonts = {
@@ -33,6 +30,8 @@
     ];
 
     fontconfig = {
+      enable = true;
+
       defaultFonts = {
         serif = [
           "Noto Serif CJK SC"
@@ -65,7 +64,7 @@
         fcitx5-mozc # japanese
         fcitx5-chinese-addons # chinese
 
-        # pinyin libs
+        # pinyin lib supplement
         fcitx5-pinyin-zhwiki
         fcitx5-pinyin-moegirl
         fcitx5-pinyin-minecraft

@@ -16,18 +16,6 @@
     };
   };
 
-  users.users."${vars.userName}" = {
-    isNormalUser = true;
-    description = vars.userFullname;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = pkgs.zsh;
-  };
-
-  environment.shells = with pkgs; [ zsh ];
-
   programs.zsh.enable = true;
 
   programs.nix-ld.enable = true;
@@ -49,22 +37,11 @@
     };
   };
 
+  environment.shells = with pkgs; [ zsh ];
+
   environment.systemPackages = with pkgs; [
     git
     just
-    fontconfig # font
     nix-output-monitor # nom
-  ];
-
-  security.sudo.extraRules = [
-    {
-      users = [ vars.userName ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
   ];
 }

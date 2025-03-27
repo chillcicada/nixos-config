@@ -1,4 +1,4 @@
-{ inputs, pkgs }:
+{ inputs, pkgs, ... }:
 
 [ inputs.zen-browser.packages."${pkgs.system}".default ]
 ++ (

@@ -1,16 +1,13 @@
-{
-  pkgs,
-  vars,
-  ...
-}:
+{ pkgs, vars, ... }:
 
 {
   programs.git = {
     enable = true;
+    package = pkgs.git;
     userName = vars.userFullname;
     userEmail = vars.userEmail;
     extraConfig = {
-      user.signingKey = "34C212310A99754B";
+      user.signingKey = vars.userSigningKey;
       user.timezone = "Asia/Shanghai";
       core.editor = "nvim";
       commit.gpgsign = true;

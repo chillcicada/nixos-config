@@ -1,13 +1,9 @@
-{
-  pkgs,
-  config,
-  vars,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   programs.zsh = {
     enable = true;
+    package = pkgs.zsh;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;

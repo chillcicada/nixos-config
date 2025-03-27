@@ -1,13 +1,9 @@
-{
-  pkgs,
-  config,
-  vars,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   programs.eza = {
     enable = true;
+    package = pkgs.eza;
     git = true;
     icons = "auto";
   };
