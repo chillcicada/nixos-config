@@ -55,7 +55,6 @@
     typora
     zotero
     wechat-uos
-    wakatime-cli
     teamspeak5_client
   ]
   ++ (with nur.repos; [
