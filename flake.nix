@@ -10,6 +10,8 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
+    sops.url = "github:Mic92/sops-nix";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,11 +19,6 @@
 
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
