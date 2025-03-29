@@ -15,6 +15,8 @@
       gamescopeSession.enable = true;
 
       fontPackages = with pkgs; [
+        lxgw-wenkai
+
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         noto-fonts-color-emoji
