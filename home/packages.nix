@@ -5,13 +5,11 @@
   with pkgs;
   [
     # core & utils
-    fh # flake generator
     curl # cli http client
     dust # disk usage
     tree # tree view
     wget # download files
     tokei # count code lines
-    typos # typo correction
     unzip # unzip files, required by nvim
     cachix # nix binary cache
     treefmt # tree format
@@ -23,13 +21,11 @@
 
     # python
     uv
-    rye
     ruff
     python311
 
     # typst
     typst
-    typstyle # formatter
 
     # rust
     rustup
@@ -43,7 +39,7 @@
     nil # nix linter
     nixfmt-rfc-style # formatter
 
-    # lua
+    # lua & neovim
     selene # lua linter
     stylua # lua formatter
     tree-sitter # required by nvim
