@@ -33,7 +33,6 @@
     # c/c++
     gcc
     xmake
-    clang-tools # provides clangd and clang-format
 
     # nix
     nil # nix linter

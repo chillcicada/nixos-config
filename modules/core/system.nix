@@ -18,7 +18,12 @@
 
   programs.zsh.enable = true;
 
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      icu # required by `marksman` for nvim
+    ];
+  };
 
   programs.clash-verge = {
     enable = true;
