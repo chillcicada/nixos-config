@@ -55,6 +55,10 @@
     };
   };
 
+  programs.zsh.enable = true;
+
+  environment.shells = with pkgs; [ zsh ];
+
   security.sudo.extraRules = [
     {
       users = [ vars.userName ];

@@ -16,8 +16,6 @@
     };
   };
 
-  programs.zsh.enable = true;
-
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
@@ -32,7 +30,7 @@
 
   services.openssh = {
     enable = true;
-    ports = [ 20202 ];
+    ports = [ vars.sshPort ];
     openFirewall = true;
     settings = {
       UseDns = true;
@@ -41,8 +39,6 @@
       PasswordAuthentication = true;
     };
   };
-
-  environment.shells = with pkgs; [ zsh ];
 
   environment.systemPackages = with pkgs; [
     git
