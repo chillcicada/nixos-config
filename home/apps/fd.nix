@@ -6,6 +6,7 @@
     package = pkgs.fd;
 
     ignores = [
+      ".cache/"
       ".ruff_cache/"
       ".git/"
       ".venv/"

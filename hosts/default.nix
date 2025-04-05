@@ -23,7 +23,9 @@ with inputs;
       imports = [
         ../home
 
+        ../modules/code/home.nix
         ../modules/gnome/home.nix
+        ../modules/fun/home.nix
 
         stylix.homeManagerModules.stylix
       ];
