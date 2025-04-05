@@ -5,6 +5,7 @@
     with pkgs;
     [
       qq
+      kazumi
       zotero
       wechat-uos
       teamspeak5_client
