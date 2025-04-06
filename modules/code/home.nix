@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./home ];
+
   home.packages =
     with pkgs;
     [
@@ -30,9 +32,12 @@
       nil # nix linter
       nixfmt-rfc-style # formatter
 
-      # lua
+      # lua & neovim
       selene # lua linter
       stylua # lua formatter
+      tree-sitter # required by nvim
+      lua51Packages.lua
+      luajitPackages.luarocks
 
       # misc
       tokei # count code lines
@@ -40,19 +45,6 @@
     ]
     ++ (with nur.repos; [
       # nur
-      chillcicada.typship
+      chillcicada.typship # tpyst publishing tool
     ]);
-
-  # js/ts
-  programs.bun = {
-    enable = true;
-    package = pkgs.bun;
-
-    enableGitIntegration = true;
-
-    # refer to https://bun.sh/docs/runtime/bunfig
-    settings = {
-      smol = true;
-    };
-  };
 }
