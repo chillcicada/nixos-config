@@ -12,11 +12,12 @@
 
       # python
       uv
-      ruff
-      python311
+      ruff # python linter and formatter
+      python312
 
       # typst
       typst
+      typstyle # formatter
 
       # rust
       rustup
@@ -28,6 +29,14 @@
       # nix
       nil # nix linter
       nixfmt-rfc-style # formatter
+
+      # lua
+      selene # lua linter
+      stylua # lua formatter
+
+      # misc
+      tokei # count code lines
+      treefmt # tree format
     ]
     ++ (with nur.repos; [
       # nur

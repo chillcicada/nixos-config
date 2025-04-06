@@ -7,15 +7,11 @@ with pkgs;
   dust # disk usage
   tree # tree view
   wget # download files
-  tokei # count code lines
   unzip # unzip files, required by nvim
   cachix # nix binary cache
-  treefmt # tree format
   difftastic # diff tool
 
   # lua & neovim
-  selene # lua linter
-  stylua # lua formatter
   tree-sitter # required by nvim
   lua51Packages.lua
   luajitPackages.luarocks
