@@ -8,8 +8,6 @@
 
     stylix.url = "github:danth/stylix";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
     sops-nix.url = "github:Mic92/sops-nix";
 
     home-manager = {
@@ -20,6 +18,12 @@
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 

@@ -19,7 +19,6 @@ with inputs;
 
   flake.homeModules = {
     chill = {
-      # gnome
       imports = [
         ../home
 
@@ -28,6 +27,7 @@ with inputs;
         ../modules/fun/home.nix
 
         stylix.homeManagerModules.stylix
+        zen-browser.homeModules.default
       ];
     };
   };

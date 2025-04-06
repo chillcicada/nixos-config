@@ -13,4 +13,8 @@
     ++ (with nur.repos; [
       chillcicada.wpsoffice-cn
     ]);
+
+  programs.zen-browser = {
+    enable = true;
+  };
 }
