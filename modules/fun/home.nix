@@ -7,6 +7,7 @@
     with pkgs;
     [
       qq
+      typora
       kazumi
       zotero
       wechat-uos
