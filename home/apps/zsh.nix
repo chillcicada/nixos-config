@@ -7,6 +7,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history.size = 20000;
     oh-my-zsh = {
       enable = true;
       plugins = [
@@ -27,12 +28,22 @@
       # cargo
       export PATH="$PATH:$HOME/.cargo/bin"
       # cargo end
+
+      # yazi
+      function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+          builtin cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+      }
+      # yazi end
     '';
     shellAliases = {
       # ! special character alias
       f = "fastfetch";
       j = "just";
-      y = "yazi";
       c = "code";
       py = "python";
 
