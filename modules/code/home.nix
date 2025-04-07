@@ -27,6 +27,7 @@
       # c/c++
       gcc
       xmake
+      gnumake # required by neovim
 
       # nix
       nil # nix linter
