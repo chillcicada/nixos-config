@@ -59,6 +59,7 @@
       forge
       open-bar
       appindicator
+      blur-my-shell
       app-menu-is-back
     ]);
 

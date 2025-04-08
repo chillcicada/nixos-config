@@ -26,7 +26,6 @@
       fira-math
       julia-mono
       newcomputermodern
-      texlivePackages.cm
     ];
 
     fontconfig = {
@@ -65,7 +64,6 @@
         # pinyin lib supplement
         fcitx5-pinyin-zhwiki
         fcitx5-pinyin-moegirl
-        fcitx5-pinyin-minecraft
       ];
 
       ignoreUserConfig = false;
