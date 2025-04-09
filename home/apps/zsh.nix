@@ -18,7 +18,7 @@
     plugins = [ ];
     initExtra = ''
       # pnpm
-      export PNPM_HOME="/home/cc/.local/share/pnpm"
+      export PNPM_HOME="$HOME/.local/share/pnpm"
       case ":$PATH:" in
         *":$PNPM_HOME:"*) ;;
         *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -28,6 +28,10 @@
       # cargo
       export PATH="$PATH:$HOME/.cargo/bin"
       # cargo end
+
+      # uv
+      export PATH="$PATH:$HOME/.local/bin"
+      # uv end
 
       # yazi
       function y() {
