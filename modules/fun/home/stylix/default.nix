@@ -1,11 +1,14 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
+let
+  backgroundImage = "${inputs.imgs.packages."${pkgs.system}".default}/share/wallpapers/bg.jpg";
+in
 {
   stylix = {
     enable = true;
     autoEnable = true;
 
-    image = ./bg.jpg; # TODO: remove this by nix module
+    image = backgroundImage;
 
     polarity = "dark";
 
