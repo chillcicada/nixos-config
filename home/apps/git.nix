@@ -14,6 +14,7 @@
       credential.helper = "store";
       credential.credentialStore = "cache";
       init.defaultBranch = "main";
+      pull.rebase = true;
     };
     lfs.enable = true;
   };
