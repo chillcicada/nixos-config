@@ -40,6 +40,9 @@
       lua51Packages.lua
       luajitPackages.luarocks
 
+      # go
+      go # required by neovim
+
       # misc
       tokei # count code lines
       treefmt # tree format
