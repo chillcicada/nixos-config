@@ -43,6 +43,9 @@
       # go
       go # required by neovim
 
+      # toml
+      taplo
+
       # misc
       tokei # count code lines
       treefmt # tree format
