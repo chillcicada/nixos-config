@@ -11,6 +11,7 @@
       kazumi
       zotero
       wechat-uos
+      cherry-studio
       teamspeak5_client
     ]
     ++ (with nur.repos; [
