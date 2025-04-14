@@ -33,6 +33,20 @@
       url = "github:chillcicada/imgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvim-config = {
+      type = "github";
+      owner = "chillcicada";
+      repo = "nvim-config";
+      flake = false;
+    };
+
+    typora-themes = {
+      type = "github";
+      owner = "chillcicada";
+      repo = "typora-themes";
+      flake = false;
+    };
   };
 
   outputs =

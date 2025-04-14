@@ -414,6 +414,22 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744517615,
+        "narHash": "sha256-nWMS0rqHTxNPmlhLD2PZfG6Ll4FALxUiGty+P5JY4W8=",
+        "owner": "chillcicada",
+        "repo": "nvim-config",
+        "rev": "3bb4e366e0207269fd0bb8e00538790df19d41a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chillcicada",
+        "repo": "nvim-config",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -421,8 +437,10 @@
         "imgs": "imgs",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
+        "nvim-config": "nvim-config",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
+        "typora-themes": "typora-themes",
         "zen-browser": "zen-browser"
       }
     },
@@ -618,6 +636,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "typora-themes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1741583163,
+        "narHash": "sha256-RgVbFzhN01u3w0/F4AHQCIm1qUyMjJYk6DI2zECYo0k=",
+        "owner": "chillcicada",
+        "repo": "typora-themes",
+        "rev": "aa393a4db50012c0ce53840c1d0d85739b916738",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chillcicada",
+        "repo": "typora-themes",
         "type": "github"
       }
     },
