@@ -23,11 +23,6 @@
     ];
   };
 
-  programs.clash-verge = {
-    enable = true;
-    autoStart = true;
-  };
-
   services.openssh = {
     enable = true;
     ports = [ vars.sshPort ];

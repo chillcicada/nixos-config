@@ -8,6 +8,7 @@
     ../../modules/core
     ../../modules/gnome
     ../../modules/steam
+    ../../modules/desktop
   ];
 
   # Bootloader.
