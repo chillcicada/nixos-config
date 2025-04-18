@@ -101,7 +101,6 @@
       appindicator
       blur-my-shell
       app-menu-is-back
-      battery-health-charging
     ]);
 
   programs.dconf.enable = true;
