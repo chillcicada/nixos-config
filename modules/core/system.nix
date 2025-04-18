@@ -11,9 +11,6 @@
     backupFileExtension = "homeManagerBackup";
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${vars.userName} = {
-      imports = [ inputs.self.homeModules.chill ];
-    };
   };
 
   programs.nix-ld = {

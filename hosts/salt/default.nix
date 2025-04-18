@@ -1,4 +1,9 @@
-{ pkgs, vars, ... }:
+{
+  pkgs,
+  inputs,
+  vars,
+  ...
+}:
 
 {
   imports = [
@@ -49,6 +54,12 @@
       ];
     }
   ];
+
+  home-manager = {
+    users.${vars.userName} = {
+      imports = [ inputs.self.homeModules.salt ];
+    };
+  };
 
   fonts = {
     enableDefaultPackages = true;

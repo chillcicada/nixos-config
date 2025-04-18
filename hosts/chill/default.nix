@@ -1,4 +1,9 @@
-{ pkgs, vars, ... }:
+{
+  pkgs,
+  inputs,
+  vars,
+  ...
+}:
 
 {
   imports = [
@@ -72,6 +77,12 @@
     }
   ];
 
+  home-manager = {
+    users.${vars.userName} = {
+      imports = [ inputs.self.homeModules.chill ];
+    };
+  };
+
   console = {
     earlySetup = true;
     font = "ter-i32b";
@@ -86,6 +97,9 @@
   };
 
   services.openssh = {
-    ports = [ vars.sshPort 22 ];
+    ports = [
+      vars.sshPort
+      22
+    ];
   };
 }
