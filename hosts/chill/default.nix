@@ -71,4 +71,21 @@
       ];
     }
   ];
+
+  console = {
+    earlySetup = true;
+    font = "ter-i32b";
+    packages = with pkgs; [ terminus_font ];
+    keyMap = "us";
+  };
+
+  nixpkgs = {
+    config = {
+      permittedInsecurePackages = [ "electron-11.5.0" ];
+    };
+  };
+
+  services.openssh = {
+    ports = [ vars.sshPort ];
+  };
 }

@@ -36,7 +36,7 @@
       # lua & neovim
       selene # lua linter
       stylua # lua formatter
-      tree-sitter # required by nvim
+      tree-sitter
       lua51Packages.lua
       luajitPackages.luarocks
 

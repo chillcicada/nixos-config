@@ -19,6 +19,20 @@ with inputs;
 
       system.stateVersion = "25.05";
     };
+
+    salt = {
+      imports = [
+        ./salt
+
+        nur.modules.nixos.default
+        sops-nix.nixosModules.sops
+        home-manager.nixosModules.home-manager
+      ];
+
+      networking.hostName = "salt";
+
+      system.stateVersion = "24.11";
+    };
   };
 
   flake.homeModules = {
@@ -35,6 +49,16 @@ with inputs;
       ];
 
       home.stateVersion = "25.05";
+    };
+
+    salt = {
+      imports = [
+        ../home
+
+        ../modules/code/home.nix
+      ];
+
+      home.stateVersion = "24.11";
     };
   };
 

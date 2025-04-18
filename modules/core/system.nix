@@ -25,7 +25,6 @@
 
   services.openssh = {
     enable = true;
-    ports = [ vars.sshPort ];
     openFirewall = true;
     settings = {
       UseDns = true;
