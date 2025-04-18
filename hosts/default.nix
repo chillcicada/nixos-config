@@ -14,6 +14,10 @@ with inputs;
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
+
+      networking.hostName = "chill";
+
+      system.stateVersion = "25.05";
     };
   };
 
@@ -29,6 +33,8 @@ with inputs;
         stylix.homeManagerModules.stylix
         zen-browser.homeModules.default
       ];
+
+      home.stateVersion = "25.05";
     };
   };
 

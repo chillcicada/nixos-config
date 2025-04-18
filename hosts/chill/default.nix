@@ -71,8 +71,4 @@
       ];
     }
   ];
-
-  networking.hostName = "chill";
-
-  system.stateVersion = "25.05";
 }

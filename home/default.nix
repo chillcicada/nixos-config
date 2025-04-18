@@ -13,7 +13,6 @@ in
     username = vars.userName;
     homeDirectory = "/home/${vars.userName}";
     packages = packages;
-    stateVersion = "25.05";
   };
 
   # https://nix-community.github.io/home-manager/options.xhtml
