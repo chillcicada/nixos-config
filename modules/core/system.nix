@@ -35,11 +35,6 @@
     };
   };
 
-  services.mihomo = {
-    enable = true;
-    webui = pkgs.metacubexd;
-  };
-
   environment.systemPackages = with pkgs; [
     git
     just
