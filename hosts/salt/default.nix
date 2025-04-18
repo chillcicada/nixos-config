@@ -64,10 +64,6 @@
     enableDefaultPackages = true;
 
     packages = with pkgs; [
-      fira
-      roboto
-      lxgw-wenkai
-
       maple-mono.truetype
       maple-mono.NF-unhinted
       maple-mono.NF-CN-unhinted
