@@ -49,22 +49,6 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  users = {
-    users.${vars.userName} = {
-      isNormalUser = true;
-      description = vars.userFullname;
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-      shell = pkgs.zsh;
-    };
-  };
-
-  programs.zsh.enable = true;
-
-  environment.shells = with pkgs; [ zsh ];
-
   security.sudo.extraRules = [
     {
       users = [ vars.userName ];

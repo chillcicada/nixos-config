@@ -13,6 +13,22 @@
     useUserPackages = true;
   };
 
+  users = {
+    users.${vars.userName} = {
+      isNormalUser = true;
+      description = vars.userFullname;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
+      shell = pkgs.zsh;
+    };
+  };
+
+  programs.zsh.enable = true;
+
+  environment.shells = with pkgs; [ zsh ];
+
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [

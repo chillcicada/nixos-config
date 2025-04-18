@@ -15,29 +15,14 @@
     ../../modules/core/locale.nix
     ../../modules/core/system.nix
     ../../modules/core/nixpkgs.nix
-    ../../modules/services/webdav
+    ../../modules/services/nginx-proxy-manager
   ];
 
   boot.tmp.cleanOnBoot = true;
 
   zramSwap.enable = true;
 
-  users = {
-    users.${vars.userName} = {
-      isNormalUser = true;
-      description = vars.userFullname;
-      extraGroups = [
-        "networkmanager"
-        "docker"
-        "wheel"
-      ];
-      shell = pkgs.zsh;
-    };
-  };
-
-  programs.zsh.enable = true;
-
-  environment.shells = with pkgs; [ zsh ];
+  users.extraGroups.docker.members = [ vars.userName ];
 
   security.sudo.extraRules = [
     {
@@ -49,10 +34,6 @@
         }
       ];
     }
-  ];
-
-  environment.systemPackages = with pkgs; [
-    merecat
   ];
 
   home-manager = {

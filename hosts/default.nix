@@ -25,6 +25,7 @@ with inputs;
         ./salt
 
         nur.modules.nixos.default
+        arion.nixosModules.arion
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];

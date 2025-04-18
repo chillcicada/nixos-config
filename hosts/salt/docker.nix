@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # merecat
     arion
     docker-client
   ];
@@ -13,6 +14,4 @@
     };
     arion.backend = "docker";
   };
-
-  environment.persistence."/persistent".directories = [ "/var/lib/docker" ];
 }

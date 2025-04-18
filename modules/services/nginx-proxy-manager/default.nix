@@ -15,13 +15,13 @@
             "ENABLE_DNSMASQ" = "true";
           };
           volumes = [
-            "/Storage/Services/Nginx-Proxy-Manager/data:/data"
-            "/Storage/Services/Nginx-Proxy-Manager/letsencrypt:/etc/letsencrypt"
+            "/opt/storage/nginx-proxy-manager/data:/data"
+            "/opt/storage/nginx-proxy-manager/letsencrypt:/etc/letsencrypt"
           ];
           ports = [
             "80:80"
-            "443:443"
             "81:81"
+            "443:443"
           ];
           networks = [
             "public"
