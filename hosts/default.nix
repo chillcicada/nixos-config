@@ -42,6 +42,7 @@ with inputs;
 
         ../modules/code/home.nix
         ../modules/gnome/home.nix
+        ../modules/editor/home.nix
         ../modules/desktop/home.nix
 
         stylix.homeManagerModules.stylix

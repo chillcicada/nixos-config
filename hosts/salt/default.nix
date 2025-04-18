@@ -14,7 +14,6 @@
     ../../modules/core/locale.nix
     ../../modules/core/system.nix
     ../../modules/core/nixpkgs.nix
-    # ../../modules/mihomo
   ];
 
   boot.tmp.cleanOnBoot = true;
