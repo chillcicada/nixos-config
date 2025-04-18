@@ -41,3 +41,7 @@ fmt:
 # find all the files that get backup by home-manager
 fd:
   fd -H -e '.homeManagerBackup' -p ~
+
+push TARGET:
+  git add --all
+  nixos-rebuild --target-host {{TARGET}} --verbose --use-remote-sudo switch --flake .#{{TARGET}} |& nom

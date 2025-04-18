@@ -2,16 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # merecat
-    arion
-    docker-client
+    docker-compose
   ];
 
   virtualisation = {
     docker = {
       enable = true;
-      liveRestore = false;
+      autoPrune.enable = true;
     };
-    arion.backend = "docker";
+    oci-containers.backend = "docker";
   };
 }

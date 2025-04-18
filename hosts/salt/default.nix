@@ -15,7 +15,6 @@
     ../../modules/core/locale.nix
     ../../modules/core/system.nix
     ../../modules/core/nixpkgs.nix
-    ../../modules/services/nginx-proxy-manager
   ];
 
   boot.tmp.cleanOnBoot = true;
