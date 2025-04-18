@@ -48,4 +48,41 @@
       ];
     }
   ];
+
+  fonts = {
+    enableDefaultPackages = true;
+
+    packages = with pkgs; [
+      fira
+      roboto
+      lxgw-wenkai
+
+      maple-mono.truetype
+      maple-mono.NF-unhinted
+      maple-mono.NF-CN-unhinted
+
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+    ];
+
+    fontconfig = {
+      enable = true;
+
+      defaultFonts = {
+        serif = [
+          "Noto Serif CJK SC"
+        ];
+        sansSerif = [
+          "Noto Sans CJK SC"
+        ];
+        monospace = [
+          "Maple Mono NF CN"
+        ];
+        emoji = [
+          "Noto Color Emoji"
+        ];
+      };
+    };
+  };
 }

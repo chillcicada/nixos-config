@@ -67,4 +67,10 @@ with inputs;
     specialArgs = { inherit inputs system vars; };
     modules = [ self.nixosModules.chill ];
   };
+
+  flake.nixosConfigurations.salt = nixpkgs.lib.nixosSystem rec {
+    system = "x86_64-linux";
+    specialArgs = { inherit inputs system vars; };
+    modules = [ self.nixosModules.salt ];
+  };
 }
