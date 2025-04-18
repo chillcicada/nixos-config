@@ -86,6 +86,6 @@
   };
 
   services.openssh = {
-    ports = [ vars.sshPort ];
+    ports = [ vars.sshPort 22 ];
   };
 }
