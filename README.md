@@ -1,6 +1,6 @@
 # NixOS-config
 
-<p align="center"><img src="https://img.chillcicada.com/i/2025/03/26/67e3884a2de6d.png" width=300px></p>
+<p align="center"><img src="https://img.chillcicada.com/i/2025/04/19/68030a566a60e.png" width=300px></p>
 
 This repo stores some cc's NixOS-configs.
 

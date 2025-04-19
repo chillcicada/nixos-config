@@ -45,7 +45,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    history.size = 10000;
+    oh-my-zsh.enable = true;
     initExtra = ''
       # yazi
       function y() {
