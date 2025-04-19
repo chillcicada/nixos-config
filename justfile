@@ -44,4 +44,4 @@ fd:
 
 push TARGET:
   git add --all
-  nixos-rebuild --target-host {{TARGET}} --verbose --use-remote-sudo switch --flake .#{{TARGET}} |& nom
+  nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake .#{{TARGET}} |& nom
