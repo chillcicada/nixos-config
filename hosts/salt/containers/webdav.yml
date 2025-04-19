@@ -1,0 +1,12 @@
+services:
+  webdav:
+    container_name: webdav
+    image: bytemark/webdav
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      USERNAME: <USERNAME>
+      PASSWORD: <PASSWORD>
+    volumes:
+      - ./data:/var/lib/dav/data
