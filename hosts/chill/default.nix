@@ -61,6 +61,12 @@
     }
   ];
 
+  environment.systemPackages = with pkgs; [
+    git
+    just
+    nix-output-monitor # nom
+  ];
+
   home-manager = {
     users.${vars.userName} = {
       imports = [ inputs.self.homeModules.chill ];
@@ -84,6 +90,12 @@
     ports = [
       vars.sshPort
       22
+    ];
+  };
+
+  programs.nix-ld = {
+    libraries = with pkgs; [
+      icu # required by `marksman` for nvim
     ];
   };
 }

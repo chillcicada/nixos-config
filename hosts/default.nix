@@ -24,14 +24,13 @@ with inputs;
       imports = [
         ./salt
 
-        nur.modules.nixos.default
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
 
       networking.hostName = "salt";
 
-      system.stateVersion = "24.11";
+      system.stateVersion = "25.05";
     };
   };
 
@@ -54,12 +53,10 @@ with inputs;
 
     salt = {
       imports = [
-        ../home
-
-        ../modules/code/home.nix
+        ../home/minimal.nix
       ];
 
-      home.stateVersion = "24.11";
+      home.stateVersion = "25.05";
     };
   };
 

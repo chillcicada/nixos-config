@@ -29,12 +29,7 @@
 
   environment.shells = with pkgs; [ zsh ];
 
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [
-      icu # required by `marksman` for nvim
-    ];
-  };
+  programs.nix-ld.enable = true;
 
   services.openssh = {
     enable = true;
@@ -46,10 +41,4 @@
       PasswordAuthentication = true;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    git
-    just
-    nix-output-monitor # nom
-  ];
 }
