@@ -2,7 +2,7 @@ services:
   lsky-pro:
     container_name: lsky-pro
     image: dko0/lsky-pro
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./data/html:/var/www/html
     ports:
@@ -16,7 +16,7 @@ services:
   mysql:
     image: mysql:8.0
     container_name: lsky-pro-db # sql address
-    restart: always
+    restart: unless-stopped
     environment:
       - MYSQL_DATABASE=<DB_NAME>
       - MYSQL_USER=<USERNAME>

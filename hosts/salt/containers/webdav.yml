@@ -2,7 +2,7 @@ services:
   webdav:
     container_name: webdav
     image: bytemark/webdav
-    restart: always
+    restart: unless-stopped
     ports:
       - 8080:80
     environment:
