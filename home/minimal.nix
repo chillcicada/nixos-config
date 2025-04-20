@@ -23,6 +23,12 @@
     package = pkgs.fd;
   };
 
+  programs.helix = {
+    enable = true;
+    package = pkgs.helix;
+    defaultEditor = true;
+  };
+
   programs.yazi = {
     enable = true;
     package = pkgs.yazi;
@@ -69,7 +75,6 @@
     ./apps/btop.nix
     ./apps/fastfetch.nix
     ./apps/fzf.nix
-    ./apps/helix.nix
     ./apps/nh.nix
     ./apps/ripgrep.nix
     ./apps/starship.nix
