@@ -6,13 +6,24 @@
 
     firewall = {
       allowedTCPPorts = [
-        80 # Nginx Services
-        81 # Nginx Web Admin
-        443 # Nginx Services (HTTPS)
-        7791 # lsky-pro
-        8080 # webdav
+        # nginx proxy manager
+        80 # for http
+        81 # web panel
+        443 # for https
+
+        # lsky-pro
+        7791
+
+        # webdav
+        8080
+
+        # teamspeak
+        10011 # server query
+        30033 # file transfer
       ];
       allowedUDPPorts = [
+        # teamspeak
+        9987 # voice
       ];
     };
   };
