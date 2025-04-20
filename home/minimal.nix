@@ -42,6 +42,14 @@
         wrap = "yes";
         tab_size = 2;
       };
+      opener = {
+        edit = [
+          {
+            run = "hx $@";
+            block = true;
+          }
+        ];
+      };
     };
   };
 
