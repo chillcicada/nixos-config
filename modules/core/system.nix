@@ -39,8 +39,6 @@
 
   environment.shells = with pkgs; [ zsh ];
 
-  programs.nix-ld.enable = true;
-
   services.openssh = {
     enable = true;
     openFirewall = true;

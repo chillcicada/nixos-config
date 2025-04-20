@@ -71,7 +71,10 @@
     22
   ];
 
-  programs.nix-ld.libraries = with pkgs; [
-    icu # required by `marksman` for nvim
-  ];
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      icu # required by `marksman` for nvim
+    ];
+  };
 }
