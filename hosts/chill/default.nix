@@ -49,29 +49,13 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  security.sudo.extraRules = [
-    {
-      users = [ vars.userName ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
-
   environment.systemPackages = with pkgs; [
     git
     just
     nix-output-monitor # nom
   ];
 
-  home-manager = {
-    users.${vars.userName} = {
-      imports = [ inputs.self.homeModules.chill ];
-    };
-  };
+  home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
 
   console = {
     earlySetup = true;
@@ -80,22 +64,14 @@
     keyMap = "us";
   };
 
-  nixpkgs = {
-    config = {
-      permittedInsecurePackages = [ "electron-11.5.0" ];
-    };
-  };
+  nixpkgs.config.permittedInsecurePackages = [ "electron-11.5.0" ];
 
-  services.openssh = {
-    ports = [
-      vars.sshPort
-      22
-    ];
-  };
+  services.openssh.ports = [
+    vars.sshPort
+    22
+  ];
 
-  programs.nix-ld = {
-    libraries = with pkgs; [
-      icu # required by `marksman` for nvim
-    ];
-  };
+  programs.nix-ld.libraries = with pkgs; [
+    icu # required by `marksman` for nvim
+  ];
 }

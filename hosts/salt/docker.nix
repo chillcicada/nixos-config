@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, vars, ... }:
 
 {
   environment.systemPackages = with pkgs; [
     docker-compose
   ];
+
+  users.extraGroups.docker.members = [ vars.userName ];
 
   virtualisation = {
     docker = {

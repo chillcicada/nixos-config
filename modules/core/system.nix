@@ -13,17 +13,27 @@
     useUserPackages = true;
   };
 
-  users = {
-    users.${vars.userName} = {
-      isNormalUser = true;
-      description = vars.userFullname;
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-      shell = pkgs.zsh;
-    };
+  users.users.${vars.userName} = {
+    isNormalUser = true;
+    description = vars.userFullname;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    shell = pkgs.zsh;
   };
+
+  security.sudo.extraRules = [
+    {
+      users = [ vars.userName ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   programs.zsh.enable = true;
 

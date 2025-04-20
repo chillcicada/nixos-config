@@ -76,5 +76,8 @@
     ./apps/zoxide.nix
   ];
 
+  # misc
+  fonts.fontconfig.enable = false;
+
   programs.home-manager.enable = true;
 }

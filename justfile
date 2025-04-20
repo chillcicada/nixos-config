@@ -42,6 +42,7 @@ fmt:
 fd:
   fd -H -e '.homeManagerBackup' -p ~
 
+# build system and push to remote host
 push TARGET:
   git add --all
   nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake .#{{TARGET}} |& nom
