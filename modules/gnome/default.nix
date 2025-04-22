@@ -57,6 +57,7 @@
     gnome-user-docs
     gnome-calculator
     gnome-characters
+    gnome-connections
     gnome-font-viewer
     gnome-text-editor
     gnome-disk-utility
