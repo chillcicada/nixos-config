@@ -65,6 +65,7 @@
     };
   };
 
+  # pick up which to use
   imports = [
     ./apps/bat.nix
     ./apps/btop.nix
@@ -76,7 +77,7 @@
     ./apps/zoxide.nix
   ];
 
-  # misc
+  # disable fontconfig
   fonts.fontconfig.enable = false;
 
   programs.home-manager.enable = true;

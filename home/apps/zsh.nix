@@ -16,7 +16,7 @@
       ];
     };
     plugins = [ ];
-    initExtra = ''
+    initContent = ''
       # pnpm
       export PNPM_HOME="$HOME/.local/share/pnpm"
       case ":$PATH:" in
