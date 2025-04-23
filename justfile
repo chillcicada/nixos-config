@@ -22,10 +22,6 @@ diagnosis TARGET=current_hostname:
 test:
   nix flake check .
 
-# clean all the system nix profiles
-cleanall:
-  nh clean all
-
 # list the system nix profiles
 list:
   nix profile history --profile /nix/var/nix/profiles/system
@@ -33,14 +29,6 @@ list:
 # update the flake
 up TARGET='':
   nix flake update {{TARGET}}
-
-# format nix files
-fmt:
-  treefmt
-
-# find all the files that get backup by home-manager
-fd:
-  fd -H -e '.homeManagerBackup' -p ~
 
 # build system and push to remote host
 push TARGET:
