@@ -23,6 +23,8 @@
     shell = pkgs.zsh;
   };
 
+  users.users.root.shell = pkgs.zsh;
+
   security.sudo.extraRules = [
     {
       users = [ vars.userName ];
@@ -38,6 +40,8 @@
   programs.zsh.enable = true;
 
   environment.shells = with pkgs; [ zsh ];
+
+  environment.defaultPackages = [ ];
 
   services.openssh = {
     enable = true;
