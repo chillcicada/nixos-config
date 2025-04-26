@@ -17,11 +17,6 @@
     icons = "auto";
   };
 
-  programs.fd = {
-    enable = true;
-    package = pkgs.fd;
-  };
-
   programs.helix = {
     enable = true;
     package = pkgs.helix;
@@ -35,15 +30,16 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
+    shellAliases = {
+      # ! single character aliases
+      f = "ufetch";
+    };
   };
 
   # pick up which to use
   imports = [
-    ./apps/bat.nix
     ./apps/btop.nix
-    ./apps/fzf.nix
     ./apps/nh.nix
-    ./apps/ripgrep.nix
     ./apps/starship.nix
     ./apps/zoxide.nix
   ];

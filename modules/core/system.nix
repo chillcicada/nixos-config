@@ -41,6 +41,12 @@
 
   environment.defaultPackages = [ ];
 
+  # nixpkgs config
+  nixpkgs.config = {
+    allowUnfree = true;
+    allowUnsupportedSystem = true;
+  };
+
   services.openssh = {
     enable = true;
     openFirewall = true;

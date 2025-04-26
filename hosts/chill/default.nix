@@ -11,9 +11,9 @@
     ./networking.nix
 
     ../../modules/core
-    ../../modules/gnome
     ../../modules/steam
-    ../../modules/desktop
+    ../../modules/graphics
+    ../../modules/desktop/gnome
   ];
 
   # Bootloader.

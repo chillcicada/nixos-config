@@ -22,7 +22,7 @@
       nur.repos.rewine.ttf-wps-fonts
       nur.repos.chillcicada.ttf-ms-win10-sc-sup
 
-      # math fonts
+      # math fonts, requred by Typst Math
       fira-math
       julia-mono
       newcomputermodern

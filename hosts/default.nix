@@ -24,7 +24,6 @@ with inputs;
       imports = [
         ./salt
 
-        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
 
@@ -40,9 +39,9 @@ with inputs;
         ../home
 
         ../modules/code/home.nix
-        ../modules/gnome/home.nix
         ../modules/editor/home.nix
-        ../modules/desktop/home.nix
+        ../modules/graphics/home.nix
+        ../modules/desktop/gnome/home.nix
 
         stylix.homeManagerModules.stylix
         zen-browser.homeModules.default
