@@ -6,6 +6,7 @@
     homeDirectory = "/home/${vars.userName}";
     packages = with pkgs; [
       dust
+      ufetch
       nix-tree
     ];
   };
@@ -27,30 +28,6 @@
     defaultEditor = true;
   };
 
-  programs.yazi = {
-    enable = true;
-    package = pkgs.yazi;
-    enableZshIntegration = true;
-    settings = {
-      manager = {
-        show_hidden = true;
-        show_symlink = true;
-      };
-      preview = {
-        wrap = "yes";
-        tab_size = 2;
-      };
-      opener = {
-        edit = [
-          {
-            run = "hx $@";
-            block = true;
-          }
-        ];
-      };
-    };
-  };
-
   programs.zsh = {
     enable = true;
     package = pkgs.zsh;
@@ -58,17 +35,12 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     oh-my-zsh.enable = true;
-    shellAliases = {
-      # ! special character alias
-      f = "fastfetch";
-    };
   };
 
   # pick up which to use
   imports = [
     ./apps/bat.nix
     ./apps/btop.nix
-    ./apps/fastfetch.nix
     ./apps/fzf.nix
     ./apps/nh.nix
     ./apps/ripgrep.nix
