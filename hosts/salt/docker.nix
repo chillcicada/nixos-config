@@ -18,6 +18,5 @@
         ];
       };
     };
-    oci-containers.backend = "docker";
   };
 }

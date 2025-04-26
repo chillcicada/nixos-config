@@ -1,6 +1,11 @@
 { lib, ... }:
 
 {
+  services.openssh.ports = [
+    22
+    20202
+  ];
+
   networking = {
     networkmanager = {
       enable = true;

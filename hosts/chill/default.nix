@@ -66,11 +66,6 @@
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-11.5.0" ];
 
-  services.openssh.ports = [
-    vars.sshPort
-    22
-  ];
-
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [

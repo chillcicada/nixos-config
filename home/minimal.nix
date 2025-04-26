@@ -5,7 +5,6 @@
     username = vars.userName;
     homeDirectory = "/home/${vars.userName}";
     packages = with pkgs; [
-      curl
       dust
       nix-tree
     ];

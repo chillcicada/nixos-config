@@ -23,8 +23,6 @@
     shell = pkgs.zsh;
   };
 
-  users.users.root.shell = pkgs.zsh;
-
   security.sudo.extraRules = [
     {
       users = [ vars.userName ];

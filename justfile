@@ -34,3 +34,7 @@ up TARGET='':
 push TARGET:
   git add --all
   nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake .#{{TARGET}} |& nom
+
+# tree view of the system configuration dependencies
+tree:
+  nix-store --gc --print-roots | rg -v '/proc/' | rg -Po '(?<= -> ).*' | xargs -o nix-tree

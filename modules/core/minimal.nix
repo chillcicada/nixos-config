@@ -1,10 +1,7 @@
-{
-  pkgs,
-  lib,
-  vars,
-  inputs,
-  ...
-}:
+# This file contains the minimal core configuration for a NixOS system.
+# No graphical environment is included.
+
+{ vars, ... }:
 
 {
   imports = [
@@ -13,11 +10,8 @@
 
   # nix
   nix = {
-    package = pkgs.nix;
     channel.enable = false;
-    registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
-      nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       auto-optimise-store = true;
       experimental-features = [
         "nix-command"
@@ -26,8 +20,6 @@
       trusted-users = [ vars.userName ];
     };
   };
-
-  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
 
   # locales
   time.timeZone = "Asia/Shanghai";
