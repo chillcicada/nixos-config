@@ -39,6 +39,7 @@ with inputs;
         ../home
 
         ../modules/code/home.nix
+        ../modules/games/home.nix
         ../modules/editor/home.nix
         ../modules/graphics/home.nix
         ../modules/desktop/gnome/home.nix
