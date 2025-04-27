@@ -7,6 +7,7 @@
 
 {
   imports = [
+    ./nvidia.nix
     ./hardware.nix
     ./networking.nix
 

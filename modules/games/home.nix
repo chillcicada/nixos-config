@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    # minecraft
+    # HMCL - Minecraft Launcher
     hmcl
   ];
 }
