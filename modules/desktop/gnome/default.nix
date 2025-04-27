@@ -66,6 +66,7 @@
     tali # task manager
     yelp # help viewer
     geary # mail client
+    loupe # image viewer
     iagno # solitaire
     totem # video player
     baobab # disk usage analyzer
