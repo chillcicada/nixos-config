@@ -6,7 +6,7 @@
     homeDirectory = "/home/${vars.userName}";
     packages = with pkgs; [
       dust
-      ufetch
+      ufetch # alternative to fastfetch
       nix-tree
     ];
   };
@@ -21,6 +21,20 @@
     enable = true;
     package = pkgs.helix;
     defaultEditor = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    package = pkgs.starship;
+    enableZshIntegration = true;
+
+    settings = {
+      username.disabled = true;
+      character = {
+        success_symbol = "[λ](bold green)";
+        error_symbol = "[×](bold red)";
+      };
+    };
   };
 
   programs.zsh = {
@@ -40,7 +54,6 @@
   imports = [
     ./apps/btop.nix
     ./apps/nh.nix
-    ./apps/starship.nix
     ./apps/zoxide.nix
   ];
 
