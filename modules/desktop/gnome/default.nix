@@ -58,12 +58,12 @@
     gnome-calculator
     gnome-characters
     gnome-connections
+    gnome-backgrounds
     gnome-font-viewer
     gnome-text-editor
     gnome-disk-utility
 
     orca # screen reader
-    tali # task manager
     yelp # help viewer
     geary # mail client
     loupe # image viewer
