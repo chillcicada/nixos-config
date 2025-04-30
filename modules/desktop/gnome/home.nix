@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+  services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
 
   home.packages =
     with pkgs;

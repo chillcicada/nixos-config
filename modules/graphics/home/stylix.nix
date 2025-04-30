@@ -1,22 +1,20 @@
 { inputs, pkgs, ... }:
 
 let
-  backgroundImage = "${inputs.imgs.packages."${pkgs.system}".default}/share/wallpapers/bg.jpg";
+  backgroundImage = "${inputs.imgs.packages."${pkgs.system}".default}/share/wallpapers/BA.png";
 in
 {
   stylix = {
     enable = true;
     autoEnable = true;
-
     image = backgroundImage;
-
     polarity = "dark";
 
     targets = {
       gtk.enable = true;
 
-      vscode.enable = false;
       neovim.enable = false;
+      vscode.enable = false;
     };
 
     # keep in sync with modules/core/font.nix

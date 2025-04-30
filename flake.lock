@@ -309,11 +309,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1744164483,
-        "narHash": "sha256-SmrB9w18li2KeVBOO4GpeC0zYW6oOq1ii88gZF0b6wc=",
+        "lastModified": 1745990477,
+        "narHash": "sha256-lJzf9LMh/5znXgUH6Xcfi9/iQtlFOoZnChkaU+/Gok4=",
         "owner": "chillcicada",
         "repo": "imgs",
-        "rev": "218f5a63ffafbe9b610d39cab1b736108a3388eb",
+        "rev": "c72387636530db2b3d226846a322340cfa3fb7ba",
         "type": "github"
       },
       "original": {
