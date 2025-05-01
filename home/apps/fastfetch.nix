@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.fastfetch = {
     enable = true;
-    package = pkgs.fastfetch;
 
     settings = {
       modules = [
@@ -32,6 +31,12 @@
         "memory"
         "swap"
         "disk"
+
+        # Set a break
+        "break"
+
+        # Color Scheme
+        "colors"
       ];
     };
   };

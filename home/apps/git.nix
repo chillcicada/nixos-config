@@ -1,9 +1,8 @@
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
   programs.git = {
     enable = true;
-    package = pkgs.git;
     userName = vars.userFullname;
     userEmail = vars.userEmail;
     extraConfig = {

@@ -8,6 +8,8 @@
   home.packages =
     with pkgs;
     [
+      hyprshot # screenshot
+      snapshot # camera
       nautilus # file manager
     ]
     ++ (with nur.repos; [

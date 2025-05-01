@@ -13,19 +13,16 @@
 
   programs.eza = {
     enable = true;
-    package = pkgs.eza;
     icons = "auto";
   };
 
   programs.helix = {
     enable = true;
-    package = pkgs.helix;
     defaultEditor = true;
   };
 
   programs.starship = {
     enable = true;
-    package = pkgs.starship;
     enableZshIntegration = true;
 
     settings = {
@@ -39,7 +36,6 @@
 
   programs.zsh = {
     enable = true;
-    package = pkgs.zsh;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -52,8 +48,8 @@
 
   # pick up which to use
   imports = [
-    ./apps/btop.nix
     ./apps/nh.nix
+    ./apps/btop.nix
     ./apps/zoxide.nix
   ];
 

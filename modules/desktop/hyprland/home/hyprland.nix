@@ -2,6 +2,9 @@
 
 {
   wayland.windowManager.hyprland = {
+    enable = true;
+    package = null;
+    portalPackage = null;
     systemd.enable = true;
 
     settings = {
@@ -20,7 +23,7 @@
       ];
 
       monitor = [
-        # "eDP-1, 1920x1200@60, 0x0, 1"
+        # "eDP-1, 2540@60, 0x0, 1"
         # "DP-1, 1920x1080@60, 1920x0, 1"
         ", preferred, auto, 1"
       ];
@@ -78,7 +81,7 @@
         [
           "$mod, Q, exec, $terminal"
           "$mod, C, killactive"
-          "$mod, M, exit"
+          "$mod, L, exit"
           "$mod, E, exec, $fileManager"
           "$mod, V, togglefloating"
           "$mod, R, exec, $menu"
@@ -97,16 +100,10 @@
           "$mod, mouse_up, workspace, e-1"
         ]
         ++ (builtins.concatLists (
-          builtins.genList (
-            i:
-            let
-              ws = i + 1;
-            in
-            [
-              "$mod, code:1${toString i}, workspace, ${toString ws}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-            ]
-          ) 9
+          builtins.genList (i: [
+            "$mod, ${toString i + 1}, workspace, ${toString i + 1}"
+            "$mod SHIFT, ${toString i + 1}, movetoworkspace, ${toString i + 1}"
+          ]) 9 # [1..9]
         ));
 
       general = {
