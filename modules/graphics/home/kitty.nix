@@ -1,9 +1,8 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.kitty = {
     enable = true;
-    package = pkgs.kitty;
 
     settings = {
       dynamic_background_opacity = true;
