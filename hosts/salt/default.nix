@@ -6,7 +6,7 @@
   };
 
   imports = [
-    # ./services
+    ./services
 
     ./docker.nix
     ./hardware.nix
