@@ -53,6 +53,7 @@
   environment.systemPackages = with pkgs; [
     git
     just
+    sops
     nix-output-monitor # nom
   ];
 

@@ -24,6 +24,7 @@ with inputs;
       imports = [
         ./salt
 
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
 

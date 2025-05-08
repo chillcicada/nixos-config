@@ -41,6 +41,8 @@
 
   environment.defaultPackages = [ ];
 
+  sops.age.keyFile = "/home/${vars.userName}/.config/sops/age/keys.txt";
+
   # nixpkgs config
   nixpkgs.config = {
     allowUnfree = true;
