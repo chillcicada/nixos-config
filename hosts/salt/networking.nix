@@ -10,9 +10,6 @@
         80 # for http
         81 # for network development
         443 # for https
-
-        # lsky-pro
-        7791
       ];
     };
   };
