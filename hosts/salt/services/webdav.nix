@@ -23,7 +23,7 @@
 
       accounts.auth-type = "htpasswd.default";
 
-      # `nix shell nixpkgs#apacheHttpd`, then `htpasswd -B -c ./htpasswd USERNAME`
+      # `nix shell nixpkgs#apacheHttpd`, then `htpasswd -B -c ./htpasswd <USERNAME>`
       htpasswd.default.htpasswd = config.sops.secrets.webdav_auth.path;
 
       location = [

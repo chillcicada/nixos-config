@@ -9,6 +9,7 @@
       qq
       kazumi
       zotero
+      obs-studio
       wechat-uos
       teamspeak5_client
     ]
