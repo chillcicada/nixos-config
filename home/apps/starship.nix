@@ -7,7 +7,6 @@
 
     # https://starship.rs/config/
     settings = {
-      hostname.disabled = true;
       username.disabled = true;
       nix_shell.disabled = true;
 

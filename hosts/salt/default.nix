@@ -1,14 +1,11 @@
 { inputs, vars, ... }:
 
 {
-  sops = {
-    defaultSopsFile = ./secrets.yaml;
-  };
+  sops.defaultSopsFile = ./secrets.yaml;
 
   imports = [
     ./services
 
-    ./docker.nix
     ./hardware.nix
     ./networking.nix
 

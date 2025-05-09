@@ -11,7 +11,7 @@
       enableACME = true;
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://0.0.0.0:7791";
+        proxyPass = "http://0.0.0.0:2283";
       };
     };
 
@@ -19,7 +19,7 @@
       enableACME = true;
       forceSSL = true;
       locations."/" = {
-        proxyPass = "http://0.0.0.0:8080";
+        proxyPass = "http://127.0.0.1:8080";
       };
     };
   };

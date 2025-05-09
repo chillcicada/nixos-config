@@ -1,44 +1,40 @@
 { config, ... }:
 
-let
-  webdavUser = "webdav";
-  webdavGroup = "webdav";
-  webdavRoot = "/var/www/webdav";
-in
 {
   sops.secrets.webdav_auth = {
-    owner = webdavUser;
-    group = webdavGroup;
+    owner = "webdav";
+    group = "webdav";
   };
 
-  users.users.${webdavUser} = {
-    home = webdavRoot;
-    extraGroups = [ webdavGroup ];
+  users.users."webdav" = {
+    home = "/var/www/webdav";
+    extraGroups = [ "webdav" ];
   };
 
   services.webdav-server-rs = {
     enable = true;
 
-    user = webdavUser;
+    debug = true;
+
+    user = "webdav";
 
     settings = {
       server.listen = [ "127.0.0.1:8080" ];
 
       accounts.auth-type = "htpasswd.default";
 
-      # The password was generated using:
       # `nix shell nixpkgs#apacheHttpd`, then `htpasswd -B -c ./htpasswd USERNAME`
       htpasswd.default.htpasswd = config.sops.secrets.webdav_auth.path;
 
       location = [
         {
-          route = [ "/" ];
+          route = [ "/*path" ];
           handler = "filesystem";
           methods = [ "webdav-rw" ];
           auth = "true";
           autoindex = true;
 
-          directory = "~";
+          directory = "/var/www/webdav";
         }
       ];
     };
