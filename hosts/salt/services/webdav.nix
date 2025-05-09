@@ -7,6 +7,7 @@
   };
 
   users.users."webdav" = {
+    # manually create the folder beforehand
     home = "/var/www/webdav";
     extraGroups = [ "webdav" ];
   };
@@ -14,10 +15,9 @@
   services.webdav-server-rs = {
     enable = true;
 
-    debug = true;
-
     user = "webdav";
 
+    # More config can be found at https://github.com/miquels/webdav-server-rs/blob/master/webdav-server.toml
     settings = {
       server.listen = [ "127.0.0.1:8080" ];
 
@@ -28,13 +28,35 @@
 
       location = [
         {
-          route = [ "/*path" ];
+          # This is the default location, but we can override it
+          route = [ "/(:path)" ];
+          handler = "filesystem";
+          methods = [ "webdav-ro" ];
+          auth = "false";
+          autoindex = true;
+
+          # manually create the directory beforehand
+          directory = "/var/www/webdav";
+        }
+        {
+          route = [ "/public/*path" ];
+          handler = "filesystem";
+          methods = [ "webdav-rw" ];
+          auth = "false";
+          autoindex = true;
+
+          # manually create the directory beforehand
+          directory = "/var/www/webdav/public";
+        }
+        {
+          route = [ "/private/*path" ];
           handler = "filesystem";
           methods = [ "webdav-rw" ];
           auth = "true";
           autoindex = true;
 
-          directory = "/var/www/webdav";
+          # manually create the directory beforehand
+          directory = "/var/www/webdav/private";
         }
       ];
     };
