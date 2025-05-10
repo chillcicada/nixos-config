@@ -160,7 +160,7 @@ nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake
 ## Other Configs
 
 - neovim config: [nvim-config](https://github.com/chillcicada/nvim-config)
-- typora themes: [typora-theme](https://github.com/chillcicada/typora-themes)
+- typora themes: [typora-themes](https://github.com/chillcicada/typora-themes)
 - wallpapers: [wallpapers](https://github.com/chillcicada/imgs)
 
 ## License
