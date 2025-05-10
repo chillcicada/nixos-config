@@ -12,8 +12,15 @@
     username = vars.userName;
     homeDirectory = "/home/${vars.userName}";
     packages = with pkgs; [
+      dust
       ufetch # alternative to fastfetch
+      nix-tree
     ];
+  };
+
+  programs.eza = {
+    enable = true;
+    icons = "auto";
   };
 
   programs.starship = {
