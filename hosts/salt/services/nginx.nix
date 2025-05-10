@@ -7,14 +7,6 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
 
-    virtualHosts."img.chillcicada.com" = {
-      enableACME = true;
-      forceSSL = true;
-      locations."/" = {
-        proxyPass = "http://0.0.0.0:2283";
-      };
-    };
-
     virtualHosts."webdav.chillcicada.com" = {
       enableACME = true;
       forceSSL = true;

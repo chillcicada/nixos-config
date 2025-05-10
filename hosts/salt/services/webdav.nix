@@ -17,6 +17,8 @@
 
     user = "webdav";
 
+    debug = false;
+
     # More config can be found at https://github.com/miquels/webdav-server-rs/blob/master/webdav-server.toml
     settings = {
       server.listen = [ "127.0.0.1:8080" ];
