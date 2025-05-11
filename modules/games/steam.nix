@@ -1,6 +1,7 @@
 { pkgs, vars, ... }:
 
 {
+  # https://nixos.wiki/wiki/Steam
   programs = {
     gamescope = {
       enable = true;

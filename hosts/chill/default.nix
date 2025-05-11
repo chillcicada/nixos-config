@@ -58,13 +58,7 @@
 
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-11.5.0"
-    "clash-verge-rev-2.2.3"
-    "clash-verge-rev-unwrapped-2.2.3"
-    "clash-verge-rev-webui-2.2.3"
-    "clash-verge-rev-service-2.2.3"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ ];
 
   programs.nix-ld = {
     enable = true;

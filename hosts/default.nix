@@ -53,9 +53,7 @@ with inputs;
     };
 
     salt = {
-      imports = [
-        ../home/minimal.nix
-      ];
+      imports = [ ../home/minimal.nix ];
 
       home.stateVersion = "25.05";
     };
