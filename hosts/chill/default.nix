@@ -58,13 +58,6 @@
 
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
 
-  console = {
-    earlySetup = true;
-    font = "ter-i32b";
-    packages = with pkgs; [ terminus_font ];
-    keyMap = "us";
-  };
-
   nixpkgs.config.permittedInsecurePackages = [
     "electron-11.5.0"
     "clash-verge-rev-2.2.3"

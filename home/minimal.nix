@@ -3,6 +3,7 @@
 {
   # pick up which to use
   imports = [
+    ./apps/nh.nix
     ./apps/btop.nix
     ./apps/helix.nix
     ./apps/zoxide.nix
