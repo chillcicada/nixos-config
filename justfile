@@ -5,7 +5,7 @@ re TARGET=current_hostname:
   git add --all
   sudo nixos-rebuild switch --flake .#{{TARGET}} |& nom
 
-# rebuild the system configuration bubt not switch
+# rebuild the system configuration but not switch
 boot TARGET=current_hostname:
   git add --all
   sudo nixos-rebuild boot --flake .#{{TARGET}} |& nom

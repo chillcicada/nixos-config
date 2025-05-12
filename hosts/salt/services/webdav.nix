@@ -43,7 +43,7 @@
         {
           route = [ "/public/*path" ];
           handler = "filesystem";
-          methods = [ "webdav-rw" ];
+          methods = [ "webdav-ro" ];
           auth = "false";
           autoindex = true;
 
