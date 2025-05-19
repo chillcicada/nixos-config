@@ -8,6 +8,7 @@ in
     enable = true;
     autoEnable = true;
     image = backgroundImage;
+    enableReleaseChecks = false;
     polarity = "dark";
 
     targets = {

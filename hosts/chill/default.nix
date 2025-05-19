@@ -12,7 +12,6 @@
     ./networking.nix
 
     ../../modules/core
-    ../../modules/games
     ../../modules/graphics
     ../../modules/desktop/gnome
   ];

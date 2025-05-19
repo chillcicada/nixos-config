@@ -37,12 +37,12 @@ with inputs;
   flake.homeModules = {
     chill = {
       imports = [
-        ../home
+        ./chill/home.nix
 
-        ../modules/code/home.nix
-        ../modules/games/home.nix
-        ../modules/editor/home.nix
-        ../modules/graphics/home.nix
+        ../home
+        ../modules/code/home
+        ../modules/editor/home
+        ../modules/graphics/home
         ../modules/desktop/gnome/home.nix
 
         stylix.homeModules.stylix

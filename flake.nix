@@ -6,11 +6,15 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    stylix.url = "github:danth/stylix";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     nur = {
