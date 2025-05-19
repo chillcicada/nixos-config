@@ -9,15 +9,17 @@
       roboto
       lxgw-wenkai
 
+      # nerd fonts
       maple-mono.truetype
       maple-mono.NF-unhinted
       maple-mono.NF-CN-unhinted
 
+      # Noto fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
 
-      # Microsoft fonts
+      # Microsoft fonts & WPS fonts
       nur.repos.rewine.ttf-ms-win10
       nur.repos.rewine.ttf-wps-fonts
       nur.repos.chillcicada.ttf-ms-win10-sc-sup

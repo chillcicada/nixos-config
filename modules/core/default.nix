@@ -1,12 +1,10 @@
-_:
-let
-  files = builtins.attrNames (
-    removeAttrs (builtins.readDir ./.) [
-      "default.nix"
-      "minimal.nix"
-    ]
+_: {
+  imports = map (name: ./${name}) (
+    builtins.attrNames (
+      removeAttrs (builtins.readDir ./.) [
+        "default.nix"
+        "minimal.nix"
+      ]
+    )
   );
-in
-{
-  imports = map (name: ./${name}) files;
 }

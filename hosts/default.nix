@@ -17,7 +17,7 @@ with inputs;
 
       networking.hostName = "chill";
 
-      system.stateVersion = "25.05";
+      system.stateVersion = "25.11";
     };
 
     salt = {
@@ -30,7 +30,7 @@ with inputs;
 
       networking.hostName = "salt";
 
-      system.stateVersion = "25.05";
+      system.stateVersion = "25.11";
     };
   };
 
@@ -45,17 +45,17 @@ with inputs;
         ../modules/graphics/home.nix
         ../modules/desktop/gnome/home.nix
 
-        stylix.homeManagerModules.stylix
+        stylix.homeModules.stylix
         zen-browser.homeModules.default
       ];
 
-      home.stateVersion = "25.05";
+      home.stateVersion = "25.11";
     };
 
     salt = {
       imports = [ ../home/minimal.nix ];
 
-      home.stateVersion = "25.05";
+      home.stateVersion = "25.11";
     };
   };
 

@@ -3,16 +3,16 @@ current_hostname := `hostname`
 # rebuild the system configuration
 re TARGET=current_hostname:
   git add --all
-  sudo nixos-rebuild switch --flake .#{{TARGET}} |& nom
+  sudo nixos-rebuild switch --flake ."#{{TARGET}}" |& nom
 
 # rebuild the system configuration but not switch
 boot TARGET=current_hostname:
   git add --all
-  sudo nixos-rebuild boot --flake .#{{TARGET}} |& nom
+  sudo nixos-rebuild boot --flake ."#{{TARGET}}" |& nom
 
 # rebuild the system configuration as root
 re-as-root TARGET=current_hostname:
-  nixos-rebuild switch --flake .#{{TARGET}} |& nom
+  nixos-rebuild switch --flake ."#{{TARGET}}" |& nom
 
 # rebuild the system configuration with verbose output and print build logs
 diagnosis TARGET=current_hostname:

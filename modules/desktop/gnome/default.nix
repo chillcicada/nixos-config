@@ -20,7 +20,7 @@
     };
 
     gnome = {
-      core-utilities.enable = true;
+      core-apps.enable = true;
 
       games.enable = false;
       gnome-user-share.enable = false;

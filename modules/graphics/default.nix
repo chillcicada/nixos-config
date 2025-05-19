@@ -3,6 +3,9 @@
 {
   programs.clash-verge = {
     enable = true;
-    autoStart = true;
+    /*
+      https://github.com/NixOS/nixpkgs/issues/408632
+    */
+    # autoStart = true;
   };
 }
