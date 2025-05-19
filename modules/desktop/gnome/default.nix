@@ -102,7 +102,9 @@
       open-bar
       appindicator
       blur-my-shell
+      system-monitor
       app-menu-is-back
+      applications-menu
     ]);
 
   programs.dconf.enable = true;
