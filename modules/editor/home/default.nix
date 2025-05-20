@@ -33,9 +33,6 @@
     lua51Packages.lua # required by neovim
     luajitPackages.luarocks # required by neovim
 
-    # go
-    go # required by neovim
-
     # toml
     taplo
 
