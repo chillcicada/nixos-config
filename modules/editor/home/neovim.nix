@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.neovim = {
@@ -8,4 +8,12 @@
   };
 
   home.file.".config/nvim".source = inputs.nvim-config;
+
+  # required by neovim
+  home.packages = with pkgs; [
+    gnumake
+    tree-sitter
+    lua51Packages.lua
+    luajitPackages.luarocks
+  ];
 }

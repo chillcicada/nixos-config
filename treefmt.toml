@@ -1,10 +1,12 @@
-excludes = ["LICENSE", "flake.lock", "README.md", "justfile", ".*"]
+excludes = [
+  "LICENSE",
+  "flake.lock",
+  "README.md",
+  "treefmt.toml",
+  "justfile",
+  ".*",
+]
 
 [formatter.nixfmt-rfc-style]
 command = "nixfmt"
 includes = ["*.nix"]
-
-[formatter.taplo]
-command = "taplo"
-options = ["format"]
-includes = ["*.toml"]
