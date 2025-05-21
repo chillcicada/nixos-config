@@ -22,10 +22,6 @@
     nil # nix linter
     nixfmt-rfc-style # formatter
 
-    # rust
-    cargo
-    rustc
-
     # python
     uv
     ruff # python linter and formatter
