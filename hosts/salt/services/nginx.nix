@@ -25,6 +25,14 @@
         proxyPass = "http://127.0.0.1:8080";
       };
     };
+
+    virtualHosts."status.chillcicada.com" = {
+      useACMEHost = "chillcicada.com";
+      forceSSL = true;
+      locations."/" = {
+        proxyPass = "http://127.0.0.1:8081";
+      };
+    };
   };
 
   security.acme = {
@@ -32,7 +40,10 @@
     defaults.email = vars.userEmail;
     certs."chillcicada.com" = {
       domain = "chillcicada.com";
-      extraDomainNames = [ "webdav.chillcicada.com" ];
+      extraDomainNames = [
+        "webdav.chillcicada.com"
+        "status.chillcicada.com"
+      ];
     };
   };
 
