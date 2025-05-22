@@ -42,9 +42,8 @@ Run `just --list` to see all recipes.
 ├── LICENSE
 ├── modules
 │   ├── code
-│   │   ├── home
-│   │   │   └── ...
-│   │   └── home.nix
+│   │   └── home
+│   │       └── ...
 │   ├── core
 │   │   ├── default.nix
 │   │   ├── font.nix
@@ -57,24 +56,19 @@ Run `just --list` to see all recipes.
 │   │   ├── gnome
 │   │   │   ├── default.nix
 │   │   │   └── home.nix
+│   │   │       └── ...
 │   │   └── hyprland
 │   │       ├── default.nix
-│   │       ├── home
-│   │       │   └── ...
-│   │       └── home.nix
+│   │       └── home
+│   │           └── ...
 │   ├── editor
-│   │   ├── home
-│   │   │   └── ...
-│   │   └── home.nix
-│   ├── games
-│   │   ├── default.nix
-│   │   ├── home.nix
-│   │   └── steam.nix
+│   │   └── home
+│   │       └── ...
 │   └── graphics
 │       ├── default.nix
 │       ├── home
 │       │   └── ...
-│       └── home.nix
+│       └── steam.nix
 ├── README.md
 └── treefmt.toml
 ```
@@ -91,7 +85,6 @@ A brief description of the structure:
   - `desktop`: contains the desktop environment modules, like `gnome` and `hyprland`.
   - `code`: contains the code-related modules.
   - `editor`: contains the editor modules.
-  - `games`: contains the game modules.
   - `graphics`: contains the graphics app modules.
 - `home`: contains the home-manager configurations.
   - `apps`: contains the app-specific configurations.
