@@ -23,7 +23,7 @@
     nixfmt-rfc-style # formatter
 
     # python
-    (python312.withPackages (
+    (python313.withPackages (
       ps: with ps; [
         requests
       ]
