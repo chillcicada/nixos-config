@@ -2,7 +2,7 @@
 
 <p align="center">
 	<a href="https://github.com/chillcicada/nixos-config/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/chillcicada/nixos-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" /></a>
-  <a href="https://nixos.org/"><img alt="NIXOS Version" src="https://img.shields.io/badge/NixOS-25.05-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" /></a>
+  <a href="https://nixos.org/"><img alt="NIXOS Version" src="https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" /></a>
 </p>
 
 This repo stores some cc's **nixos and home-manager** configurations.
@@ -18,8 +18,7 @@ Run `just --list` to see all recipes.
 ├── flake.lock
 ├── flake.nix
 ├── home
-│   ├── apps
-│   │   └── ...
+│   ├── apps/
 │   ├── default.nix
 │   ├── minimal.nix
 │   └── packages.nix
@@ -27,23 +26,22 @@ Run `just --list` to see all recipes.
 │   ├── chill
 │   │   ├── default.nix
 │   │   ├── hardware.nix
+│   │   ├── home.nix
 │   │   ├── networking.nix
 │   │   └── nvidia.nix
-│   ├── default.nix
 │   ├── salt
 │   │   ├── default.nix
 │   │   ├── hardware.nix
 │   │   ├── networking.nix
 │   │   ├── secrets.yaml
-│   │   └── services
-│   │       └── ...
+│   │   └── services/
+│   ├── default.nix
 │   └── vars.nix
 ├── justfile
 ├── LICENSE
 ├── modules
 │   ├── code
-│   │   └── home
-│   │       └── ...
+│   │   └── home/
 │   ├── core
 │   │   ├── default.nix
 │   │   ├── font.nix
@@ -55,19 +53,15 @@ Run `just --list` to see all recipes.
 │   ├── desktop
 │   │   ├── gnome
 │   │   │   ├── default.nix
-│   │   │   └── home.nix
-│   │   │       └── ...
+│   │   │   └── home/
 │   │   └── hyprland
 │   │       ├── default.nix
-│   │       └── home
-│   │           └── ...
+│   │       └── home/
 │   ├── editor
-│   │   └── home
-│   │       └── ...
+│   │   └── home/
 │   └── graphics
 │       ├── default.nix
-│       ├── home
-│       │   └── ...
+│       ├── home/
 │       └── steam.nix
 ├── README.md
 └── treefmt.toml
