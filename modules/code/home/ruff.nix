@@ -6,7 +6,7 @@
 
     # refer to https://docs.astral.sh/ruff/configuration/
     settings = {
-      exculude = [ ".venv" ];
+      exclude = [ ".venv" ];
       line-length = 120;
       indent-width = 4;
       target-version = "py312";
