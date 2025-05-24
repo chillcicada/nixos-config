@@ -11,7 +11,7 @@
 
   # required by neovim
   home.packages = with pkgs; [
-    gnumake
+    gnumake # required by mason
     tree-sitter
     lua51Packages.lua
     luajitPackages.luarocks

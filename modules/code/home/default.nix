@@ -19,12 +19,10 @@
     xmake
 
     # nix
-    nil # nix linter
+    nil # linter
     nixfmt-rfc-style # formatter
 
     # python
-    uv
-    ruff # python linter and formatter
     (python312.withPackages (
       ps: with ps; [
         requests

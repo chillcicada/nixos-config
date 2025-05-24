@@ -43,7 +43,7 @@ with inputs;
         ../modules/code/home
         ../modules/editor/home
         ../modules/graphics/home
-        ../modules/desktop/gnome/home.nix
+        ../modules/desktop/gnome/home
 
         stylix.homeModules.stylix
         zen-browser.homeModules.default
