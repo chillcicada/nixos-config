@@ -3,7 +3,7 @@
 {
   services.openssh.ports = [
     22
-    20202
+    20202 # the lower ports is gotten blocked by the THU
   ];
 
   networking = {
