@@ -42,6 +42,9 @@
     };
 
     udev.packages = with pkgs; [ gnome-settings-daemon ];
+
+    # for nautilus trash
+    gvfs.enable = true;
   };
 
   environment.gnome.excludePackages = with pkgs; [

@@ -17,4 +17,7 @@
     ++ (with nur.repos; [
       novel2430.wemeet-bin-bwrap-wayland-screenshare
     ]);
+
+  # for nautilus trash
+  services.gvfs.enable = true;
 }
