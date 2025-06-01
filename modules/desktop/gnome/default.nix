@@ -8,10 +8,20 @@
 {
   # X11 & GNOME
   services = {
+    displayManager = {
+      gdm.enable = true;
+
+      # Enable automatic login for the user.
+      autoLogin = {
+        enable = true;
+        user = vars.userName;
+      };
+    };
+
+    desktopManager.gnome.enable = true;
+
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       excludePackages = with pkgs; [ xterm ];
 
       xkb = {
@@ -29,14 +39,6 @@
       gnome-online-accounts.enable = false;
       gnome-browser-connector.enable = false;
       evolution-data-server.enable = lib.mkForce false;
-    };
-
-    # Enable automatic login for the user.
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = vars.userName;
-      };
     };
 
     udev.packages = with pkgs; [ gnome-settings-daemon ];

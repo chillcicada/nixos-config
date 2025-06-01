@@ -41,5 +41,5 @@
     };
   };
 
-  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
+  environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs;
 }

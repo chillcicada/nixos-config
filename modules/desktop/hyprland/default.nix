@@ -2,20 +2,20 @@
 
 {
   services = {
+    displayManager = {
+      gdm.enable = true;
+      autoLogin = {
+        enable = true;
+        user = vars.userName;
+      };
+    };
+
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
       excludePackages = with pkgs; [ xterm ];
 
       xkb = {
         layout = "us";
-      };
-    };
-
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = vars.userName;
       };
     };
   };
