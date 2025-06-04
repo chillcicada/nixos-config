@@ -34,18 +34,10 @@
       enable = true;
 
       defaultFonts = {
-        serif = [
-          "Noto Serif CJK SC"
-        ];
-        sansSerif = [
-          "Noto Sans CJK SC"
-        ];
-        monospace = [
-          "Maple Mono NF CN"
-        ];
-        emoji = [
-          "Noto Color Emoji"
-        ];
+        emoji = [ "Noto Color Emoji" ];
+        serif = [ "Noto Serif CJK SC" ];
+        sansSerif = [ "Noto Sans CJK SC" ];
+        monospace = [ "Maple Mono NF CN" ];
       };
     };
   };
