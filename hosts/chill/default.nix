@@ -14,6 +14,7 @@
     ../../modules/core
     ../../modules/graphics
     ../../modules/desktop/gnome
+    # ../../modules/desktop/hyprland
   ];
 
   # Bootloader.

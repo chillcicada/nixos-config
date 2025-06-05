@@ -24,6 +24,8 @@
       addons = with pkgs; [
         fcitx5-gtk # gtk support
 
+        fcitx5-nord # nord theme
+
         fcitx5-mozc # japanese
         fcitx5-chinese-addons # chinese
 
@@ -35,6 +37,11 @@
       ignoreUserConfig = false;
 
       settings = {
+        addons = {
+          classicui.globalSection.Theme = "Nord-Dark";
+          classicui.globalSection.DarkTheme = "Nord-Dark";
+        };
+
         inputMethod = {
           "Group/0" = {
             Name = "Default";

@@ -10,6 +10,7 @@ with pkgs;
   wget # download files
   unzip # unzip files, required by nvim
   cachix # nix binary cache
+  killall # kill all processes by name
   nix-tree # nix tree view
   degit-rs # degit
   difftastic # diff tool

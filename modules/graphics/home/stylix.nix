@@ -13,9 +13,6 @@ in
 
     targets = {
       gtk.enable = true;
-
-      neovim.enable = false;
-      vscode.enable = false;
     };
 
     # keep in sync with modules/core/font.nix

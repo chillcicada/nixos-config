@@ -44,6 +44,7 @@ with inputs;
         ../modules/editor/home
         ../modules/graphics/home
         ../modules/desktop/gnome/home
+        # ../modules/desktop/hyprland/home
 
         stylix.homeModules.stylix
         zen-browser.homeModules.default

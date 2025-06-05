@@ -14,6 +14,10 @@ boot TARGET=current_hostname:
 re-as-root TARGET=current_hostname:
   nixos-rebuild switch --flake ."#{{TARGET}}" |& nom
 
+# rebuild the system configuration but not switch as root
+boot-as-root TARGET=current_hostname:
+  nixos-rebuild boot --flake ."#{{TARGET}}" |& nom
+
 # rebuild the system configuration with verbose output and print build logs
 diagnosis TARGET=current_hostname:
   sudo nixos-rebuild switch  --show-trace --verbose --print-build-logs --flake .#{{TARGET}} |& nom

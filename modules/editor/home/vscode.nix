@@ -9,6 +9,8 @@
     mutableExtensionsDir = true;
   };
 
+  stylix.targets.vscode.enable = false;
+
   home.sessionVariables = {
     EDITOR = "code";
   };

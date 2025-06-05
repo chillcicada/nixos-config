@@ -15,17 +15,25 @@
       exec-once = [
         "fcitx5"
         "waybar"
+        "hyprpaper"
       ];
 
       env = [
         "XCURSOR_SIZE,24"
+        "HYPRCURSOR_ENABLE,1"
         "HYPRCURSOR_SIZE,24"
+
+        # Nvidia
+        "LIBVA_DRIVER_NAME,nvidia"
+        "XDG_SESSION_TYPE,wayland"
+        "GBM_BACKEND,nvidia-drm"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "WLR_NO_HARDWARE_CURSORS,1"
       ];
 
       monitor = [
-        # "eDP-1, 2540@60, 0x0, 1"
-        # "DP-1, 1920x1080@60, 1920x0, 1"
-        ", preferred, auto, 1"
+        "eDP-1, 1920x1080@60, 0x0, 1"
+        "DP-1, 2560x1440@144, 1920x0, 1"
       ];
 
       input = {
@@ -56,6 +64,11 @@
       };
 
       bindl = [
+        # 合盖时禁用内置显示屏
+        ", switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, disable\" "
+        # 开盖时启用内置显示屏
+        ", switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1, 1920x1080@60, 0x0, 1\""
+
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
@@ -63,6 +76,7 @@
       ];
 
       bindm = [
+        # 左键移动，右键缩放
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
@@ -88,11 +102,6 @@
           "$mod, P, pseudo"
           "$mod, J, togglesplit"
 
-          "$mod, left, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, down, movefocus, d"
-
           "$mod, S, togglespecialworkspace, magic"
           "$mod SHIFT, S, movetoworkspace, special:magic"
 
@@ -101,8 +110,8 @@
         ]
         ++ (builtins.concatLists (
           builtins.genList (i: [
-            "$mod, ${toString i + 1}, workspace, ${toString i + 1}"
-            "$mod SHIFT, ${toString i + 1}, movetoworkspace, ${toString i + 1}"
+            "$mod, ${toString (i + 1)}, workspace, ${toString (i + 1)}"
+            "$mod SHIFT, ${toString (i + 1)}, movetoworkspace, ${toString (i + 1)}"
           ]) 9 # [1..9]
         ));
 
@@ -143,7 +152,7 @@
       };
 
       windowrule = [
-        "suppressevent maximize, class:.*"
+        "float, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
 

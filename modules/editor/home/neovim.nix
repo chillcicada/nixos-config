@@ -7,6 +7,8 @@
     viAlias = true;
   };
 
+  stylix.targets.neovim.enable = false;
+
   home.file.".config/nvim".source = inputs.nvim-config;
 
   # required by neovim

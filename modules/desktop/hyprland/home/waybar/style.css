@@ -1,0 +1,142 @@
+* {
+  font-family: "Maple Mono NF CN";
+  font-weight: 500;
+  font-size: 12px;
+  text-shadow: none;
+
+  transition-property: background;
+  transition-duration: 0.2s;
+}
+
+window#waybar {
+  /* Large size for shorter side padding*/
+  /*border-radius: 100px;*/
+  /* margin: 6px; */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+tooltip {
+  background-color: rgba(18, 18, 18, 0.8);
+  border: 1px solid rgba(34, 34, 34, 0.5);
+  border-radius: 15px;
+}
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#backlight,
+#tray,
+#mode,
+#battery,
+#window,
+#workspaces {
+  border-radius: 5px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 0 10px;
+}
+
+#workspaces {
+  /* border: rgba(255, 255, 255, 0.2) solid 2px; */
+  padding: 3px;
+  background: rgb(18, 18, 18);
+  transition: none;
+
+  font-size: 12px;
+}
+
+#workspaces :first-child {
+  margin-left: 0;
+}
+
+#workspaces button {
+  border-radius: 5px;
+  border: none;
+  padding: 0 6px;
+  background: transparent;
+  color: #ffffff;
+  margin-left: 3px;
+}
+
+#workspaces button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#workspaces button.empty {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+#workspaces button.active {
+  background: #ffffff;
+  color: #2f2f2f;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#mode {
+  background-color: #64727d;
+  border-bottom: 3px solid #ffffff;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > * {
+  margin-left: 6px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > * {
+  margin-right: 6px;
+}
+
+#cpu {
+  background-color: #fe968b;
+  color: #000000;
+}
+
+#memory {
+  background-color: #f994fe;
+  color: #000000;
+}
+
+#pulseaudio {
+  background-color: #b0f5e5;
+  color: #000000;
+}
+
+#backlight {
+  background-color: #ffeaaa;
+  color: #000000;
+}
+
+#network {
+  background-color: #a4e4fe;
+  color: #000000;
+}
+
+#clock {
+  background-color: #eefff1;
+  color: #000000;
+}
+
+#battery {
+  background-color: #b01191;
+  color: #000000;
+}
+
+#tray {
+  /* border: rgba(255, 255, 255, 0.2) solid 2px; */
+  background-color: transparent;
+}
+
+#window {
+  background-color: #d3e4c9;
+  color: #000000;
+}

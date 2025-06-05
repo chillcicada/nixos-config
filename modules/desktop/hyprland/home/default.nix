@@ -11,13 +11,11 @@
     with pkgs;
     [
       hyprshot # screenshot
+      hyprcursor
       snapshot # camera
       nautilus # file manager
     ]
     ++ (with nur.repos; [
       novel2430.wemeet-bin-bwrap-wayland-screenshare
     ]);
-
-  # for nautilus trash
-  services.gvfs.enable = true;
 }
