@@ -32,6 +32,7 @@
         # pinyin lib supplement
         fcitx5-pinyin-zhwiki
         fcitx5-pinyin-moegirl
+        nur.repos.chillcicada.fcitx5-pinyin-custom-dictionary
       ];
 
       ignoreUserConfig = false;
