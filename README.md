@@ -18,51 +18,18 @@ Run `just --list` to see all recipes.
 ├── flake.lock
 ├── flake.nix
 ├── home
-│   ├── apps/
-│   ├── default.nix
-│   ├── minimal.nix
-│   └── packages.nix
+│   ├── apps/
+│   └── modules/
+│   └── minimal.nix
 ├── hosts
-│   ├── chill
-│   │   ├── default.nix
-│   │   ├── hardware.nix
-│   │   ├── home.nix
-│   │   ├── networking.nix
-│   │   └── nvidia.nix
-│   ├── salt
-│   │   ├── default.nix
-│   │   ├── hardware.nix
-│   │   ├── networking.nix
-│   │   ├── secrets.yaml
-│   │   └── services/
-│   ├── default.nix
-│   └── vars.nix
+│   ├── <machine>/
+│   ├── default.nix
+│   └── vars.nix
 ├── justfile
 ├── LICENSE
-├── modules
-│   ├── code
-│   │   └── home/
-│   ├── core
-│   │   ├── default.nix
-│   │   ├── font.nix
-│   │   ├── input.nix
-│   │   ├── locale.nix
-│   │   ├── minimal.nix
-│   │   ├── nix.nix
-│   │   └── system.nix
-│   ├── desktop
-│   │   ├── gnome
-│   │   │   ├── default.nix
-│   │   │   └── home/
-│   │   └── hyprland
-│   │       ├── default.nix
-│   │       └── home/
-│   ├── editor
-│   │   └── home/
-│   └── graphics
-│       ├── default.nix
-│       ├── home/
-│       └── steam.nix
+├── modules/
+│   ├── core/
+│   └── <top-level>.nix
 ├── README.md
 └── treefmt.toml
 ```
@@ -71,21 +38,21 @@ A brief description of the structure:
 
 - `flake.nix`: the main entry point of the flake.
 - `flake.lock`: the lock file for the flake.
-- `hosts`: contains the host-specific configurations.
-  - `vars.nix`: contains the variables used in the host configurations.
-  - `default.nix`: the default configuration for all hosts.
-- `modules`: contains the reusable modules for different purposes.
-  - `core`: contains the core modules for the system.
-  - `desktop`: contains the desktop environment modules, like `gnome` and `hyprland`.
-  - `code`: contains the code-related modules.
-  - `editor`: contains the editor modules.
-  - `graphics`: contains the graphics app modules.
-- `home`: contains the home-manager configurations.
-  - `apps`: contains the app-specific configurations.
-- `treefmt.toml`: the configuration file for `treefmt`, a tool to format the directory tree.
+- `home`: the home-manager configurations.
+  - `apps`: the auto-imported app-specific configurations.
+  - `modules`: the reusable modules for home-manager.
+  - `minimal.nix`: the minimal configuration for home-manager.
+- `hosts`: the host-specific configurations.
+  - `<machine>/`: the configurations for a specific machine.
+  - `default.nix`: the import configuration for all hosts.
+  - `vars.nix`: the shared variables used in the host configurations.
 - `justfile`: the file that contains the recipes for the `just` command.
 - `LICENSE`: the license file for the repo.
+- `modules`: contains the reusable modules for different purposes.
+  - `core`: the auto-imported core modules for the system.
+  - `<top-level>.nix`: the top-level modules for the system.
 - `README.md`: this file.
+- `treefmt.toml`: the configuration file for `treefmt`, a tool to format the directory tree.
 
 ## Miscellaneous
 
