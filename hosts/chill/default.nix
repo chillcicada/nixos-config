@@ -65,6 +65,13 @@
     ];
   };
 
+  console = {
+    earlySetup = true;
+    font = "ter-i32b";
+    packages = with pkgs; [ terminus_font ];
+    keyMap = "us";
+  };
+
   # self defined options
   clash.enable = true;
   gnome.enable = true;

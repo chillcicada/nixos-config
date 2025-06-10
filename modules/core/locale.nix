@@ -1,8 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
-  time.timeZone = "Asia/Shanghai";
-
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.supportedLocales = [
@@ -20,12 +18,5 @@
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
-  };
-
-  console = {
-    earlySetup = true;
-    font = "ter-i32b";
-    packages = with pkgs; [ terminus_font ];
-    keyMap = "us";
   };
 }

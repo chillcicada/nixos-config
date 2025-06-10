@@ -6,6 +6,8 @@
 }:
 
 {
+  time.timeZone = "Asia/Shanghai";
+
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
     backupFileExtension = "homeManagerBackup";

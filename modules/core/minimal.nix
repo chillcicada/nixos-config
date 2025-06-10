@@ -4,11 +4,8 @@
 { vars, ... }:
 
 {
-  imports = [
-    ./system.nix
-  ];
+  imports = [ ./system.nix ];
 
-  # nix
   nix = {
     channel.enable = false;
     settings = {
@@ -20,7 +17,4 @@
       trusted-users = [ vars.userName ];
     };
   };
-
-  # locales
-  time.timeZone = "Asia/Shanghai";
 }
