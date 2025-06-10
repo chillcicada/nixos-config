@@ -37,14 +37,8 @@ with inputs;
   flake.homeModules = {
     chill = {
       imports = [
-        ./chill/home.nix
-
         ../home
-        ../modules/code/home
-        ../modules/editor/home
-        ../modules/graphics/home
-        ../modules/desktop/gnome/home
-        # ../modules/desktop/hyprland/home
+        ./chill/home.nix
 
         stylix.homeModules.stylix
         zen-browser.homeModules.default

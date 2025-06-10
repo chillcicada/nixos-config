@@ -7,14 +7,12 @@
 
 {
   imports = [
+    ../../modules
+    ../../modules/core
+
     ./nvidia.nix
     ./hardware.nix
     ./networking.nix
-
-    ../../modules/core
-    ../../modules/graphics
-    ../../modules/desktop/gnome
-    # ../../modules/desktop/hyprland
   ];
 
   # Bootloader.
@@ -66,4 +64,9 @@
       icu # required by `marksman` for nvim
     ];
   };
+
+  # self defined options
+  clash.enable = true;
+  gnome.enable = true;
+  steam.enable = true;
 }

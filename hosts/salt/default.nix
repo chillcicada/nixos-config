@@ -4,12 +4,11 @@
   sops.defaultSopsFile = ./secrets.yaml;
 
   imports = [
-    ./services
+    ../../modules/core/minimal.nix
 
+    ./services
     ./hardware.nix
     ./networking.nix
-
-    ../../modules/core/minimal.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
