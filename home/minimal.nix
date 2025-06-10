@@ -52,8 +52,5 @@
   # set helix as the default editor
   programs.helix.defaultEditor = true;
 
-  # disable fontconfig
-  fonts.fontconfig.enable = false;
-
   programs.home-manager.enable = true;
 }

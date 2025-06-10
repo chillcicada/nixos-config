@@ -23,7 +23,4 @@
 
   # locales
   time.timeZone = "Asia/Shanghai";
-
-  # fonts
-  fonts.fontconfig.enable = false;
 }

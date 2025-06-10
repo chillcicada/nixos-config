@@ -16,6 +16,7 @@
   coreutils.enable = true;
   tools.enable = true;
   graphics.enable = true;
+  fcitx5.enable = true;
 
   cpp.enable = true;
   frontend.enable = true;
