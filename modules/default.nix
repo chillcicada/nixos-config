@@ -59,6 +59,7 @@
   # nix config
   nix = {
     channel.enable = false;
+
     settings = {
       auto-optimise-store = true;
       experimental-features = [
@@ -66,6 +67,12 @@
         "flakes"
       ];
       trusted-users = [ vars.userName ];
+    };
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
     };
   };
 

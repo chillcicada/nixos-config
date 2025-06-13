@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  vars,
   inputs,
   ...
 }:
@@ -16,8 +15,6 @@
       registry.nixpkgs.flake = inputs.nixpkgs;
       settings = {
         nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
-        use-xdg-base-directories = true;
-        trusted-users = [ vars.userName ];
         substituters = [
           "https://cache.nixos.org"
 
@@ -30,12 +27,6 @@
           "chillcicada.cachix.org-1:nW+OhwrpD0z5oGcBFt/aLEtzN94XcJBm81/cAHsEwVU="
           "rewine.cachix.org-1:aOIg9PvwuSefg59gVXXxGIInHQI9fMpskdyya2xO+7I="
         ];
-      };
-
-      gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 7d";
       };
     };
 
