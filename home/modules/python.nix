@@ -10,7 +10,7 @@
     python.enable = lib.mkEnableOption "python";
   };
 
-  config = lib.mkIf config.typst.enable {
+  config = lib.mkIf config.python.enable {
     home.packages = with pkgs; [
       (python313.withPackages (
         ps: with ps; [
@@ -27,7 +27,7 @@
         exclude = [ ".venv" ];
         line-length = 120;
         indent-width = 4;
-        target-version = "py312";
+        target-version = "py313";
 
         lint = {
           select = [
