@@ -8,6 +8,7 @@ with inputs;
   flake.nixosModules = {
     chill = {
       imports = [
+        ../modules
         ./chill
 
         nur.modules.nixos.default
@@ -22,6 +23,7 @@ with inputs;
 
     salt = {
       imports = [
+        ../modules
         ./salt
 
         sops-nix.nixosModules.sops

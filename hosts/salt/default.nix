@@ -4,8 +4,6 @@
   sops.defaultSopsFile = ./secrets.yaml;
 
   imports = [
-    ../../modules/core/minimal.nix
-
     ./services
     ./hardware.nix
     ./networking.nix
@@ -16,4 +14,7 @@
   zramSwap.enable = true;
 
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.salt ];
+
+  # Time Zone.
+  time.timeZone = "Asia/Shanghai";
 }

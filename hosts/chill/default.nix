@@ -7,9 +7,6 @@
 
 {
   imports = [
-    ../../modules
-    ../../modules/core
-
     ./nvidia.nix
     ./hardware.nix
     ./networking.nix
@@ -72,8 +69,14 @@
     keyMap = "us";
   };
 
+  # Time Zone.
+  time.timeZone = "Asia/Shanghai";
+
   # self defined options
+  cjk.enable = true;
   clash.enable = true;
   gnome.enable = true;
   steam.enable = true;
+  locale.enable = true;
+  source.enable = true;
 }
