@@ -47,17 +47,17 @@
         }
         {
           type = "kernel";
-          key = "│ ├";
+          key = "│ ";
           keyColor = "yellow";
         }
         {
           type = "packages";
-          key = "│ ├󰏖";
+          key = "│ 󰏖";
           keyColor = "yellow";
         }
         {
           type = "shell";
-          key = "│ └";
+          key = "│ ";
           keyColor = "yellow";
         }
         {
@@ -67,27 +67,27 @@
         }
         {
           type = "lm";
-          key = "│ ├󰧨";
+          key = "│ 󰧨";
           keyColor = "blue";
         }
         {
           type = "wmtheme";
-          key = "│ ├󰉼";
+          key = "│ 󰉼";
           keyColor = "blue";
         }
         {
           type = "icons";
-          key = "│ ├󰀻";
+          key = "│ 󰀻";
           keyColor = "blue";
         }
         {
           type = "terminal";
-          key = "│ ├";
+          key = "│ ";
           keyColor = "blue";
         }
         {
           type = "wallpaper";
-          key = "│ └󰸉";
+          key = "│ 󰸉";
           keyColor = "blue";
         }
         {
@@ -97,27 +97,27 @@
         }
         {
           type = "cpu";
-          key = "│ ├󰻠";
+          key = "│ 󰻠";
           keyColor = "green";
         }
         {
           type = "gpu";
-          key = "│ ├󰍛";
+          key = "│ 󰍛";
           keyColor = "green";
         }
         {
           type = "disk";
-          key = "│ ├";
+          key = "│ ";
           keyColor = "green";
         }
         {
           type = "memory";
-          key = "│ ├󰑭";
+          key = "│ 󰑭";
           keyColor = "green";
         }
         {
           type = "swap";
-          key = "│ ├󰓡";
+          key = "│ 󰓡";
           keyColor = "green";
         }
         {
