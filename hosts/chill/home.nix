@@ -4,8 +4,8 @@
   home.packages = with pkgs; [
     hmcl
     kazumi
-    aseprite
     obs-studio
+    libresprite
     teamspeak5_client
     nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
   ];

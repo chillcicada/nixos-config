@@ -39,8 +39,6 @@
 
   # Enable wayland support.
   environment.sessionVariables = {
-    XMODIFIERS = "@im=fcitx";
-    QT_IM_MODULE = "fcitx";
     QT_QPA_PLATFORM = "wayland";
     NIXOS_OZONE_WL = "1";
   };
@@ -77,6 +75,7 @@
   clash.enable = true;
   gnome.enable = true;
   steam.enable = true;
+  fcitx5.enable = true;
   locale.enable = true;
   source.enable = true;
 }
