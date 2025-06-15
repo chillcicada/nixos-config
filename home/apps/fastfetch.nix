@@ -14,12 +14,12 @@
       };
       display = {
         separator = " -> ";
-        constants = [ "──────────────────────────────" ];
+        constants = [ "─────────────────────────" ];
       };
       modules = [
         {
           type = "custom";
-          format = "┌{$1}{$1}┐";
+          format = "┌{$1}{$1}┐";
           outputColor = "90";
         }
         {
@@ -27,22 +27,8 @@
           keyWidth = "10";
         }
         {
-          type = "custom";
-          format = "└{$1}{$1}┘";
-          outputColor = "90";
-        }
-        {
-          type = "custom";
-          format = " {#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37}  {#38}  {#39}       {#38}  {#37}  {#36}  {#35}  {#34}  {#33}  {#32}  {#31}  {#90}";
-        }
-        {
-          type = "custom";
-          format = "┌{$1}{$1}┐";
-          outputColor = "90";
-        }
-        {
           type = "os";
-          key = "{icon} OS";
+          key = "{icon}  OS";
           keyColor = "yellow";
         }
         {
@@ -62,7 +48,7 @@
         }
         {
           type = "wm";
-          key = " DE/WM";
+          key = "  DE/WM";
           keyColor = "blue";
         }
         {
@@ -92,7 +78,7 @@
         }
         {
           type = "host";
-          key = "󰌢 PC";
+          key = "󰌢  PC";
           keyColor = "green";
         }
         {
@@ -122,17 +108,13 @@
         }
         {
           type = "sound";
-          key = " SND";
+          key = "  SND";
           keyColor = "cyan";
         }
         {
           type = "custom";
-          format = "└{$1}{$1}┘";
+          format = "└{$1}{$1}┘";
           outputColor = "90";
-        }
-        {
-          type = "custom";
-          format = " {#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37}  {#38}  {#39}       {#38}  {#37}  {#36}  {#35}  {#34}  {#33}  {#32}  {#31}  {#90}";
         }
       ];
     };
