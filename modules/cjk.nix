@@ -15,8 +15,6 @@
       enableDefaultPackages = true;
 
       packages = with pkgs; [
-        fira
-        roboto
         lxgw-wenkai
 
         # nerd fonts
@@ -33,6 +31,9 @@
         nur.repos.rewine.ttf-ms-win10
         nur.repos.rewine.ttf-wps-fonts
         nur.repos.chillcicada.ttf-ms-win10-sc-sup
+
+        # Typst Math
+        nur.repos.chillcicada.font-typst-math
       ];
 
       fontconfig = {

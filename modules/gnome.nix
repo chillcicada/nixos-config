@@ -82,6 +82,7 @@
       totem # video player
       baobab # disk usage analyzer
       evince # document viewer
+      decibels # audio player
       epiphany # web browser
       simple-scan # scanner
     ];
