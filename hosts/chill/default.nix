@@ -51,8 +51,6 @@
 
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
 
-  nixpkgs.config.permittedInsecurePackages = [ ];
-
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [

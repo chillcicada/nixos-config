@@ -7,9 +7,7 @@
 
 {
   imports = map (name: ./${name}) (
-    builtins.attrNames (
-      removeAttrs (builtins.readDir ./.) [ "default.nix" ]
-    )
+    builtins.attrNames (removeAttrs (builtins.readDir ./.) [ "default.nix" ])
   );
 
   home-manager = {
@@ -53,7 +51,9 @@
   # nixpkgs config
   nixpkgs.config = {
     allowUnfree = true;
+    allowUnfreePredicate = _: true;
     allowUnsupportedSystem = true;
+    allowBroken = false;
   };
 
   # nix config
