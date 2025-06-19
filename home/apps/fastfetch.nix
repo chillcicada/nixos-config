@@ -27,6 +27,11 @@
           keyWidth = "10";
         }
         {
+          type = "custom";
+          format = "│";
+          outputColor = "90";
+        }
+        {
           type = "os";
           key = "{icon}  OS";
           keyColor = "yellow";
