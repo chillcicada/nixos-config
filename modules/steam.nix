@@ -6,6 +6,23 @@
   ...
 }:
 
+let
+  patchDesktop =
+    pkg: appName: from: to:
+    lib.hiPrio (
+      pkgs.runCommand "$patched-desktop-entry-for-${appName}" { } ''
+        ${pkgs.coreutils}/bin/mkdir -p $out/share/applications
+        ${pkgs.gnused}/bin/sed 's#${from}#${to}#g' < ${pkg}/share/applications/${appName}.desktop > $out/share/applications/${appName}.desktop
+      ''
+    );
+
+  GPUOffloadApp =
+    pkg: desktopName:
+    lib.mkIf config.hardware.nvidia.prime.offload.enableOffloadCmd (
+      patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload "
+    );
+in
+
 {
   options = {
     steam.enable = lib.mkEnableOption "steam";
@@ -40,6 +57,9 @@
     environment.systemPackages = with pkgs; [
       adwsteamgtk
       mangohud
+
+      # desktop applications patched for GPU offloading
+      (GPUOffloadApp steam "steam")
     ];
 
     services.getty.autologinUser = vars.userName;

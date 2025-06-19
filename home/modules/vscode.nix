@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ lib, config, ... }:
 
 {
   options = {
@@ -16,7 +11,6 @@
     # https://nixos.wiki/wiki/Visual_Studio_Code
     programs.vscode = {
       enable = true;
-      package = pkgs.vscode;
 
       mutableExtensionsDir = true;
     };
