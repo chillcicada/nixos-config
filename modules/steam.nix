@@ -18,7 +18,7 @@ let
 
   GPUOffloadApp =
     pkg: desktopName:
-    lib.mkIf config.hardware.nvidia.prime.offload.enableOffloadCmd (
+    lib.mkIf config.hardware.nvidia.prime.offload.enable (
       patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload "
     );
 in

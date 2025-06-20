@@ -15,7 +15,20 @@ let
       ''
     );
 
+  # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload
+  nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
+    export __GL_THREADED_OPTIMIZATIONS=0
+    export __NV_PRIME_RENDER_OFFLOAD=1
+    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+    export __GLX_VENDOR_LIBRARY_NAME=nvidia
+    export __VK_LAYER_NV_optimus=NVIDIA_only
+    exec "$@"
+  '';
+
   GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
+
+  GPUOffloadAppNoOpt =
+    pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
 in
 
 {
@@ -41,6 +54,7 @@ in
 
   home.packages =
     [
+      nvidia-offload-no-opt
       # desktop applications patched for GPU offloading
       (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
     ]
@@ -53,7 +67,7 @@ in
       nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
 
       # desktop applications patched for GPU offloading
-      (GPUOffloadApp hmcl "HMCL")
+      (GPUOffloadAppNoOpt hmcl "HMCL")
       (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
       (GPUOffloadApp obs-studio "com.obsproject.Studio")
     ]);
