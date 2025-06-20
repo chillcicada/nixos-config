@@ -21,7 +21,19 @@
         80
         443
       ];
+      allowedTCPPortRanges = [
+        {
+          from = 20000;
+          to = 65535;
+        }
+      ];
       allowedUDPPorts = [ ];
+      allowedUDPPortRanges = [
+        {
+          from = 20000;
+          to = 65535;
+        }
+      ];
     };
   };
 }
