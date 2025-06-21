@@ -17,12 +17,7 @@ let
 
   # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload
   nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
-    export __GL_THREADED_OPTIMIZATIONS=0
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec "$@"
+    __GL_THREADED_OPTIMIZATIONS=0 nvidia-offload "$@"
   '';
 
   GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
@@ -34,23 +29,34 @@ in
 {
   services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
 
-  # self defined options
+  # -------------------- #
+  # self defined options #
+  # -------------------- #
+
+  # region cli
   coreutils.enable = true;
   tools.enable = true;
-  graphics.enable = true;
-  fcitx5.enable = true;
 
   cpp.enable = true;
   frontend.enable = true;
   nixlang.enable = true;
   python.enable = true;
   typst.enable = true;
+  # endregion
 
+  # region gui
+  graphics.enable = true;
+  fcitx5.enable = true;
   vscode.enable = true;
   neovim.enable = true;
 
   im.enable = true;
   office.enable = true;
+  # endregion
+
+  # ------------------- #
+  # additional packages #
+  # ------------------- #
 
   home.packages =
     [
@@ -67,8 +73,16 @@ in
       nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
 
       # desktop applications patched for GPU offloading
-      (GPUOffloadAppNoOpt hmcl "HMCL")
+      (GPUOffloadApp imv "imv")
+      (GPUOffloadApp imv "imv-dir")
+      (GPUOffloadApp mpv "mpv")
+      (GPUOffloadApp mpv "umpv")
+      (GPUOffloadApp kitty "kitty")
+      (GPUOffloadApp kitty "kitty-open")
+      (GPUOffloadApp typora "typora")
+      (GPUOffloadApp zotero "zotero")
       (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
       (GPUOffloadApp obs-studio "com.obsproject.Studio")
+      (GPUOffloadAppNoOpt hmcl "HMCL")
     ]);
 }
