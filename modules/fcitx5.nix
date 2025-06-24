@@ -79,23 +79,23 @@
               sections = {
                 Fuzzy = {
                   VE_UE = "True";
-                  NG_GN = "True";
-                  Inner = "True";
-                  InnerShort = "True";
-                  PartialFinal = "True";
+                  NG_GN = "False";
+                  Inner = "False";
+                  InnerShort = "False";
+                  PartialFinal = "False";
                   PartialSp = "False";
                   V_U = "True";
-                  AN_ANG = "True";
-                  EN_ENG = "True";
-                  IAN_IANG = "True";
+                  AN_ANG = "False";
+                  EN_ENG = "False";
+                  IAN_IANG = "False";
                   IN_ING = "True";
-                  U_OU = "True";
-                  UAN_UANG = "True";
-                  C_CH = "True";
-                  F_H = "True";
+                  U_OU = "False";
+                  UAN_UANG = "False";
+                  C_CH = "False";
+                  F_H = "False";
                   L_N = "True";
-                  S_SH = "True";
-                  Z_ZH = "True";
+                  S_SH = "False";
+                  Z_ZH = "False";
                   Correction = "None";
                 };
               };
