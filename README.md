@@ -19,7 +19,7 @@ Run `just --list` to see all recipes.
 ├── flake.nix
 ├── home
 │   ├── apps/
-│   └── modules/
+│   ├── modules/
 │   └── minimal.nix
 ├── hosts
 │   ├── <machine>/
@@ -28,7 +28,6 @@ Run `just --list` to see all recipes.
 ├── justfile
 ├── LICENSE
 ├── modules/
-│   ├── core/
 │   └── <top-level>.nix
 ├── README.md
 └── treefmt.toml
@@ -49,7 +48,6 @@ A brief description of the structure:
 - `justfile`: the file that contains the recipes for the `just` command.
 - `LICENSE`: the license file for the repo.
 - `modules`: contains the reusable modules for different purposes.
-  - `core`: the auto-imported core modules for the system.
   - `<top-level>.nix`: the top-level modules for the system.
 - `README.md`: this file.
 - `treefmt.toml`: the configuration file for `treefmt`, a tool to format the directory tree.
