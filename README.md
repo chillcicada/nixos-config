@@ -28,15 +28,14 @@ Run `just --list` to see all recipes.
 ├── justfile
 ├── LICENSE
 ├── modules/
-│   └── <top-level>.nix
 ├── README.md
 └── treefmt.toml
 ```
 
 A brief description of the structure:
 
-- `flake.nix`: the main entry point of the flake.
 - `flake.lock`: the lock file for the flake.
+- `flake.nix`: the main entry point of the flake.
 - `home`: the home-manager configurations.
   - `apps`: the auto-imported app-specific configurations.
   - `modules`: the reusable modules for home-manager.
@@ -47,8 +46,7 @@ A brief description of the structure:
   - `vars.nix`: the shared variables used in the host configurations.
 - `justfile`: the file that contains the recipes for the `just` command.
 - `LICENSE`: the license file for the repo.
-- `modules`: contains the reusable modules for different purposes.
-  - `<top-level>.nix`: the top-level modules for the system.
+- `modules`: contains the reusable top-level modules for different purposes.
 - `README.md`: this file.
 - `treefmt.toml`: the configuration file for `treefmt`, a tool to format the directory tree.
 
