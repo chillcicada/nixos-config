@@ -1,16 +1,81 @@
 {
+  pkgs,
+  vars,
   lib,
   config,
-  pkgs,
   ...
 }:
 
+let
+  cfg = config.desktop;
+
+  allowedTypes = lib.types.enum [
+    "gnome"
+    "hyprland"
+  ];
+in
+
 {
-  options = {
-    fcitx5.enable = lib.mkEnableOption "fcitx5";
+  options.desktop = {
+    enable = lib.mkEnableOption "desktop";
+
+    wm = lib.mkOption {
+      type = allowedTypes;
+      default = "gnome";
+      defaultText = lib.literalMD "The value of your windows manager, defaulting to null";
+      example = "hyprland";
+      description = "The windows manager option.";
+    };
   };
 
-  config = lib.mkIf config.fcitx5.enable {
+  imports = map (name: ./${name}) (
+    builtins.attrNames (removeAttrs (builtins.readDir ./.) [ "default.nix" ])
+  );
+
+  config = lib.mkIf cfg.enable {
+    # X11
+    services = {
+      displayManager = {
+        gdm.enable = true;
+
+        # Enable automatic login for the user.
+        autoLogin = {
+          enable = true;
+          user = vars.userName;
+        };
+      };
+
+      desktopManager.gnome.enable = true;
+
+      xserver = {
+        enable = true;
+        excludePackages = with pkgs; [ xterm ];
+
+        xkb.layout = "us";
+      };
+    };
+
+    # Locale
+    i18n.defaultLocale = "en_US.UTF-8";
+
+    i18n.supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "zh_CN.UTF-8/UTF-8"
+    ];
+
+    i18n.extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
+
+    # Input Method Fcitx5
     /**
       currently gnome doesn't support text-input-v1 and doesn't plan to support it
       reference to: https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3751
@@ -137,9 +202,50 @@
       };
     };
 
-    environment.sessionVariables = {
-      XMODIFIERS = "@im=fcitx";
-      QT_IM_MODULE = "fcitx";
+    # Font Config
+    fonts = {
+      enableDefaultPackages = true;
+
+      packages = with pkgs; [
+        lxgw-wenkai
+
+        # nerd fonts
+        maple-mono.truetype
+        maple-mono.NF-unhinted
+        maple-mono.NF-CN-unhinted
+
+        # Noto fonts
+        noto-fonts-cjk-sans
+        noto-fonts-cjk-serif
+        noto-fonts-color-emoji
+
+        # Microsoft fonts & WPS fonts
+        nur.repos.rewine.ttf-ms-win10
+        nur.repos.rewine.ttf-wps-fonts
+        nur.repos.chillcicada.ttf-ms-win10-sc-sup
+
+        # Typst Math
+        nur.repos.chillcicada.font-typst-math
+      ];
+
+      fontconfig = {
+        enable = true;
+
+        defaultFonts = {
+          emoji = [ "Noto Color Emoji" ];
+          serif = [ "Noto Serif CJK SC" ];
+          sansSerif = [ "Noto Sans CJK SC" ];
+          monospace = [ "Maple Mono NF CN" ];
+        };
+      };
+    };
+
+    # Console
+    console = {
+      earlySetup = true;
+      font = "ter-i32b";
+      packages = with pkgs; [ terminus_font ];
+      keyMap = "us";
     };
   };
 }

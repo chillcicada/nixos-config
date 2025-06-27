@@ -1,16 +1,34 @@
 {
+  pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 
+let
+  cfg = config.essential;
+in
+
 {
-  options = {
-    source.enable = lib.mkEnableOption "source";
+  options.essential = {
+    enable = lib.mkEnableOption "essential";
+
+    proxy.enable = lib.mkEnableOption "proxy";
   };
 
-  config = lib.mkIf config.source.enable {
+  imports = map (name: ./${name}) (
+    builtins.attrNames (removeAttrs (builtins.readDir ./.) [ "default.nix" ])
+  );
+
+  config = lib.mkIf cfg.enable {
+    # Build Coreutils
+    environment.systemPackages = with pkgs; [
+      git
+      just
+      nix-output-monitor # nom
+    ];
+
+    # Build Source
     nix = {
       registry.nixpkgs.flake = inputs.nixpkgs;
       settings = {

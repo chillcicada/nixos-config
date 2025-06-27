@@ -43,14 +43,11 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    just
-    nix-output-monitor # nom
-  ];
-
+  # Home Manager Entry
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
 
+  # Todo: remove this
+  # Enable nix-ld
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
@@ -58,22 +55,12 @@
     ];
   };
 
-  console = {
-    earlySetup = true;
-    font = "ter-i32b";
-    packages = with pkgs; [ terminus_font ];
-    keyMap = "us";
-  };
-
   # Time Zone.
   time.timeZone = "Asia/Shanghai";
 
   # self defined options
-  cjk.enable = true;
-  clash.enable = true;
-  gnome.enable = true;
+  desktop.enable = true;
+  essential.enable = true;
+  essential.proxy.enable = true;
   steam.enable = true;
-  fcitx5.enable = true;
-  locale.enable = true;
-  source.enable = true;
 }
