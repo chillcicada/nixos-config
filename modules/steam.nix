@@ -7,6 +7,8 @@
 }:
 
 let
+  cfg = config.steam;
+
   patchDesktop =
     pkg: appName: from: to:
     lib.hiPrio (
@@ -24,11 +26,11 @@ let
 in
 
 {
-  options = {
-    steam.enable = lib.mkEnableOption "steam";
+  options.steam = {
+    enable = lib.mkEnableOption "steam";
   };
 
-  config = lib.mkIf config.steam.enable {
+  config = lib.mkIf cfg.enable {
     # https://nixos.wiki/wiki/Steam
     programs = {
       gamescope = {
