@@ -55,6 +55,12 @@ in
       };
     };
 
+    # Enable wayland support.
+    environment.sessionVariables = {
+      QT_QPA_PLATFORM = "wayland";
+      NIXOS_OZONE_WL = "1";
+    };
+
     # Locale
     i18n.defaultLocale = "en_US.UTF-8";
 

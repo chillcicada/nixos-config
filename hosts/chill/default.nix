@@ -2,10 +2,31 @@
   pkgs,
   inputs,
   vars,
+  config,
   ...
 }:
 
+let
+  tomlFormat = pkgs.formats.toml { };
+
+  wakatime = {
+    settings = {
+      api_key = config.sops.secrets.wakatime_api_key.path;
+      status_bar_enabled = false;
+    };
+  };
+
+  wakatimeConfig = tomlFormat.generate "wakatime-config" wakatime;
+in
+
 {
+  sops.defaultSopsFile = ./secrets.yaml;
+
+  sops.secrets.wakatime_api_key = {
+    owner = vars.userName;
+    group = "users";
+  };
+
   imports = [
     ./nvidia.nix
     ./hardware.nix
@@ -37,14 +58,14 @@
 
   security.rtkit.enable = true; # Required for pulse and pipewire.
 
-  # Enable wayland support.
-  environment.sessionVariables = {
-    QT_QPA_PLATFORM = "wayland";
-    NIXOS_OZONE_WL = "1";
-  };
-
   # Home Manager Entry
-  home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
+  home-manager.users.${vars.userName} = {
+    imports = [ inputs.self.homeModules.chill ];
+
+    home.file = {
+      ".wakatime.cfg".source = wakatimeConfig;
+    };
+  };
 
   # Todo: remove this
   # Enable nix-ld
