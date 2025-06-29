@@ -33,11 +33,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # my wallpaper repo
     imgs = {
       url = "github:chillcicada/imgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # my neovim config
     nvim-config = {
       type = "github";
       owner = "chillcicada";
@@ -45,6 +47,7 @@
       flake = false;
     };
 
+    # my typora themes repo
     typora-themes = {
       type = "github";
       owner = "chillcicada";
