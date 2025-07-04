@@ -11,7 +11,6 @@ with inputs;
         ../modules
         ./chill
 
-        nur.modules.nixos.default
         sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
@@ -19,6 +18,8 @@ with inputs;
       networking.hostName = "chill";
 
       system.stateVersion = "25.11";
+
+      nixpkgs.overlays = [ inputs.chillcicada.overlays.default ];
     };
 
     salt = {

@@ -70,8 +70,8 @@ in
       aseprite
       obs-studio
       teamspeak5_client
-      nur.repos.chillcicada.et-astral
-      nur.repos.novel2430.wemeet-bin-bwrap-wayland-screenshare
+
+      chillcicada.et-astral
 
       # desktop applications patched for GPU offloading
       (GPUOffloadApp imv "imv")

@@ -17,11 +17,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,11 +28,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # my NUR repo
+    chillcicada.url = "github:chillcicada/nurpkgs";
+
     # my wallpaper repo
-    imgs = {
-      url = "github:chillcicada/imgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    imgs.url = "github:chillcicada/imgs";
 
     # my neovim config
     nvim-config = {

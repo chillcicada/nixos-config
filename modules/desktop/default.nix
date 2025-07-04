@@ -111,7 +111,8 @@ in
           # pinyin lib supplement
           fcitx5-pinyin-zhwiki
           fcitx5-pinyin-moegirl
-          nur.repos.chillcicada.fcitx5-pinyin-custom-dictionary
+
+          chillcicada.fcitx5-pinyin-custom-dictionary
         ];
 
         ignoreUserConfig = false;
@@ -213,8 +214,6 @@ in
       enableDefaultPackages = true;
 
       packages = with pkgs; [
-        lxgw-wenkai
-
         # nerd fonts
         maple-mono.truetype
         maple-mono.NF-unhinted
@@ -224,14 +223,6 @@ in
         noto-fonts-cjk-sans
         noto-fonts-cjk-serif
         noto-fonts-color-emoji
-
-        # Microsoft fonts & WPS fonts
-        nur.repos.rewine.ttf-ms-win10
-        nur.repos.rewine.ttf-wps-fonts
-        nur.repos.chillcicada.ttf-ms-win10-sc-sup
-
-        # Typst Math
-        nur.repos.chillcicada.font-typst-math
       ];
 
       fontconfig = {

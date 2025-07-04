@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options = {
@@ -18,5 +23,8 @@
     home.sessionVariables = {
       EDITOR = "code";
     };
+
+    # Typst Math
+    home.packages = with pkgs; [ chillcicada.font-typst-math ];
   };
 }
