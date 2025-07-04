@@ -50,7 +50,11 @@
   };
 
   # set helix as the default editor
-  programs.helix.defaultEditor = true;
+  programs.helix = {
+    enable = true;
+
+    defaultEditor = true;
+  };
 
   programs.home-manager.enable = true;
 }
