@@ -1,60 +1,13 @@
-{ pkgs, vars, ... }:
+{ pkgs, ... }:
 
 {
-  # pick up which to use
-  imports = [
-    ./apps/nh.nix
-    ./apps/btop.nix
-    ./apps/helix.nix
-    ./apps/zoxide.nix
-  ];
+  imports = [ ./common.nix ];
 
-  home = {
-    username = vars.userName;
-    homeDirectory = "/home/${vars.userName}";
-    packages = with pkgs; [
-      dust
-      ufetch # alternative to fastfetch
-      nix-tree
-    ];
-  };
+  # alternative to fastfetch
+  home.packages = with pkgs; [ ufetch ];
 
-  programs.eza = {
-    enable = true;
-    icons = "auto";
-  };
+  programs.zsh.shellAliases.f = "ufetch";
 
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-
-    settings = {
-      username.disabled = true;
-      character = {
-        success_symbol = "[λ](bold green)";
-        error_symbol = "[×](bold red)";
-      };
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    oh-my-zsh.enable = true;
-    shellAliases = {
-      # ! single character aliases
-      f = "ufetch";
-    };
-  };
-
-  # set helix as the default editor
-  programs.helix = {
-    enable = true;
-
-    defaultEditor = true;
-  };
-
-  programs.home-manager.enable = true;
+  # Use helix by default
+  programs.helix.enable = true;
 }

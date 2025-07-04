@@ -1,20 +1,13 @@
 { ... }:
 
 {
+  # Zsh extended configuration from common.nix
   programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
     history.size = 20000;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "dotenv"
-      ];
-    };
-    plugins = [ ];
+    oh-my-zsh.plugins = [
+      "git"
+      "dotenv"
+    ];
     initContent = ''
       # pnpm
       export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -23,10 +16,6 @@
         *) export PATH="$PNPM_HOME:$PATH" ;;
       esac
       # pnpm end
-
-      # cargo
-      export PATH="$PATH:$HOME/.cargo/bin"
-      # cargo end
 
       # uv
       export PATH="$PATH:$HOME/.local/bin"

@@ -23,4 +23,7 @@
     enableSshSupport = true;
     enableZshIntegration = true;
   };
+
+  # Eza with git
+  programs.eza.git = true;
 }

@@ -20,7 +20,7 @@ boot-as-root TARGET=current_hostname:
 
 # rebuild the system configuration with verbose output and print build logs
 diagnosis TARGET=current_hostname:
-  sudo nixos-rebuild switch --show-trace --verbose --print-build-logs --flake .#{{TARGET}} |& nom
+  sudo nixos-rebuild switch --show-trace --verbose --print-build-logs --flake ."#{{TARGET}}" |& nom
 
 # test the system configuration
 test:
@@ -37,7 +37,7 @@ up TARGET='':
 # build system and push to remote host
 push TARGET:
   git add --all
-  nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake .#{{TARGET}} |& nom
+  nixos-rebuild --target-host {{TARGET}} --sudo switch --flake ."#{{TARGET}}" |& nom
 
 # tree view of the system configuration dependencies
 tree:
