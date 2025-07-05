@@ -55,6 +55,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    history.size = 20000;
     oh-my-zsh.enable = true;
   };
 }

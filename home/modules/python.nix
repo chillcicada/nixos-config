@@ -19,6 +19,8 @@
       ))
     ];
 
+    programs.zsh.shellAliases.py = "python";
+
     programs.ruff = {
       enable = true;
 

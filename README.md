@@ -20,6 +20,8 @@ Run `just --list` to see all recipes.
 ├── home
 │   ├── apps/
 │   ├── modules/
+│   ├── common.nix
+│   ├── default.nix
 │   └── minimal.nix
 ├── hosts
 │   ├── <machine>/
@@ -39,6 +41,8 @@ A brief description of the structure:
 - `home`: the home-manager configurations.
   - `apps`: the auto-imported app-specific configurations.
   - `modules`: the reusable modules for home-manager.
+  - `common.nix`: the common configuration for home-manager.
+  - `default.nix`: the default configuration for home-manager.
   - `minimal.nix`: the minimal configuration for home-manager.
 - `hosts`: the host-specific configurations.
   - `<machine>/`: the configurations for a specific machine.
