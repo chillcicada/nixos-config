@@ -65,7 +65,7 @@ in
       (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
     ]
     ++ (with pkgs; [
-      hmcl
+      # hmcl
       kazumi
       aseprite
       obs-studio
@@ -84,6 +84,6 @@ in
       (GPUOffloadApp zotero "zotero")
       (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
       (GPUOffloadApp obs-studio "com.obsproject.Studio")
-      (GPUOffloadAppNoOpt hmcl "HMCL")
+      # (GPUOffloadAppNoOpt hmcl "HMCL")
     ]);
 }
