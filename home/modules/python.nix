@@ -59,5 +59,11 @@
       # refer to https://docs.astral.sh/uv/configuration/
       settings = { };
     };
+
+    home.sessionVariables = {
+      SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt"; # use system CA bundle
+      # manully create the directory beforehand
+      NLTK_DATA = "${config.home.homeDirectory}/.local/share/nltk_data";
+    };
   };
 }
