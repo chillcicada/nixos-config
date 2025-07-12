@@ -66,14 +66,14 @@
       ];
       allowedTCPPortRanges = [
         {
-          from = 20000;
+          from = 2000;
           to = 65535;
         }
       ];
       allowedUDPPorts = [ ];
       allowedUDPPortRanges = [
         {
-          from = 20000;
+          from = 2000;
           to = 65535;
         }
       ];
