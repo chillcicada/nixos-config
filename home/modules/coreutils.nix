@@ -13,7 +13,7 @@
   config = lib.mkIf config.coreutils.enable {
     home.packages = with pkgs; [
       jq # json processor
-      dust # disk usage
+      ncdu # du with ncurses interface
       tree # tree view
       sops # secrets management
       wget # download files

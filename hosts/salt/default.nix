@@ -18,4 +18,7 @@
 
   # Time Zone.
   time.timeZone = "Asia/Shanghai";
+
+  # Disable the nixos manual.
+  documentation.enable = false;
 }
