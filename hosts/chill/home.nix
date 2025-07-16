@@ -15,7 +15,7 @@ let
       ''
     );
 
-  # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload
+  # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload, used by minecraft
   nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
     __GL_THREADED_OPTIMIZATIONS=0 nvidia-offload "$@"
   '';
@@ -34,25 +34,47 @@ in
   # -------------------- #
 
   # region cli
-  coreutils.enable = true;
   tools.enable = true;
+  coreutils.enable = true;
 
   cpp.enable = true;
-  frontend.enable = true;
-  nixlang.enable = true;
-  python.enable = true;
   typst.enable = true;
+  python.enable = true;
+  nixlang.enable = true;
+  frontend.enable = true;
   # endregion
 
   # region gui
-  graphics.enable = true;
   fcitx5.enable = true;
   vscode.enable = true;
   neovim.enable = true;
+  graphics.enable = true;
 
   im.enable = true;
   office.enable = true;
   # endregion
+
+  # ----------- #
+  # font config #
+  # ----------- #
+  stylix.targets.fontconfig.enable = false;
+
+  fonts.fontconfig = {
+    enable = true;
+
+    defaultFonts = {
+      emoji = [ "Noto Color Emoji" ];
+      serif = [
+        "Georgia"
+        "Noto Serif CJK SC"
+      ];
+      sansSerif = [
+        "Arial"
+        "Noto Sans CJK SC"
+      ];
+      monospace = [ "Maple Mono NF CN" ];
+    };
+  };
 
   # ------------------- #
   # additional packages #

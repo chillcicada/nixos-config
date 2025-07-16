@@ -93,6 +93,8 @@ in
         https://sh.alynx.one/posts/GNOME-IBus-Wayland-IME/
       - the present situation of the text input method implementation in wayland:
         https://zhuanlan.zhihu.com/p/22611314767
+
+      the solution is to use fcitx5 with xwayland frontend for specific apps
     */
 
     i18n.inputMethod = {
@@ -209,14 +211,15 @@ in
       };
     };
 
-    # Font Config
     fonts = {
       enableDefaultPackages = true;
 
       packages = with pkgs; [
-        # nerd fonts
+        # Maple Mono (Ligature TTF unhinted)
         maple-mono.truetype
+        # Maple Mono NF (Ligature unhinted)
         maple-mono.NF-unhinted
+        # Maple Mono NF CN (Ligature unhinted)
         maple-mono.NF-CN-unhinted
 
         # Noto fonts
@@ -224,17 +227,6 @@ in
         noto-fonts-cjk-serif
         noto-fonts-color-emoji
       ];
-
-      fontconfig = {
-        enable = true;
-
-        defaultFonts = {
-          emoji = [ "Noto Color Emoji" ];
-          serif = [ "Noto Serif CJK SC" ];
-          sansSerif = [ "Noto Sans CJK SC" ];
-          monospace = [ "Maple Mono NF CN" ];
-        };
-      };
     };
 
     # Console
