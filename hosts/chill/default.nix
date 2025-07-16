@@ -52,22 +52,6 @@
   # Time Zone.
   time.timeZone = "Asia/Shanghai";
 
-  # FontConfig
-  fonts.fontconfig = {
-    defaultFonts = {
-      emoji = [ "Noto Color Emoji" ];
-      serif = [
-        "Georgia"
-        "Noto Serif CJK SC"
-      ];
-      sansSerif = [
-        "Arial"
-        "Noto Sans CJK SC"
-      ];
-      monospace = [ "Maple Mono NF CN" ];
-    };
-  };
-
   # self defined options
   desktop.enable = true;
   essential.enable = true;
