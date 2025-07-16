@@ -29,6 +29,8 @@ in
 {
   services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
 
+  stylix.targets.fontconfig.enable = false;
+
   # -------------------- #
   # self defined options #
   # -------------------- #
@@ -54,32 +56,9 @@ in
   office.enable = true;
   # endregion
 
-  # ----------- #
-  # font config #
-  # ----------- #
-  stylix.targets.fontconfig.enable = false;
-
-  fonts.fontconfig = {
-    enable = true;
-
-    defaultFonts = {
-      emoji = [ "Noto Color Emoji" ];
-      serif = [
-        "Georgia"
-        "Noto Serif CJK SC"
-      ];
-      sansSerif = [
-        "Arial"
-        "Noto Sans CJK SC"
-      ];
-      monospace = [ "Maple Mono NF CN" ];
-    };
-  };
-
   # ------------------- #
   # additional packages #
   # ------------------- #
-
   home.packages =
     [
       nvidia-offload-no-opt

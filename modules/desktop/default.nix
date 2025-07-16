@@ -213,20 +213,7 @@ in
 
     fonts = {
       enableDefaultPackages = true;
-
-      packages = with pkgs; [
-        # Maple Mono (Ligature TTF unhinted)
-        maple-mono.truetype
-        # Maple Mono NF (Ligature unhinted)
-        maple-mono.NF-unhinted
-        # Maple Mono NF CN (Ligature unhinted)
-        maple-mono.NF-CN-unhinted
-
-        # Noto fonts
-        noto-fonts-cjk-sans
-        noto-fonts-cjk-serif
-        noto-fonts-color-emoji
-      ];
+      fontconfig.enable = true;
     };
 
     # Console

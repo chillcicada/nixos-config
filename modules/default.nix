@@ -45,9 +45,6 @@
 
   environment.defaultPackages = [ ];
 
-  # disable fontconfig
-  fonts.fontconfig.enable = false;
-
   # manually add the sops file
   sops.age.keyFile = "/home/${vars.userName}/.config/sops/age/keys.txt";
 

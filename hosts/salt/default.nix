@@ -13,6 +13,9 @@
 
   zramSwap.enable = true;
 
+  # Disable font config
+  fonts.fontconfig.enable = false;
+
   # Home Manager Entry
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.salt ];
 
