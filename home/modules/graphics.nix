@@ -11,21 +11,6 @@
   };
 
   config = lib.mkIf config.graphics.enable {
-    # font config
-    home.packages = with pkgs; [
-      # Maple Mono (Ligature TTF unhinted)
-      maple-mono.truetype
-      # Maple Mono NF (Ligature unhinted)
-      maple-mono.NF-unhinted
-      # Maple Mono NF CN (Ligature unhinted)
-      maple-mono.NF-CN-unhinted
-
-      # noto fonts
-      noto-fonts-cjk-serif
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-    ];
-
     # image
     programs.imv = {
       enable = true;

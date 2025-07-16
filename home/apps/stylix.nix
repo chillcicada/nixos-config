@@ -4,6 +4,15 @@ let
   backgroundImage = "${inputs.imgs.packages."${pkgs.system}".default}/share/wallpapers/BA.png";
 in
 {
+  home.packages = with pkgs; [
+    # Maple Mono (Ligature TTF unhinted)
+    maple-mono.truetype
+    # Maple Mono NF (Ligature unhinted)
+    maple-mono.NF-unhinted
+    # Maple Mono NF CN (Ligature unhinted)
+    maple-mono.NF-CN-unhinted
+  ];
+
   stylix = {
     enable = true;
     autoEnable = true;
@@ -12,6 +21,26 @@ in
     polarity = "dark";
 
     fonts = {
+      serif = {
+        package = pkgs.noto-fonts-cjk-serif;
+        name = "Noto Serif CJK SC";
+      };
+
+      sansSerif = {
+        package = pkgs.noto-fonts-cjk-sans;
+        name = "Noto Sans CJK SC";
+      };
+
+      monospace = {
+        package = pkgs.maple-mono.NF-CN-unhinted;
+        name = "Maple Mono NF CN";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+
       sizes = {
         terminal = 13;
       };

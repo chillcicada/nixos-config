@@ -29,8 +29,6 @@ in
 {
   services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
 
-  stylix.targets.fontconfig.enable = false;
-
   # -------------------- #
   # self defined options #
   # -------------------- #
