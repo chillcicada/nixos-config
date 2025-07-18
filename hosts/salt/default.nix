@@ -19,9 +19,9 @@
   # Home Manager Entry
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.salt ];
 
-  # Time Zone.
+  # Time Zone
   time.timeZone = "Asia/Shanghai";
 
-  # Disable the nixos manual.
+  # Disable the nixos manual
   documentation.enable = false;
 }

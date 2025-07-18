@@ -52,9 +52,10 @@
   # Enable Zsh & oh-my-zsh
   programs.zsh = {
     enable = true;
+    oh-my-zsh.enable = true;
     enableCompletion = true;
+    history.ignoreAllDups = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh.enable = true;
   };
 }

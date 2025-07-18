@@ -40,7 +40,6 @@
   # Home Manager Entry
   home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
 
-  # Todo: remove this
   # Enable nix-ld
   programs.nix-ld = {
     enable = true;
@@ -49,8 +48,15 @@
     ];
   };
 
-  # Time Zone.
+  # Time Zone
   time.timeZone = "Asia/Shanghai";
+
+  # Set nix gc
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
 
   # self defined options
   desktop.enable = true;

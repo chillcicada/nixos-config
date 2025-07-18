@@ -12,7 +12,7 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
-    backupFileExtension = "homeManagerBackup";
+    backupFileExtension = vars.hmBackupFileExtension;
     useGlobalPkgs = true;
     useUserPackages = true;
   };
@@ -25,7 +25,12 @@
       "wheel"
     ];
     shell = pkgs.zsh;
+    ignoreShellProgramCheck = true; # shell defined in home-manager
   };
+
+  environment.shells = [ pkgs.zsh ];
+
+  environment.defaultPackages = [ ];
 
   security.sudo.extraRules = [
     {
@@ -39,43 +44,25 @@
     }
   ];
 
-  programs.zsh.enable = true;
-
-  environment.shells = with pkgs; [ zsh ];
-
-  environment.defaultPackages = [ ];
-
   # manually add the sops file
   sops.age.keyFile = "/home/${vars.userName}/.config/sops/age/keys.txt";
 
   # nixpkgs config
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = _: true;
-    allowUnsupportedSystem = true;
-    allowBroken = false;
-  };
+  nixpkgs.config.allowUnfree = true;
 
   # nix config
-  nix = {
-    channel.enable = false;
-
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      trusted-users = [ vars.userName ];
-    };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+  nix.settings = {
+    trusted-users = [ vars.userName ];
+    auto-optimise-store = true;
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
+  nix.channel.enable = false;
+
+  # openssh configuration
   services.openssh = {
     enable = true;
     openFirewall = true;
