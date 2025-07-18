@@ -125,5 +125,5 @@
     };
   };
 
-  programs.zsh.shellAliases.f = "fastfetch";
+  home.shellAliases.f = "fastfetch";
 }

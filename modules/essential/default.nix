@@ -14,7 +14,9 @@ in
   options.essential = {
     enable = lib.mkEnableOption "essential";
 
-    proxy.enable = lib.mkEnableOption "proxy";
+    proxy.enable = lib.mkEnableOption "proxy" // {
+      default = true;
+    };
   };
 
   imports = map (name: ./${name}) (

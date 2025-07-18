@@ -18,12 +18,6 @@
     lfs.enable = true;
   };
 
-  services.gpg-agent = {
-    enable = true;
-    enableSshSupport = true;
-    enableZshIntegration = true;
-  };
-
   # Eza with git
   programs.eza.git = true;
 }

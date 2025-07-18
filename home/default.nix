@@ -5,4 +5,6 @@ _: {
     ./modules
     ./common.nix
   ];
+
+  gtk.enable = true;
 }
