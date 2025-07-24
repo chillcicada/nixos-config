@@ -92,29 +92,28 @@
 
         ];
 
-        bind =
-          [
-            "$mod, Q, exec, $terminal"
-            "$mod, C, killactive"
-            "$mod, L, exit"
-            "$mod, E, exec, $fileManager"
-            "$mod, V, togglefloating"
-            "$mod, R, exec, $menu"
-            "$mod, P, pseudo"
-            "$mod, J, togglesplit"
+        bind = [
+          "$mod, Q, exec, $terminal"
+          "$mod, C, killactive"
+          "$mod, L, exit"
+          "$mod, E, exec, $fileManager"
+          "$mod, V, togglefloating"
+          "$mod, R, exec, $menu"
+          "$mod, P, pseudo"
+          "$mod, J, togglesplit"
 
-            "$mod, S, togglespecialworkspace, magic"
-            "$mod SHIFT, S, movetoworkspace, special:magic"
+          "$mod, S, togglespecialworkspace, magic"
+          "$mod SHIFT, S, movetoworkspace, special:magic"
 
-            "$mod, mouse_down, workspace, e+1"
-            "$mod, mouse_up, workspace, e-1"
-          ]
-          ++ (builtins.concatLists (
-            builtins.genList (i: [
-              "$mod, ${toString (i + 1)}, workspace, ${toString (i + 1)}"
-              "$mod SHIFT, ${toString (i + 1)}, movetoworkspace, ${toString (i + 1)}"
-            ]) 9 # [1..9]
-          ));
+          "$mod, mouse_down, workspace, e+1"
+          "$mod, mouse_up, workspace, e-1"
+        ]
+        ++ (builtins.concatLists (
+          builtins.genList (i: [
+            "$mod, ${toString (i + 1)}, workspace, ${toString (i + 1)}"
+            "$mod SHIFT, ${toString (i + 1)}, movetoworkspace, ${toString (i + 1)}"
+          ]) 9 # [1..9]
+        ));
 
         general = {
           gaps_in = 5;

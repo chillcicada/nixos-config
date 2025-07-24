@@ -22,6 +22,8 @@ in
         gnome-remote-desktop.enable = false;
         gnome-online-accounts.enable = false;
         gnome-browser-connector.enable = false;
+
+        gnome-keyring.enable = lib.mkForce false;
         evolution-data-server.enable = lib.mkForce false;
       };
 
@@ -38,6 +40,7 @@ in
       gnome-music
       gnome-clocks
       gnome-console
+      gnome-keyring
       gnome-weather
       gnome-calendar
       gnome-contacts
@@ -62,6 +65,7 @@ in
       evince # document viewer
       decibels # audio player
       epiphany # web browser
+      seahorse # password and encryption keys manager
       simple-scan # scanner
     ];
 

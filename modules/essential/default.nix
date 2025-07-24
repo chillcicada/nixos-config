@@ -28,8 +28,11 @@ in
     environment.systemPackages = with pkgs; [
       git
       just
+      gnupg
       nix-output-monitor # nom
     ];
+
+    programs.gnupg.agent.enable = true;
 
     # Build Source
     nix = {

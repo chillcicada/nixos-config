@@ -27,8 +27,6 @@ let
 in
 
 {
-  services.gpg-agent.pinentry.package = pkgs.pinentry-gnome3;
-
   # Zsh extended configuration
   programs.zsh = {
     oh-my-zsh.plugins = [
@@ -86,32 +84,31 @@ in
   # ------------------- #
   # additional packages #
   # ------------------- #
-  home.packages =
-    [
-      nvidia-offload-no-opt
-      # desktop applications patched for GPU offloading
-      (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
-    ]
-    ++ (with pkgs; [
-      hmcl
-      kazumi
-      aseprite
-      obs-studio
-      teamspeak5_client
+  home.packages = [
+    nvidia-offload-no-opt
+    # desktop applications patched for GPU offloading
+    (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
+  ]
+  ++ (with pkgs; [
+    hmcl
+    kazumi
+    aseprite
+    obs-studio
+    teamspeak5_client
 
-      chillcicada.et-astral
+    chillcicada.et-astral
 
-      # desktop applications patched for GPU offloading
-      (GPUOffloadApp imv "imv")
-      (GPUOffloadApp imv "imv-dir")
-      (GPUOffloadApp mpv "mpv")
-      (GPUOffloadApp mpv "umpv")
-      (GPUOffloadApp kitty "kitty")
-      (GPUOffloadApp kitty "kitty-open")
-      (GPUOffloadApp typora "typora")
-      (GPUOffloadApp zotero "zotero")
-      (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
-      (GPUOffloadApp obs-studio "com.obsproject.Studio")
-      (GPUOffloadAppNoOpt hmcl "HMCL")
-    ]);
+    # desktop applications patched for GPU offloading
+    (GPUOffloadApp imv "imv")
+    (GPUOffloadApp imv "imv-dir")
+    (GPUOffloadApp mpv "mpv")
+    (GPUOffloadApp mpv "umpv")
+    (GPUOffloadApp kitty "kitty")
+    (GPUOffloadApp kitty "kitty-open")
+    (GPUOffloadApp typora "typora")
+    (GPUOffloadApp zotero "zotero")
+    (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
+    (GPUOffloadApp obs-studio "com.obsproject.Studio")
+    (GPUOffloadAppNoOpt hmcl "HMCL")
+  ]);
 }
