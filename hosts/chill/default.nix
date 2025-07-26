@@ -58,7 +58,6 @@
 
   # self defined options
   desktop.enable = true;
-  desktop.wm = "hyprland";
   essential.enable = true;
   essential.proxy.enable = true;
   steam.enable = true;
