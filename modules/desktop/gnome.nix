@@ -13,6 +13,8 @@ in
   config = lib.mkIf (cfg.enable && cfg.wm == "gnome") {
     # GNOME
     services = {
+      desktopManager.gnome.enable = true;
+
       gnome = {
         core-apps.enable = true;
 

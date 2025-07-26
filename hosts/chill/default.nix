@@ -43,9 +43,7 @@
   # Enable nix-ld
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
-      icu # required by `marksman` for nvim
-    ];
+    libraries = with pkgs; [ icu ]; # required by `marksman` for nvim
   };
 
   # Time Zone
@@ -60,6 +58,7 @@
 
   # self defined options
   desktop.enable = true;
+  desktop.wm = "hyprland";
   essential.enable = true;
   essential.proxy.enable = true;
   steam.enable = true;

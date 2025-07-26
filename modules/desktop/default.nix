@@ -23,7 +23,7 @@ in
       type = allowedTypes;
       default = "gnome";
       defaultText = lib.literalMD "The value of your windows manager, defaulting to null";
-      example = "hyprland";
+      example = "gnome";
       description = "The windows manager option.";
     };
   };
@@ -33,20 +33,17 @@ in
   );
 
   config = lib.mkIf cfg.enable {
-    # X11
     services = {
+      # Use gdm as the display manager.
       displayManager = {
         gdm.enable = true;
 
         # Enable automatic login for the user.
-        autoLogin = {
-          enable = true;
-          user = vars.userName;
-        };
+        autoLogin.enable = true;
+        autoLogin.user = vars.userName;
       };
 
-      desktopManager.gnome.enable = true;
-
+      # X11 configuration
       xserver = {
         enable = true;
         excludePackages = with pkgs; [ xterm ];
