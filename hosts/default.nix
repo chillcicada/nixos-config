@@ -45,6 +45,7 @@ with inputs;
 
         stylix.homeModules.stylix
         zen-browser.homeModules.default
+        vscode-server.homeModules.default
       ];
 
       home.stateVersion = "25.11";

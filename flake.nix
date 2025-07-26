@@ -6,6 +6,8 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

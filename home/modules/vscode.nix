@@ -20,6 +20,8 @@
       mutableExtensionsDir = true;
     };
 
+    services.vscode-server.enable = true;
+
     home.sessionVariables = {
       EDITOR = "code";
     };
