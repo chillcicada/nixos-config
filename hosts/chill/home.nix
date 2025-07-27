@@ -93,10 +93,10 @@ in
     # hmcl
     kazumi
     aseprite
-    obs-studio
-    teamspeak5_client
+    # obs-studio
+    # teamspeak5_client
 
-    chillcicada.et-astral
+    # chillcicada.et-astral
 
     # desktop applications patched for GPU offloading
     (GPUOffloadApp imv "imv")
@@ -108,7 +108,7 @@ in
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
     (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
-    (GPUOffloadApp obs-studio "com.obsproject.Studio")
+    # (GPUOffloadApp obs-studio "com.obsproject.Studio")
     # (GPUOffloadAppNoOpt hmcl "HMCL")
   ]);
 }
