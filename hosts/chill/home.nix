@@ -15,15 +15,15 @@ let
       ''
     );
 
-  # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload, used by minecraft
-  nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
-    __GL_THREADED_OPTIMIZATIONS=0 nvidia-offload "$@"
-  '';
+  # # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload, used by minecraft
+  # nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
+  #   __GL_THREADED_OPTIMIZATIONS=0 nvidia-offload "$@"
+  # '';
 
   GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
 
-  GPUOffloadAppNoOpt =
-    pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
+  # GPUOffloadAppNoOpt =
+  #   pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
 in
 
 {
@@ -85,12 +85,12 @@ in
   # additional packages #
   # ------------------- #
   home.packages = [
-    nvidia-offload-no-opt
+    # nvidia-offload-no-opt
     # desktop applications patched for GPU offloading
     (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
   ]
   ++ (with pkgs; [
-    hmcl
+    # hmcl
     kazumi
     aseprite
     obs-studio
@@ -109,6 +109,6 @@ in
     (GPUOffloadApp zotero "zotero")
     (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
     (GPUOffloadApp obs-studio "com.obsproject.Studio")
-    (GPUOffloadAppNoOpt hmcl "HMCL")
+    # (GPUOffloadAppNoOpt hmcl "HMCL")
   ]);
 }
