@@ -13,13 +13,13 @@
 
   config = lib.mkIf config.office.enable {
     home.packages = with pkgs; [
-      lxgw-wenkai # Used by Typora
       typora
-
       zotero
 
       chillcicada.wemeet
       chillcicada.wpsoffice-cn
+
+      lxgw-wenkai
 
       # Microsoft fonts & WPS fonts
       chillcicada.ttf-ms-win10-wps-mix

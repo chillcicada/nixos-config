@@ -78,7 +78,6 @@ in
   graphics.enable = true;
 
   im.enable = true;
-  hyprland.enable = true;
   office.enable = true;
   # endregion
 
