@@ -13,7 +13,7 @@
   config = lib.mkIf config.im.enable {
     home.packages = with pkgs; [
       qq
-      wechat-uos
+      wechat
     ];
   };
 }
