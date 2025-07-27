@@ -74,6 +74,7 @@ in
   # region gui
   fcitx5.enable = true;
   vscode.enable = true;
+  vscode.server.enable = true;
   neovim.enable = true;
   graphics.enable = true;
 

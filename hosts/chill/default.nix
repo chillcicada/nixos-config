@@ -57,8 +57,7 @@
   };
 
   # self defined options
+  steam.enable = true;
   desktop.enable = true;
   essential.enable = true;
-  essential.proxy.enable = true;
-  steam.enable = true;
 }
