@@ -60,7 +60,11 @@
     ];
   };
 
+  # Disable the NixOS channel
   nix.channel.enable = false;
+
+  # Disable the NixOS manual
+  documentation.enable = false;
 
   # openssh configuration
   services.openssh = {
