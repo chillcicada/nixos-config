@@ -1,6 +1,7 @@
 { vars, ... }:
 
 {
+  # https://nix-community.github.io/home-manager/options.xhtml
   home = {
     username = vars.userName;
     homeDirectory = "/home/${vars.userName}";
@@ -52,8 +53,8 @@
   # Enable Zsh & oh-my-zsh
   programs.zsh = {
     enable = true;
-    oh-my-zsh.enable = true;
     enableCompletion = true;
+    oh-my-zsh.enable = true;
     history.ignoreAllDups = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;

@@ -14,7 +14,6 @@
     # image
     programs.imv = {
       enable = true;
-      settings = { };
     };
 
     # video & audio
@@ -57,16 +56,12 @@
 
       keybindings = {
         "ctrl+c" = "copy_or_interrupt";
+        "ctrl+v" = "paste_from_clipboard";
       };
 
       shellIntegration = {
         enableZshIntegration = true;
       };
-    };
-
-    home.sessionVariables = {
-      TERM = "kitty";
-      TERMINAL = "kitty";
     };
   };
 }

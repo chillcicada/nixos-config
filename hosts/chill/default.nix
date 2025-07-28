@@ -56,6 +56,9 @@
     options = "--delete-older-than 7d";
   };
 
+  # disable suspend on close lid
+  services.logind.lidSwitch = "ignore";
+
   # self defined options
   steam.enable = true;
   desktop.enable = true;

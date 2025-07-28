@@ -59,23 +59,20 @@ in
   # -------------------- #
   # self defined options #
   # -------------------- #
-
   # region cli
   tools.enable = true;
-  coreutils.enable = true;
 
   cpp.enable = true;
-  typst.enable = true;
   python.enable = true;
   nixlang.enable = true;
   frontend.enable = true;
   # endregion
 
   # region gui
-  fcitx5.enable = true;
   vscode.enable = true;
   vscode.server.enable = true;
   neovim.enable = true;
+
   graphics.enable = true;
 
   im.enable = true;

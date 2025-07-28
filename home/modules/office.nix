@@ -19,6 +19,7 @@
       chillcicada.wemeet
       chillcicada.wpsoffice-cn
 
+      # Fonts
       lxgw-wenkai
 
       # Microsoft fonts & WPS fonts
