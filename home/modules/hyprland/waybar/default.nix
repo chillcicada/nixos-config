@@ -1,12 +1,19 @@
-{ ... }:
+{ lib, config, ... }:
+
+let
+  cfg = config.hyprland;
+in
 
 {
-  stylix.targets.waybar.enable = false;
+  config = lib.mkIf cfg.enable {
+    stylix.targets.waybar.enable = false;
 
-  programs.waybar = {
-    enable = true;
+    programs.waybar = {
+      enable = true;
+
+      style = builtins.readFile ./style.css;
+    };
+
+    home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
   };
-
-  home.file.".config/waybar/style.css".source = ./style.css;
-  home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
 }

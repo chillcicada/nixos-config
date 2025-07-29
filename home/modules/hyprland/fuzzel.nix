@@ -1,7 +1,11 @@
 { lib, config, ... }:
 
+let
+  cfg = config.hyprland;
+in
+
 {
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf cfg.enable {
     programs.fuzzel = {
       enable = true;
     };
