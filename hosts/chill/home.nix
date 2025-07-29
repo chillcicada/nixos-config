@@ -46,6 +46,10 @@ in
       # uv
       export PATH="$PATH:$HOME/.local/bin"
       # uv end
+
+      # gnupg agent
+      export GPG_TTY=$(tty)
+      # gnupg agent end
     '';
   };
 
