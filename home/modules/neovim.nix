@@ -6,12 +6,16 @@
   ...
 }:
 
+let
+  cfg = config.neovim;
+in
+
 {
-  options = {
-    neovim.enable = lib.mkEnableOption "neovim";
+  options.neovim = {
+    enable = lib.mkEnableOption "neovim";
   };
 
-  config = lib.mkIf config.neovim.enable {
+  config = lib.mkIf cfg.enable {
     stylix.targets.neovim.enable = false;
 
     programs.neovim = {

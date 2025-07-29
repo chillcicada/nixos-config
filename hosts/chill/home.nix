@@ -77,10 +77,8 @@ in
   vscode.server.enable = true;
   neovim.enable = true;
 
-  graphics.enable = true;
-
-  im.enable = true;
   office.enable = true;
+  desktop.enable = true;
   # endregion
 
   # ------------------- #
@@ -92,6 +90,7 @@ in
     (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
   ]
   ++ (with pkgs; [
+    qq
     # hmcl
     kazumi
     aseprite

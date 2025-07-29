@@ -5,12 +5,16 @@
   ...
 }:
 
+let
+  cfg = config.cpp;
+in
+
 {
-  options = {
-    cpp.enable = lib.mkEnableOption "cpp";
+  options.cpp = {
+    enable = lib.mkEnableOption "cpp";
   };
 
-  config = lib.mkIf config.cpp.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       gcc
       xmake

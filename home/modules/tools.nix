@@ -5,12 +5,16 @@
   ...
 }:
 
+let
+  cfg = config.tools;
+in
+
 {
-  options = {
-    tools.enable = lib.mkEnableOption "tools";
+  options.tools = {
+    enable = lib.mkEnableOption "tools";
   };
 
-  config = lib.mkIf config.tools.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       dust # disk usage analyzer
       sops # secrets management

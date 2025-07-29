@@ -5,12 +5,16 @@
   ...
 }:
 
+let
+  cfg = config.frontend;
+in
+
 {
-  options = {
-    frontend.enable = lib.mkEnableOption "frontend";
+  options.frontend = {
+    enable = lib.mkEnableOption "frontend";
   };
 
-  config = lib.mkIf config.frontend.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       pnpm
       eslint

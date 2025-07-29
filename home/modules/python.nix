@@ -5,12 +5,16 @@
   ...
 }:
 
+let
+  cfg = config.python;
+in
+
 {
-  options = {
-    python.enable = lib.mkEnableOption "python";
+  options.python = {
+    enable = lib.mkEnableOption "python";
   };
 
-  config = lib.mkIf config.python.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       (python313.withPackages (
         ps: with ps; [

@@ -5,15 +5,19 @@
   ...
 }:
 
-{
-  options = {
-    vscode.enable = lib.mkEnableOption "vscode";
+let
+  cfg = config.vscode;
+in
 
-    vscode.server.enable = lib.mkEnableOption "vscode server";
+{
+  options.vscode = {
+    enable = lib.mkEnableOption "vscode";
+
+    server.enable = lib.mkEnableOption "vscode server";
   };
 
   config = lib.mkMerge [
-    (lib.mkIf config.vscode.enable {
+    (lib.mkIf cfg.enable {
       stylix.targets.vscode.enable = false;
 
       # https://nixos.wiki/wiki/Visual_Studio_Code
@@ -31,7 +35,7 @@
       home.packages = with pkgs; [ chillcicada.font-typst-math ];
     })
 
-    (lib.mkIf config.vscode.server.enable {
+    (lib.mkIf cfg.server.enable {
       services.vscode-server.enable = true;
     })
   ];

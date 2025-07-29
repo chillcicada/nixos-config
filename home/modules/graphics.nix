@@ -5,12 +5,16 @@
   ...
 }:
 
+let
+  cfg = config.desktop;
+in
+
 {
-  options = {
-    graphics.enable = lib.mkEnableOption "graphics";
+  options.desktop = {
+    enable = lib.mkEnableOption "desktop";
   };
 
-  config = lib.mkIf config.graphics.enable {
+  config = lib.mkIf cfg.enable {
     # image
     programs.imv = {
       enable = true;

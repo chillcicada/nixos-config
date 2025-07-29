@@ -6,14 +6,19 @@
   ...
 }:
 
+let
+  cfg = config.office;
+in
+
 {
-  options = {
-    office.enable = lib.mkEnableOption "office";
+  options.office = {
+    enable = lib.mkEnableOption "office";
   };
 
-  config = lib.mkIf config.office.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       typora
+      wechat
       zotero
 
       chillcicada.wemeet

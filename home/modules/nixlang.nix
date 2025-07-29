@@ -5,12 +5,16 @@
   ...
 }:
 
+let
+  cfg = config.nixlang;
+in
+
 {
-  options = {
-    nixlang.enable = lib.mkEnableOption "nixlang";
+  options.nixlang = {
+    enable = lib.mkEnableOption "nixlang";
   };
 
-  config = lib.mkIf config.nixlang.enable {
+  config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       nil # linter
       nixfmt-rfc-style # formatter
