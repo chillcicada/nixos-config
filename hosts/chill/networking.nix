@@ -7,9 +7,7 @@
   ];
 
   networking = {
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager.enable = true;
 
     useDHCP = lib.mkDefault true;
 
