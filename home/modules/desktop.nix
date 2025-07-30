@@ -16,9 +16,7 @@ in
 
   config = lib.mkIf cfg.enable {
     # image
-    programs.imv = {
-      enable = true;
-    };
+    programs.imv.enable = true;
 
     # video & audio
     # https://wiki.nixos.org/wiki/MPV
@@ -43,9 +41,7 @@ in
     };
 
     # browser
-    programs.zen-browser = {
-      enable = true;
-    };
+    programs.zen-browser.enable = true;
 
     # terminal
     programs.kitty = {
@@ -63,9 +59,7 @@ in
         "ctrl+v" = "paste_from_clipboard";
       };
 
-      shellIntegration = {
-        enableZshIntegration = true;
-      };
+      shellIntegration.enableZshIntegration = true;
     };
   };
 }

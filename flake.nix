@@ -30,10 +30,16 @@
     };
 
     # my NUR repo
-    chillcicada.url = "github:chillcicada/nurpkgs";
+    chillcicada = {
+      url = "github:chillcicada/nurpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # my wallpaper repo
-    imgs.url = "github:chillcicada/imgs";
+    imgs = {
+      url = "github:chillcicada/imgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # my neovim config
     nvim-config = {
