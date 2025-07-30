@@ -29,7 +29,7 @@ in
         evolution-data-server.enable = lib.mkForce false;
       };
 
-      udev.packages = with pkgs; [ gnome-settings-daemon ];
+      udev.packages = [ pkgs.gnome-settings-daemon ];
 
       # for nautilus trash
       gvfs.enable = true;
@@ -86,22 +86,17 @@ in
     systemd.services."getty@tty1".enable = false;
     systemd.services."autovt@tty1".enable = false;
 
-    environment.systemPackages =
-      with pkgs;
-      [
-        gnome-tweaks
-      ]
-      ++ (with gnomeExtensions; [
-        forge
-        caffeine
-        kimpanel
-        open-bar
-        appindicator
-        blur-my-shell
-        system-monitor
-        app-menu-is-back
-        applications-menu
-      ]);
+    environment.systemPackages = with pkgs.gnomeExtensions; [
+      forge
+      caffeine
+      kimpanel
+      open-bar
+      appindicator
+      blur-my-shell
+      system-monitor
+      app-menu-is-back
+      applications-menu
+    ];
 
     programs.dconf.enable = true;
   };
