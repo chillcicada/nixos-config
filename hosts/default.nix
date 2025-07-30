@@ -19,7 +19,7 @@ with inputs;
 
       system.stateVersion = "25.11";
 
-      nixpkgs.overlays = [ inputs.chillcicada.overlays.default ];
+      nixpkgs.overlays = [ chillcicada.overlays.default ];
     };
 
     salt = {
