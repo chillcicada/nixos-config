@@ -1,4 +1,6 @@
-_: {
+{ ... }:
+
+{
   # This configuration is designed for graphical usage (`desktop.enable = true`).
   imports = [
     # Software enabled by default

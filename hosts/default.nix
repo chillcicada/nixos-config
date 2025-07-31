@@ -3,6 +3,7 @@
 let
   vars = import ./vars.nix { inherit inputs; };
 in
+
 with inputs;
 {
   flake.nixosModules = {
@@ -15,11 +16,13 @@ with inputs;
         home-manager.nixosModules.home-manager
       ];
 
+      nixpkgs.overlays = [ chillcicada.overlays.default ];
+
       networking.hostName = "chill";
 
-      system.stateVersion = "25.11";
+      home-manager.users.${vars.userName}.imports = [ self.homeModules.chill ];
 
-      nixpkgs.overlays = [ chillcicada.overlays.default ];
+      system.stateVersion = "25.11";
     };
 
     salt = {
@@ -32,6 +35,8 @@ with inputs;
       ];
 
       networking.hostName = "salt";
+
+      home-manager.users.${vars.userName}.imports = [ self.homeModules.salt ];
 
       system.stateVersion = "25.11";
     };

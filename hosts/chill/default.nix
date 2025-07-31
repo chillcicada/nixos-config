@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  vars,
-  ...
-}:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -37,8 +32,8 @@
 
   security.rtkit.enable = true; # Required for pulse and pipewire.
 
-  # Home Manager Entry
-  home-manager.users.${vars.userName}.imports = [ inputs.self.homeModules.chill ];
+  # Disable suspend on close lid
+  services.logind.lidSwitch = "ignore";
 
   # Enable nix-ld
   programs.nix-ld = {
@@ -48,16 +43,6 @@
 
   # Time Zone
   time.timeZone = "Asia/Shanghai";
-
-  # Set nix gc
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  # disable suspend on close lid
-  services.logind.lidSwitch = "ignore";
 
   # self defined options
   steam.enable = true;
