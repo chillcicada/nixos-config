@@ -24,9 +24,6 @@
     icons = "auto";
   };
 
-  # Enable Nixos Helper
-  programs.nh.enable = true;
-
   # Enable Starship
   programs.starship = {
     enable = true;
