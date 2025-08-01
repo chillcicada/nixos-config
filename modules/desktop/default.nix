@@ -3,6 +3,7 @@
   vars,
   lib,
   config,
+  inputs,
   ...
 }:
 
@@ -33,6 +34,8 @@ in
   );
 
   config = lib.mkIf cfg.enable {
+    nixpkgs.overlays = [ inputs.chillcicada.overlays.default ];
+
     services = {
       # Use gdm as the display manager.
       displayManager = {

@@ -1,4 +1,4 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   # This configuration is designed for graphical usage (`desktop.enable = true`).
@@ -10,6 +10,8 @@
     # Common configurations with Minimal configurations
     ./common.nix
   ];
+
+  nixpkgs.overlays = [ inputs.chillcicada.overlays.default ];
 
   gtk = {
     enable = true;

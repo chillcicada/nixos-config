@@ -16,8 +16,6 @@ with inputs;
         home-manager.nixosModules.home-manager
       ];
 
-      nixpkgs.overlays = [ chillcicada.overlays.default ];
-
       networking.hostName = "chill";
 
       home-manager.users.${vars.userName}.imports = [ self.homeModules.chill ];
@@ -53,8 +51,6 @@ with inputs;
         zen-browser.homeModules.default
         vscode-server.homeModules.default
       ];
-
-      nixpkgs.overlays = [ chillcicada.overlays.default ];
 
       home.stateVersion = "25.11";
     };
