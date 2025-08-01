@@ -67,8 +67,10 @@ in
   # -------------------- #
   tools.enable = true;
 
+  cpp.enable = true;
   python.enable = true;
   nixlang.enable = true;
+  frontend.enable = true;
 
   vscode.enable = true;
   vscode.server.enable = true;
