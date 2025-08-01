@@ -60,26 +60,22 @@ in
     offproxy = "unset https_proxy http_proxy all_proxy HTTPS_PROXY HTTP_PROXY ALL_PROXY";
   };
 
+  stylix.targets.zen-browser.profileNames = [ "594ztnss.default" ];
+
   # -------------------- #
   # self defined options #
   # -------------------- #
-  # region cli
   tools.enable = true;
 
-  cpp.enable = true;
   python.enable = true;
   nixlang.enable = true;
-  frontend.enable = true;
-  # endregion
 
-  # region gui
   vscode.enable = true;
   vscode.server.enable = true;
   neovim.enable = true;
 
   office.enable = true;
   desktop.enable = true;
-  # endregion
 
   # ------------------- #
   # additional packages #

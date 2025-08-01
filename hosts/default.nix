@@ -42,6 +42,7 @@ with inputs;
     };
   };
 
+  # https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-nixos-module
   flake.homeModules = {
     chill = {
       imports = [
@@ -53,6 +54,8 @@ with inputs;
         vscode-server.homeModules.default
       ];
 
+      nixpkgs.overlays = [ chillcicada.overlays.default ];
+
       home.stateVersion = "25.11";
     };
 
@@ -63,13 +66,13 @@ with inputs;
     };
   };
 
-  flake.nixosConfigurations.chill = nixpkgs.lib.nixosSystem rec {
+  flake.nixosConfigurations.chill = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = { inherit inputs system vars; };
     modules = [ self.nixosModules.chill ];
   };
 
-  flake.nixosConfigurations.salt = nixpkgs.lib.nixosSystem rec {
+  flake.nixosConfigurations.salt = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = { inherit inputs system vars; };
     modules = [ self.nixosModules.salt ];

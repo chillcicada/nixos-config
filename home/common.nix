@@ -59,4 +59,6 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
   };
+
+  nixpkgs.config.allowUnfree = true;
 }

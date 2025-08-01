@@ -43,8 +43,6 @@ in
     # browser
     programs.zen-browser.enable = true;
 
-    stylix.targets.zen-browser.profileNames = [ "594ztnss.default" ];
-
     # terminal
     programs.kitty = {
       enable = true;

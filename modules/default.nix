@@ -13,7 +13,6 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
     backupFileExtension = vars.hmBackupFileExtension;
-    useGlobalPkgs = true;
     useUserPackages = true;
   };
 
