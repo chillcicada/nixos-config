@@ -21,7 +21,6 @@ in
       wechat
       zotero
 
-      chillcicada.wemeet
       chillcicada.wpsoffice-cn
 
       # Fonts
