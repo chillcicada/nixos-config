@@ -21,6 +21,7 @@ in
           requests
         ]
       ))
+      mypy
     ];
 
     programs.ruff = {
