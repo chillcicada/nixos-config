@@ -25,6 +25,7 @@ in
       treefmt # tree format
       nix-tree # nix tree view
       patchelf # package utility
+      mupdf-headless # pdf utility
     ];
   };
 }
