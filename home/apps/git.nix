@@ -17,7 +17,4 @@
     };
     lfs.enable = true;
   };
-
-  # Eza with git
-  programs.eza.git = true;
 }

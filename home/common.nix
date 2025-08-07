@@ -18,12 +18,6 @@
     };
   };
 
-  # Enable Eza
-  programs.eza = {
-    enable = true;
-    icons = "auto";
-  };
-
   # Enable Starship
   programs.starship = {
     enable = true;
@@ -39,12 +33,6 @@
         error_symbol = "[×](bold red)";
       };
     };
-  };
-
-  # Enable Zoxide
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   # Enable Zsh & oh-my-zsh
