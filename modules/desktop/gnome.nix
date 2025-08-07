@@ -94,7 +94,6 @@ in
       appindicator
       blur-my-shell
       system-monitor
-      app-menu-is-back
       applications-menu
     ];
 
