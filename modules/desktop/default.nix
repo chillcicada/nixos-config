@@ -52,6 +52,7 @@ in
         excludePackages = with pkgs; [ xterm ];
 
         xkb.layout = "us";
+        xkb.variant = "altgr-intl";
       };
     };
 
