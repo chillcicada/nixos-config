@@ -66,9 +66,9 @@ in
     };
 
     home.sessionVariables = {
-      SSL_CERT_FILE = "/etc/ssl/certs/ca-bundle.crt"; # use system CA bundle
+      SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
       # manully create the directory beforehand
-      NLTK_DATA = "${config.home.homeDirectory}/.local/share/nltk_data";
+      NLTK_DATA = "${config.xdg.dataHome}/nltk_data";
     };
   };
 }
