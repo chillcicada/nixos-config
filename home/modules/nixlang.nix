@@ -17,7 +17,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       nil # linter
-      nixfmt-rfc-style # formatter
+      nixfmt # formatter
     ];
   };
 }

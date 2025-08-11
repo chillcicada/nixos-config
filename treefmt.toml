@@ -7,6 +7,6 @@ excludes = [
   ".*",
 ]
 
-[formatter.nixfmt-rfc-style]
+[formatter.nixfmt]
 command = "nixfmt"
 includes = ["*.nix"]
