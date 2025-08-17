@@ -55,6 +55,7 @@ in
       };
 
       keybindings = {
+        # use the windows compatible keybindings
         "ctrl+c" = "copy_or_interrupt";
         "ctrl+v" = "paste_from_clipboard";
       };

@@ -21,8 +21,14 @@ in
           requests
         ]
       ))
-      mypy
     ];
+
+    programs.mypy = {
+      enable = true;
+
+      # refer to https://mypy.readthedocs.io/en/stable/config_file.html
+      # settings = { };
+    };
 
     programs.ruff = {
       enable = true;
@@ -62,7 +68,7 @@ in
       enable = true;
 
       # refer to https://docs.astral.sh/uv/configuration/
-      settings = { };
+      # settings = { };
     };
 
     home.sessionVariables = {
