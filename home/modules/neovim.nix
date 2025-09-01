@@ -25,14 +25,5 @@ in
     };
 
     home.file.".config/nvim".source = inputs.nvim-config;
-
-    # required by neovim
-    home.packages = with pkgs; [
-      unzip
-      gnumake # required by mason
-      tree-sitter
-      lua51Packages.lua
-      luajitPackages.luarocks
-    ];
   };
 }

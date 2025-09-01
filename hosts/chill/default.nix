@@ -36,10 +36,7 @@
   services.logind.lidSwitch = "ignore";
 
   # Enable nix-ld
-  programs.nix-ld = {
-    enable = true;
-    libraries = with pkgs; [ icu ]; # required by `marksman` for nvim
-  };
+  programs.nix-ld.enable = true;
 
   # Time Zone
   time.timeZone = "Asia/Shanghai";
