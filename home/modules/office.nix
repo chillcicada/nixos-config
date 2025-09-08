@@ -31,7 +31,7 @@ in
       chillcicada.ttf-ms-win10-sc-sup
     ];
 
-    # required by typora
+    # Required by typora
     programs.pandoc.enable = true;
 
     home.file.".config/Typora/themes".source = inputs.typora-themes;
