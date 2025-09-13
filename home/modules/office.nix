@@ -17,10 +17,11 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
+      # Office software
       typora
       wechat
       zotero
-
+      # wpsoffice-cn
       chillcicada.wpsoffice-cn
 
       # Fonts

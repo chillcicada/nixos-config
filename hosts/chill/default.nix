@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -33,7 +33,7 @@
   security.rtkit.enable = true; # Required for pulse and pipewire.
 
   # Disable suspend on close lid
-  services.logind.lidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
 
   # Enable nix-ld
   programs.nix-ld.enable = true;

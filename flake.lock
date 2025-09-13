@@ -74,11 +74,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755345386,
-        "narHash": "sha256-us97x/45LZAiyHbM6m3Qjw8V2ZfXokcvglqMBOgFp5w=",
+        "lastModified": 1757681416,
+        "narHash": "sha256-YAT7FG5C+3wA7OELCzeKUB64TxLloUOTGI0CXEkrf7A=",
         "owner": "chillcicada",
         "repo": "nurpkgs",
-        "rev": "eed704a41f8944176bbaa9275e1b1b3f48a2c552",
+        "rev": "ba6549d6250e23de898bb47e179173e91f61877b",
         "type": "github"
       },
       "original": {
