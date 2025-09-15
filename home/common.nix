@@ -16,6 +16,7 @@
 
     settings = {
       theme_background = false;
+      log_level = "ERROR";
     };
   };
 

@@ -74,7 +74,7 @@ in
     home.sessionVariables = {
       SSL_CERT_FILE = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
       # manully create the directory beforehand
-      NLTK_DATA = "${config.xdg.dataHome}/nltk_data";
+      NLTK_DATA = "${config.xdg.dataHome}/nltk_data"; # ~/.local/share/nltk_data
     };
   };
 }

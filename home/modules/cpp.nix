@@ -19,5 +19,9 @@ in
       gcc
       xmake
     ];
+
+    home.sessionVariables = {
+      XMAKE_GLOBALDIR = "${config.xdg.configHome}/xmake"; # ~/.config/xmake
+    };
   };
 }
