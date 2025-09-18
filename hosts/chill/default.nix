@@ -41,7 +41,10 @@
   # Time Zone
   time.timeZone = "Asia/Shanghai";
 
-  # self defined options
+  # Enable zsh to get completion for system packages
+  environment.pathsToLink = [ "/share/zsh" ];
+
+  # Self defined options
   steam.enable = true;
   desktop.enable = true;
   essential.enable = true;

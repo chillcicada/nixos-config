@@ -21,7 +21,7 @@ in
     ];
 
     home.sessionVariables = {
-      XMAKE_GLOBALDIR = "${config.xdg.configHome}/xmake"; # ~/.config/xmake
+      XMAKE_GLOBALDIR = config.xdg.configHome; # ~/.config
     };
   };
 }
