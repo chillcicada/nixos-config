@@ -93,7 +93,7 @@ in
     kazumi
     # aseprite
     # obs-studio
-    teamspeak5_client
+    # teamspeak5_client
 
     # chillcicada.et-astral
 
