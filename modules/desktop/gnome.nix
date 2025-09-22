@@ -87,7 +87,6 @@ in
     systemd.services."autovt@tty1".enable = false;
 
     environment.systemPackages = with pkgs.gnomeExtensions; [
-      forge
       caffeine
       kimpanel
       open-bar
