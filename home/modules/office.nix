@@ -21,8 +21,7 @@ in
       typora
       wechat
       zotero
-      # wpsoffice-cn
-      chillcicada.wpsoffice-cn
+      wpsoffice-cn
 
       # Fonts
       lxgw-wenkai
@@ -31,9 +30,6 @@ in
       chillcicada.ttf-ms-win10-wps-mix
       chillcicada.ttf-ms-win10-sc-sup
     ];
-
-    # Required by typora
-    programs.pandoc.enable = true;
 
     home.file.".config/Typora/themes".source = inputs.typora-themes;
   };
