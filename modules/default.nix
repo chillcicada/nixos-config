@@ -2,7 +2,6 @@
   pkgs,
   inputs,
   vars,
-  config,
   ...
 }:
 
@@ -45,7 +44,7 @@
   ];
 
   # manually add the sops file
-  sops.age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+  sops.age.keyFile = "/home/${vars.userName}/.config/sops/age/keys.txt";
 
   # nixpkgs config
   nixpkgs.config.allowUnfree = true;
