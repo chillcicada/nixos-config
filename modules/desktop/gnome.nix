@@ -33,9 +33,6 @@ in
 
       # for nautilus trash
       gvfs.enable = true;
-
-      # enable Flatpak support
-      flatpak.enable = true;
     };
 
     environment.gnome.excludePackages = with pkgs; [
