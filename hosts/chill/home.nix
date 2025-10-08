@@ -22,8 +22,8 @@ let
 
   GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
 
-  GPUOffloadAppNoOpt =
-    pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
+  # GPUOffloadAppNoOpt =
+  #   pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
 in
 
 {
@@ -94,7 +94,7 @@ in
     readest
     # aseprite
     # obs-studio
-    # teamspeak5_client
+    teamspeak6-client
 
     # chillcicada.et-astral
 
