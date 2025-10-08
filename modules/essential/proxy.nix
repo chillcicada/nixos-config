@@ -8,7 +8,7 @@ in
   config = lib.mkIf (cfg.enable && cfg.proxy.enable) {
     programs.clash-verge = {
       enable = true;
-      autoStart = true;
+      # autoStart = true;
     };
   };
 }
