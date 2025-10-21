@@ -3,11 +3,13 @@
 {
   programs.git = {
     enable = true;
-    userName = vars.userFullname;
-    userEmail = vars.userEmail;
-    extraConfig = {
+
+    lfs.enable = true;
+
+    settings = {
+      user.name = vars.userFullname;
+      user.email = vars.userEmail;
       user.signingKey = vars.userSigningKey;
-      user.timezone = "Asia/Shanghai";
       core.editor = "nvim";
       commit.gpgsign = true;
       credential.helper = "store";
@@ -15,6 +17,5 @@
       init.defaultBranch = "main";
       pull.rebase = true;
     };
-    lfs.enable = true;
   };
 }
