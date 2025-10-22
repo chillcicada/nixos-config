@@ -27,7 +27,7 @@ in
       lxgw-wenkai
 
       # Microsoft fonts & WPS fonts
-      chillcicada.ttf-ms-win10-wps-mix
+      chillcicada.ttf-wps-fonts
       chillcicada.ttf-ms-win10-sc-sup
     ];
 
