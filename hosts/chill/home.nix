@@ -91,7 +91,8 @@ in
     qq
     # hmcl
     kazumi
-    readest
+    sparkle
+    # readest
     # aseprite
     # obs-studio
     teamspeak6-client

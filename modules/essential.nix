@@ -13,15 +13,7 @@ in
 {
   options.essential = {
     enable = lib.mkEnableOption "essential";
-
-    proxy.enable = lib.mkEnableOption "proxy" // {
-      default = true;
-    };
   };
-
-  imports = map (name: ./${name}) (
-    builtins.attrNames (removeAttrs (builtins.readDir ./.) [ "default.nix" ])
-  );
 
   config = lib.mkIf cfg.enable {
     # Build Coreutils

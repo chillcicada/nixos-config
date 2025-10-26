@@ -21,13 +21,13 @@ in
       typora
       wechat
       zotero
-      chillcicada.wpsoffice-cn
+      wpsoffice-cn
 
       # Fonts
       lxgw-wenkai
 
       # Microsoft fonts & WPS fonts
-      chillcicada.ttf-wps-fonts
+      chillcicada.ttf-ms-win10
       chillcicada.ttf-ms-win10-sc-sup
     ];
 

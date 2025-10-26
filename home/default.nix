@@ -16,9 +16,7 @@
   gtk = {
     enable = true;
 
-    gtk2.extraConfig = ''
-      gtk-im-module = "fcitx"
-    '';
+    gtk2.enable = false;
 
     gtk3.extraConfig = {
       gtk-im-module = "fcitx";
