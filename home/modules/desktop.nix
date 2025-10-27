@@ -62,5 +62,34 @@ in
 
       shellIntegration.enableZshIntegration = true;
     };
+
+    programs.ghostty = {
+      enable = true;
+
+      enableZshIntegration = true;
+
+      settings = {
+        # Window
+        window-vsync = true;
+        window-height = 35;
+        window-width = 135;
+        window-padding-x = 10;
+        gtk-titlebar-style = "tabs";
+        window-inherit-font-size = true;
+        # Keybind
+        keybind = [
+          "ctrl+v=paste_from_clipboard"
+        ];
+        # Preference
+        bold-is-bright = true;
+        cursor-style = "bar";
+        cursor-opacity = 0.8;
+        link-url = true;
+        confirm-close-surface = false;
+        background-blur = true;
+        # Others
+        shell-integration-features = "cursor,sudo,title";
+      };
+    };
   };
 }
