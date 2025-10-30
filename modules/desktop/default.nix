@@ -109,7 +109,7 @@ in
           fcitx5-gtk # gtk support
 
           fcitx5-mozc # japanese
-          fcitx5-chinese-addons # chinese
+          qt6Packages.fcitx5-chinese-addons # chinese
 
           # pinyin lib supplement
           fcitx5-pinyin-zhwiki

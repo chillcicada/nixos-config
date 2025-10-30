@@ -18,15 +18,14 @@ in
       gnome = {
         core-apps.enable = true;
 
-        games.enable = false;
-        gnome-user-share.enable = false;
-        gnome-initial-setup.enable = false;
-        gnome-remote-desktop.enable = false;
-        gnome-online-accounts.enable = false;
-        gnome-browser-connector.enable = false;
-
+        games.enable = lib.mkForce false;
         gnome-keyring.enable = lib.mkForce false;
+        gnome-user-share.enable = lib.mkForce false;
+        gnome-initial-setup.enable = lib.mkForce false;
+        gnome-remote-desktop.enable = lib.mkForce false;
+        gnome-online-accounts.enable = lib.mkForce false;
         evolution-data-server.enable = lib.mkForce false;
+        gnome-browser-connector.enable = lib.mkForce false;
       };
 
       udev.packages = [ pkgs.gnome-settings-daemon ];

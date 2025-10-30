@@ -27,6 +27,7 @@ in
         pkgs.mpv-unwrapped.wrapper {
           scripts = with pkgs.mpvScripts; [
             uosc
+            bdanmaku
             sponsorblock
           ];
 
@@ -46,6 +47,7 @@ in
     # terminal
     programs.kitty = {
       enable = true;
+      shellIntegration.enableZshIntegration = true;
 
       settings = {
         dynamic_background_opacity = true;
@@ -59,13 +61,10 @@ in
         "ctrl+c" = "copy_or_interrupt";
         "ctrl+v" = "paste_from_clipboard";
       };
-
-      shellIntegration.enableZshIntegration = true;
     };
 
     programs.ghostty = {
       enable = true;
-
       enableZshIntegration = true;
 
       settings = {

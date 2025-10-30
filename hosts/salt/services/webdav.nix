@@ -14,14 +14,12 @@
 
   services.webdav-server-rs = {
     enable = true;
-
-    user = "webdav";
-
     debug = false;
+    user = "webdav";
 
     # More config can be found at https://github.com/miquels/webdav-server-rs/blob/master/webdav-server.toml
     settings = {
-      server.listen = [ "127.0.0.1:8080" ];
+      server.listen = [ "127.0.0.1:8081" ];
 
       accounts.auth-type = "htpasswd.default";
 

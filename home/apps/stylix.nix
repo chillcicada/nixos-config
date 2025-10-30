@@ -1,8 +1,12 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 let
-  backgroundImage = "${inputs.imgs.packages."${pkgs.system}".default}/share/wallpapers/BA.png";
+  backgroundImage = pkgs.fetchurl {
+    url = "https://raw.githubusercontent.com/chillcicada/imgs/refs/heads/main/wallpapers/BA.png";
+    hash = "sha256-faTiAZN+Uaidve5McdD07idk6Q1ISxeiQXhtNHARM/s=";
+  };
 in
+
 {
   home.packages = with pkgs; [
     # Maple Mono (Ligature TTF unhinted)

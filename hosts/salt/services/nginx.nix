@@ -18,22 +18,22 @@
       };
     };
 
-    virtualHosts."webdav.chillcicada.com" = {
-      useACMEHost = "chillcicada.com";
-      forceSSL = true;
-      locations."/" = {
-        proxyPass = "http://127.0.0.1:8080";
-        extraConfig = ''
-          client_max_body_size 1024M;
-        '';
-      };
-    };
-
     virtualHosts."uptime.chillcicada.com" = {
       useACMEHost = "chillcicada.com";
       forceSSL = true;
       locations."/" = {
+        proxyPass = "http://127.0.0.1:8080";
+      };
+    };
+
+    virtualHosts."webdav.chillcicada.com" = {
+      useACMEHost = "chillcicada.com";
+      forceSSL = true;
+      locations."/" = {
         proxyPass = "http://127.0.0.1:8081";
+        extraConfig = ''
+          client_max_body_size 1024M;
+        '';
       };
     };
 
@@ -55,8 +55,8 @@
     certs."chillcicada.com" = {
       domain = "chillcicada.com";
       extraDomainNames = [
-        "webdav.chillcicada.com"
         "uptime.chillcicada.com"
+        "webdav.chillcicada.com"
         "pastebin.chillcicada.com"
       ];
     };

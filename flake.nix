@@ -2,7 +2,6 @@
   description = "chillcicada's personal nixos config";
 
   inputs = {
-    # nixpkgs.url = "github:Nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:Nixos/nixpkgs/master";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -15,7 +14,7 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -30,15 +29,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # my NUR repo
+    # my NUR
     chillcicada = {
       url = "github:chillcicada/nurpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # my wallpaper repo
-    imgs = {
-      url = "github:chillcicada/imgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -50,7 +43,7 @@
       flake = false;
     };
 
-    # my typora themes repo
+    # my typora themes
     typora-themes = {
       type = "github";
       owner = "chillcicada";
