@@ -19,9 +19,10 @@ in
 
   stylix = {
     enable = true;
-    autoEnable = true;
-    image = backgroundImage;
     enableReleaseChecks = false;
+    autoEnable = true;
+
+    image = backgroundImage;
     polarity = "dark";
 
     fonts = {

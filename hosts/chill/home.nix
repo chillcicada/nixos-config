@@ -27,6 +27,10 @@ let
 in
 
 {
+  # ------------------ #
+  # host configuration #
+  # ------------------ #
+
   # Zsh extended configuration
   programs.zsh = {
     oh-my-zsh.plugins = [
@@ -85,7 +89,7 @@ in
   home.packages = [
     # nvidia-offload-no-opt
     # desktop applications patched for GPU offloading
-    (GPUOffloadApp inputs.zen-browser.packages."${pkgs.system}".default "zen-beta")
+    (GPUOffloadApp inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default "zen-beta")
   ]
   ++ (with pkgs; [
     qq
