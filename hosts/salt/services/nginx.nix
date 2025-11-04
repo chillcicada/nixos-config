@@ -1,4 +1,29 @@
-{ vars, ... }:
+{ vars, config, ... }:
+
+let
+  domainName = "chillcicada.com";
+
+  proxyServices = [
+    {
+      prefix = "uptime";
+      port = 8080;
+    }
+    {
+      prefix = "webdav";
+      port = 8081;
+      extraConfig = ''
+        client_max_body_size 1024M;
+      '';
+    }
+    {
+      prefix = "pastebin";
+      port = 8082;
+      extraConfig = ''
+        client_max_body_size 1024M;
+      '';
+    }
+  ];
+in
 
 {
   # https://wiki.nixos.org/wiki/Nginx
@@ -10,63 +35,43 @@
     recommendedOptimisation = true;
     recommendedProxySettings = true;
 
-    virtualHosts =
-      let
-        proxy =
-          host:
-          {
-            port,
-            extra ? "",
-          }:
-          {
-            useACMEHost = host;
-            forceSSL = true;
-            locations."/" = {
-              proxyPass = "http://127.0.0.1:" + toString port;
-              extraConfig = extra;
-            };
-          };
-      in
-      {
-        "chillcicada.com" = {
-          enableACME = true;
-          forceSSL = true;
-          locations."/" = {
-            return = "200 '<html><body>Hello world!</body></html>'";
-            extraConfig = ''
-              default_type text/html;
-            '';
-          };
-        };
-
-        "uptime.chillcicada.com" = proxy "chillcicada.com" {
-          port = 8080;
-        };
-
-        "webdav.chillcicada.com" = proxy "chillcicada.com" {
-          port = 8081;
-          extra = "client_max_body_size 1024M;";
-        };
-
-        "pastebin.chillcicada.com" = proxy "chillcicada.com" {
-          port = 8082;
-          extra = "client_max_body_size 1024M;";
+    virtualHosts = {
+      "${domainName}" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = {
+          return = "200 '<html><body>Hello world!</body></html>'";
+          extraConfig = ''
+            default_type text/html;
+          '';
         };
       };
+    }
+    // (builtins.listToAttrs (
+      map (service: {
+        name = "${service.prefix}.${domainName}";
+        value = {
+          useACMEHost = domainName;
+          forceSSL = true;
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:${toString service.port}";
+            extraConfig = service.extraConfig or "";
+          };
+        };
+      }) proxyServices
+    ));
   };
 
+  # https://wiki.nixos.org/wiki/ACME
   security.acme = {
     acceptTerms = true;
     defaults.email = vars.userEmail;
-    certs."chillcicada.com" = {
-      domain = "chillcicada.com";
-      extraDomainNames = [
-        "uptime.chillcicada.com"
-        "webdav.chillcicada.com"
-        "pastebin.chillcicada.com"
-      ];
+    certs.${domainName} = {
+      domain = domainName;
+      group = config.services.nginx.group;
+      extraDomainNames = map (prefix: prefix + "." + domainName) (
+        map (service: service.prefix) proxyServices
+      );
     };
   };
-
-  users.users.nginx.extraGroups = [ "acme" ];
 }
