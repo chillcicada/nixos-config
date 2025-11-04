@@ -49,7 +49,7 @@ in
     }
     // (builtins.listToAttrs (
       map (service: {
-        name = "${service.prefix}.${domainName}";
+        name = service.prefix + "." + domainName;
         value = {
           useACMEHost = domainName;
           forceSSL = true;
