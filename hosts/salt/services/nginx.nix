@@ -69,9 +69,7 @@ in
     certs.${domainName} = {
       domain = domainName;
       group = config.services.nginx.group;
-      extraDomainNames = map (prefix: prefix + "." + domainName) (
-        map (service: service.prefix) proxyServices
-      );
+      extraDomainNames = map (service: service.prefix + "." + domainName) proxyServices;
     };
   };
 }
