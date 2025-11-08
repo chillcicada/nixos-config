@@ -94,7 +94,7 @@ in
   ++ (with pkgs; [
     qq
     # hmcl
-    kazumi
+    # kazumi
     sparkle
     # readest
     # aseprite
@@ -112,7 +112,7 @@ in
     (GPUOffloadApp kitty "kitty-open")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
-    (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
+    # (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
     # (GPUOffloadAppNoOpt hmcl "HMCL")
   ]);
