@@ -31,8 +31,8 @@ list:
   nix profile history --profile /nix/var/nix/profiles/system
 
 # update the flake
-up TARGET='':
-  nix flake update {{TARGET}}
+up *args:
+  nix flake update {{ args }}
 
 # build system and push to remote host
 push TARGET:
