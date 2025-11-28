@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 
 {
   services.openssh.ports = [
@@ -8,8 +8,6 @@
 
   networking = {
     networkmanager.enable = true;
-
-    useDHCP = lib.mkDefault true;
 
     extraHosts = ''
       # for ban-ip

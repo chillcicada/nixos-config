@@ -19,8 +19,8 @@ in
 
   stylix = {
     enable = true;
-    enableReleaseChecks = false;
     autoEnable = true;
+    enableReleaseChecks = false;
 
     image = backgroundImage;
     polarity = "dark";

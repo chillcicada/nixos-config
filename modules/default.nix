@@ -29,6 +29,9 @@
 
   environment.shells = [ pkgs.zsh ];
 
+  # Enable zsh to get completion for system packages
+  environment.pathsToLink = [ "/share/zsh" ];
+
   environment.defaultPackages = [ ];
 
   security.sudo.extraRules = [

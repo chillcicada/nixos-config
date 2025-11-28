@@ -64,7 +64,14 @@ in
     offproxy = "unset https_proxy http_proxy all_proxy HTTPS_PROXY HTTP_PROXY ALL_PROXY";
   };
 
-  stylix.targets.zen-browser.profileNames = [ "594ztnss.default" ];
+  # Fix stylix targets
+  stylix.targets = {
+    kde.enable = false;
+    blender.enable = false;
+    vencord.enable = false;
+
+    zen-browser.profileNames = [ "594ztnss.default" ];
+  };
 
   # -------------------- #
   # self defined options #

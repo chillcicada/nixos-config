@@ -21,6 +21,7 @@ in
       tree # tree view
       tokei # count code lines
       typst # typesetting system
+      shfmt # shell format
       killall # kill all processes by name
       treefmt # tree format
       nix-tree # nix tree view

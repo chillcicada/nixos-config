@@ -69,7 +69,7 @@ in
 
       settings = {
         # Window
-        window-vsync = true;
+        window-vsync = false;
         window-height = 35;
         window-width = 135;
         window-padding-x = 10;

@@ -16,59 +16,25 @@ in
       desktopManager.gnome.enable = true;
 
       gnome = {
-        core-apps.enable = true;
+        rygel.enable = true;
+        sushi.enable = true;
+        tinysparql.enable = true;
+        localsearch.enable = true;
 
         games.enable = lib.mkForce false;
+        core-apps.enable = lib.mkForce false;
         gnome-keyring.enable = lib.mkForce false;
         gnome-user-share.enable = lib.mkForce false;
         gnome-initial-setup.enable = lib.mkForce false;
+        core-developer-tools.enable = lib.mkForce false;
         gnome-remote-desktop.enable = lib.mkForce false;
         gnome-online-accounts.enable = lib.mkForce false;
         evolution-data-server.enable = lib.mkForce false;
         gnome-browser-connector.enable = lib.mkForce false;
       };
-
-      udev.packages = [ pkgs.gnome-settings-daemon ];
-
-      # for nautilus trash
-      gvfs.enable = true;
     };
 
-    environment.gnome.excludePackages = with pkgs; [
-      gnome-logs
-      gnome-maps
-      gnome-tour
-      gnome-music
-      gnome-clocks
-      gnome-console
-      gnome-keyring
-      gnome-weather
-      gnome-calendar
-      gnome-contacts
-      gnome-software
-      gnome-terminal
-      gnome-user-docs
-      gnome-calculator
-      gnome-characters
-      gnome-connections
-      gnome-backgrounds
-      gnome-font-viewer
-      gnome-text-editor
-      gnome-disk-utility
-
-      orca # screen reader
-      yelp # help viewer
-      geary # mail client
-      loupe # image viewer
-      iagno # solitaire
-      totem # video player
-      baobab # disk usage analyzer
-      evince # document viewer
-      decibels # audio player
-      epiphany # web browser
-      seahorse # password and encryption keys manager
-      simple-scan # scanner
-    ];
+    environment.gnome.excludePackages = with pkgs; [ gnome-tour ];
 
     xdg = {
       portal = {
@@ -81,15 +47,26 @@ in
       };
     };
 
-    environment.systemPackages = with pkgs.gnomeExtensions; [
-      caffeine
-      kimpanel
-      open-bar
-      appindicator
-      blur-my-shell
-      system-monitor
-      applications-menu
-    ];
+    environment.systemPackages =
+      with pkgs;
+      [
+        mutter
+        nautilus
+        snapshot
+        gnome-shell
+        gnome-session
+        gnome-system-monitor
+        gnome-control-center
+      ]
+      ++ (with gnomeExtensions; [
+        caffeine
+        kimpanel
+        open-bar
+        appindicator
+        blur-my-shell
+        system-monitor
+        applications-menu
+      ]);
 
     programs.dconf.enable = true;
   };

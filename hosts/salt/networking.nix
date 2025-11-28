@@ -5,10 +5,10 @@
     domain = "localdomain";
 
     firewall = {
+      # Allow HTTP and HTTPS traffic
       allowedTCPPorts = [
-        80 # for http
-        81 # for network development
-        443 # for https
+        80
+        443
       ];
     };
   };

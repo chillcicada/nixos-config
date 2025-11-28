@@ -20,7 +20,7 @@ with inputs;
 
       home-manager.users.${vars.userName}.imports = [ self.homeModules.chill ];
 
-      system.stateVersion = "25.11";
+      system.stateVersion = "26.05";
     };
 
     salt = {
@@ -36,7 +36,7 @@ with inputs;
 
       home-manager.users.${vars.userName}.imports = [ self.homeModules.salt ];
 
-      system.stateVersion = "25.11";
+      system.stateVersion = "26.05";
     };
   };
 
@@ -51,13 +51,13 @@ with inputs;
         vscode-server.homeModules.default
       ];
 
-      home.stateVersion = "25.11";
+      home.stateVersion = "26.05";
     };
 
     salt = {
       imports = [ ../home/minimal.nix ];
 
-      home.stateVersion = "25.11";
+      home.stateVersion = "26.05";
     };
   };
 

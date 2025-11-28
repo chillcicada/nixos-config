@@ -17,12 +17,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pulse and pipewire.
-  services.pulseaudio = {
-    enable = false;
-    support32Bit = true;
-  };
-
+  # Enable sound with pipewire.
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -30,7 +25,7 @@
     pulse.enable = true;
   };
 
-  security.rtkit.enable = true; # Required for pulse and pipewire.
+  security.rtkit.enable = true; # Required for pipewire.
 
   # Disable suspend on close lid
   services.logind.settings.Login.HandleLidSwitch = "ignore";
@@ -40,9 +35,6 @@
 
   # Time Zone
   time.timeZone = "Asia/Shanghai";
-
-  # Enable zsh to get completion for system packages
-  environment.pathsToLink = [ "/share/zsh" ];
 
   # Self defined options
   steam.enable = true;

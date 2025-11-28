@@ -153,22 +153,22 @@ in
               };
               sections = {
                 Fuzzy = {
-                  VE_UE = "True";
+                  VE_UE = "False";
                   NG_GN = "False";
                   Inner = "False";
                   InnerShort = "False";
                   PartialFinal = "False";
                   PartialSp = "False";
-                  V_U = "True";
+                  V_U = "False";
                   AN_ANG = "False";
                   EN_ENG = "False";
                   IAN_IANG = "False";
-                  IN_ING = "True";
+                  IN_ING = "False";
                   U_OU = "False";
                   UAN_UANG = "False";
                   C_CH = "False";
                   F_H = "False";
-                  L_N = "True";
+                  L_N = "False";
                   S_SH = "False";
                   Z_ZH = "False";
                   Correction = "None";

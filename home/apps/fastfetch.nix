@@ -13,7 +13,7 @@
         };
       };
       display = {
-        separator = " -> ";
+        separator = "-> ";
         constants = [ "─────────────────────────" ];
       };
       modules = [
@@ -33,87 +33,87 @@
         }
         {
           type = "os";
-          key = "{icon}  OS";
+          key = "{icon}  OS ";
           keyColor = "yellow";
         }
         {
           type = "kernel";
-          key = "│ ";
+          key = "│  ";
           keyColor = "yellow";
         }
         {
           type = "packages";
-          key = "│ 󰏖";
+          key = "│ 󰏖 ";
           keyColor = "yellow";
         }
         {
           type = "shell";
-          key = "│ ";
+          key = "│  ";
           keyColor = "yellow";
         }
         {
           type = "wm";
-          key = "  DE/WM";
+          key = "  DE/WM ";
           keyColor = "blue";
         }
         {
           type = "lm";
-          key = "│ 󰧨";
+          key = "│ 󰧨 ";
           keyColor = "blue";
         }
         {
           type = "wmtheme";
-          key = "│ 󰉼";
+          key = "│ 󰉼 ";
           keyColor = "blue";
         }
         {
           type = "icons";
-          key = "│ 󰀻";
+          key = "│ 󰀻 ";
           keyColor = "blue";
         }
         {
           type = "terminal";
-          key = "│ ";
+          key = "│  ";
           keyColor = "blue";
         }
         {
           type = "wallpaper";
-          key = "│ 󰸉";
+          key = "│ 󰸉 ";
           keyColor = "blue";
         }
         {
           type = "host";
-          key = "󰌢  PC";
+          key = "󰌢  PC ";
           keyColor = "green";
         }
         {
           type = "cpu";
-          key = "│ 󰻠";
+          key = "│ 󰻠 ";
           keyColor = "green";
         }
         {
           type = "gpu";
-          key = "│ 󰍛";
+          key = "│ 󰍛 ";
           keyColor = "green";
         }
         {
           type = "disk";
-          key = "│ ";
+          key = "│  ";
           keyColor = "green";
         }
         {
           type = "memory";
-          key = "│ 󰑭";
+          key = "│ 󰑭 ";
           keyColor = "green";
         }
         {
           type = "swap";
-          key = "│ 󰓡";
+          key = "│ 󰓡 ";
           keyColor = "green";
         }
         {
           type = "sound";
-          key = "  SND";
+          key = "  SND ";
           keyColor = "cyan";
         }
         {
