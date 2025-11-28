@@ -41,7 +41,6 @@ in
         enable = true;
         extraPortals = with pkgs; [
           xdg-desktop-portal-gtk
-          xdg-desktop-portal-wlr
           xdg-desktop-portal-gnome
         ];
       };
@@ -50,9 +49,10 @@ in
     environment.systemPackages =
       with pkgs;
       [
-        mutter
         nautilus
         snapshot
+
+        mutter
         gnome-shell
         gnome-session
         gnome-system-monitor
