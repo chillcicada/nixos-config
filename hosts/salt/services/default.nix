@@ -15,13 +15,6 @@ let
         client_max_body_size 1024M;
       '';
     }
-    {
-      prefix = "pastebin";
-      port = 8082;
-      extraConfig = ''
-        client_max_body_size 1024M;
-      '';
-    }
   ];
 in
 

@@ -79,4 +79,12 @@
       PasswordAuthentication = false;
     };
   };
+
+  # journal configuration
+  services.journald = {
+    extraConfig = ''
+      MaxRetentionSec=7day
+      MaxFileSec=1day
+    '';
+  };
 }
