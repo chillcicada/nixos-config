@@ -19,7 +19,9 @@ in
         rygel.enable = true;
         sushi.enable = true;
         tinysparql.enable = true;
+        core-shell.enable = true;
         localsearch.enable = true;
+        core-os-services.enable = true;
 
         games.enable = lib.mkForce false;
         core-apps.enable = lib.mkForce false;
@@ -36,27 +38,13 @@ in
 
     environment.gnome.excludePackages = with pkgs; [ gnome-tour ];
 
-    xdg = {
-      portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gtk
-          xdg-desktop-portal-gnome
-        ];
-      };
-    };
-
     environment.systemPackages =
       with pkgs;
       [
-        nautilus
-        snapshot
-
-        mutter
-        gnome-shell
-        gnome-session
-        gnome-system-monitor
-        gnome-control-center
+        nautilus # File manager
+        snapshot # Camera app
+        gnome-system-monitor # System monitor
+        gnome-control-center # Settings app
       ]
       ++ (with gnomeExtensions; [
         caffeine
@@ -67,7 +55,5 @@ in
         system-monitor
         applications-menu
       ]);
-
-    programs.dconf.enable = true;
   };
 }

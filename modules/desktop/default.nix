@@ -114,7 +114,6 @@ in
           # pinyin lib supplement
           fcitx5-pinyin-zhwiki
           fcitx5-pinyin-moegirl
-
           chillcicada.fcitx5-pinyin-custom-dictionary
         ];
 
