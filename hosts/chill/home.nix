@@ -57,6 +57,21 @@ in
     '';
   };
 
+  # Extended GTK configuration
+  gtk = {
+    enable = true;
+
+    gtk2.enable = false;
+
+    gtk3.extraConfig = {
+      gtk-im-module = "fcitx";
+    };
+
+    gtk4.extraConfig = {
+      gtk-im-module = "fcitx";
+    };
+  };
+
   # Top level shell aliases
   home.shellAliases = {
     j = "just";
@@ -67,6 +82,9 @@ in
   # Fix stylix targets
   stylix.targets = {
     kde.enable = false;
+    gdu.enable = false;
+    forge.enable = false;
+    gedit.enable = false;
     blender.enable = false;
     vencord.enable = false;
 
