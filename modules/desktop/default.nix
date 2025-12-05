@@ -83,21 +83,6 @@ in
     };
 
     # Input Method Fcitx5
-    /**
-      currently gnome doesn't support text-input-v1 and doesn't plan to support it
-      reference to: https://gitlab.gnome.org/GNOME/mutter/-/merge_requests/3751
-      so some electron apps like discord, vscode and qq don't work well with fcitx5 and wayland flags
-      this problem has been marked in https://github.com/chillcicada/nixos-config/issues/17
-
-      other reference:
-      - the input implementation in wayland:
-        https://sh.alynx.one/posts/GNOME-IBus-Wayland-IME/
-      - the present situation of the text input method implementation in wayland:
-        https://zhuanlan.zhihu.com/p/22611314767
-
-      the solution is to use fcitx5 with xwayland frontend for specific apps
-    */
-
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";
