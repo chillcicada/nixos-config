@@ -16,19 +16,8 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      (python313.withPackages (
-        ps: with ps; [
-          requests
-        ]
-      ))
+      (python313.withPackages (ps: with ps; [ requests ]))
     ];
-
-    programs.mypy = {
-      enable = true;
-
-      # refer to https://mypy.readthedocs.io/en/stable/config_file.html
-      # settings = { };
-    };
 
     programs.ruff = {
       enable = true;

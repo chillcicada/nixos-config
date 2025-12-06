@@ -17,13 +17,7 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       pnpm
-      eslint
       nodejs
     ];
-
-    programs.bun = {
-      enable = true;
-      enableGitIntegration = true;
-    };
   };
 }

@@ -45,14 +45,14 @@ A brief description of the structure:
   - `default.nix`: the default configuration for home-manager.
   - `minimal.nix`: the minimal configuration for home-manager.
 - `hosts`: the host-specific configurations.
-  - `<machine>/`: the configurations for a specific machine.
+  - `<machine>`: the configurations for a specific machine.
   - `default.nix`: the import configuration for all hosts.
   - `vars.nix`: the shared variables used in the host configurations.
 - `justfile`: the file that contains the recipes for the `just` command.
-- `LICENSE`: the license file for the repo.
+- `LICENSE`: the license file.
 - `modules`: contains the reusable top-level modules for different purposes.
 - `README.md`: this file.
-- `treefmt.toml`: the configuration file for `treefmt`, a tool to format the directory tree.
+- `treefmt.toml`: the configuration file for `treefmt`, used to format the repo.
 
 ## Miscellaneous
 
@@ -60,7 +60,7 @@ Below are some miscellaneous notes.
 
 ---
 
-Set a temporary proxy for nix-daemon:
+Set a temporary proxy for nix-daemon (superuser permission required):
 
 ```sh
 #!/usr/bin/env bash
@@ -87,7 +87,7 @@ Clean the machine:
 nh clean all
 ```
 
-Get the dependency graph of a package:
+Get the dependency graph of a package (`nix-tree` and `ripgrep` is required):
 
 ```sh
 nix-store --gc --print-roots | rg -v '/proc/' | rg -Po '(?<= -> ).*' | xargs -o nix-tree
@@ -95,7 +95,7 @@ nix-store --gc --print-roots | rg -v '/proc/' | rg -Po '(?<= -> ).*' | xargs -o 
 
 Then type `/` and the package name to get the dependency graph.
 
-This nixos config is designed to build remote nixos system on a local machine, use
+This nixos config is designed to build remote nixos system on a local machine, use:
 
 ```sh
 just push <remote-host>
@@ -107,7 +107,15 @@ Here the `<remote-host>` is the hostname of the remote machine, which is defined
 nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake
 ```
 
-## Other Configs
+Here `{{TARGET}}` is `<remote-host>`, with a ssh config like:
+
+```ssh
+Host <remote-host>
+  User <username>
+  Hostname <ip-address/domain>
+```
+
+## Other Configurations
 
 - neovim config: [nvim-config](https://github.com/chillcicada/nvim-config)
 - typora themes: [typora-themes](https://github.com/chillcicada/typora-themes)

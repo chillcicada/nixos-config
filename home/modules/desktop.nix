@@ -27,7 +27,6 @@ in
         pkgs.mpv-unwrapped.wrapper {
           scripts = with pkgs.mpvScripts; [
             uosc
-            bdanmaku
             sponsorblock
           ];
 
@@ -46,6 +45,7 @@ in
 
     # terminal
     programs.kitty = {
+      # run `infocmp -x xterm-kitty | ssh <remote-host> -- tic -x -` to install the terminfo
       enable = true;
       shellIntegration.enableZshIntegration = true;
 
@@ -64,6 +64,7 @@ in
     };
 
     programs.ghostty = {
+      # run `infocmp -x xterm-ghostty | ssh <remote-host> -- tic -x -` to install the terminfo
       enable = true;
       enableZshIntegration = true;
 
