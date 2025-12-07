@@ -16,7 +16,8 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
-      (python313.withPackages (ps: with ps; [ requests ]))
+      # (python313.withPackages (ps: with ps; [ requests ]))
+      python313
     ];
 
     programs.ruff = {
