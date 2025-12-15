@@ -2,7 +2,7 @@
 
 <p align="center">
 	<a href="https://github.com/chillcicada/nixos-config/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/chillcicada/nixos-config?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" /></a>
-  <a href="https://nixos.org/"><img alt="NIXOS Version" src="https://img.shields.io/badge/NixOS-25.11-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" /></a>
+  <a href="https://nixos.org/"><img alt="NIXOS Version" src="https://img.shields.io/badge/NixOS-Unstable-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" /></a>
 </p>
 
 This repo stores some cc's **nixos and home-manager** configurations.

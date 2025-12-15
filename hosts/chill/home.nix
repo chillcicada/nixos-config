@@ -7,20 +7,20 @@
 
 let
   patchDesktop =
-    pkg: appName: from: to:
+    pkg: app: from: to:
     lib.hiPrio (
-      pkgs.runCommand "$patched-desktop-entry-for-${appName}" { } ''
-        ${pkgs.coreutils}/bin/mkdir -p $out/share/applications
-        ${pkgs.gnused}/bin/sed 's#${from}#${to}#g' < ${pkg}/share/applications/${appName}.desktop > $out/share/applications/${appName}.desktop
+      pkgs.runCommand "$patched-desktop-entry-for-${app}" { } ''
+        mkdir -p $out/share/applications
+        sed 's#${from}#${to}#g' < ${pkg}/share/applications/${app}.desktop > $out/share/applications/${app}.desktop
       ''
     );
+
+  GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
 
   # # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload, used by minecraft
   # nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
   #   __GL_THREADED_OPTIMIZATIONS=0 nvidia-offload "$@"
   # '';
-
-  GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
 
   # GPUOffloadAppNoOpt =
   #   pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
@@ -46,14 +46,6 @@ in
         *) export PATH="$PNPM_HOME:$PATH" ;;
       esac
       # pnpm end
-
-      # uv
-      export PATH="$PATH:$HOME/.local/bin"
-      # uv end
-
-      # gnupg agent
-      export GPG_TTY=$(tty)
-      # gnupg agent end
     '';
   };
 
@@ -121,7 +113,6 @@ in
     # hmcl
     kazumi
     sparkle
-    # readest
     # aseprite
     # obs-studio
     teamspeak6-client
