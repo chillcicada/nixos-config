@@ -30,6 +30,9 @@
   # Disable suspend on close lid
   services.logind.settings.Login.HandleLidSwitch = "ignore";
 
+  # Enable DNS resolver
+  services.resolved.enable = true;
+
   # Enable nix-ld
   programs.nix-ld.enable = true;
 

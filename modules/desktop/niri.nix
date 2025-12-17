@@ -9,8 +9,8 @@ let
 in
 
 {
-  config = lib.mkIf (cfg.enable && cfg.wm == "hyprland") {
-    programs.hyprland = {
+  config = lib.mkIf (cfg.enable && cfg.wm == "niri") {
+    programs.niri = {
       enable = true;
     };
   };

@@ -112,9 +112,11 @@ in
     qq
     # hmcl
     kazumi
+    wemeet
     sparkle
     # aseprite
     # obs-studio
+    go-musicfox
     teamspeak6-client
 
     # chillcicada.et-astral
