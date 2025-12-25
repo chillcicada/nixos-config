@@ -23,9 +23,6 @@ in
       zotero
       wpsoffice-cn
 
-      # Fonts
-      lxgw-wenkai
-
       # Microsoft fonts
       chillcicada.ttf-ms-win10
       chillcicada.ttf-ms-win10-sc-sup
