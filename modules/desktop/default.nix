@@ -3,7 +3,6 @@
   vars,
   lib,
   config,
-  inputs,
   ...
 }:
 
@@ -34,8 +33,6 @@ in
   );
 
   config = lib.mkIf cfg.enable {
-    nixpkgs.overlays = with inputs; [ chillcicada.overlays.default ];
-
     services = {
       # Use gdm as the display manager.
       displayManager = {
@@ -99,7 +96,6 @@ in
           # pinyin lib supplement
           fcitx5-pinyin-zhwiki
           fcitx5-pinyin-moegirl
-          chillcicada.fcitx5-pinyin-custom-dictionary
         ];
 
         ignoreUserConfig = false;

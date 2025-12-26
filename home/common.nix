@@ -1,4 +1,4 @@
-{ vars, ... }:
+{ vars, config, ... }:
 
 {
   # https://nix-community.github.io/home-manager/options.xhtml
@@ -40,6 +40,8 @@
   # Enable Zsh & oh-my-zsh
   programs.zsh = {
     enable = true;
+
+    dotDir = "${config.xdg.configHome}/zsh"; # ~/.config/zsh
     enableCompletion = true;
     oh-my-zsh.enable = true;
     history.ignoreAllDups = true;

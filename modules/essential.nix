@@ -28,7 +28,6 @@ in
 
     # Build Source
     nix = {
-      registry.nixpkgs.flake = inputs.nixpkgs;
       settings = {
         nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
         substituters = [
