@@ -50,7 +50,7 @@ in
 
         fontPackages = with pkgs; [
           lxgw-neoxihei # CJK
-          noto-fonts-color-emoji # Emoji
+          twemoji-color-font # Emoji
         ];
       };
     };

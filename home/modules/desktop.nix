@@ -43,26 +43,6 @@ in
     # browser
     programs.zen-browser.enable = true;
 
-    # terminal
-    programs.kitty = {
-      # run `infocmp -x xterm-kitty | ssh <remote-host> -- tic -x -` to install the terminfo
-      enable = true;
-      shellIntegration.enableZshIntegration = true;
-
-      settings = {
-        dynamic_background_opacity = true;
-        background_blur = 16;
-        window_padding_width = "0 10";
-        tab_bar_edge = "top";
-      };
-
-      keybindings = {
-        # use the windows compatible keybindings
-        "ctrl+c" = "copy_or_interrupt";
-        "ctrl+v" = "paste_from_clipboard";
-      };
-    };
-
     programs.ghostty = {
       # run `infocmp -x xterm-ghostty | ssh <remote-host> -- tic -x -` to install the terminfo
       enable = true;
