@@ -130,8 +130,6 @@ in
     (GPUOffloadApp imv "imv-dir")
     (GPUOffloadApp mpv "mpv")
     (GPUOffloadApp mpv "umpv")
-    (GPUOffloadApp kitty "kitty")
-    (GPUOffloadApp kitty "kitty-open")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
     (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
