@@ -22,7 +22,6 @@ in
       tokei # count code lines
       typst # typesetting system
       killall # kill all processes by name
-      treefmt # tree format
       nix-tree # nix tree view
     ];
   };

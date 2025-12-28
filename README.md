@@ -30,8 +30,7 @@ Run `just --list` to see all recipes.
 ├── justfile
 ├── LICENSE
 ├── modules/
-├── README.md
-└── treefmt.toml
+└── README.md
 ```
 
 A brief description of the structure:
@@ -52,7 +51,6 @@ A brief description of the structure:
 - `LICENSE`: the license file.
 - `modules`: contains the reusable top-level modules for different purposes.
 - `README.md`: this file.
-- `treefmt.toml`: the configuration file for `treefmt`, used to format the repo.
 
 ## Miscellaneous
 
@@ -73,12 +71,6 @@ Environment="all_proxy=<your_proxy>"
 EOF
 systemctl daemon-reload
 systemctl restart nix-daemon
-```
-
-Format the repo:
-
-```sh
-treefmt
 ```
 
 Clean the machine:
