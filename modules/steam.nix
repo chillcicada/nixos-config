@@ -50,15 +50,13 @@ in
 
         fontPackages = with pkgs; [
           lxgw-neoxihei # CJK
-          twemoji-color-font # Emoji
+          noto-fonts-color-emoji # Emoji
         ];
       };
     };
 
     environment.systemPackages = with pkgs; [
       adwsteamgtk
-      mangohud
-
       # desktop applications patched for GPU offloading
       (GPUOffloadApp steam "steam")
     ];

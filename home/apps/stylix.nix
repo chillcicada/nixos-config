@@ -43,8 +43,8 @@ in
       };
 
       emoji = {
-        package = pkgs.twemoji-color-font;
-        name = "Twitter Color Emoji";
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
       };
 
       sizes = {

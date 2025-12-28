@@ -115,6 +115,13 @@ Host <remote-host>
   Hostname <ip-address/domain>
 ```
 
+Emergency rollback to the previous boot entry:
+
+```sh
+sudo grub-reboot '1>1'
+sudo reboot
+```
+
 ## Other Configurations
 
 - neovim config: [nvim-config](https://github.com/chillcicada/nvim-config)
