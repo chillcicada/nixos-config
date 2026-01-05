@@ -53,6 +53,7 @@ in
         blur-my-shell
         system-monitor
         applications-menu
+        clipboard-indicator
       ]);
   };
 }

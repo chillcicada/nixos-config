@@ -48,7 +48,7 @@ in
       # pnpm end
 
       # gunpg agent
-      export GPG_TTY=$(tty)
+      # export GPG_TTY=$(tty)
       # gunpg agent end
     '';
   };
