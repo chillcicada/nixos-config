@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   inputs,
   config,
@@ -15,6 +16,10 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = with pkgs; [ gnupg ];
+
+    programs.gnupg.agent.enable = true;
+
     nix = {
       settings = {
         nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";

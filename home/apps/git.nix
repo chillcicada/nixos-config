@@ -19,10 +19,4 @@
       pull.rebase = true;
     };
   };
-
-  programs.gpg = {
-    enable = true;
-
-    # homeDir
-  };
 }

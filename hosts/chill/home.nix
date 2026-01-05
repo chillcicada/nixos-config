@@ -46,10 +46,6 @@ in
         *) export PATH="$PNPM_HOME:$PATH" ;;
       esac
       # pnpm end
-
-      # gunpg agent
-      # export GPG_TTY=$(tty)
-      # gunpg agent end
     '';
   };
 
