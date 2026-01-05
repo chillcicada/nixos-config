@@ -27,7 +27,6 @@ Run `just --list` to see all recipes.
 │   ├── <machine>/
 │   ├── default.nix
 │   └── vars.nix
-├── justfile
 ├── LICENSE
 ├── modules/
 └── README.md
@@ -47,7 +46,6 @@ A brief description of the structure:
   - `<machine>`: the configurations for a specific machine.
   - `default.nix`: the import configuration for all hosts.
   - `vars.nix`: the shared variables used in the host configurations.
-- `justfile`: the file that contains the recipes for the `just` command.
 - `LICENSE`: the license file.
 - `modules`: contains the reusable top-level modules for different purposes.
 - `README.md`: this file.
@@ -56,7 +54,17 @@ A brief description of the structure:
 
 Below are some miscellaneous notes.
 
----
+Rebuild and switch the system configuration:
+
+```sh
+sudo nixos-rebuild switch --flake ."#$(hostname)" |& nom
+```
+
+Rebuild the system configuration but not switch:
+
+```sh
+sudo nixos-rebuild boot --flake ."#$(hostname)" |& nom
+```
 
 Set a temporary proxy for nix-daemon (superuser permission required):
 
@@ -76,7 +84,7 @@ systemctl restart nix-daemon
 Clean the machine:
 
 ```sh
-nh clean all
+sudo nh clean all
 ```
 
 Get the dependency graph of a package (`nix-tree` and `ripgrep` is required):
@@ -96,7 +104,7 @@ just push <remote-host>
 Here the `<remote-host>` is the hostname of the remote machine, which is defined in the **ssh config**, and the recipe is a wrapper of the following command:
 
 ```sh
-nixos-rebuild --target-host {{TARGET}} --use-remote-sudo switch --flake
+sudo nixos-rebuild --target-host "{{TARGET}}" --sudo switch --flake ."#{{TARGET}}" |& nom
 ```
 
 Here `{{TARGET}}` is `<remote-host>`, with a ssh config like:

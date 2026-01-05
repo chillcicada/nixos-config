@@ -1,8 +1,10 @@
-{ vars, ... }:
+{ vars, pkgs, ... }:
 
 {
   programs.git = {
     enable = true;
+
+    package = pkgs.gitMinimal;
 
     settings = {
       user.name = vars.userFullname;

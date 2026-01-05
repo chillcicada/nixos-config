@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   inputs,
   config,
@@ -16,17 +15,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # Build Coreutils
-    environment.systemPackages = with pkgs; [
-      git
-      just
-      gnupg
-      nix-output-monitor # nom
-    ];
-
-    programs.gnupg.agent.enable = true;
-
-    # Build Source
     nix = {
       settings = {
         nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";

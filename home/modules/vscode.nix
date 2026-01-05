@@ -31,7 +31,7 @@ in
         EDITOR = "code";
       };
 
-      # Typst Math
+      # VSCode Extension Typst Math
       home.packages = with pkgs; [ chillcicada.font-typst-math ];
     })
 

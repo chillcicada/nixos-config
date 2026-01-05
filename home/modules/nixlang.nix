@@ -18,6 +18,7 @@ in
     home.packages = with pkgs; [
       nil # linter
       nixfmt # formatter
+      nix-output-monitor # nom
     ];
   };
 }

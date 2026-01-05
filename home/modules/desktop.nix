@@ -23,16 +23,18 @@ in
     programs.mpv = {
       enable = true;
 
-      package = (
-        pkgs.mpv-unwrapped.wrapper {
-          scripts = with pkgs.mpvScripts; [
-            uosc
-            sponsorblock
-          ];
+      # package = pkgs.mpv.override {
+      #   waylandSupport = true;
+      # };
 
-          mpv = pkgs.mpv-unwrapped.override { waylandSupport = true; };
-        }
-      );
+      scripts = with pkgs.mpvScripts; [
+        uosc
+        sponsorblock
+      ];
+
+      extraInput = ''
+        esc quit
+      '';
 
       config = {
         profile = "high-quality";

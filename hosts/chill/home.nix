@@ -115,25 +115,20 @@ in
   ++ (with pkgs; [
     qq
     # hmcl
-    kazumi
+    # (GPUOffloadAppNoOpt hmcl "HMCL")
     wemeet
-    sparkle
+    flclash
     # aseprite
     # obs-studio
-    go-musicfox
+    # (GPUOffloadApp obs-studio "com.obsproject.Studio")
     teamspeak6-client
-
     # chillcicada.et-astral
 
-    # desktop applications patched for GPU offloading
     (GPUOffloadApp imv "imv")
     (GPUOffloadApp imv "imv-dir")
     (GPUOffloadApp mpv "mpv")
     (GPUOffloadApp mpv "umpv")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
-    (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
-    # (GPUOffloadApp obs-studio "com.obsproject.Studio")
-    # (GPUOffloadAppNoOpt hmcl "HMCL")
   ]);
 }
