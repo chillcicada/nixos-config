@@ -60,6 +60,8 @@ in
     })
 
     (lib.mkIf cfg.zed.enable {
+      stylix.targets.zed.enable = false;
+
       programs.zed-editor = {
         enable = true;
       };
