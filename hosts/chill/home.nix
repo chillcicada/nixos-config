@@ -93,9 +93,10 @@ in
   nixlang.enable = true;
   frontend.enable = true;
 
+  zed.enable = true;
+  neovim.enable = true;
   vscode.enable = true;
   vscode.server.enable = true;
-  neovim.enable = true;
 
   office.enable = true;
   desktop.enable = true;
