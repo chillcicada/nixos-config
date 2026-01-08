@@ -87,19 +87,19 @@ in
   # self defined options #
   # -------------------- #
   tools.enable = true;
-
-  cpp.enable = true;
-  python.enable = true;
-  nixlang.enable = true;
-  frontend.enable = true;
-
-  zed.enable = true;
-  neovim.enable = true;
-  vscode.enable = true;
-  vscode.server.enable = true;
-
   office.enable = true;
   desktop.enable = true;
+
+  develop.cpp.enable = true;
+  develop.nix.enable = true;
+  develop.rust.enable = true;
+  develop.python.enable = true;
+  develop.frontend.enable = true;
+
+  editors.zed.enable = true;
+  editors.neovim.enable = true;
+  editors.vscode.enable = true;
+  editors.vscode-server.enable = true;
 
   # ------------------- #
   # additional packages #

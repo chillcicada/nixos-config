@@ -20,11 +20,11 @@ in
         tinysparql.enable = true;
         core-shell.enable = true;
         localsearch.enable = true;
+        gnome-keyring.enable = true;
         core-os-services.enable = true;
 
         games.enable = lib.mkForce false;
         core-apps.enable = lib.mkForce false;
-        gnome-keyring.enable = lib.mkForce false;
         gnome-user-share.enable = lib.mkForce false;
         gnome-initial-setup.enable = lib.mkForce false;
         core-developer-tools.enable = lib.mkForce false;
