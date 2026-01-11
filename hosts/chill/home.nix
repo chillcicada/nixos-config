@@ -118,7 +118,7 @@ in
     # aseprite
     # obs-studio
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
-    teamspeak6-client
+    # teamspeak6-client
     # chillcicada.et-astral
 
     (GPUOffloadApp imv "imv")

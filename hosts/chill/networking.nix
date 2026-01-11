@@ -6,8 +6,16 @@
     20202 # the lower ports is gotten blocked by the THU
   ];
 
+  services.resolved.enable = true;
+
   networking = {
     networkmanager.enable = true;
+
+    extraHosts = ''
+      # for ban-ip
+      127.0.0.1 www.zhihu.com
+      127.0.0.1 www.bilibili.com
+    '';
 
     firewall = {
       enable = true;

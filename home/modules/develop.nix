@@ -32,7 +32,7 @@ in
 
     (lib.mkIf cfg.nix.enable {
       home.packages = with pkgs; [
-        nil # linter
+        nixd # linter
         nixfmt # formatter
         nix-output-monitor # nom
       ];
