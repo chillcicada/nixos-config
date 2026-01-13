@@ -10,12 +10,14 @@
     builtins.attrNames (removeAttrs (builtins.readDir ./.) [ "default.nix" ])
   );
 
+  # Config home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
     backupFileExtension = vars.hmBackupFileExtension;
     useUserPackages = true;
   };
 
+  # Define the main user
   users.users.${vars.userName} = {
     isNormalUser = true;
     description = vars.userFullname;
@@ -32,8 +34,10 @@
   # Enable zsh to get completion for system packages
   environment.pathsToLink = [ "/share/zsh" ];
 
+  # Disable default packages
   environment.defaultPackages = [ ];
 
+  # No password sudo for the main user
   security.sudo.extraRules = [
     {
       users = [ vars.userName ];
@@ -46,13 +50,13 @@
     }
   ];
 
-  # manually add the sops file
+  # Manually add the sops file
   sops.age.keyFile = "/home/${vars.userName}/.config/sops/age/keys.txt";
 
-  # nixpkgs config
+  # Nixpkgs config
   nixpkgs.config.allowUnfree = true;
 
-  # nix config
+  # Nix config
   nix.settings = {
     trusted-users = [ vars.userName ];
     auto-optimise-store = true;

@@ -15,17 +15,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # image
+    # image viewer
     programs.imv.enable = true;
 
-    # video & audio
+    # video & audio player
     # https://wiki.nixos.org/wiki/MPV
     programs.mpv = {
       enable = true;
-
-      # package = pkgs.mpv.override {
-      #   waylandSupport = true;
-      # };
 
       scripts = with pkgs.mpvScripts; [
         uosc
@@ -45,8 +41,9 @@ in
     # browser
     programs.zen-browser.enable = true;
 
+    # terminal emulator
+    # run `infocmp -x xterm-ghostty | ssh <remote-host> -- tic -x -` to install the terminfo
     programs.ghostty = {
-      # run `infocmp -x xterm-ghostty | ssh <remote-host> -- tic -x -` to install the terminfo
       enable = true;
       enableZshIntegration = true;
 

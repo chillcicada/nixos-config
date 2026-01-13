@@ -1,17 +1,17 @@
 { inputs, ... }:
 
 {
-  # This configuration is designed for graphical usage (`desktop.enable = true`).
+  # This configuration is designed for graphical usage.
   imports = [
-    # Software enabled by default
+    # Software enabled for the desktop environment by default
     ./apps
     # Modules for the desktop environment
     ./modules
-    # Common configurations with Minimal configurations
+    # Common configurations with the minimal configurations
     ./common.nix
   ];
 
-  # Add nixpkgs overlays
+  # Nixpkgs overlays
   nixpkgs.overlays = [
     inputs.chillcicada.overlays.default
     (_: super: {

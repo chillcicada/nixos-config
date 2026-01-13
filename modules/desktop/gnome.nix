@@ -14,6 +14,9 @@ in
     services = {
       desktopManager.gnome.enable = true;
 
+      # Disable orca screen reader
+      orca.enable = false;
+
       gnome = {
         rygel.enable = true;
         sushi.enable = true;
@@ -35,7 +38,11 @@ in
       };
     };
 
-    environment.gnome.excludePackages = with pkgs; [ gnome-tour ];
+    # Disable docs & help packages
+    environment.gnome.excludePackages = with pkgs; [
+      gnome-tour
+      gnome-user-docs
+    ];
 
     environment.systemPackages =
       with pkgs;

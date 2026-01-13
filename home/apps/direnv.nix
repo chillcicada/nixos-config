@@ -8,7 +8,7 @@
     enableBashIntegration = true;
 
     config = {
-      warn_timeout = 0;
+      warn_timeout = 0; # disable warning timeout
     };
 
     config.global = {

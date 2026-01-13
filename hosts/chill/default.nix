@@ -48,4 +48,7 @@
       default = [ "com.mitchellh.ghostty.desktop" ];
     };
   };
+
+  # Reset the default enabled programs
+  programs.nano.enable = false;
 }
