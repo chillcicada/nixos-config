@@ -46,6 +46,10 @@ in
         *) export PATH="$PNPM_HOME:$PATH" ;;
       esac
       # pnpm end
+
+      # gnupg agent
+      export GPG_TTY=$(tty)
+      # gnupg agent end
     '';
   };
 

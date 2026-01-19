@@ -41,6 +41,7 @@ in
     (lib.mkIf cfg.rust.enable {
       home.packages = with pkgs; [
         cargo
+        rustc
       ];
     })
 
