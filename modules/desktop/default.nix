@@ -52,7 +52,7 @@ in
       };
     };
 
-    # Enable wayland support.
+    # Enable wayland support
     environment.sessionVariables = {
       QT_QPA_PLATFORM = "wayland";
       NIXOS_OZONE_WL = "1";
