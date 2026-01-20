@@ -5,10 +5,6 @@ let
 
   proxyServices = [
     {
-      prefix = "uptime";
-      port = 8080;
-    }
-    {
       prefix = "webdav";
       port = 8081;
       extraConfig = ''
