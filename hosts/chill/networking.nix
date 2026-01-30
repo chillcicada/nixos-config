@@ -11,12 +11,6 @@
   networking = {
     networkmanager.enable = true;
 
-    extraHosts = ''
-      # for ban-ip
-      127.0.0.1 www.zhihu.com
-      127.0.0.1 www.bilibili.com
-    '';
-
     firewall = {
       enable = true;
       # Allow HTTP and SSH traffic
