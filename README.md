@@ -95,16 +95,11 @@ nix-store --gc --print-roots | rg -v '/proc/' | rg -Po '(?<= -> ).*' | xargs -o 
 
 Then type `/` and the package name to get the dependency graph.
 
-This nixos config is designed to build remote nixos system on a local machine, use:
+This nixos config is designed to build remote nixos system on a local machine and push it to the remote machine, use with **ssh config**:
 
 ```sh
-just push <remote-host>
-```
-
-Here the `<remote-host>` is the hostname of the remote machine, which is defined in the **ssh config**, and the recipe is a wrapper of the following command:
-
-```sh
-sudo nixos-rebuild --target-host "{{TARGET}}" --sudo switch --flake ."#{{TARGET}}" |& nom
+# Note that it required no sudo permission on the local machine
+nixos-rebuild --target-host "{{TARGET}}" --sudo switch --flake ."#{{TARGET}}" |& nom
 ```
 
 Here `{{TARGET}}` is `<remote-host>`, with a ssh config like:
