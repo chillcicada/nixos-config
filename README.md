@@ -15,40 +15,21 @@ Run `just --list` to see all recipes.
 
 ```txt
 .
-├── flake.lock
-├── flake.nix
-├── home
-│   ├── apps/
-│   ├── modules/
-│   ├── common.nix
-│   ├── default.nix
-│   └── minimal.nix
-├── hosts
-│   ├── <machine>/
-│   ├── default.nix
-│   └── vars.nix
-├── LICENSE
-├── modules/
-└── README.md
+├── flake.lock      # the lock file for the flake.
+├── flake.nix       # the main entry point of the flake.
+├── home            # the home-manager configurations.
+│   ├── apps/       # the auto-imported app-specific configurations.
+│   ├── modules/    # the reusable modules for home-manager.
+│   ├── common.nix  # the common configuration for home-manager.
+│   └── default.nix # the default configuration for home-manager.
+├── hosts           # the host-specific configurations.
+│   ├── <machine>/  # the configurations for a specific machine.
+│   ├── default.nix # the import configuration for all hosts.
+│   └── vars.nix    # the shared variables used in the host configurations.
+├── LICENSE         # the license file.
+├── modules/        # the reusable top-level modules for different purposes.
+└── README.md       # this file.
 ```
-
-A brief description of the structure:
-
-- `flake.lock`: the lock file for the flake.
-- `flake.nix`: the main entry point of the flake.
-- `home`: the home-manager configurations.
-  - `apps`: the auto-imported app-specific configurations.
-  - `modules`: the reusable modules for home-manager.
-  - `common.nix`: the common configuration for home-manager.
-  - `default.nix`: the default configuration for home-manager.
-  - `minimal.nix`: the minimal configuration for home-manager.
-- `hosts`: the host-specific configurations.
-  - `<machine>`: the configurations for a specific machine.
-  - `default.nix`: the import configuration for all hosts.
-  - `vars.nix`: the shared variables used in the host configurations.
-- `LICENSE`: the license file.
-- `modules`: contains the reusable top-level modules for different purposes.
-- `README.md`: this file.
 
 ## Miscellaneous
 
@@ -87,22 +68,14 @@ Clean the machine:
 sudo nh clean all
 ```
 
-Get the dependency graph of a package (`nix-tree` and `ripgrep` is required):
-
-```sh
-nix-store --gc --print-roots | rg -v '/proc/' | rg -Po '(?<= -> ).*' | xargs -o nix-tree
-```
-
-Then type `/` and the package name to get the dependency graph.
-
 This nixos config is designed to build remote nixos system on a local machine and push it to the remote machine, use with **ssh config**:
 
 ```sh
 # Note that it required no sudo permission on the local machine
-nixos-rebuild --target-host "{{TARGET}}" --sudo switch --flake ."#{{TARGET}}" |& nom
+nixos-rebuild --target-host "<remote-host>" --sudo switch --flake ."#<remote-host>" |& nom
 ```
 
-Here `{{TARGET}}` is `<remote-host>`, with a ssh config like:
+With the ssh config like:
 
 ```ssh
 Host <remote-host>
