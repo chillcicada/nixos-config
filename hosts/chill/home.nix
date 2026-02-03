@@ -96,7 +96,6 @@ in
 
   develop.cpp.enable = true;
   develop.nix.enable = true;
-  develop.rust.enable = true;
   develop.python.enable = true;
   develop.frontend.enable = true;
 

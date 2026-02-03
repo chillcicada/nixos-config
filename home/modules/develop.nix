@@ -13,7 +13,6 @@ in
   options.develop = {
     cpp.enable = lib.mkEnableOption "cpp";
     nix.enable = lib.mkEnableOption "nix";
-    rust.enable = lib.mkEnableOption "rust";
     python.enable = lib.mkEnableOption "python";
     frontend.enable = lib.mkEnableOption "frontend";
   };
@@ -35,13 +34,6 @@ in
         nixd # linter
         nixfmt # formatter
         nix-output-monitor # nom
-      ];
-    })
-
-    (lib.mkIf cfg.rust.enable {
-      home.packages = with pkgs; [
-        cargo
-        rustc
       ];
     })
 
