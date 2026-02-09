@@ -48,8 +48,7 @@ in
       with pkgs;
       [
         nautilus # File manager
-        snapshot # Camera app
-        gnome-system-monitor # System monitor
+        # snapshot # Camera app
         gnome-control-center # Settings app
       ]
       ++ (with gnomeExtensions; [
@@ -58,9 +57,8 @@ in
         open-bar
         appindicator
         blur-my-shell
-        system-monitor
-        applications-menu
         clipboard-indicator
+        net-speed-simplified
       ]);
   };
 }
