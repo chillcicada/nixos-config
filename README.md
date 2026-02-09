@@ -9,10 +9,6 @@ This repo stores some cc's **nixos and home-manager** configurations.
 
 > Hint: this repo contains my hardware configuration, you shouldn't directly use the config to build your system.
 
-Run `just --list` to see all recipes.
-
-## Structure
-
 ```txt
 .
 ├── flake.lock      # the lock file for the flake.
@@ -31,9 +27,20 @@ Run `just --list` to see all recipes.
 └── README.md       # this file.
 ```
 
-## Miscellaneous
+## Other Configurations
+
+- user packages: [nurpkgs](https://github.com/chillcicada/nurpkgs)
+- neovim config: [nvim-config](https://github.com/chillcicada/nvim-config)
+- typora themes: [typora-themes](https://github.com/chillcicada/typora-themes)
+- wallpapers: [wallpapers](https://github.com/chillcicada/imgs)
+
+## License
+
+[GLWTS](LICENSE)
 
 Below are some miscellaneous notes.
+
+---
 
 Rebuild and switch the system configuration:
 
@@ -89,13 +96,3 @@ Emergency rollback to the previous boot entry:
 sudo grub-reboot '1>1'
 sudo reboot
 ```
-
-## Other Configurations
-
-- neovim config: [nvim-config](https://github.com/chillcicada/nvim-config)
-- typora themes: [typora-themes](https://github.com/chillcicada/typora-themes)
-- wallpapers: [wallpapers](https://github.com/chillcicada/imgs)
-
-## License
-
-[GLWTS](LICENSE)
