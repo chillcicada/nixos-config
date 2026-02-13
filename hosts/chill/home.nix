@@ -115,14 +115,16 @@ in
   ++ (with pkgs; [
     qq
     # hmcl
-    # (GPUOffloadAppNoOpt hmcl "HMCL")
     wemeet
     flclash
     # aseprite
     # obs-studio
-    # (GPUOffloadApp obs-studio "com.obsproject.Studio")
+    bilibili-tui
+    telegram-desktop
     # teamspeak6-client
-    # chillcicada.et-astral
+
+    # (GPUOffloadAppNoOpt hmcl "HMCL")
+    # (GPUOffloadApp obs-studio "com.obsproject.Studio")
 
     (GPUOffloadApp imv "imv")
     (GPUOffloadApp imv "imv-dir")
