@@ -38,7 +38,7 @@ in
     })
 
     (lib.mkIf cfg.python.enable {
-      home.packages = with pkgs; [ python313 ];
+      home.packages = with pkgs; [ (python3.withPackages (ps: with ps; [ requests ])) ];
 
       programs.ruff = {
         enable = true;
@@ -72,6 +72,10 @@ in
             docstring-code-line-length = "dynamic";
           };
         };
+      };
+
+      programs.ty = {
+        enable = true;
       };
 
       programs.uv = {

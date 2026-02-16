@@ -19,6 +19,8 @@ in
 
     programs.gnupg.agent.enable = true;
 
+    nix.package = pkgs.lixPackageSets.stable.lix;
+
     nix.settings = {
       substituters = [
         "https://nix-community.cachix.org"
