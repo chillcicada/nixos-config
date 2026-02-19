@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   inputs,
   vars,
@@ -27,6 +28,7 @@
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true; # shell defined in home-manager
+    openssh.authorizedKeys.keys = vars.opensshKeys;
   };
 
   environment.shells = [ pkgs.zsh ];
@@ -35,7 +37,7 @@
   environment.pathsToLink = [ "/share/zsh" ];
 
   # Disable default packages
-  environment.defaultPackages = [ ];
+  environment.defaultPackages = lib.mkDefault [ ];
 
   # No password sudo for the main user
   security.sudo.extraRules = [
@@ -59,7 +61,6 @@
   # Nix config
   nix.settings = {
     trusted-users = [ vars.userName ];
-    auto-optimise-store = true;
     experimental-features = [
       "nix-command"
       "flakes"
@@ -67,12 +68,13 @@
   };
 
   # Disable the NixOS channel
-  nix.channel.enable = false;
+  nix.channel.enable = lib.mkDefault false;
 
-  # Disable the NixOS manual
-  documentation.enable = false;
+  # Disable info pages and the NixOS manual
+  documentation.info.enable = lib.mkDefault false;
+  documentation.nixos.enable = lib.mkDefault false;
 
-  # openssh configuration
+  # Openssh configuration
   services.openssh = {
     enable = true;
     openFirewall = true;
@@ -84,7 +86,7 @@
     };
   };
 
-  # journal configuration
+  # Journal configuration
   services.journald = {
     extraConfig = ''
       MaxRetentionSec=7day

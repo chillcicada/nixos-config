@@ -8,6 +8,7 @@
 
   users.users."webdav" = {
     # manually create the folder beforehand
+    # `install -d -m 755 -o webdav -g webdav /var/www/webdav`
     home = "/var/www/webdav";
     extraGroups = [ "webdav" ];
   };
@@ -35,7 +36,6 @@
           auth = "false";
           autoindex = true;
 
-          # manually create the directory beforehand
           directory = "/var/www/webdav";
         }
         {
@@ -46,6 +46,7 @@
           autoindex = true;
 
           # manually create the directory beforehand
+          # `install -d -m 755 -o webdav -g webdav /var/www/webdav/public`
           directory = "/var/www/webdav/public";
         }
         {
@@ -56,6 +57,7 @@
           autoindex = true;
 
           # manually create the directory beforehand
+          # `install -d -m 750 -o webdav -g webdav /var/www/webdav/private`
           directory = "/var/www/webdav/private";
         }
       ];

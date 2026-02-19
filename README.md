@@ -54,16 +54,14 @@ Rebuild the system configuration but not switch:
 sudo nixos-rebuild boot --flake ."#$(hostname)" |& nom
 ```
 
-Set a temporary proxy for nix-daemon (superuser permission required):
+Pass envrionment variables to nix-daemon (superuser permission required):
 
 ```sh
 #!/usr/bin/env bash
 mkdir /run/systemd/system/nix-daemon.service.d
 cat > /run/systemd/system/nix-daemon.service.d/override.conf << EOF
 [Service]
-Environment="http_proxy=<your_proxy>"
-Environment="https_proxy=<your_proxy>"
-Environment="all_proxy=<your_proxy>"
+Environment="<ENV_VAR_NAME>=<ENV_VAR_VALUE>"
 EOF
 systemctl daemon-reload
 systemctl restart nix-daemon
@@ -90,7 +88,7 @@ Host <remote-host>
   Hostname <ip-address/domain>
 ```
 
-Emergency rollback to the previous boot entry:
+Emergency rollback to the previous boot entry (for grub):
 
 ```sh
 sudo grub-reboot '1>1'
