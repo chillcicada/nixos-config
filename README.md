@@ -5,7 +5,7 @@
   <a href="https://nixos.org/"><img alt="NIXOS Version" src="https://img.shields.io/badge/NixOS-Unstable-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" /></a>
 </p>
 
-This repo stores some cc's **nixos and home-manager** configurations.
+**This repo stores some cc's [NixOS](https://nixos.org) and [home-manager](https://github.com/nix-community/home-manager) configurations.**
 
 > Hint: this repo contains my hardware configuration, you shouldn't directly use the config to build your system.
 
@@ -27,6 +27,8 @@ This repo stores some cc's **nixos and home-manager** configurations.
 └── README.md       # this file.
 ```
 
+System theme is built via [stylix](https://github.com/nix-community/stylix)
+
 ## Other Configurations
 
 - user packages: [nurpkgs](https://github.com/chillcicada/nurpkgs)
@@ -38,7 +40,7 @@ This repo stores some cc's **nixos and home-manager** configurations.
 
 [GLWTS](LICENSE)
 
-Below are some miscellaneous notes.
+*Below are some miscellaneous notes.*
 
 ---
 

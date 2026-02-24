@@ -9,7 +9,7 @@ let
   patchDesktop =
     pkg: app: from: to:
     lib.hiPrio (
-      pkgs.runCommand "$patched-desktop-entry-for-${app}" { } ''
+      pkgs.runCommand "patched-desktop-entry-for-${app}" { } ''
         mkdir -p $out/share/applications
         sed 's#${from}#${to}#g' < ${pkg}/share/applications/${app}.desktop > $out/share/applications/${app}.desktop
       ''
