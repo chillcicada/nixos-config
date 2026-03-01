@@ -39,7 +39,10 @@ in
     };
 
     # browser
-    programs.zen-browser.enable = true;
+    programs.zen-browser = {
+      enable = true;
+      suppressXdgMigrationWarning = true;
+    };
 
     # terminal emulator
     # run `infocmp -x xterm-ghostty | ssh <remote-host> -- tic -x -` to install the terminfo

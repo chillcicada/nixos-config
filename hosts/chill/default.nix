@@ -49,6 +49,11 @@
     };
   };
 
+  programs.nautilus-open-any-terminal = {
+    enable = true;
+    terminal = "ghostty";
+  };
+
   # Reset the default enabled programs
   programs.nano.enable = false;
 }

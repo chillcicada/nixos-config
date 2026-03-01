@@ -15,6 +15,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
     backupFileExtension = vars.hmBackupFileExtension;
+    useGlobalPkgs = true;
     useUserPackages = true;
   };
 
@@ -54,9 +55,6 @@
 
   # Manually add the sops file
   sops.age.keyFile = "/home/${vars.userName}/.config/sops/age/keys.txt";
-
-  # Nixpkgs config
-  nixpkgs.config.allowUnfree = true;
 
   # Nix config
   nix.settings = {

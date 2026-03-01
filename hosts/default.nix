@@ -17,9 +17,7 @@ with inputs;
       ];
 
       networking.hostName = "chill";
-
       home-manager.users.${vars.userName}.imports = [ self.homeModules.chill ];
-
       system.stateVersion = "26.05";
     };
 
@@ -33,9 +31,7 @@ with inputs;
       ];
 
       networking.hostName = "salt";
-
       home-manager.users.${vars.userName}.imports = [ self.homeModules.salt ];
-
       system.stateVersion = "26.05";
     };
   };
@@ -65,11 +61,20 @@ with inputs;
     system = "x86_64-linux";
     specialArgs = { inherit inputs system vars; };
     modules = [ self.nixosModules.chill ];
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+      overlays = [ inputs.chillcicada.overlays.default ];
+    };
   };
 
   flake.nixosConfigurations.salt = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     specialArgs = { inherit inputs system vars; };
     modules = [ self.nixosModules.salt ];
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
   };
 }

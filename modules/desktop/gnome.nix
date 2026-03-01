@@ -55,6 +55,7 @@ in
         caffeine
         kimpanel
         open-bar
+        todo-list
         appindicator
         blur-my-shell
         clipboard-indicator

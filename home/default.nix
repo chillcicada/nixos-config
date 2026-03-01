@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 
 {
   # This configuration is designed for graphical usage.
@@ -10,7 +10,4 @@
     # Common configurations with the minimal configurations
     ./common.nix
   ];
-
-  # Nixpkgs overlays
-  nixpkgs.overlays = [ inputs.chillcicada.overlays.default ];
 }
