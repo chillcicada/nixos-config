@@ -6,6 +6,8 @@
     enable = true;
     enableZshIntegration = true;
 
+    initLua = ./init.lua;
+
     settings = {
       mgr = {
         show_hidden = true;
@@ -20,6 +22,20 @@
           {
             run = "nvim $@";
             block = true;
+          }
+        ];
+      };
+      plugin = {
+        prepend_fetchers = [
+          {
+            id = "git";
+            url = "*";
+            run = "git";
+          }
+          {
+            id = "git";
+            url = "*/";
+            run = "git";
           }
         ];
       };
