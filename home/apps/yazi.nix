@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # refer to https://yazi-rs.github.io/ for more information
@@ -23,6 +23,10 @@
           }
         ];
       };
+    };
+
+    plugins = {
+      inherit (pkgs.yaziPlugins) git starship;
     };
   };
 }

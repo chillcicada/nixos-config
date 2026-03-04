@@ -13,6 +13,7 @@ in
   options.develop = {
     cpp.enable = lib.mkEnableOption "cpp";
     nix.enable = lib.mkEnableOption "nix";
+    misc.enable = lib.mkEnableOption "misc";
     python.enable = lib.mkEnableOption "python";
     frontend.enable = lib.mkEnableOption "frontend";
   };
@@ -92,6 +93,10 @@ in
         pnpm
         nodejs
       ];
+    })
+
+    (lib.mkIf cfg.misc.enable {
+      home.packages = with pkgs; [ just-lsp ];
     })
   ];
 }
