@@ -120,7 +120,7 @@ in
     flclash
     # aseprite
     # obs-studio
-    bilibili-tui
+    # bilibili-tui
     telegram-desktop
     # teamspeak6-client
 
