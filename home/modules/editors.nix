@@ -49,6 +49,7 @@ in
 
       home.sessionVariables = {
         EDITOR = "code";
+        WAKATIME_HOME = config.xdg.configHome;
       };
 
       # VSCode Extension Typst Math
