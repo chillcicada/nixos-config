@@ -53,6 +53,8 @@ with inputs;
     salt = {
       imports = [ ../home/common.nix ];
 
+      xdg.mime.enable = false;
+
       home.stateVersion = "26.05";
     };
   };

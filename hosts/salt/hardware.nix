@@ -3,11 +3,12 @@
 {
   imports = [
     (modulesPath + "/profiles/minimal.nix")
-    (modulesPath + "/profiles/perlless.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
-  boot.loader.limine.enable = true;
+  boot.loader.grub.device = "/dev/vda";
+
+  boot.initrd.systemd.enable = true;
 
   boot.initrd.availableKernelModules = [
     "ata_piix"
@@ -16,6 +17,9 @@
     "vmw_pvscsi"
   ];
   boot.initrd.kernelModules = [ "nvme" ];
+
+  services.userborn.enable = true;
+  system.etc.overlay.enable = true;
 
   fileSystems."/" = {
     device = "/dev/vda1";
