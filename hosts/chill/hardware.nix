@@ -8,6 +8,8 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
+  boot.loader.grub.enable = lib.mkDefault false;
+
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"

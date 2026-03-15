@@ -8,11 +8,18 @@
   ];
 
   # Bootloader.
+  boot.initrd.systemd.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-64f9a2a3-e6c3-418c-902d-dde61e57bdb3".device =
     "/dev/disk/by-uuid/64f9a2a3-e6c3-418c-902d-dde61e57bdb3";
+
+  # Disable automatic generation of hardware-configuration.nix
+  system.tools.nixos-generate-config.enable = false;
+
+  # Enable userborn for user management.
+  services.userborn.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
