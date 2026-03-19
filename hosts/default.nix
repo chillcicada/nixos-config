@@ -66,7 +66,7 @@ with inputs;
     pkgs = import nixpkgs {
       system = "x86_64-linux";
       config.allowUnfree = true;
-      overlays = [ inputs.chillcicada.overlays.default ];
+      overlays = [ chillcicada.overlays.default ];
     };
   };
 

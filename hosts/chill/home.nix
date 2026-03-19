@@ -122,7 +122,7 @@ in
     # obs-studio
     # bilibili-tui
     telegram-desktop
-    # teamspeak6-client
+    teamspeak6-client
 
     # (GPUOffloadAppNoOpt hmcl "HMCL")
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
