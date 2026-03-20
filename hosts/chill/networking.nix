@@ -9,6 +9,11 @@
   services.resolved.enable = true;
 
   networking = {
+    hosts."127.0.0.1" = [
+      "www.zhihu.com"
+      "www.bilibili.com"
+    ];
+
     networkmanager.enable = true;
 
     firewall = {
