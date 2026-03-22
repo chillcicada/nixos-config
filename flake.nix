@@ -2,7 +2,7 @@
   description = "chillcicada's personal nixos config";
 
   inputs = {
-    nixpkgs.url = "github:Nixos/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 
@@ -29,7 +29,6 @@
       flake = false;
     };
 
-    # my typora themes
     typora-themes = {
       type = "github";
       owner = "chillcicada";

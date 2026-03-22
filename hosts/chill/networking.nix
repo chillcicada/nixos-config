@@ -10,6 +10,9 @@
 
   networking = {
     hosts."127.0.0.1" = [
+      "bgm.tv"
+      "discord.com"
+      "youtube.com"
       "www.zhihu.com"
       "www.bilibili.com"
     ];
