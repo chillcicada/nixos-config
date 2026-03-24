@@ -10,7 +10,7 @@
 
   networking = {
     hosts."127.0.0.1" = [
-      "bgm.tv"
+      "x.com"
       "discord.com"
       "youtube.com"
       "www.zhihu.com"
