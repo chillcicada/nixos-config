@@ -14,7 +14,7 @@
       "discord.com"
       "youtube.com"
       "www.zhihu.com"
-      # "www.bilibili.com"
+      "www.bilibili.com"
     ];
 
     networkmanager.enable = true;
