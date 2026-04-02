@@ -11,20 +11,20 @@
 
 ```txt
 .
-├── flake.lock      # the lock file for the flake.
-├── flake.nix       # the main entry point of the flake.
-├── home            # the home-manager configurations.
-│   ├── apps/       # the auto-imported app-specific configurations.
-│   ├── modules/    # the reusable modules for home-manager.
-│   ├── common.nix  # the common configuration for home-manager.
-│   └── default.nix # the default configuration for home-manager.
-├── hosts           # the host-specific configurations.
-│   ├── <machine>/  # the configurations for a specific machine.
-│   ├── default.nix # the import configuration for all hosts.
-│   └── vars.nix    # the shared variables used in the host configurations.
-├── LICENSE         # the license file.
-├── modules/        # the reusable top-level modules for different purposes.
-└── README.md       # this file.
+├── flake.lock      # lock file for the flake
+├── flake.nix       # main entry point of the flake
+├── home            # home-manager configurations
+│   ├── apps/       # auto-imported app-specific configurations
+│   ├── modules/    # reusable modules for home-manager
+│   ├── common.nix  # common configuration for home-manager
+│   └── default.nix # default configuration for home-manager
+├── hosts           # host-specific configurations
+│   ├── <machine>/  # configurations for a specific machine
+│   ├── default.nix # import configuration for all hosts
+│   └── vars.nix    # shared variables used in the host configurations
+├── LICENSE         # license file
+├── modules/        # reusable top-level modules for different purposes
+└── README.md       # this file
 ```
 
 System theme is built via [stylix](https://github.com/nix-community/stylix)
