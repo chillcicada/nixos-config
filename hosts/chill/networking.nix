@@ -11,6 +11,7 @@
   networking = {
     hosts."127.0.0.1" = [
       "x.com"
+      "baidu.com"
       "discord.com"
       "youtube.com"
       "www.zhihu.com"

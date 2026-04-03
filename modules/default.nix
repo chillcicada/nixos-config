@@ -14,7 +14,7 @@
   # Config home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
-    backupFileExtension = vars.hmBackupFileExtension;
+    backupFileExtension = "hmbak";
     useGlobalPkgs = true;
     useUserPackages = true;
   };
@@ -23,10 +23,6 @@
   users.users.${vars.userName} = {
     isNormalUser = true;
     description = vars.userFullname;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true; # shell defined in home-manager
     openssh.authorizedKeys.keys = vars.opensshKeys;

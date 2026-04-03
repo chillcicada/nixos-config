@@ -1,10 +1,15 @@
-{ ... }:
+{ vars, ... }:
 
 {
   imports = [
     ./nvidia.nix
     ./hardware.nix
     ./networking.nix
+  ];
+
+  users.users.${vars.userName}.extraGroups = [
+    "networkmanager"
+    "wheel"
   ];
 
   # Bootloader.

@@ -66,7 +66,17 @@ with inputs;
     pkgs = import nixpkgs {
       system = "x86_64-linux";
       config.allowUnfree = true;
-      overlays = [ chillcicada.overlays.default ];
+      overlays = [
+        chillcicada.overlays.default
+        (_: super: {
+          wechat = super.wechat.overrideAttrs (_: {
+            src = super.fetchurl {
+              url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
+              hash = "sha256-XxAvFnlljqurGPDgRr+DnuCKbdVvgXBPh02DLHY3Oz8=";
+            };
+          });
+        })
+      ];
     };
   };
 
