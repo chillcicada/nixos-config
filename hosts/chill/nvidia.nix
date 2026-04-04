@@ -1,7 +1,6 @@
-# https://nixos.wiki/wiki/Nvidia
-
 { config, ... }:
 
+# https://nixos.wiki/wiki/Nvidia
 {
   # enable OpenGL
   hardware.graphics.enable = true;
@@ -29,7 +28,7 @@
     nvidiaSettings = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
     prime = {
       # Run `sudo lshw -c display` to find the bus id of your nvidia card

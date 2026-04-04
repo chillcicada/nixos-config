@@ -8,21 +8,6 @@
 
 let
   cfg = config.steam;
-
-  patchDesktop =
-    pkg: appName: from: to:
-    lib.hiPrio (
-      pkgs.runCommand "$patched-desktop-entry-for-${appName}" { } ''
-        mkdir -p $out/share/applications
-        sed 's#${from}#${to}#g' < ${pkg}/share/applications/${appName}.desktop > $out/share/applications/${appName}.desktop
-      ''
-    );
-
-  GPUOffloadApp =
-    pkg: desktopName:
-    lib.mkIf config.hardware.nvidia.prime.offload.enable (
-      patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload "
-    );
 in
 
 {
@@ -33,11 +18,6 @@ in
   config = lib.mkIf cfg.enable {
     # https://nixos.wiki/wiki/Steam
     programs = {
-      gamescope = {
-        enable = true;
-        capSysNice = true;
-      };
-
       steam = {
         enable = true;
         # Open ports in the firewall for Steam Remote Play
@@ -46,20 +26,22 @@ in
         dedicatedServer.openFirewall = true;
         # Open ports in the firewall for Steam Local Network Game Transfers
         localNetworkGameTransfers.openFirewall = true;
-        gamescopeSession.enable = true;
+        gamescopeSession.enable = config.desktop.wm != "gnome";
 
         fontPackages = with pkgs; [
           lxgw-neoxihei # CJK
           noto-fonts-color-emoji # Emoji
         ];
       };
+    }
+    // lib.optionalAttrs (config.desktop.wm != "gnome") {
+      gamescope = {
+        enable = true;
+        capSysNice = true;
+      };
     };
 
-    environment.systemPackages = with pkgs; [
-      adwsteamgtk
-      # desktop applications patched for GPU offloading
-      (GPUOffloadApp steam "steam")
-    ];
+    environment.systemPackages = with pkgs; [ adwsteamgtk ];
 
     services.getty.autologinUser = vars.userName;
 
