@@ -95,7 +95,7 @@ in
   desktop.enable = true;
 
   # develop.cpp.enable = true;
-  develop.nix.enable = true;
+  # develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
   # develop.frontend.enable = true;
@@ -114,7 +114,7 @@ in
     (GPUOffloadApp inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default "zen-beta")
   ]
   ++ (with pkgs; [
-    qq
+    # qq
     # hmcl
     # wemeet
     flclash
@@ -131,7 +131,7 @@ in
     (GPUOffloadApp imv "imv-dir")
     (GPUOffloadApp mpv "mpv")
     (GPUOffloadApp mpv "umpv")
-    (GPUOffloadApp steam "steam")
+    # (GPUOffloadApp steam "steam")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
   ]);
