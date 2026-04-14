@@ -94,13 +94,13 @@ in
   office.enable = true;
   desktop.enable = true;
 
-  develop.cpp.enable = true;
+  # develop.cpp.enable = true;
   develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
-  develop.frontend.enable = true;
+  # develop.frontend.enable = true;
 
-  editors.zed.enable = true;
+  # editors.zed.enable = true;
   editors.neovim.enable = true;
   editors.vscode.enable = true;
   editors.vscode-server.enable = true;
@@ -116,13 +116,13 @@ in
   ++ (with pkgs; [
     qq
     # hmcl
-    wemeet
+    # wemeet
     flclash
     # aseprite
     # obs-studio
     # bilibili-tui
-    telegram-desktop
-    teamspeak6-client
+    # telegram-desktop
+    # teamspeak6-client
 
     # (GPUOffloadAppNoOpt hmcl "HMCL")
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
