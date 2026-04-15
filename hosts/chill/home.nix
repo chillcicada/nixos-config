@@ -94,7 +94,7 @@ in
   office.enable = true;
   desktop.enable = true;
 
-  # develop.cpp.enable = true;
+  develop.cpp.enable = true;
   # develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;

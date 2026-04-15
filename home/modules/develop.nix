@@ -34,7 +34,6 @@ in
       home.packages = with pkgs; [
         nixd # linter
         nixfmt # formatter
-        nix-output-monitor # nom
       ];
     })
 

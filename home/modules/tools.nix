@@ -24,6 +24,7 @@ in
       typst # typesetting system
       killall # kill all processes by name
       nix-tree # nix tree view
+      nix-output-monitor # nom
     ];
   };
 }
