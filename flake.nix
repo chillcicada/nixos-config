@@ -2,7 +2,7 @@
   description = "chillcicada's personal nixos config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 

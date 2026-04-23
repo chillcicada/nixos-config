@@ -33,10 +33,7 @@ in
 
   # Zsh extended configuration
   programs.zsh = {
-    oh-my-zsh.plugins = [
-      "git"
-      "dotenv"
-    ];
+    oh-my-zsh.plugins = [ "git" ];
 
     initContent = ''
       # pnpm
@@ -95,7 +92,7 @@ in
   desktop.enable = true;
 
   develop.cpp.enable = true;
-  # develop.nix.enable = true;
+  develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
   # develop.frontend.enable = true;
@@ -114,14 +111,14 @@ in
     (GPUOffloadApp inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default "zen-beta")
   ]
   ++ (with pkgs; [
-    # qq
+    qq
     # hmcl
     # wemeet
     flclash
     # aseprite
     # obs-studio
     # bilibili-tui
-    # telegram-desktop
+    telegram-desktop
     # teamspeak6-client
 
     # (GPUOffloadAppNoOpt hmcl "HMCL")
