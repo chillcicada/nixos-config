@@ -22,8 +22,7 @@ in
       zotero
       wpsoffice-cn
 
-      chillcicada.ttf-ms-win10
-      chillcicada.ttf-ms-win10-sc-sup
+      chillcicada.font-office
     ];
 
     home.file.".config/Typora/themes".source = inputs.typora-themes;
