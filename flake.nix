@@ -22,6 +22,13 @@
     chillcicada.url = "github:chillcicada/nurpkgs";
     chillcicada.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvim-config = {
+      type = "github";
+      owner = "chillcicada";
+      repo = "nvim-config";
+      flake = false;
+    };
+
     typora-themes = {
       type = "github";
       owner = "chillcicada";

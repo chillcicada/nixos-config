@@ -56,13 +56,9 @@ in
 
     gtk2.enable = false;
 
-    gtk3.extraConfig = {
-      gtk-im-module = "fcitx";
-    };
+    gtk3.extraConfig.gtk-im-module = "fcitx";
 
-    gtk4.extraConfig = {
-      gtk-im-module = "fcitx";
-    };
+    gtk4.extraConfig.gtk-im-module = "fcitx";
   };
 
   # Top level shell aliases
@@ -91,7 +87,7 @@ in
   office.enable = true;
   desktop.enable = true;
 
-  develop.cpp.enable = true;
+  # develop.cpp.enable = true;
   develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
@@ -117,8 +113,7 @@ in
     flclash
     # aseprite
     # obs-studio
-    # bilibili-tui
-    telegram-desktop
+    # telegram-desktop
     # teamspeak6-client
 
     # (GPUOffloadAppNoOpt hmcl "HMCL")

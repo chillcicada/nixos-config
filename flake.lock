@@ -283,12 +283,29 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777033673,
+        "narHash": "sha256-V9r6ip0I1KV/zrLlFeX6t64Ki3B998rItwB0yYc7iQA=",
+        "owner": "chillcicada",
+        "repo": "nvim-config",
+        "rev": "4fb3568b6baa76d3dc7ae9b1b5980326fc08fb5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chillcicada",
+        "repo": "nvim-config",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "chillcicada": "chillcicada",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nvim-config": "nvim-config",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "typora-themes": "typora-themes",

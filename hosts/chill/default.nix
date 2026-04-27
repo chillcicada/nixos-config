@@ -49,16 +49,14 @@
   time.timeZone = "Asia/Shanghai";
 
   # Self defined options
-  steam.enable = true;
+  # steam.enable = true;
   desktop.enable = true;
   essential.enable = true;
 
   # Fix XDG terminal exec
   xdg.terminal-exec = {
     enable = true;
-    settings = {
-      default = [ "com.mitchellh.ghostty.desktop" ];
-    };
+    settings.default = [ "com.mitchellh.ghostty.desktop" ];
   };
 
   programs.nautilus-open-any-terminal = {

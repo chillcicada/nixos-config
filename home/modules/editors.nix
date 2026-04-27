@@ -1,5 +1,6 @@
 {
   lib,
+  inputs,
   config,
   pkgs,
   ...
@@ -29,9 +30,12 @@ in
       };
 
       home.packages = with pkgs; [
+        gcc # Required by tree-sitter
         unzip # Required by mason to download LSP servers
         gnumake # Required by luasnip.nvim
       ];
+
+      home.file.".config/nvim".source = inputs.nvim-config;
     })
 
     (lib.mkIf cfg.vscode.enable {
