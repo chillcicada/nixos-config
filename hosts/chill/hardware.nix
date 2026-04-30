@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }:
@@ -9,6 +10,7 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.loader.grub.enable = lib.mkDefault false;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"

@@ -109,11 +109,12 @@ in
   ++ (with pkgs; [
     qq
     # hmcl
+    kazumi
     # wemeet
     flclash
     # aseprite
     # obs-studio
-    # telegram-desktop
+    telegram-desktop
     # teamspeak6-client
 
     # (GPUOffloadAppNoOpt hmcl "HMCL")
@@ -124,6 +125,7 @@ in
     (GPUOffloadApp mpv "mpv")
     (GPUOffloadApp mpv "umpv")
     # (GPUOffloadApp steam "steam")
+    (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
   ]);
