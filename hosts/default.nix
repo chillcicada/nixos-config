@@ -67,6 +67,7 @@ with inputs;
       system = "x86_64-linux";
       config.allowUnfree = true;
       overlays = [
+        lxgw-fonts.overlays.default
         chillcicada.overlays.default
         (_: super: {
           wechat = super.wechat.overrideAttrs (_: {

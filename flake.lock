@@ -214,6 +214,26 @@
         "type": "github"
       }
     },
+    "lxgw-fonts": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777615848,
+        "narHash": "sha256-blS/lZvx0hfiYzm5ISqVEyiKlKKtZSGbm7AxntD8Lxo=",
+        "owner": "chillcicada",
+        "repo": "lxgw-fonts-flake",
+        "rev": "b94adbbb5858f9e39cf4f1a062562ea87125d641",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chillcicada",
+        "repo": "lxgw-fonts-flake",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1776829775,
@@ -304,6 +324,7 @@
         "chillcicada": "chillcicada",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
+        "lxgw-fonts": "lxgw-fonts",
         "nixpkgs": "nixpkgs",
         "nvim-config": "nvim-config",
         "sops-nix": "sops-nix",

@@ -27,14 +27,13 @@ in
 
     fonts = {
       serif = {
-        # package = pkgs.lxgw-neozhisong;
-        package = pkgs.noto-fonts-cjk-serif;
-        name = "Noto Serif CJK SC";
+        package = pkgs.lxgw-fonts.neozhisong-screen;
+        name = "LXGW Neo ZhiSong Screen";
       };
 
       sansSerif = {
-        package = pkgs.lxgw-neoxihei;
-        name = "LXGW Neo XiHei";
+        package = pkgs.lxgw-fonts.neoxihei-screen;
+        name = "LXGW Neo XiHei Screen";
       };
 
       monospace = {

@@ -16,6 +16,9 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.inputs.home-manager.follows = "home-manager";
 
+    lxgw-fonts.url = "github:chillcicada/lxgw-fonts-flake";
+    lxgw-fonts.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
