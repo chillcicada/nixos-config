@@ -124,7 +124,7 @@ in
     (GPUOffloadApp imv "imv-dir")
     (GPUOffloadApp mpv "mpv")
     (GPUOffloadApp mpv "umpv")
-    # (GPUOffloadApp steam "steam")
+    (GPUOffloadApp steam "steam")
     (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
