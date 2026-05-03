@@ -70,6 +70,7 @@ in
 
   # Fix stylix targets
   stylix.targets = {
+    qt.enable = false;
     kde.enable = false;
     gdu.enable = false;
     forge.enable = false;
@@ -108,24 +109,26 @@ in
   ]
   ++ (with pkgs; [
     qq
-    # hmcl
-    kazumi
     # wemeet
     flclash
     # aseprite
-    # obs-studio
-    telegram-desktop
+    # telegram-desktop
     # teamspeak6-client
 
+    # hmcl
     # (GPUOffloadAppNoOpt hmcl "HMCL")
+
+    # kazumi
+    # (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
+
+    # obs-studio
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
 
     (GPUOffloadApp imv "imv")
     (GPUOffloadApp imv "imv-dir")
     (GPUOffloadApp mpv "mpv")
     (GPUOffloadApp mpv "umpv")
-    (GPUOffloadApp steam "steam")
-    (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
+    # (GPUOffloadApp steam "steam")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
   ]);
