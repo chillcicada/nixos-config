@@ -124,10 +124,7 @@ in
     # obs-studio
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
 
-    (GPUOffloadApp imv "imv")
-    (GPUOffloadApp imv "imv-dir")
     (GPUOffloadApp mpv "mpv")
-    (GPUOffloadApp mpv "umpv")
     # (GPUOffloadApp steam "steam")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
