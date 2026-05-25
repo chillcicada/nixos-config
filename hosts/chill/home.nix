@@ -53,11 +53,8 @@ in
   # Extended GTK configuration
   gtk = {
     enable = true;
-
     gtk2.enable = false;
-
     gtk3.extraConfig.gtk-im-module = "fcitx";
-
     gtk4.extraConfig.gtk-im-module = "fcitx";
   };
 
