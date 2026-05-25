@@ -18,7 +18,7 @@ with inputs;
 
       networking.hostName = "chill";
       home-manager.users.${vars.userName}.imports = [ self.homeModules.chill ];
-      system.stateVersion = "26.05";
+      system.stateVersion = "26.11";
     };
 
     salt = {
