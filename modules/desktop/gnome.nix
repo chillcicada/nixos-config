@@ -48,11 +48,10 @@ in
       with pkgs;
       [
         nautilus # File manager
-        # snapshot # Camera app
-        gnome-control-center # Settings app
+        # snapshot # Camera
+        gnome-control-center # Settings
       ]
       ++ (with gnomeExtensions; [
-        caffeine
         kimpanel
         open-bar
         appindicator
