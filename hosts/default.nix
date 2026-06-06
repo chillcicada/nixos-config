@@ -32,7 +32,7 @@ with inputs;
 
       networking.hostName = "salt";
       home-manager.users.${vars.userName}.imports = [ self.homeModules.salt ];
-      system.stateVersion = "26.05";
+      system.stateVersion = "26.11";
     };
   };
 
@@ -47,7 +47,7 @@ with inputs;
         vscode-server.homeModules.default
       ];
 
-      home.stateVersion = "26.05";
+      home.stateVersion = "26.11";
     };
 
     salt = {
@@ -55,7 +55,7 @@ with inputs;
 
       xdg.mime.enable = false;
 
-      home.stateVersion = "26.05";
+      home.stateVersion = "26.11";
     };
   };
 

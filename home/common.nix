@@ -7,6 +7,8 @@
     homeDirectory = "/home/${vars.userName}";
   };
 
+  nix.assumeXdg = true;
+
   # Enable Home Manager
   programs.home-manager.enable = true;
 

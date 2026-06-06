@@ -5,6 +5,17 @@ let
 
   proxyServices = [
     {
+      prefix = "trilium";
+      port = 8080;
+      extraConfig = ''
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_cache_bypass $http_upgrade;
+        client_max_body_size 0;
+      '';
+    }
+    {
       prefix = "webdav";
       port = 8081;
       extraConfig = ''
