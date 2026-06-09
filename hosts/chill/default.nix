@@ -23,9 +23,6 @@
   # Disable automatic generation of hardware-configuration.nix
   system.tools.nixos-generate-config.enable = false;
 
-  # Enable userborn for user management.
-  services.userborn.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -38,6 +35,9 @@
   };
 
   security.rtkit.enable = true; # Required for pipewire.
+
+  # Allow the etc directory to be mutable
+  system.etc.overlay.mutable = true;
 
   # Disable suspend on close lid
   services.logind.settings.Login.HandleLidSwitch = "ignore";

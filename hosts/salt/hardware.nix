@@ -18,9 +18,6 @@
   ];
   boot.initrd.kernelModules = [ "nvme" ];
 
-  services.userborn.enable = true;
-  system.etc.overlay.enable = true;
-
   fileSystems."/" = {
     device = "/dev/vda1";
     fsType = "ext4";

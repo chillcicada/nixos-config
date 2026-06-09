@@ -11,6 +11,12 @@
     builtins.attrNames (removeAttrs (builtins.readDir ./.) [ "default.nix" ])
   );
 
+  # Enable userborn for user management
+  services.userborn.enable = true;
+
+  # Enable etc overlay
+  system.etc.overlay.enable = true;
+
   # Config home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs vars; };
