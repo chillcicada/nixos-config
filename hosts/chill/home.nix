@@ -109,7 +109,7 @@ in
     # wemeet
     flclash
     # aseprite
-    # telegram-desktop
+    telegram-desktop
     # teamspeak6-client
 
     # hmcl
@@ -122,7 +122,7 @@ in
     # (GPUOffloadApp obs-studio "com.obsproject.Studio")
 
     (GPUOffloadApp mpv "mpv")
-    # (GPUOffloadApp steam "steam")
+    (GPUOffloadApp steam "steam")
     (GPUOffloadApp typora "typora")
     (GPUOffloadApp zotero "zotero")
   ]);

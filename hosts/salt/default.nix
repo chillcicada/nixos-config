@@ -17,6 +17,8 @@
 
   system.tools.nixos-generate-config.enable = false;
 
+  system.etc.overlay.enable = true;
+
   # Time Zone
   time.timeZone = "Asia/Shanghai";
 }

@@ -36,9 +36,6 @@
 
   security.rtkit.enable = true; # Required for pipewire.
 
-  # Allow the etc directory to be mutable
-  system.etc.overlay.mutable = true;
-
   # Disable suspend on close lid
   services.logind.settings.Login.HandleLidSwitch = "ignore";
 
@@ -49,7 +46,7 @@
   time.timeZone = "Asia/Shanghai";
 
   # Self defined options
-  # steam.enable = true;
+  steam.enable = true;
   desktop.enable = true;
   essential.enable = true;
 
