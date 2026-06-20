@@ -45,7 +45,7 @@ in
 
     services.getty.autologinUser = vars.userName;
 
-    hardware.xpadneo.enable = true; # xbox controller support
+    hardware.xone.enable = true; # xbox controller support
     hardware.graphics.enable32Bit = true;
   };
 }
