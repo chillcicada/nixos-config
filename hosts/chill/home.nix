@@ -110,7 +110,7 @@ in
     flclash
     # aseprite
     telegram-desktop
-    # teamspeak6-client
+    teamspeak6-client
 
     # hmcl
     # (GPUOffloadAppNoOpt hmcl "HMCL")
