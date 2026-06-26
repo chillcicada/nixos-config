@@ -26,18 +26,11 @@ in
         dedicatedServer.openFirewall = true;
         # Open ports in the firewall for Steam Local Network Game Transfers
         localNetworkGameTransfers.openFirewall = true;
-        gamescopeSession.enable = config.desktop.wm != "gnome";
 
         fontPackages = with pkgs; [
           lxgw-neoxihei # CJK
           noto-fonts-color-emoji # Emoji
         ];
-      };
-    }
-    // lib.optionalAttrs (config.desktop.wm != "gnome") {
-      gamescope = {
-        enable = true;
-        capSysNice = true;
       };
     };
 
