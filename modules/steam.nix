@@ -26,11 +26,6 @@ in
         dedicatedServer.openFirewall = true;
         # Open ports in the firewall for Steam Local Network Game Transfers
         localNetworkGameTransfers.openFirewall = true;
-
-        fontPackages = with pkgs; [
-          lxgw-neoxihei # CJK
-          noto-fonts-color-emoji # Emoji
-        ];
       };
     };
 
