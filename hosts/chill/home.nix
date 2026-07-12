@@ -74,6 +74,7 @@ in
     gedit.enable = false;
     blender.enable = false;
     vencord.enable = false;
+    flatpakSupport.enable = false;
 
     zen-browser.profileNames = [ "594ztnss.default" ];
   };

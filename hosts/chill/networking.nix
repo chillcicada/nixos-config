@@ -9,14 +9,6 @@
   services.resolved.enable = true;
 
   networking = {
-    hosts."127.0.0.1" = [
-      "baidu.com"
-      "discord.com"
-      "www.zhihu.com"
-      "www.youtube.com"
-      "www.bilibili.com"
-    ];
-
     networkmanager.enable = true;
 
     firewall = {

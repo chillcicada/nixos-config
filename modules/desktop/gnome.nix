@@ -53,7 +53,7 @@ in
       ]
       ++ (with gnomeExtensions; [
         kimpanel
-        open-bar
+        # open-bar
         appindicator
         blur-my-shell
         clipboard-indicator
