@@ -74,7 +74,6 @@ in
     gedit.enable = false;
     blender.enable = false;
     vencord.enable = false;
-    flatpakSupport.enable = false;
 
     zen-browser.profileNames = [ "594ztnss.default" ];
   };
@@ -90,7 +89,7 @@ in
   develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
-  # develop.frontend.enable = true;
+  develop.frontend.enable = true;
 
   # editors.zed.enable = true;
   editors.neovim.enable = true;

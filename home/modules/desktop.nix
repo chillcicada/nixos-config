@@ -25,6 +25,7 @@ in
 
       scripts = with pkgs.mpvScripts; [
         uosc
+        uosc-danmaku
         sponsorblock
       ];
 
