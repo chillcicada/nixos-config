@@ -46,7 +46,7 @@
   time.timeZone = "Asia/Shanghai";
 
   # Self defined options
-  steam.enable = true;
+  steam.enable = false;
   desktop.enable = true;
   essential.enable = true;
 
