@@ -36,13 +36,13 @@ in
     oh-my-zsh.plugins = [ "git" ];
 
     initContent = ''
-      # pnpm
-      export PNPM_HOME="$HOME/.local/share/pnpm"
-      case ":$PATH:" in
-        *":$PNPM_HOME:"*) ;;
-        *) export PATH="$PNPM_HOME:$PATH" ;;
-      esac
-      # pnpm end
+      # # pnpm
+      # export PNPM_HOME="$HOME/.local/share/pnpm"
+      # case ":$PATH:" in
+      #   *":$PNPM_HOME:"*) ;;
+      #   *) export PATH="$PNPM_HOME:$PATH" ;;
+      # esac
+      # # pnpm end
 
       # gnupg agent
       export GPG_TTY=$(tty)
@@ -89,7 +89,7 @@ in
   develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
-  develop.frontend.enable = true;
+  # develop.frontend.enable = true;
 
   # editors.zed.enable = true;
   editors.neovim.enable = true;
@@ -109,8 +109,8 @@ in
     # wemeet
     flclash
     # aseprite
-    telegram-desktop
-    teamspeak6-client
+    # telegram-desktop
+    # teamspeak6-client
 
     # hmcl
     # (GPUOffloadAppNoOpt hmcl "HMCL")
