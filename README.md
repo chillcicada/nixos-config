@@ -47,13 +47,13 @@ System theme is built via [stylix](https://github.com/nix-community/stylix)
 Rebuild and switch the system configuration:
 
 ```sh
-sudo nixos-rebuild switch --flake ."#$(hostname)" |& nom
+nh os switch ."#$(hostname)"
 ```
 
 Rebuild the system configuration but not switch:
 
 ```sh
-sudo nixos-rebuild boot --flake ."#$(hostname)" |& nom
+nh os boot ."#$(hostname)"
 ```
 
 Pass envrionment variables to nix-daemon (superuser permission required):
