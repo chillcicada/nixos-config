@@ -36,6 +36,9 @@
 
   security.rtkit.enable = true; # Required for pipewire.
 
+  # Use xdg base directories for nix
+  nix.settings.use-xdg-base-directories = true;
+
   # Disable suspend on close lid
   services.logind.settings.Login.HandleLidSwitch = "ignore";
 
