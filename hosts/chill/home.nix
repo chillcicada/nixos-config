@@ -89,7 +89,7 @@ in
   develop.nix.enable = true;
   develop.misc.enable = true;
   develop.python.enable = true;
-  # develop.frontend.enable = true;
+  develop.frontend.enable = true;
 
   # editors.zed.enable = true;
   editors.neovim.enable = true;

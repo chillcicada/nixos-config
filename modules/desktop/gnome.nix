@@ -58,6 +58,7 @@ in
         blur-my-shell
         clipboard-indicator
         net-speed-simplified
+        transparent-top-bar-adjustable-transparency
       ]);
   };
 }
