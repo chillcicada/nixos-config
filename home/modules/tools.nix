@@ -19,7 +19,6 @@ in
       dust # disk usage analyzer
       sops # secrets management
       just # command runner
-      tree # tree view
       tokei # count code lines
       typst # typesetting system
       killall # kill all processes by name

@@ -36,14 +36,6 @@ in
     oh-my-zsh.plugins = [ "git" ];
 
     initContent = ''
-      # # pnpm
-      # export PNPM_HOME="$HOME/.local/share/pnpm"
-      # case ":$PATH:" in
-      #   *":$PNPM_HOME:"*) ;;
-      #   *) export PATH="$PNPM_HOME:$PATH" ;;
-      # esac
-      # # pnpm end
-
       # gnupg agent
       export GPG_TTY=$(tty)
       # gnupg agent end
@@ -88,8 +80,9 @@ in
   # develop.cpp.enable = true;
   develop.nix.enable = true;
   develop.misc.enable = true;
+  develop.rust.enable = true;
   develop.python.enable = true;
-  develop.frontend.enable = true;
+  # develop.frontend.enable = true;
 
   # editors.zed.enable = true;
   editors.neovim.enable = true;
@@ -107,9 +100,9 @@ in
   ++ (with pkgs; [
     qq
     # wemeet
-    flclash
+    # bettbox
     # aseprite
-    # telegram-desktop
+    telegram-desktop
     # teamspeak6-client
 
     # hmcl
@@ -124,6 +117,6 @@ in
     (GPUOffloadApp mpv "mpv")
     # (GPUOffloadApp steam "steam")
     (GPUOffloadApp typora "typora")
-    (GPUOffloadApp zotero "zotero")
+    # (GPUOffloadApp zotero "zotero")
   ]);
 }

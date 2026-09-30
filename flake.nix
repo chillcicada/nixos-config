@@ -44,7 +44,7 @@
   };
 
   outputs =
-    inputs@{ flake-parts, ... }:
+    { flake-parts, ... }@inputs:
 
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ ./hosts ];

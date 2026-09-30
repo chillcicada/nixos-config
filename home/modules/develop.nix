@@ -14,6 +14,7 @@ in
     cpp.enable = lib.mkEnableOption "cpp";
     nix.enable = lib.mkEnableOption "nix";
     misc.enable = lib.mkEnableOption "misc";
+    rust.enable = lib.mkEnableOption "rust";
     python.enable = lib.mkEnableOption "python";
     frontend.enable = lib.mkEnableOption "frontend";
   };
@@ -96,6 +97,17 @@ in
 
     (lib.mkIf cfg.misc.enable {
       home.packages = with pkgs; [ just-lsp ];
+    })
+
+    (lib.mkIf cfg.rust.enable {
+      home.packages = with pkgs; [
+        rustup
+      ];
+
+      home.sessionVariables = {
+        CARGO_HOME = "$HOME/.local/share/cargo";
+        RUSTUP_HOME = "$HOME/.local/share/rustup";
+      };
     })
   ];
 }

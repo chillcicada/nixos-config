@@ -84,10 +84,8 @@
   };
 
   # Journal configuration
-  services.journald = {
-    extraConfig = ''
-      MaxRetentionSec=7day
-      MaxFileSec=1day
-    '';
+  services.journald.settings.Journal = {
+    MaxRetentionSec = "7day";
+    MaxFileSec = "1day";
   };
 }

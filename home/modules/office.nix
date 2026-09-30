@@ -19,7 +19,7 @@ in
     home.packages = with pkgs; [
       typora
       wechat
-      zotero
+      # zotero
       wpsoffice-cn
 
       chillcicada.font-office
