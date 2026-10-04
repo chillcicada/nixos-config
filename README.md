@@ -69,17 +69,16 @@ systemctl daemon-reload
 systemctl restart nix-daemon
 ```
 
-Clean the machine:
+Clean up:
 
 ```sh
 sudo nh clean all
 ```
 
-This nixos config is designed to build remote nixos system on a local machine and push it to the remote machine, use with **ssh config**:
+Build remote nixos system and push it, use with **ssh config**:
 
 ```sh
-# Note that it required no sudo permission on the local machine
-nixos-rebuild --target-host "<remote-host>" --sudo switch --flake ."#<remote-host>" |& nom
+nh os switch ."#<remote-host>" --target-host <remote-host>
 ```
 
 With the ssh config like:
@@ -90,7 +89,7 @@ Host <remote-host>
   Hostname <ip-address/domain>
 ```
 
-Emergency rollback to the previous boot entry (for grub):
+Emergency rollback to the previous boot entry (for grub, usually on your remote machine):
 
 ```sh
 sudo grub-reboot '1>1'
