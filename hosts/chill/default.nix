@@ -49,6 +49,7 @@
   time.timeZone = "Asia/Shanghai";
 
   # Self defined options
+  proxy.enable = true;
   steam.enable = false;
   desktop.enable = true;
   essential.enable = true;
