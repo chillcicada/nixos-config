@@ -56,19 +56,6 @@ Rebuild the system configuration but not switch:
 nh os boot ."#$(hostname)"
 ```
 
-Pass envrionment variables to nix-daemon (superuser permission required):
-
-```sh
-#!/usr/bin/env bash
-mkdir /run/systemd/system/nix-daemon.service.d
-cat > /run/systemd/system/nix-daemon.service.d/override.conf << EOF
-[Service]
-Environment="<ENV_VAR_NAME>=<ENV_VAR_VALUE>"
-EOF
-systemctl daemon-reload
-systemctl restart nix-daemon
-```
-
 Clean up:
 
 ```sh
