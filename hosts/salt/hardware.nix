@@ -8,8 +8,6 @@
 
   boot.loader.grub.device = "/dev/vda";
 
-  boot.initrd.systemd.enable = true;
-
   boot.initrd.availableKernelModules = [
     "ata_piix"
     "uhci_hcd"
