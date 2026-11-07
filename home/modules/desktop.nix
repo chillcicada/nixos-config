@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -16,11 +17,11 @@ in
 
   config = lib.mkIf cfg.enable {
     # image viewer
-    programs.imv.enable = true;
+    rum.programs.imv.enable = true;
 
     # video & audio player
     # https://wiki.nixos.org/wiki/MPV
-    programs.mpv = {
+    rum.programs.mpv = {
       enable = true;
 
       scripts = with pkgs.mpvScripts; [
@@ -29,9 +30,9 @@ in
         sponsorblock # youtube
       ];
 
-      extraInput = ''
-        esc quit
-      '';
+      bindings = {
+        esc = "quit";
+      };
 
       config = {
         profile = "high-quality";
@@ -40,13 +41,18 @@ in
     };
 
     # browser
-    programs.zen-browser.enable = true;
+    packages = [ inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default ];
 
     # terminal emulator
     # run `infocmp -x xterm-ghostty | ssh <remote-host> -- tic -x -` to install the terminfo
-    programs.ghostty = {
+    rum.programs.zsh.initConfig = ''
+      if [[ -r "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration ]]; then
+        source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+      fi
+    '';
+
+    rum.programs.ghostty = {
       enable = true;
-      enableZshIntegration = true;
 
       settings = {
         # Window
@@ -67,6 +73,8 @@ in
         link-url = true;
         confirm-close-surface = false;
         background-blur = true;
+        # Keep the text opaque; only the terminal background is translucent.
+        background-opacity = 0.85;
         # Others
         shell-integration-features = "cursor,sudo,title";
       };

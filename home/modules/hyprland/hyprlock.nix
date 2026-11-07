@@ -6,7 +6,7 @@ in
 
 {
   config = lib.mkIf cfg.enable {
-    programs.hyprlock = {
+    rum.programs.hyprlock = {
       enable = true;
     };
   };

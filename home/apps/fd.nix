@@ -1,21 +1,17 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  programs.fd = {
-    enable = true;
+  packages = [ pkgs.fd ];
 
-    ignores = [
-      ".cache/"
-      ".ruff_cache/"
-      ".git/"
-      ".venv/"
-      ".vscode/"
-      "target/"
-      "node_modules/"
-      "dist/"
-      "build/"
-    ];
-
-    # extraOptions = [ ];
-  };
+  xdg.config.files."fd/ignore".text = ''
+    .cache/
+    .ruff_cache/
+    .git/
+    .venv/
+    .vscode/
+    target/
+    node_modules/
+    dist/
+    build/
+  '';
 }

@@ -2,11 +2,8 @@
 
 {
   # refer to https://yazi-rs.github.io/ for more information
-  programs.yazi = {
+  rum.programs.yazi = {
     enable = true;
-    enableZshIntegration = true;
-
-    initLua = ./init.lua;
 
     settings = {
       mgr = {
@@ -40,9 +37,24 @@
         ];
       };
     };
-
-    plugins = {
-      inherit (pkgs.yaziPlugins) git starship;
-    };
   };
+
+  packages = [ pkgs.starship ];
+
+  xdg.config.files = {
+    "yazi/init.lua".source = ./init.lua;
+    "yazi/plugins/git.yazi".source = pkgs.yaziPlugins.git;
+    "yazi/plugins/starship.yazi".source = pkgs.yaziPlugins.starship;
+  };
+
+  rum.programs.zsh.initConfig = ''
+    function y() {
+      local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+      command yazi "$@" --cwd-file="$tmp"
+      if cwd="$(<"$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+      fi
+      rm -f -- "$tmp"
+    }
+  '';
 }

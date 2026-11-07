@@ -5,7 +5,7 @@
   <a href="https://nixos.org/"><img alt="NIXOS Version" src="https://img.shields.io/badge/NixOS-Unstable-informational.svg?style=for-the-badge&logo=nixos&color=F2CDCD&logoColor=D9E0EE&labelColor=302D41" /></a>
 </p>
 
-**This repo stores some cc's [NixOS](https://nixos.org) and [home-manager](https://github.com/nix-community/home-manager) configurations.**
+**This repo stores some cc's [NixOS](https://nixos.org), [hjem](https://github.com/feel-co/hjem) and [hjem-rum](https://github.com/snugnug/hjem-rum) configurations.**
 
 > Hint: this repo contains my hardware configuration, you shouldn't directly use the config to build your system.
 
@@ -13,11 +13,11 @@
 .
 ├── flake.lock      # lock file for the flake
 ├── flake.nix       # main entry point of the flake
-├── home            # home-manager configurations
+├── home            # hjem configurations
 │   ├── apps/       # auto-imported app-specific configurations
-│   ├── modules/    # reusable modules for home-manager
-│   ├── common.nix  # common configuration for home-manager
-│   └── default.nix # default configuration for home-manager
+│   ├── modules/    # reusable modules for hjem
+│   ├── common.nix  # common configuration for hjem
+│   └── default.nix # default configuration for hjem
 ├── hosts           # host-specific configurations
 │   ├── <machine>/  # configurations for a specific machine
 │   ├── default.nix # import configuration for all hosts
@@ -33,7 +33,6 @@ System theme is built via [stylix](https://github.com/nix-community/stylix)
 
 - user packages: [nurpkgs](https://github.com/chillcicada/nurpkgs)
 - neovim config: [nvim-config](https://github.com/chillcicada/nvim-config)
-- typora themes: [typora-themes](https://github.com/chillcicada/typora-themes)
 - wallpapers: [wallpapers](https://github.com/chillcicada/imgs)
 
 ## License

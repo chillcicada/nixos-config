@@ -15,7 +15,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
+    packages = with pkgs; [
       dust # disk usage analyzer
       sops # secrets management
       just # command runner

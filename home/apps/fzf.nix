@@ -1,8 +1,8 @@
 { ... }:
 
 {
-  programs.fzf = {
+  rum.programs.fzf = {
     enable = true;
-    enableZshIntegration = true;
+    integrations.zsh.enable = true;
   };
 }

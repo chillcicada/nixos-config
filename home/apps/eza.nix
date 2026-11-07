@@ -1,9 +1,14 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  programs.eza = {
-    enable = true;
-    git = true;
-    icons = "auto";
-  };
+  packages = [ pkgs.eza ];
+
+  rum.programs.zsh.initConfig = ''
+    alias eza='eza --icons auto --git'
+    alias ls='eza'
+    alias ll='eza -l'
+    alias la='eza -a'
+    alias lt='eza --tree'
+    alias lla='eza -la'
+  '';
 }

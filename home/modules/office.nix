@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -16,15 +15,12 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      typora
+    packages = with pkgs; [
       wechat
       # zotero
       wpsoffice-cn
 
       chillcicada.font-office
     ];
-
-    home.file.".config/Typora/themes".source = inputs.typora-themes;
   };
 }

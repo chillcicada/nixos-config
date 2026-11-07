@@ -5,6 +5,7 @@
     ./nvidia.nix
     ./hardware.nix
     ./networking.nix
+    ./stylix.nix
   ];
 
   users.users.${vars.userName}.extraGroups = [
@@ -44,6 +45,9 @@
   # Enable nix-ld
   programs.nix-ld.enable = true;
 
+  # Patch the VS Code server downloaded by the remote SSH extension
+  services.vscode-server.enable = true;
+
   # Time Zone
   time.timeZone = "Asia/Shanghai";
 
@@ -51,6 +55,7 @@
   proxy.enable = true;
   steam.enable = false;
   desktop.enable = true;
+  desktop.wm = "niri";
   essential.enable = true;
 
   # Fix XDG terminal exec

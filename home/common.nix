@@ -1,31 +1,23 @@
-{ vars, config, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  # https://nix-community.github.io/home-manager/options.xhtml
-  home = {
-    username = vars.userName;
-    homeDirectory = "/home/${vars.userName}";
-  };
-
-  nix.assumeXdg = true;
-
-  # Enable Home Manager
-  programs.home-manager.enable = true;
-
   # Enable Btop
-  programs.btop = {
-    enable = true;
+  packages = [ pkgs.btop ];
 
-    settings = {
-      theme_background = false;
-      log_level = "ERROR"; # Only log errors
-    };
-  };
+  xdg.config.files."btop/btop.conf".text = ''
+    theme_background = False
+    log_level = "ERROR"
+  '';
 
   # Enable Starship
-  programs.starship = {
+  rum.programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    integrations.zsh.enable = true;
 
     # https://starship.rs/config/
     settings = {
@@ -39,15 +31,41 @@
     };
   };
 
+  # Some oh-my-zsh plugins expect the cache directory to exist.
+  xdg.cache.files."oh-my-zsh/.keep".text = "";
+
+  # Keep the zsh history directory around.
+  xdg.data.files."zsh/.keep".text = "";
+
   # Enable Zsh & oh-my-zsh
-  programs.zsh = {
+  rum.programs.zsh = {
     enable = true;
 
-    dotDir = "${config.xdg.configHome}/zsh"; # ~/.config/zsh
-    enableCompletion = true;
-    oh-my-zsh.enable = true;
-    history.ignoreAllDups = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
+    # Ordering mirrors the one Home Manager used for zsh.
+    initConfig = lib.mkMerge [
+      (lib.mkOrder 700 ''
+        source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+      '')
+
+      (lib.mkOrder 800 ''
+        export ZSH="${pkgs.oh-my-zsh}/share/oh-my-zsh"
+        ZSH_CACHE_DIR="${config.xdg.cache.directory}/oh-my-zsh"
+        ZSH_THEME=""
+        plugins=(git)
+
+        source "$ZSH/oh-my-zsh.sh"
+      '')
+
+      (lib.mkOrder 1000 ''
+        HISTFILE="${config.xdg.data.directory}/zsh/history"
+        HISTSIZE=10000
+        SAVEHIST=10000
+        setopt HIST_IGNORE_ALL_DUPS
+      '')
+
+      (lib.mkOrder 1200 ''
+        source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+      '')
+    ];
   };
 }

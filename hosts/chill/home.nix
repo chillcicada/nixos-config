@@ -16,14 +16,6 @@ let
     );
 
   GPUOffloadApp = pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload ";
-
-  # # add __GL_THREADED_OPTIMIZATIONS=0 to disable threaded optimizations for nvidia-offload, used by minecraft
-  # nvidia-offload-no-opt = pkgs.writeShellScriptBin "nvidia-offload-no-opt" ''
-  #   __GL_THREADED_OPTIMIZATIONS=0 nvidia-offload "$@"
-  # '';
-
-  # GPUOffloadAppNoOpt =
-  #   pkg: desktopName: patchDesktop pkg desktopName "^Exec=" "Exec=nvidia-offload-no-opt ";
 in
 
 {
@@ -32,43 +24,29 @@ in
   # ------------------ #
 
   # Zsh extended configuration
-  programs.zsh = {
-    oh-my-zsh.plugins = [ "git" ];
+  rum.programs.zsh.initConfig = ''
+    # gnupg agent
+    export GPG_TTY=$(tty)
+    # gnupg agent end
 
-    initContent = ''
-      # gnupg agent
-      export GPG_TTY=$(tty)
-      # gnupg agent end
-    '';
-  };
+    alias j='just'
+    alias onproxy='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890 no_proxy='
+    alias offproxy='unset https_proxy http_proxy all_proxy HTTPS_PROXY HTTP_PROXY ALL_PROXY'
+  '';
 
-  # Extended GTK configuration
-  gtk = {
-    enable = true;
-    gtk2.enable = false;
-    gtk3.extraConfig.gtk-im-module = "fcitx";
-    gtk4.extraConfig.gtk-im-module = "fcitx";
-  };
+  # Keep Zen on the existing profile instead of creating a fresh one.
+  # The profile itself stays in ~/.config/zen/594ztnss.default.
+  xdg.config.files."zen/profiles.ini".text = ''
+    [General]
+    StartWithLastProfile=1
+    Version=2
 
-  # Top level shell aliases
-  home.shellAliases = {
-    j = "just";
-    onproxy = "export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890 HTTP_PROXY=http://127.0.0.1:7890 HTTPS_PROXY=http://127.0.0.1:7890 ALL_PROXY=socks5://127.0.0.1:7890 no_proxy=";
-    offproxy = "unset https_proxy http_proxy all_proxy HTTPS_PROXY HTTP_PROXY ALL_PROXY";
-  };
-
-  # Fix stylix targets
-  stylix.targets = {
-    qt.enable = false;
-    kde.enable = false;
-    gdu.enable = false;
-    forge.enable = false;
-    gedit.enable = false;
-    blender.enable = false;
-    vencord.enable = false;
-
-    zen-browser.profileNames = [ "594ztnss.default" ];
-  };
+    [Profile0]
+    Name=default
+    IsRelative=1
+    Path=594ztnss.default
+    Default=1
+  '';
 
   # -------------------- #
   # self defined options #
@@ -80,43 +58,27 @@ in
   # develop.cpp.enable = true;
   develop.nix.enable = true;
   develop.misc.enable = true;
-  develop.rust.enable = true;
+  # develop.rust.enable = true;
   develop.python.enable = true;
   # develop.frontend.enable = true;
 
   # editors.zed.enable = true;
   editors.neovim.enable = true;
   editors.vscode.enable = true;
-  editors.vscode-server.enable = true;
 
   # ------------------- #
   # additional packages #
   # ------------------- #
-  home.packages = [
-    # nvidia-offload-no-opt
+  packages = [
     # desktop applications patched for GPU offloading
     (GPUOffloadApp inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default "zen-beta")
   ]
   ++ (with pkgs; [
     qq
-    # wemeet
-    # bettbox
-    # aseprite
-    telegram-desktop
-    # teamspeak6-client
-
-    # hmcl
-    # (GPUOffloadAppNoOpt hmcl "HMCL")
-
-    # kazumi
-    # (GPUOffloadApp kazumi "io.github.Predidit.Kazumi")
-
-    # obs-studio
-    # (GPUOffloadApp obs-studio "com.obsproject.Studio")
+    tg
 
     (GPUOffloadApp mpv "mpv")
     # (GPUOffloadApp steam "steam")
-    (GPUOffloadApp typora "typora")
     # (GPUOffloadApp zotero "zotero")
   ]);
 }

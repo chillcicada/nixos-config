@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  programs.fastfetch = {
+  rum.programs.fastfetch = {
     enable = true;
 
     settings = {
@@ -124,6 +124,4 @@
       ];
     };
   };
-
-  home.shellAliases.f = "fastfetch";
 }

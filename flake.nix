@@ -14,13 +14,13 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-    zen-browser.inputs.home-manager.follows = "home-manager";
 
     lxgw-fonts.url = "github:chillcicada/lxgw-fonts-flake";
     lxgw-fonts.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hjem-rum.url = "github:snugnug/hjem-rum";
+    hjem-rum.inputs.nixpkgs.follows = "nixpkgs";
+    hjem.follows = "hjem-rum/hjem";
 
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     vscode-server.inputs.flake-parts.follows = "flake-parts";
@@ -32,13 +32,6 @@
       type = "github";
       owner = "chillcicada";
       repo = "nvim-config";
-      flake = false;
-    };
-
-    typora-themes = {
-      type = "github";
-      owner = "chillcicada";
-      repo = "typora-themes";
       flake = false;
     };
   };

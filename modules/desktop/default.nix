@@ -12,6 +12,7 @@ let
   allowedTypes = lib.types.enum [
     "gnome"
     "hyprland"
+    "niri"
   ];
 in
 
@@ -34,12 +35,13 @@ in
 
   config = lib.mkIf cfg.enable {
     services = {
-      # Use gdm as the display manager.
+      # GDM for the GNOME/Hyprland sessions; niri uses Noctalia Greeter instead.
       displayManager = {
-        gdm.enable = true;
+        gdm.enable = lib.mkDefault (cfg.wm != "niri");
 
-        # Enable automatic login for the user.
-        autoLogin.enable = true;
+        # Enable automatic login for the user (GDM-based sessions; niri's
+        # autologin is greetd's initial_session in niri.nix).
+        autoLogin.enable = lib.mkDefault (cfg.wm != "niri");
         autoLogin.user = vars.userName;
       };
 
@@ -57,8 +59,6 @@ in
       QT_QPA_PLATFORM = "wayland";
       NIXOS_OZONE_WL = "1";
       QT_IM_MODULE = "fcitx";
-      GTK_IM_MODULE = "fcitx";
-      # XMODIFIERS = "@im=fcitx";
     };
 
     # Locale
@@ -104,6 +104,12 @@ in
 
         settings = {
           addons = {
+            # Floating candidate window font.
+            classicui.globalSection = {
+              Font = "\"LXGW Neo XiHei Screen 13\"";
+              MenuFont = "\"LXGW Neo XiHei Screen 13\"";
+            };
+
             pinyin = {
               globalSection = {
                 ShuangpinProfile = "Ziranma";

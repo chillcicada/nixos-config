@@ -6,7 +6,7 @@ in
 
 {
   config = lib.mkIf cfg.enable {
-    services.hypridle = {
+    rum.programs.hypridle = {
       enable = true;
     };
   };

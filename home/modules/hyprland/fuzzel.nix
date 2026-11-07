@@ -6,7 +6,7 @@ in
 
 {
   config = lib.mkIf cfg.enable {
-    programs.fuzzel = {
+    rum.programs.fuzzel = {
       enable = true;
     };
   };

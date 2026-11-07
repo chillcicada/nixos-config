@@ -6,11 +6,8 @@ in
 
 {
   config = lib.mkIf cfg.enable {
-    wayland.windowManager.hyprland = {
+    rum.desktops.hyprland = {
       enable = true;
-      package = null;
-      portalPackage = null;
-      systemd.enable = true;
 
       settings = {
         "$mod" = "SUPER";
@@ -21,6 +18,8 @@ in
           "fcitx5"
           "waybar"
           "hyprpaper"
+          "mako"
+          "hypridle"
         ];
 
         env = [

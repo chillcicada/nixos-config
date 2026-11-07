@@ -13,11 +13,16 @@ with inputs;
         ./chill
 
         sops-nix.nixosModules.sops
-        home-manager.nixosModules.home-manager
+        hjem.nixosModules.default
+        vscode-server.nixosModules.default
+        stylix.nixosModules.stylix
       ];
 
       networking.hostName = "chill";
-      home-manager.users.${vars.userName}.imports = [ self.homeModules.chill ];
+      hjem.users.${vars.userName}.imports = [
+        ../home
+        ./chill/home.nix
+      ];
       system.stateVersion = "26.11";
     };
 
@@ -27,35 +32,12 @@ with inputs;
         ./salt
 
         sops-nix.nixosModules.sops
-        home-manager.nixosModules.home-manager
+        hjem.nixosModules.default
       ];
 
       networking.hostName = "salt";
-      home-manager.users.${vars.userName}.imports = [ self.homeModules.salt ];
+      hjem.users.${vars.userName}.imports = [ ../home/common.nix ];
       system.stateVersion = "26.11";
-    };
-  };
-
-  flake.homeModules = {
-    chill = {
-      imports = [
-        ../home
-        ./chill/home.nix
-
-        stylix.homeModules.stylix
-        zen-browser.homeModules.default
-        vscode-server.homeModules.default
-      ];
-
-      home.stateVersion = "26.11";
-    };
-
-    salt = {
-      imports = [ ../home/common.nix ];
-
-      xdg.mime.enable = false;
-
-      home.stateVersion = "26.11";
     };
   };
 

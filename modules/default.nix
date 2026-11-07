@@ -14,12 +14,12 @@
   # Enable userborn for user management
   services.userborn.enable = true;
 
-  # Config home-manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs vars; };
-    backupFileExtension = "hmbak";
-    useGlobalPkgs = true;
-    useUserPackages = true;
+  # Config hjem
+  hjem = {
+    extraModules = [ inputs.hjem-rum.hjemModules.default ];
+    # Back up (rather than overwrite) files left over from Home Manager.
+    clobberByDefault = false;
+    specialArgs = { inherit inputs vars; };
   };
 
   # Define the main user
@@ -27,7 +27,7 @@
     isNormalUser = true;
     description = vars.userFullname;
     shell = pkgs.zsh;
-    ignoreShellProgramCheck = true; # shell defined in home-manager
+    ignoreShellProgramCheck = true; # shell defined in hjem
     openssh.authorizedKeys.keys = vars.opensshKeys;
   };
 

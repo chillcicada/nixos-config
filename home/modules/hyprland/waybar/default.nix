@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.hyprland;
@@ -6,14 +11,11 @@ in
 
 {
   config = lib.mkIf cfg.enable {
-    stylix.targets.waybar.enable = false;
+    packages = [ pkgs.waybar ];
 
-    programs.waybar = {
-      enable = true;
-
-      style = builtins.readFile ./style.css;
+    xdg.config.files = {
+      "waybar/config.jsonc".source = ./config.jsonc;
+      "waybar/style.css".source = ./style.css;
     };
-
-    home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
   };
 }
