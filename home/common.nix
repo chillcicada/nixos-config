@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  vars,
   ...
 }:
 
@@ -43,6 +44,19 @@
 
     # Ordering mirrors the one Home Manager used for zsh.
     initConfig = lib.mkMerge [
+      # Completion functions from packages must be on fpath before
+      # compinit runs; oh-my-zsh calls compinit when it is sourced below.
+      # NixOS links system packages' share/zsh into the system profile
+      # (see modules/default.nix), while hjem packages are installed into
+      # the per-user profile.
+      (lib.mkOrder 690 ''
+        fpath+=(
+          ${pkgs.zsh-completions}/share/zsh/site-functions
+          /run/current-system/sw/share/zsh/site-functions
+          /etc/profiles/per-user/${vars.userName}/share/zsh/site-functions
+        )
+      '')
+
       (lib.mkOrder 700 ''
         source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       '')

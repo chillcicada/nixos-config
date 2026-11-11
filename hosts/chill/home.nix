@@ -78,7 +78,6 @@ in
     tg
 
     (GPUOffloadApp mpv "mpv")
-    # (GPUOffloadApp steam "steam")
     # (GPUOffloadApp zotero "zotero")
   ]);
 }

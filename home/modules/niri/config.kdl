@@ -145,7 +145,7 @@ binds {
     Mod+E { spawn "nautilus"; }
     Mod+S { spawn "noctalia" "msg" "panel-toggle" "session"; }
     Mod+Shift+X { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
-    Super+Alt+L allow-when-locked=true { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+L allow-when-locked=true { spawn "noctalia" "msg" "session" "lock"; }
 
     // Screenshots (Noctalia overlay with annotation)
     Print { spawn "noctalia" "msg" "screenshot-region"; }
@@ -176,7 +176,7 @@ binds {
     Mod+H { focus-column-left; }
     Mod+J { focus-window-down; }
     Mod+K { focus-window-up; }
-    Mod+L { focus-column-right; }
+    // Mod+L is bound to the lock screen; use Mod+Right to focus right.
 
     Mod+Ctrl+Left { move-column-left; }
     Mod+Ctrl+Down { move-window-down; }

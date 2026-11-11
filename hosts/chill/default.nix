@@ -53,7 +53,6 @@
 
   # Self defined options
   proxy.enable = true;
-  steam.enable = false;
   desktop.enable = true;
   desktop.wm = "niri";
   essential.enable = true;
