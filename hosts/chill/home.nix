@@ -76,6 +76,7 @@ in
   ++ (with pkgs; [
     qq
     tg
+    omp
 
     (GPUOffloadApp mpv "mpv")
     # (GPUOffloadApp zotero "zotero")

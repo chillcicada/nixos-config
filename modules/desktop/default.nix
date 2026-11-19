@@ -35,6 +35,10 @@ in
 
   config = lib.mkIf cfg.enable {
     services = {
+      # GVfs provides the trash:// location (gvfsd-trash) and other backends
+      # Nautilus relies on. The GNOME desktop module pulls it in, niri does not.
+      gvfs.enable = true;
+
       # GDM for the GNOME/Hyprland sessions; niri uses Noctalia Greeter instead.
       displayManager = {
         gdm.enable = lib.mkDefault (cfg.wm != "niri");

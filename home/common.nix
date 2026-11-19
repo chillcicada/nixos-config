@@ -35,8 +35,9 @@
   # Some oh-my-zsh plugins expect the cache directory to exist.
   xdg.cache.files."oh-my-zsh/.keep".text = "";
 
-  # Keep the zsh history directory around.
-  xdg.data.files."zsh/.keep".text = "";
+  # Keep the zsh directory around for runtime files (history, etc.),
+  # matching the location Home Manager used before the hjem migration.
+  xdg.config.files."zsh/.keep".text = "";
 
   # Enable Zsh & oh-my-zsh
   rum.programs.zsh = {
@@ -64,6 +65,9 @@
       (lib.mkOrder 800 ''
         export ZSH="${pkgs.oh-my-zsh}/share/oh-my-zsh"
         ZSH_CACHE_DIR="${config.xdg.cache.directory}/oh-my-zsh"
+        # oh-my-zsh would otherwise dump completions in $HOME since ZDOTDIR
+        # is no longer set to ~/.config/zsh after the hjem migration.
+        ZSH_COMPDUMP="${config.xdg.config.directory}/zsh/.zcompdump"
         ZSH_THEME=""
         plugins=(git)
 
@@ -71,7 +75,7 @@
       '')
 
       (lib.mkOrder 1000 ''
-        HISTFILE="${config.xdg.data.directory}/zsh/history"
+        HISTFILE="${config.xdg.config.directory}/zsh/.zsh_history"
         HISTSIZE=10000
         SAVEHIST=10000
         setopt HIST_IGNORE_ALL_DUPS
