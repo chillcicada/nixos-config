@@ -1,6 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [ dix ];
+
   sops.defaultSopsFile = ./secrets.yaml;
 
   imports = [
