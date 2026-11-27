@@ -12,6 +12,8 @@
   boot.loader.grub.enable = lib.mkDefault false;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernelParams = [ "pcie_aspm.policy=performance" ];
+
   boot.initrd.availableKernelModules = [
     "xhci_pci"
     "ahci"
